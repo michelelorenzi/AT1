@@ -15,10 +15,8 @@
 \newcommand{\af}[1]{\mathbb{A}^{#1}}
 \newcommand{\ppn}{{\mathbb{P}^n}}
 \newcommand{\PP}[1]{\mathbb{P}^{#1}}
-\newcommand{\I}{{\mathcal I}}
-\newcommand{\J}{{\mathcal J}}
-%\renewcommand{\P}{{\mathcal P}} %!
-%\renewcommand{\O}{{\mathcal O}} %!
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
 \renewcommand{\ring}{\mathring}
 
 \newcommand{\sm}{\smallsetminus}
@@ -40,14 +38,17 @@
 \newcommand{\xhto}{\xhookrightarrow}
 \newcommand{\onto}{\twoheadrightarrow}
 \newcommand{\xonto}{\xtwoheadrightarrow}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\xinto}{\xhookrightarrow}
 
 %Sometimes Useful
+\let\cont\ni
 \renewcommand{\ni}{{n-1}} % overrides \ni
-\newcommand{\cont}{\;\reflectbox{$\in$}\;}
 \newcommand{\mi}{{m-1}}
 \newcommand{\ki}{{k-1}}
 
 %For this document
+\newcommand{\alvaropls}{\todo[color=cyan]{\ \ \ \ \ \ \ \ \ \ /\textbackslash}}
 \newcommand{\pin}{\pi_n(X,x_0)}
 \newcommand{\pini}{\pi_n(X,x_0)}
 \newcommand{\pinr}{\pi_n(X,A,x_0)}
@@ -68,8 +69,11 @@
 \newcommand{\triples}{(X,A,x_0)}
 \newcommand{\ns}{\nabla^n}
 \newcommand{\ms}{\nabla^m}
-\newcommand{\sx}[1]{\nabla^#1}
+\newcommand{\sx}[1]{\nabla^{#1}}
 \DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\tel}{tel}
+\DeclareMathOperator{\homeo}{Homeo}
+\DeclareMathOperator{\diffeo}{Diffeo}
 
 %%%% many alphabets %%%%
 \let\varphidummy\phi
@@ -199,7 +203,10 @@
 \newcommand{\Eext}{\mathop{\Ee xt}\nolimits}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coker}{coker}
 \DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\const}{const}
 \newoperator{GL}
 \newoperator{SL}
 \newoperator{Min}
@@ -250,10 +257,10 @@
 \newcommand{\Top}{\cat{Top}}
 \newoperator{fib}
 \newoperator{cofib}
-\DeclareMathOperator*{\limit}{lim}
-\DeclareMathOperator*{\colimit}{colim}
-\DeclareMathOperator*{\hocolimit}{hocolim}
-\DeclareMathOperator*{\holimit}{holim}
+%\DeclareMathOperator*{\lim}{lim}
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator*{\hocolim}{hocolim}
+\DeclareMathOperator*{\holim}{holim}
 \DeclareMathOperator{\Global}{\Gamma}
 
 %%%% fancy arrows %%%%
@@ -400,6 +407,15 @@
 	{\Leftarrow}%
 	{\Leftarrow}%
 }
+
+\tikzset{double line with arrow/.style args={#1,#2}{decorate,decoration={markings,%
+mark=at position 0 with {\coordinate (ta-base-1) at (0,1pt);
+\coordinate (ta-base-2) at (0,-1pt);},
+mark=at position 1 with {\draw[#1] (ta-base-1) -- (0,1pt);
+\draw[#2] (ta-base-2) -- (0,-1pt);
+}}}}
+
+\tikzset{eq/.style={-,double line with arrow={-,-}}}
 
 %%%% tikz-cd convenience %%%%
 
