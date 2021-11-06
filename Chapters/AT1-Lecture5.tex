@@ -33,9 +33,9 @@ A space pair $(X,A)$ is \textbf{$k$-connected}, $h\geq0$, if the following equiv
 
 We want to prove the following theorem.
 
-\begin{theorem}
-Let $(X,A)$ be a $k$-connected pair of spaces. Then the inclusion $\S(X,A,k)\hto\S(X)$ is a deformation retraction of simplicial sets.
-\end{theorem}
+\begin{theorem**}
+Let $(X,A)$ be a $k$-connected pair of spaces. The inclusion $\S(X,A,k)\hto\S(X)$ is then a deformation retraction of simplicial sets.
+\end{theorem**}
 
 This means there is a simplicial homotopy
 \[H:S(X)\times\Delta[1]\to S(X)\]
@@ -77,12 +77,12 @@ Since $y$ is non-degenerate, we must have $a=k$ and $\sigma'=\id_{[k]}$. Hence $
 Then by $(*)$ we have $y=(\delta')^*(\bar{y})$ so $\delta'=\id$ and hence $y=\bar{y}$ and $\sigma=\bar{\sigma}$.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{sx-def-r}
 Let $(X,A)$ be $k$-connected. Then $S(X,A,k)\hookrightarrow S(X)$ is a simplicial deformation retraction.
 \end{theorem}
 
 \begin{proof}
-We will construct the following data. Continuous maps $\psi_f:\nabla^n\times\nabla^1\to X$ for all $f:\nabla^n\to X$, $n\geq 0$ such that:
+We will construct the following data. Continuous maps $\psi_f:\nabla^n\times\nabla^1\to X$ for all $f:\nabla^n\to X$, $n\geq 0$, such that:
 \begin{enumerate}[label={(\alph*)}]
     \item $\psi_f(-,e_0)=f$, $\psi_f(\sk_k(\ns),e_1)\subset A$.
     \item If $f(\sk_k(\ns))\subset A$, then $\psi_f=f\circ\pr_1$.
@@ -104,7 +104,7 @@ $(n\geq1)$ We distinguish three cases:
 Case 1. $f:\nabla^n\to X_n$ is degenerate as a simplex of the simplicial set $\S(X)$. Then $f=\sigma^*(g)$ for a unique pair $(\sigma,g)$ with $\sigma:[n]\onto[k]$, $k<n$ and $g:\nabla^k\to X$ continuous. By (c) we have to define $\psi_f$ as the composite
 \[\nabla^n\times\nabla^1\xto{\sigma_*\times\id}\nabla^k\times\nabla^1\xto{\psi_g} X\]
 
-Case 2. $f:\nabla^n\to X$ is non-degenerate and $k<n$. We note that by property $(c)$, $\psi_f:\nabla^n\times\nabla^1\to X$ is already fixed on $(\de\nabla^n)\times\nabla^1$, by $(a)$ it is also determined on $\nabla^n\times e_0$.
+Case 2. $f:\nabla^n\to X$ is non-degenerate and $k<n$. We note that by property $(c)$, the map $\psi_f:\nabla^n\times\nabla^1\to X$ is already fixed on $(\de\nabla^n)\times\nabla^1$; by $(a)$ it is also determined on $\nabla^n\times e_0$.
 
 We extend the data to $\nabla^n\times\nabla^1$ by a choice of continuous retraction:
 \[r:\nabla^n\times\nabla^1\to (\nabla^n\times e_0)\cup(\de\nabla^n\times\nabla^1)\]
@@ -113,14 +113,14 @@ hence set $\psi_f$ to be the composite of $r$ and $\til f=f\cup\bigcup_{i=0,\dot
 
 The definition satisfies $\psi_f(-,e_0)=f$ by design and $\psi_f(\sk_k(\nabla^n),e_1)\subset\psi_f(\de\nabla^n,e_1)\subset A$ by induction because $\psi_{d_i^*(f)}$ have property $(a)$.
 
-Case 3. $f:\nabla^n\to X$ is non-degenerate and $n\leq k$. The pair $((\nabla^n\times e_0)\cup(\de\nabla^n\times\nabla1), \de\nabla^n\times e_1)$ is pair homeomorphic to $(D^n,\de D^n)$.
+Case 3. $f:\nabla^n\to X$ is non-degenerate and $n\leq k$. First, note that we can show the pair $((\nabla^n\times e_0)\cup(\de\nabla^n\times\nabla^1), \de\nabla^n\times e_1)$ to be pair homeomorphic to $(D^n,\de D^n)$.
 
-We assumed that $(X,A)$ is $k$-connected, so there are a continuous map and a homotopy from $\lambda$ to the map $\til f=f\cup\bigcup_{i=0,\dots,n} \psi_{d_i^*(f)}$
+We assumed that $(X,A)$ is $k$-connected, so there are a continuous map $\lambda$ and a homotopy from $\lambda$ to the map $\til f=f\cup\bigcup_{i=0,\dots,n} \psi_{d_i^*(f)}$
 
-\[\lambda:(\nabla^n\times e_0)\cup(\de\nabla^n\times\nabla1)\to A\]
-\[H:(\nabla^n\times e_0)\cup(\de\nabla^n\times\nabla1)\times[0,1]\to X\]
+\[\lambda:(\nabla^n\times e_0)\cup(\de\nabla^n\times\nabla^1)\to A\]
+\[H:(\nabla^n\times e_0)\cup(\de\nabla^n\times\nabla^1)\times[0,1]\to X\]
 
-which combine in the diagram:
+which combine in the diagram (where the lower triangle is commutative up to homotopy):
 \begin{center}
     \begin{tikzcd}[column sep=huge]
     (\de\ns\times e_1) \arrow[r, "\bigcup_{i=0,\dots,n} \psi_{d_i^*(f)}"] \arrow[d, hook] & A \arrow[d, hook] \\
@@ -134,8 +134,8 @@ We reparametrize the relative homotopy into the desired map $\psi_f$ as follows:
     (\ns\times e_0)\cup(\de\ns\times\sx{1})\times[0,1] \arrow[d] \arrow[r, "H"] & X \\
     \ns\times\sx{1} \arrow[ur, dashed, swap, "\psi_f"]
     \end{tikzcd}
-\end{center}\rightnote{He added a nice drawing illustrating this.}
-considering the continuous quotient map.
+\end{center}\rightnote{He added a nice drawing here illustrating this "reparametrization". The "\'Alvaro pls" Signal /\textbackslash\ means that I would like some picture to be here eventually.}
+considering the continuous quotient map.\alvaropls
 
 Now we "adjoin" the continuous maps $\psi_f$ into the simplicial deformation retraction
 \[H:S(X)\times\Delta[1]\to S(X)\]
@@ -149,21 +149,19 @@ We do this via an adjunction bijection:
     \cong\cb{\psi_f:\nabla^n\times\nabla^1\to X \text{ for all } n\geq0, z\in Z_n,\text{ such that } \psi_{\alpha^*(z)}=\psi_Z(\alpha_*\circ\nabla^1)}
 \end{multline*}
 
-Sketch (full argument as an exercise).
+\textit{Sketch} (full argument as an exercise).
 
 Step 1. Given $H:Z\times\Delta[1]\to Y$ and $z\in Z_n$, we define $\psi_z:\Delta[n]\times\Delta[1]\to Y$ by $(\psi_z)_m(\alpha,k)=H_m(\alpha^*(z),k)$ (this is bijective by the Yoneda lemma).
 
-Step 2. $\S:\Top\to\sSet$ is right adjoint to $|-|:\sSet\to\Top$ and there is a preferred homeomorphism $|\Delta[n]|\cong\sn$, $(\alpha:[n]\to[m],t)\mapsto\alpha_*(t)$, with inverse $s\mapsto[\id_{[n]},s]$.
+Step 2. $\S:\Top\to\sSet$ is right adjoint to $|-|:\sSet\to\Top$ and there is a preferred homeomorphism $|\Delta[n]|\cong\ns$, $(\alpha:[n]\to[m],t)\mapsto\alpha_*(t)$, with inverse $s\mapsto[\id_{[n]},s]$.
 
-Step 3. The map $|\Delta[n]\times\Delta[1]|\xto{(|\pr_1|,|\pr_2|)}|\Delta[n]|\times|\Delta[1]|\cong\sn\times\sx{1}$ is a homeomorphism.
+Step 3. The map $|\Delta[n]\times\Delta[1]|\xto{(|\pr_1|,|\pr_2|)}|\Delta[n]|\times|\Delta[1]|\cong\ns\times\sx{1}$ is a homeomorphism.
 
 Step 4. Combine steps 1-3.
 \begin{align*}
     \Hom_\sSet(Z\times\Delta[1],\S(X))&\underset{\text{Step 1}}{\cong}\cb{\psi_z:\Delta[n]\times\Delta[1]\to\S(X)\mid(\psi_z)_m(\alpha,k)=H_m(\alpha^*(z),k)} \\
-    &\underset{\text{Step 2}}{\cong}\cb{\psi_z^*:|\Delta[n]\times\Delta[1]|\to X} \\
-    &\underset{\text{Step 3}}{\cong}\cb{\cap\psi_z:\ns\times\sx{1}\to X}
-\end{align*}
+    &\underset{\text{Step 2}}{\cong}\cb{\psi_z^\#:|\Delta[n]\times\Delta[1]|\to X} \\
+    &\underset{\text{Step 3}}{\cong}\cb{\hat\psi_z:\ns\times\sx{1}\to X}
+\end{align*}\todo{I might have written some dumb things}
 
 \end{proof}
-
-\todo[inline]{I don't understand the last part of the lecture yet, I might have written something really stupid here or there.}
