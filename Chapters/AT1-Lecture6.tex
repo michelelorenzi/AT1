@@ -77,22 +77,22 @@ Informally, $B$ is $\de\sx{n+1}$ "cut open".
 \input{Pictures/Lec6Pic2}
 
 We define $p:B\to\de\sx{n+1}$ by defining the restriction to the $i$-th copy of $\ns$ as $(d_i)_*$. The map $p$ is compatible with the equivalence relation (and hence well defined on $B$) thanks to the simplicial relations:
-\[d_i\circ d_i=d_{i+1}\circ d_i\]
-the upshot is that $p$ is a quotient map onto $\de\sx{n+1}$.
+\[d_i\circ d_i=d_{i+1}\circ d_i.\]
+The upshot is that $p$ is a quotient map onto $\de\sx{n+1}$.
 
-Because $g$ is defined on all of $\sx{n+1}$ its restriction to $\de\sx{n+1}$ represents the $0$ element in $\pi_n\pairs^\#$.
+Since $g$ is defined on all of $\sx{n+1}$, its restriction to $\de\sx{n+1}$ represents the $0$ element in $\pi_n\pairs^\#$.
 
-\[\ns\cong B\xto{p}\de\sx{n+1}\into\sx{n+1}\xto{g}X\]
+\[\ns\cong B\xto{p}\de\sx{n+1}\into\sx{n+1}\xto{g}X.\]
 
 We apply the homotopy addition theorem (in simplex version) for the maps $\nno{f}{n+1}:\sx{n}\to B=\sx{n}\cup_{\sx{n-1}}\dots\cup_{\sx{n-1}}\sx{n}$, where $f_i$ is the inclusion of the $i$-th copy.
 By the HAT:
-\[0=[g|_{\de \sx{m+1}}\circ p]=\sum_{i=0}^{m+1}(-1)^i[g\circ (d_i)_*]\]
+\[0=[g|_{\de \sx{m+1}}\circ p]=\sum_{i=0}^{m+1}(-1)^i[g\circ (d_i)_*].\]
 
 \end{claimproof}
 
 Let's finish once and for all the proof:
-\[H_n\left(\frac{C(\S(X,A,n-1))}{C(\S(A))}\right)\xto{\Phi}\pi_n(X,A)^\#\xto{h^\#}H_n(X,A;\Z)\]
-the composite $h^\#\circ\Phi$ is the homomorphism induced by the inclusion $\S(X,A,n-1)\hto \S(X)$, which is an isomorphism. So $\Phi$ is injective. But $\Phi$ is also surjective since it hits all generators. So $\Phi$ is an isomorphism, hence $h^\#$ is an isomorphism.
+\[H_n\left(\frac{C(\S(X,A,n-1))}{C(\S(A))}\right)\xto{\Phi}\pi_n(X,A)^\#\xto{h^\#}H_n(X,A;\Z).\]
+The composite $h^\#\circ\Phi$ is the homomorphism induced by the inclusion $\S(X,A,n-1)\hto \S(X)$, which is an isomorphism. So $\Phi$ is injective. But $\Phi$ is also surjective since it hits all generators. So $\Phi$ is an isomorphism, hence $h^\#$ is an isomorphism.
 \end{proof}
 
 
