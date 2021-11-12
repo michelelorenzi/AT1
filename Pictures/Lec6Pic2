@@ -1,0 +1,56 @@
+\begin{center}
+    \begin{tikzpicture}[x=1em, y=1em, z=-0.4em, baseline=0.8em]
+    \draw[very thick, black, dashed] 
+        (-3,0,0) -- (5,0,0);
+    \fill[fill=blue, opacity=0.3]
+        (5,0,0)--(0,5,0)--(0,0,5)--(5,0,0);
+    \fill[fill=blue, opacity=0.2]
+        (-3,0,0)--(0,5,0)--(0,0,5)--(-3,0,0);
+    \draw[very thick, black]
+        (5,0,0)--(0,5,0)
+        (0,0,5)--(5,0,0)
+        (0,5,0)--(0,0,5)
+        (-3,0,0)--(0,5,0)
+        (0,0,5)--(-3,0,0);
+    \filldraw 
+        (0,5,0) circle (2pt) node[anchor=south west] {$e_0$}
+        (5,0,0) circle (2pt) node[anchor=south west] {$e_2$}
+        (0,0,5) circle (2pt) node[anchor=north east] {$e_1$}
+        (-3,0,0) circle (2pt) node[anchor=south east] {$e_3$};
+    \fill[red]
+        (0,0,5) circle (3pt);
+    \fill[blue!80]
+        (-3,0,0) circle (3pt);
+    \fill[green!80!black]
+        (0,5,0) circle (3pt);
+    \fill[orange]
+        (5,0,0) circle (3pt);
+    \end{tikzpicture}$\quad\quad\quad\quad$
+    \begin{tikzpicture}[x=4em, y=4em, baseline=0.8em]
+    \draw[very thick]
+        (0,0) -- (2,0)
+        (0,0) -- (0.5, 0.866)
+        (1,0) -- (0.5, 0.866)
+        (0.5, 0.866) -- (2.5, 0.866)
+        (1,0) -- (1.5, 0.866)
+        (2,0) -- (1.5, 0.866)
+        (2,0) -- (2.5, 0.866);
+    \filldraw
+        (0,0) node[anchor=north west] {$e_1$}
+        (1,0) node[anchor=north west] {$e_3$}
+        (2,0) node[anchor=north west] {$e_1$}
+        (0.5, 0.866) node[anchor=south west] {$e_2$}
+        (1.5, 0.866) node[anchor=south west] {$e_0$}
+        (2.5, 0.866) node[anchor=south west] {$e_2$};
+    \fill[red]
+        (0,0) circle (3pt)
+        (2,0) circle (3pt);
+    \fill[blue!80]
+        (1,0) circle (3pt);
+    \fill[green!80!black]
+        (1.5, 0.866) circle (3pt);
+    \fill[orange]
+        (0.5, 0.866) circle (3pt)
+        (2.5, 0.866) circle (3pt);
+    \end{tikzpicture}
+\end{center}
