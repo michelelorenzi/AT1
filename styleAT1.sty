@@ -15,6 +15,7 @@
 %\postdisplaypenalty=8000
 \widowpenalty=8000
 \clubpenalty=8000
+\frenchspacing
 
 %%%% todo notes %%%%
 \usepackage[colorinlistoftodos,textsize=footnotesize]{todonotes}
@@ -28,8 +29,8 @@
 
 %%%% pictures %%%%
 % Thanks Álvaro
-\usepackage{tikz-cd}
 \usepackage{xcolor}
+\usepackage{tikz-cd}
 \usetikzlibrary{arrows,decorations.pathreplacing,calligraphy,patterns,hobby}
 % this is the tip of the arrows. I like to change it to match the arrows of the font you select. your current font has angle 90.
 \def\tip{angle 90} %{stealth} %{>}
@@ -73,6 +74,8 @@
 \newenvironment{alphanumerate}{\begin{enumerate}[wide=0pt, leftmargin=*,labelindent=0pt, itemsep=0.5\thmsep, topsep=0.5\thmsep, label={\upshape(\alph*)}, listparindent=\parindent, parsep=0pt]}{\end{enumerate}}
 \newenvironment{rmnumerate}{\begin{enumerate}[labelindent=0em, itemsep=0.5\thmsep, topsep=0.5\thmsep, label={\upshape(\roman*)}, parsep=0pt]}{\end{enumerate}}
 \newenvironment{temize}{\begin{itemize}[labelindent=\parindent, itemsep=0.5\thmsep, topsep=0.5\thmsep, listparindent=\parindent, parsep=0pt]}{\end{itemize}}
+
+\newenvironment{numeratezero}{\begin{enumerate}[wide=0pt, leftmargin=*, labelindent=0pt, itemsep=0.5\thmsep, topsep=0.5\thmsep, label={\upshape(\arabic*)}, listparindent=\parindent, parsep=0pt]{start=0}}{\end{enumerate}}
 
 %%%% page headings %%%%
 \usepackage[autooneside=false,automark]{scrlayer-scrpage}

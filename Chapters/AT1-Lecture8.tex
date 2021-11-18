@@ -1,6 +1,6 @@
 %%% Lecture 8
 
-\lecture[We prove actually prove the story about the long exact sequence associated to a fibre bundle.]{2021-11-10}
+\lecture[We actually prove the story about the long exact sequence associated to a fibre bundle.]{2021-11-10}
 
 Before we get to the two promised lemmas, we prove an auxiliary one.\rightnote{\Attention\ Didn't sleep much the night before this one, I hope I didn't type anything too stupid!}
 
@@ -137,14 +137,14 @@ Not every fibre bundle is a Hurewicz fibration (but actual counter-examples are 
 
 An interesting question: are lifting of homotopies unique? It turns out that they are unique up to homotopy!
 \begin{center}
-    \begin{tikzcd}
+    \begin{tikzcd}[column sep=large]
     X\times\cb{0} \arrow[r] \arrow[d] & E \arrow[d,"p"] \\
     X\times I \arrow[r] \arrow[ur,dashed,"\til H_1", "\til H_2"'] & B
-    \end{tikzcd}
+    \end{tikzcd}\qquad
     \begin{tikzcd}
     X\times I\times\cb{0} \cup X\times I\times\cb{1} \arrow[r] \arrow[d] & E \arrow[d,"p"] \\
     X\times I\times I \arrow[r] & B
     \end{tikzcd}
-\end{center}\todo{I wasn't paying attention, it might be interesting to reconstruct the argument!}
+\end{center}\normalmarginpar\todo{I wasn't paying attention, it might be interesting to reconstruct the argument!}
 
 \end{remark}
