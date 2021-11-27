@@ -1,0 +1,503 @@
+%%%% SHORTCUTS %%%%
+
+% My definitions
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\CC}{{\mathbb C}}
+\newcommand{\HH}{{\mathbb H}}
+\newcommand{\OO}{{\mathbb O}}
+\newcommand{\kpn}{{K\mathbf{P}^n}}
+\newcommand{\rpn}{{\R\mathbf{P}^n}}
+\newcommand{\rp}[1]{{\R\mathbf{P}^{#1}}}
+\newcommand{\cpn}{{\CC\mathbf{P}^n}}
+\newcommand{\cp}[1]{{\CC\mathbf{P}^{#1}}}
+\newcommand{\hpn}{{\HH\mathbf{P}^n}}
+\newcommand{\hp}[1]{{\HH\mathbf{P}^{#1}}}
+\newcommand{\afn}{{\mathbb{A}^n}}
+\newcommand{\af}[1]{\mathbb{A}^{#1}}
+\newcommand{\ppn}{{\mathbb{P}^n}}
+\newcommand{\PP}[1]{\mathbb{P}^{#1}}
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+\renewcommand{\ring}{\mathring}
+
+\newcommand{\sm}{\smallsetminus}
+\newcommand{\til}{\tilde}
+\newcommand{\fa}{\;\;\forall}
+\newcommand{\ul}[1]{\,\underline{#1}\,}
+\newcommand{\ol}{\overline}
+\newcommand{\nf}{\normalfont}
+\newcommand{\xs}{{x_1,\dots,x_n}}
+\newcommand{\xso}{{x_0,\dots,x_n}}
+\newcommand{\nn}[2]{{{#1}_1,\dots,{#1}_{#2}}}
+\newcommand{\nno}[2]{{{#1}_0,\dots,{#1}_{#2}}}
+\newcommand{\nns}[3]{{{#1}_1\,{#2}\,\dots\,{#2}\,{#1}_{#3}}}
+\newcommand{\nnso}[3]{{{#1}_0\,{#2}\,\dots\,{#2}\,{#1}_{#3}}}
+\newcommand{\cb}[1]{\{#1\}}
+\newcommand{\de}{\partial}
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+\newcommand{\hto}{\hookrightarrow}
+\newcommand{\xhto}{\xhookrightarrow}
+\newcommand{\onto}{\twoheadrightarrow}
+\newcommand{\xonto}{\xtwoheadrightarrow}
+\newcommand{\into}{\hookrightarrow}
+\newcommand{\xinto}{\xhookrightarrow}
+
+%Sometimes Useful
+\let\cont\ni
+\renewcommand{\ni}{{n-1}} % overrides \ni
+\newcommand{\mi}{{m-1}}
+\newcommand{\ki}{{k-1}}
+
+%For this document
+\newcommand{\alvaropls}{\todo[color=cyan]{\ \ \ \ \ \ \ \ \ \ /\textbackslash}}
+\newcommand{\pin}{\pi_n(X,x_0)}
+\newcommand{\pini}{\pi_n(X,x_0)}
+\newcommand{\pinr}{\pi_n(X,A,x_0)}
+\newcommand{\pinir}{\pi_\ni(X,A,x_0)}
+\newcommand{\hn}{H_n(X;\Z)}
+\newcommand{\hni}{H_\ni(X;\Z)}
+\newcommand{\hnr}{H_n(X,A;\Z)}
+\newcommand{\hnir}{H_\ni(X,A;\Z)}
+\newcommand{\dn}{D^n}
+\newcommand{\dni}{D^\ni}
+\newcommand{\sn}{S^n}
+\newcommand{\sni}{S^\ni}
+\newcommand{\sph}{(D^n,\de D^n)}
+\newcommand{\sphi}{(D^\ni,\de D^\ni)}
+\newcommand{\pair}{(I^n,\de I^n)}
+\newcommand{\pairs}{(X,A)}
+\newcommand{\triple}{(I^n,\de I^n,J^\ni)}
+\newcommand{\triples}{(X,A,x_0)}
+\newcommand{\ns}{\nabla^n}
+\newcommand{\ms}{\nabla^m}
+\newcommand{\sx}[1]{\nabla^{#1}}
+\DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\tel}{tel}
+\DeclareMathOperator{\homeo}{Homeo}
+\DeclareMathOperator{\diffeo}{Diffeo}
+\DeclareMathOperator{\incl}{incl}
+\DeclareMathOperator{\ev}{ev}
+\DeclareMathOperator{\ho}{Ho}
+
+%%%% many alphabets %%%%
+\let\varphidummy\phi
+\let\phi\varphi
+\renewcommand{\varphi}{\varphidummy}
+\renewcommand{\epsilon}{\varepsilon}
+
+\newcommand{\Aa}{\mathcal{A}}
+\newcommand{\Bb}{\mathcal{B}}
+\newcommand{\Cc}{\mathcal{C}}
+\newcommand{\Dd}{\mathcal{D}}
+\newcommand{\Ee}{\mathcal{E}}
+\newcommand{\Ff}{\mathcal{F}}
+\newcommand{\Gg}{\mathcal{G}}
+\newcommand{\Hh}{\mathcal{H}}
+\newcommand{\Ii}{\mathcal{I}}
+\newcommand{\Jj}{\mathcal{J}}
+\newcommand{\Kk}{\mathcal{K}}
+\newcommand{\Ll}{\mathcal{L}}
+\newcommand{\Mm}{\mathcal{M}}
+\newcommand{\Nn}{\mathcal{N}}
+\newcommand{\Oo}{\mathcal{O}}
+\newcommand{\Pp}{\mathcal{P}}
+\newcommand{\Qq}{\mathcal{Q}}
+\newcommand{\Rr}{\mathcal{R}}
+\let\Ss\S
+\renewcommand{\S}{\mathcal{S}}
+\newcommand{\Tt}{\mathcal{T}}
+\newcommand{\Uu}{\mathcal{U}}
+\newcommand{\Vv}{\mathcal{V}}
+\newcommand{\Ww}{\mathcal{W}}
+\newcommand{\Xx}{\mathcal{X}}
+\newcommand{\Yy}{\mathcal{Y}}
+\newcommand{\Zz}{\mathcal{Z}}
+
+\renewcommand{\AA}{\mathbb{A}}
+\newcommand{\BB}{\mathbb{B}}
+\renewcommand{\CC}{\mathbb{C}}
+\newcommand{\DD}{\mathbb{D}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\GG}{\mathbb{G}}
+\renewcommand{\HH}{\mathbb{H}}
+\newcommand{\II}{\mathbb{I}}
+\newcommand{\JJ}{\mathbb{J}}
+\newcommand{\KK}{\mathbb{K}}
+\newcommand{\LL}{\mathbb{L}}
+\newcommand{\MM}{\mathbb{M}}
+\newcommand{\NN}{\mathbb{N}}
+\renewcommand{\OO}{\mathbb{O}}
+\renewcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\renewcommand{\SS}{\mathbb{S}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\UU}{\mathbb{U}}
+\newcommand{\VV}{\mathbb{V}}
+\newcommand{\WW}{\mathbb{W}}
+\newcommand{\XX}{\mathbb{X}}
+\newcommand{\YY}{\mathbb{Y}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\xA}{\mathfrak{A}}
+\newcommand{\xB}{\mathfrak{B}}
+\newcommand{\xC}{\mathfrak{C}}
+\newcommand{\xD}{\mathfrak{D}}
+\newcommand{\xE}{\mathfrak{E}}
+\newcommand{\xF}{\mathfrak{F}}
+\newcommand{\xG}{\mathfrak{G}}
+\newcommand{\xH}{\mathfrak{H}}
+\newcommand{\xI}{\mathfrak{I}}
+\newcommand{\xJ}{\mathfrak{J}}
+\newcommand{\xK}{\mathfrak{K}}
+\newcommand{\xL}{\mathfrak{L}}
+\newcommand{\xM}{\mathfrak{M}}
+\newcommand{\xN}{\mathfrak{N}}
+\newcommand{\xO}{\mathfrak{O}}
+\newcommand{\xP}{\mathfrak{P}}
+\newcommand{\xQ}{\mathfrak{Q}}
+\newcommand{\xR}{\mathfrak{R}}
+\newcommand{\xS}{\mathfrak{S}}
+\newcommand{\xT}{\mathfrak{T}}
+\newcommand{\xU}{\mathfrak{U}}
+\newcommand{\xV}{\mathfrak{V}}
+\newcommand{\xW}{\mathfrak{W}}
+\newcommand{\xX}{\mathfrak{X}}
+\newcommand{\xY}{\mathfrak{Y}}
+\newcommand{\xZ}{\mathfrak{Z}}
+
+\renewcommand{\aa}{\mathfrak{a}}
+\newcommand{\bb}{\mathfrak{b}}
+\newcommand{\cc}{\mathfrak{c}}
+\newcommand{\dd}{\mathfrak{d}}
+\newcommand{\ee}{\mathfrak{e}}
+\newcommand{\ff}{\mathfrak{f}}
+\let\gge\gg %?
+\renewcommand{\gg}{\mathfrak{g}}
+\newcommand{\hh}{\mathfrak{h}}
+\newcommand{\ii}{\mathfrak{i}}
+\newcommand{\jj}{\mathfrak{j}}
+\newcommand{\kk}{\mathfrak{k}}
+\let\lle\ll %?
+\renewcommand{\ll}{\mathfrak{l}}
+\newcommand{\mm}{\mathfrak{m}}
+%\newcommand{\nn}{\mathfrak{n}}
+\newcommand{\oo}{\mathfrak{o}}
+\newcommand{\pp}{\mathfrak{p}}
+\newcommand{\qq}{\mathfrak{q}}
+\newcommand{\rr}{\mathfrak{r}}
+%\newcommand{\ss}{\mathfrak{s}}
+%\newcommand{\tt}{\mathfrak{t}}
+\newcommand{\uu}{\mathfrak{u}}
+\newcommand{\vv}{\mathfrak{v}}
+\newcommand{\ww}{\mathfrak{w}}
+\newcommand{\xx}{\mathfrak{x}}
+\newcommand{\yy}{\mathfrak{y}}
+\newcommand{\zz}{\mathfrak{z}}
+
+%%%% math operators %%%%
+
+\newcommand{\newoperator}[1]{\expandafter\def\csname #1\endcsname{\operatorname{#1}}}
+
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\codim}{\operatorname{codim}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Hhom}{\operatorname{\underline{Hom}}}
+\newcommand{\Eext}{\mathop{\Ee xt}\nolimits}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\spec}{Spec}
+\DeclareMathOperator{\rad}{rad}
+\DeclareMathOperator{\const}{const}
+\newoperator{GL}
+\newoperator{SL}
+\newoperator{Min}
+\newoperator{Sheaf}
+\newoperator{Pic}
+\newoperator{Frac}
+\newoperator{Div}
+\renewcommand{\det}{\operatorname{det}}%otherwise, det_K behaves strangely in displaymode
+\newoperator{Mat}
+\newoperator{Tr}
+\newoperator{rk}
+\newcommand{\trdeg}{\operatorname{tr.deg}}
+\newcommand{\idim}{\operatorname{inj.dim}}
+\newcommand{\pdim}{\operatorname{pr.dim}}
+\newcommand{\gdim}{\operatorname{gl.dim}}
+\newcommand{\fdim}{\operatorname{fl.dim}}
+\newoperator{Tor}
+\newoperator{Ext}
+\newoperator{sgn}
+\newoperator{Span}
+\newcommand{\IDelta}{
+	\mathchoice{\Delta\llap{\scalebox{0.775}{$\Delta$\hspace{0.025em}}}}%
+	{\Delta\llap{\scalebox{0.775}{$\Delta$\hspace{0.025em}}}}%
+	{\Delta\llap{\scalebox{0.775}{$\scriptstyle\Delta$\hspace{0.025em}}}}%
+	{\Delta\llap{\scalebox{0.775}{$\scriptscriptstyle\Delta$\hspace{0.025em}}}}
+	}%{\boldsymbol{\Delta}}
+\newcommand{\IGamma}{%
+	\mathchoice{\raisebox{\depth}{\scalebox{1}[-1]{$\mathbb L$}}}%
+	{\raisebox{\depth}{\scalebox{1}[-1]{$\mathbb L$}}}%
+	{\raisebox{\depth}{\scalebox{1}[-1]{$\scriptstyle\mathbb L$}}}%
+	{\raisebox{\depth}{\scalebox{1}[-1]{$\scriptscriptstyle\mathbb L$}}}
+	}
+
+%style of categories
+\newcommand{\cat}[1]{{\mathrm{#1}}}
+\newcommand{\op}{{\operatorname{op}}}
+\newcommand{\Cat}{\cat{Cat}}
+\newcommand{\Op}{\cat{Op}}
+\newcommand{\An}{\cat{An}}
+\newcommand{\sSet}{\cat{sSet}}
+\newcommand{\Set}{\cat{Set}}
+\newcommand{\Ab}{\cat{Ab}}
+\newcommand{\Grpd}{\cat{Grpd}}
+\newcommand{\Grp}{\cat{Grp}}
+\newcommand{\Kan}{\cat{Kan}}
+\newcommand{\Sp}{\cat{Sp}}
+\newcommand{\sAb}{\cat{sAb}}
+\newcommand{\Top}{\cat{Top}}
+\newoperator{fib}
+\newoperator{cofib}
+%\DeclareMathOperator*{\lim}{lim}
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator*{\hocolim}{hocolim}
+\DeclareMathOperator*{\holim}{holim}
+\DeclareMathOperator{\Global}{\Gamma}
+
+%%%% fancy arrows %%%%
+
+\newlength{\arrowlength}
+\settowidth{\arrowlength}{$\rightarrow$}
+\newlength{\longarrowlength}
+\settowidth{\longarrowlength}{$\longrightarrow$}
+
+%\IsArgEmpty is already defined in StyleEtaleI
+%\newcommand{\IsArgEmpty}[3]{%
+%	\if\relax\detokenize{#1}\relax%
+%	#2%
+%	\else%
+%	#3%
+%	\fi}
+
+\DeclareRobustCommand\longtwoheadrightarrow
+{\relbar\joinrel\twoheadrightarrow}
+\DeclareRobustCommand\longtwoheadleftarrow
+{\twoheadleftarrow\joinrel\relbar}
+
+\newcommand{\morphism}[1][]{%
+	\mathchoice{\overset{#1}{\longrightarrow}}%
+	{\IsArgEmpty{#1}{\rightarrow}{\overset{#1}{\longrightarrow}}}%
+	{\IsArgEmpty{#1}{\rightarrow}{\overset{#1}{\longrightarrow}}}%
+	{\IsArgEmpty{#1}{\rightarrow}{\overset{#1}{\longrightarrow}}}%
+}
+
+\newcommand{\lmorphism}[1][]{%
+	\mathchoice{\overset{#1}{\longleftarrow}}%
+	{\IsArgEmpty{#1}{\leftarrow}{\overset{#1}{\longleftarrow}}}%
+	{\IsArgEmpty{#1}{\leftarrow}{\overset{#1}{\longleftarrow}}}%
+	{\IsArgEmpty{#1}{\leftarrow}{\overset{#1}{\longleftarrow}}}%
+}
+
+\newcommand{\lrmorphism}[1][]{%
+	\mathchoice{\overset{#1}{\longleftrightarrow}}%
+	{\IsArgEmpty{#1}{\leftrightarrow}{\overset{#1}{\longleftrightarrow}}}%
+	{\IsArgEmpty{#1}{\leftrightarrow}{\overset{#1}{\longleftrightarrow}}}%
+	{\IsArgEmpty{#1}{\leftrightarrow}{\overset{#1}{\longleftrightarrow}}}%
+}
+
+\newcommand{\monomorphism}[1][]{%
+	\mathchoice{\overset{#1}{\mathrel{\smash{\longhookrightarrow}\vphantom{\rightarrow}}}}%
+	{\IsArgEmpty{#1}{\hookrightarrow}{\overset{#1}{\mathrel{\smash{\longhookrightarrow}\vphantom{\rightarrow}}}}}%
+	{\IsArgEmpty{#1}{\hookrightarrow}{\overset{#1}{\mathrel{\smash{\longhookrightarrow}\vphantom{\rightarrow}}}}}%
+	{\IsArgEmpty{#1}{\hookrightarrow}{\overset{#1}{\mathrel{\smash{\longhookrightarrow}\vphantom{\rightarrow}}}}}%
+}
+
+\newcommand{\lmonomorphism}[1][]{%
+	\mathchoice{\overset{#1}{\mathrel{\smash{\longhookleftarrow}\vphantom{\rightarrow}}}}%
+	{\IsArgEmpty{#1}{\hookleftarrow}{\overset{#1}{\mathrel{\smash{\longhookleftarrow}\vphantom{\rightarrow}}}}}%
+	{\IsArgEmpty{#1}{\hookleftarrow}{\overset{#1}{\mathrel{\smash{\longhookleftarrow}\vphantom{\rightarrow}}}}}%
+	{\IsArgEmpty{#1}{\hookleftarrow}{\overset{#1}{\mathrel{\smash{\longhookleftarrow}\vphantom{\rightarrow}}}}}%
+}
+
+\newcommand{\epimorphism}[1][]{%
+	\mathchoice{\overset{#1}{\mathrel{\smash{\longtwoheadrightarrow}\vphantom{\rightarrow}}}}%
+	{\IsArgEmpty{#1}{\twoheadrightarrow}{\overset{#1}{\mathrel{\smash{\longtwoheadrightarrow}\vphantom{\rightarrow}}}}}%
+	{\IsArgEmpty{#1}{\twoheadrightarrow}{\overset{#1}{\mathrel{\smash{\longtwoheadrightarrow}\vphantom{\rightarrow}}}}}%
+	{\IsArgEmpty{#1}{\twoheadrightarrow}{\overset{#1}{\mathrel{\smash{\longtwoheadrightarrow}\vphantom{\rightarrow}}}}}%
+}
+\newcommand{\lepimorphism}[1][]{%
+	\mathchoice{\overset{#1}{\mathrel{\smash{\longtwoheadleftarrow}\vphantom{\rightarrow}}}}%
+	{\IsArgEmpty{#1}{\twoheadleftarrow}{\overset{#1}{\mathrel{\smash{\longtwoheadleftarrow}\vphantom{\rightarrow}}}}}%
+	{\IsArgEmpty{#1}{\twoheadleftarrow}{\overset{#1}{\mathrel{\smash{\longtwoheadleftarrow}\vphantom{\rightarrow}}}}}%
+	{\IsArgEmpty{#1}{\twoheadleftarrow}{\overset{#1}{\mathrel{\smash{\longtwoheadleftarrow}\vphantom{\rightarrow}}}}}%
+}
+
+\newlength{\morphismlength}
+\settowidth{\morphismlength}{$\longrightarrow$}
+
+\newcommand{\ActsOn}[2]{\begin{tikzcd}[cramped]
+		#1\ar[from=1-1,to=1-1,start anchor=-10, end anchor=10,bend right=125,looseness=7,"#2"']
+\end{tikzcd}}
+
+%somewhat ugly
+\NewDocumentCommand{\doublemorphism}{O{} O{}}{%
+	\begin{tikzcd}[ampersand replacement=\&, cramped, column sep={\the\morphismlength-0.04em}]%
+	\vphantom{x}\rar[shift left=0.45ex, "#1"]\rar[shift right=0.45ex, "#2"{swap}] \& \vphantom{x}%
+	\end{tikzcd}%
+}
+
+%somewhat ugly
+\NewDocumentCommand{\doublelrmorphism}{O{} O{}}{%
+	\begin{tikzcd}[ampersand replacement=\&, cramped, column sep={\the\morphismlength-0.04em}]%
+	\vphantom{x}\rar[shift left=0.45ex, "#1"]\& \lar[shift left=0.45ex, "#2"] \vphantom{x}%
+	\end{tikzcd}%
+}
+
+%somewhat ugly
+\NewDocumentCommand{\doublerlmorphism}{O{} O{}}{%
+	\begin{tikzcd}[ampersand replacement=\&, cramped, column sep={\the\morphismlength-0.04em}]%
+		\vphantom{x}\rar[shift right=0.45ex, "#1"{swap}]\& \lar[shift right=0.45ex, "#2"{swap}] \vphantom{x}%
+	\end{tikzcd}%
+}
+
+\newlength{\shortmorphismlength}
+\settowidth{\shortmorphismlength}{$\rightarrow$}
+
+\newcommand{\shortdoublemorphism}{%
+	\begin{tikzcd}[ampersand replacement=\&, cramped, column sep={\the\shortmorphismlength-0.04em}]%
+		\vphantom{x}\rar[shift left=0.45ex]\rar[shift right=0.45ex] \& \vphantom{x}%
+	\end{tikzcd}%
+}
+
+%somewhat ugly
+\newcommand{\shortdoublelrmorphism}{%
+	\begin{tikzcd}[ampersand replacement=\&, cramped, column sep={\the\shortmorphismlength-0.04em}]%
+		\vphantom{x}\rar[shift left=0.45ex]\& \lar[shift left=0.45ex] \vphantom{x}%
+	\end{tikzcd}%
+}
+
+%ugly
+%\newcommand{\doublelrmorphism}{\mathrel{\substack{\textstyle\longrightarrow\\[-0.67ex]\textstyle\longleftarrow}}}
+
+%\colon in opposite direction, e.g. for adjunctions
+\newcommand*\noloc{%
+	\nobreak
+	\mskip6mu plus1mu
+	\mathpunct{}%
+	\nonscript
+	\mkern-\thinmuskip
+	{:}%
+	\mskip2mu
+	\relax
+}
+
+\newcommand{\isomorphism}{\overset{\smash{\raisebox{-0.2ex}{$\scriptstyle\sim$}}}{\longrightarrow}}
+\newcommand{\lisomorphism}{\overset{\smash{\raisebox{-0.2ex}{$\scriptstyle\sim$}}}{\longleftarrow}}
+\newcommand{\lrisomorphism}{\overset{\smash{\raisebox{-0.2ex}{$\scriptstyle\sim$}}}{\longleftrightarrow}}
+
+\newcommand{\converge}{%
+	\mathchoice{\Longrightarrow}%
+	{\Rightarrow}%
+	{\Rightarrow}%
+	{\Rightarrow}%
+}
+
+\newcommand{\lconverge}{%
+	\mathchoice{\Longleftarrow}%
+	{\Leftarrow}%
+	{\Leftarrow}%
+	{\Leftarrow}%
+}
+
+\tikzset{double line with arrow/.style args={#1,#2}{decorate,decoration={markings,%
+mark=at position 0 with {\coordinate (ta-base-1) at (0,1pt);
+\coordinate (ta-base-2) at (0,-1pt);},
+mark=at position 1 with {\draw[#1] (ta-base-1) -- (0,1pt);
+\draw[#2] (ta-base-2) -- (0,-1pt);
+}}}}
+
+\tikzset{eq/.style={-,double line with arrow={-,-}}}
+
+%%%% tikz-cd convenience %%%%
+
+\tikzcdset{
+	arrow style=tikz, 
+	diagrams={>=to, line cap=round, line width=rule_thickness}, arrows={line width=rule_thickness}
+}
+
+\newcommand{\pullbacksign}{\hspace{-0.325ex}\tikz[baseline=(pb.base)]{\draw[line width=rule_thickness, line cap=round] (0,0) ++ (-0.75ex,-0.75ex) -- ++(1.5ex,0ex) -- ++ (0ex,1.5ex);\node at (-0.6ex,0.6ex) {.};\node (pb) at (0,0) {\phantom{x}};}}
+
+\newcommand{\pushoutsign}{\hspace{0.2ex}\tikz[baseline=(po.base)]{\draw (0,0) ++ (-0.75ex,-0.75ex) -- ++(0ex,1.5ex) -- ++ (1.5ex,0ex);\node at (0.6ex,-0.6ex) {.};\node (po) at (0,0) {\phantom{x}};}}
+
+\tikzcdset{
+	pullback/.style = {dash, phantom, "\vphantom{x}\smash{\pullbacksign}", start anchor=center, end anchor=center},
+	hpullback/.style = {dash, phantom, "\vphantom{x}\smash{\pullbacksign_{h}}", start anchor=center, end anchor=center},
+	pushout/.style = {dash, phantom, "\vphantom{x}\smash{\pushoutsign}", start anchor=center, end anchor=center}
+}
+
+\tikzcdset{
+	eqtop/.style={dash, shift right=#1},
+	eqtop/.default={0.1em},
+	eqbot/.style={dash, shift left=#1},
+	eqbot/.default={0.1em}
+}
+\newcommand{\eqar}[1][]{\ar[#1,eqtop]\ar[#1,eqbot]}
+
+\tikzcdset{
+	mono/.style={#1 hook->},
+	mono/.default={right},
+	epi/.style={->>},
+	iso/.style={"\sim"{sloped, above}}
+}
+
+\tikzcdset{
+	longarrowwidth/.style={column sep={\the\longarrowlength}},
+	arrowwidth/.style={column sep={\the\arrowlength}}
+}
+
+\tikzset{
+	symbol/.style={
+		draw=none,
+		every to/.append style={
+			edge node={node [sloped, allow upside down, auto=false]{$#1$}}}
+	}
+}
+
+%%%% modifiers %%%%
+\newcommand{\ov}[1]{\overline{#1}\vphantom{#1}}
+
+\newcommand{\hacek}[1]{\check{#1}\hspace{0.06125em}}
+
+\DeclareMathSymbol{\widehatsym}{\mathord}{largesymbols}{"62}
+\newcommand\lowerwidehatsym{%
+	\text{\smash{\raisebox{-1.3ex}{%
+				$\widehatsym$}}}}
+\newcommand\fixwidehat[1]{\accentset{\displaystyle\lowerwidehatsym}{#1}}%
+
+\DeclareMathSymbol{\widetildesym}{\mathord}{largesymbols}{"65}
+\newcommand\lowerwidetildesym{%
+	\text{\smash{\raisebox{-1.3ex}{%
+				$\widetildesym$}}}}
+\newcommand\fixwidetilde[1]{\accentset{\displaystyle\lowerwidetildesym}{#1}}
+
+\newcommand{\snake}[1]{\fixwidetilde{#1}}%space adjusting hack
+\newcommand{\roof}[1]{\fixwidehat{#1}\vphantom{\widehat{\Oo}}}
+\newcommand{\roofmm}{\fixwidehat{\mm}\vphantom{\fixwidehat{\Oo}}}
+\newcommand{\complete}{\lowerwidehatsym}
+\newcommand{\qcmod}{\lowerwidetildesym}
+\newcommand{\cotimes}{\mathbin{\roof{\otimes}}}
+
+%%%% miscellaneous %%%%
+\newcommand{\blank}{\phantom{w}}
+\newcommand{\defemph}[1]{\emph{#1}}%{\textbf{\upshape#1}} %emphasize style of a to-be-defined object in a definition
+
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+\newcommand{\localize}[1]{\big[\textstyle\frac{1}{#1}\big]}
+\mathchardef\mhyph="2D
