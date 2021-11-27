@@ -1,0 +1,174 @@
+% Lecture 12
+
+\lecture[Homotopy fibre and the homotopy groups of a map (wew).]{2021-11-24}
+
+The \textbf{homotopy fibre} of a continuous map $f:X\to Y$ over a point $y_0\in Y$ is the space:
+\begin{align*}
+    \ho_{y_0}(f)&=X\times_Y Y^{[0,1]}\times_Y \cb{y_0}\\
+    &=\cb{(x,w)\in X\times Y^{[0,1]}\mid f(x)=w(0),w(1)=y_0}=p^{-1}(y_0).
+\end{align*}
+
+Informally the homotopy fibre is what we get when we turn the map into a Serre fibration, then take the actual fibre.
+
+Because $p:Ef\to Y$ is a Serre fibration, the homotopy groups of $\ho_{y_0}(f)$ participate in a long exact sequence:
+\[\cdots\to\pi_{n+1}(Y,y_0)\xto{\de}\pi_n(\ho_{y_0}(f),x)\to\pi_n(X,x)\xto{f_*}\pi_n(Y,y_0)\to\cdots\]
+
+The slogan is: the homotopy fibres measure how far $f$ is from a real homotopy equivalence.
+
+If $X$ and $Y$ happen to be path-connected CW-complexes, then $f$ is a homotopy equivalence if and only if $\pi_n(\ho_{y_0}(f),x)=0$ for all $n\geq0$.
+
+For $f:X\to Y$ the analogy goes:
+
+\begin{center}
+\begin{tabular}{ m{6.5cm} | m{6.5cm} } 
+ $Z(f)=X\times[0,1]\cup_{X\times1}Y$:
+ & $Ef=X\times_Y Y^{[0,1]}$: \\ 
+ \[\begin{tikzcd}[column sep=large]
+    X \arrow[r,"\text{cl. emb.}"] \arrow[dr,"f"] & Z(f)\arrow[d,"\pr_1\cup\id_Y","\simeq"']\\
+     & Y
+    \end{tikzcd}\] & \[\begin{tikzcd}[column sep=large]
+    X \arrow[r,"\sim"] \arrow[dr,"f"] & Ef\arrow[d,"p"]\\
+     & Y
+    \end{tikzcd}\] \\ 
+ $Cf=Z(f)/X=*\cup_{X\times0}X\times[0,1]\cup_{X\times1} Y$. & $\ho_{y_0}(f)=X\times_Y Y^{[0,1]}\times_Y\cb{y_0}$. \\
+  & \\
+ Long exact homology sequence. & Long exact homotopy. sequence  
+\end{tabular}
+\end{center}
+
+Where the long exact homology sequence we are referring to is the one associated with the mapping cone:
+\[\cdots\to H_n(X;A)\xto{f_*} H_n(Y;A)\to \til H_n(Cf;A)\xto{\de} H_\ni(X;A)\to\cdots\]
+and the long exact homotopy sequence the one associated with the homotopy fibre.
+
+\section{Relative Homotopy Groups of a Map}
+
+Let $X,Y$ be spaces, $f:X\to Y$ a continuous map and $x_0\in X$, $y_0=f(x_0)$. Choose a basepoint $s_0\in S^{n-1}\subset D^n$.
+
+Elements of the homotopy group $\pi_n(f)$ are represented by commutative squares of continuous maps:
+\begin{center}
+    \begin{tikzcd}
+    (S^{n-1},s_0) \arrow[d,hook] \arrow[r,"\alpha"] & (X,x_0) \arrow[d,"f"] \\
+    (D^n,s_0) \arrow[r,"\beta"] & (Y,y_0)
+    \end{tikzcd}
+\end{center}
+
+Two representatives $(\alpha_0,\beta_0)$ and $(\alpha_1,\beta_1)$ define the same class in $\pi_n(f)$ when there is a commutative square of continuous maps
+\begin{center}
+    \begin{tikzcd}
+    (S^{n-1},s_0)\times[0,1] \arrow[d,hook] \arrow[r,"H"] & (X,x_0) \arrow[d,"f"] \\
+    (D^n,s_0)\times[0,1] \arrow[r,"\bar H"] & (Y,y_0)
+    \end{tikzcd}
+\end{center}
+such that $H(-,0)=\alpha_0$, $H(-,1)=\alpha_1$, $\bar H(-,0)=\beta_0$, $\bar H(-,1)=\beta_1$.
+
+If $X\subset Y$ and $f$ is the inclusion, then the map $\alpha$ is already defined by $\beta$, and it exists precisely when $\beta(S^\ni)\subset X$. So $\pi_n(\incl:X\into Y)=\pi_n(Y,X,x_0)$.
+
+There is also an alternative (and isomorphic) description via cubes. We consider equivalence classes of commutative diagrams of continuous maps of pairs:
+\begin{center}
+    \begin{tikzcd}
+    (I^\ni,\de I^\ni) \arrow[d,hook] \arrow[r,"\alpha"] & (X,x_0) \arrow[d,"f"] \\
+    (I^n,J^\ni) \arrow[r,"\beta"] & (Y,y_0)
+    \end{tikzcd}
+\end{center}
+
+The advantage of this description is that for $n\geq2$ we can define a group structure on $\pi_n(f)$ by stacking representatives next to each other in the first coordinate.
+
+The long exact sequence of homotopy groups also generalizes:
+\[\cdots\to\pi_{n+1}(f)\xto{\de}\pi_n(X,x_0)\xto{f_*}\pi_n(Y,y_0)\to\pi_n(f)\to\cdots\tag{$*$}\]
+
+where $\de$ is:
+\[[\alpha:S^n\to X,\beta:D^{n+1}\to Y]\mapsto\alpha,\]
+
+and the map $\pi_n(Y,y_0)\to\pi_n(f)$ is:
+
+\[[\beta:(I^n,\de I^n)\to(Y,y_0)]\mapsto
+\begin{tikzcd}
+(I^\ni,\de I^\ni) \arrow[d,hook] \arrow[r,"\const_{x_0}"] & (X,x_0) \arrow[d,"f"] \\
+    (I^n,J^\ni) \arrow[r,"\beta"] & (Y,y_0)
+\end{tikzcd}
+.\]
+
+The long exact sequence is natural in $f:X\to Y$, i.e. for every commutative square
+\begin{center}
+    \begin{tikzcd}
+     X \arrow[d,"\phi"] \arrow[r,"f"] & Y \arrow[d,"\psi"] \\
+    X' \arrow[r,"f'"] & Y'
+    \end{tikzcd}
+\end{center}
+we get a commutative diagram of long exact sequences.
+
+\begin{theorem}
+The long exact sequence of homotopy groups $(*)$ is exact.
+\end{theorem}
+
+There are two possible proof, one "short", one instructive.
+
+\begin{proof}\ 
+
+1. Mimic the arguments for $\pi_n(Y,X,x_0)$, i.e. the special case $f=\incl:X\into Y$.
+
+2. For $n\geq1$ there is a natural isomorphism $\pi_\ni(\ho_{y_0}(f),*)\cong\pi_n(f)$ such that the following diagram commutes:
+\[
+\begin{tikzcd}[column sep={8em,between origins},row sep=large]
+& \pi_n(Y,y_0) \arrow[dl,"\de"'] \arrow[dr] & \\
+\pi_\ni(\ho_{y_0}(f),*) \arrow[dr] \arrow[rr,"\cong"] && \pi_n(f) \arrow[dl,"\de"] \\
+ & \pi_\ni(X,x_0) &
+\end{tikzcd}
+\]
+where the connecting homomorphism on the top left of the diagram comes from the sequence of spaces $\ho_{y_0}(f)\into Ef\xto{p} Y$ and the map on the bottom left is induced by $\pr_1:\ho_{y_0}(f)\to X$.
+
+Since the long exact sequence of the Serre fibration $p:Ef\to Y$ is exact, the new sequence $(*)$ is also exact.
+
+The isomorphism is constructed as follows.
+
+$\ho_{y_0}(f)=X\times_Y Y^{[0,1]}\times_Y\cb{y_0}$, so elements of $\pi_\ni(\ho_{y_0}(f),*)$ are represented by continuous maps of pairs $\gamma:(I^\ni,\de I^\ni)\to (X\times_Y Y^{[0,1]}\times_Y\cb{y_0},*)$. The representative $\gamma$ consists of two continuous maps $\alpha:(I^\ni,\de I^\ni)\to(X,x_0)$ and $\bar\beta:(I^\ni,\de I^\ni)\to(Y^{[0,1]},\const_{y_0})$ that satisfy $f\circ\alpha=\ev_0\circ\bar\beta$ and $\ev_1\circ\bar\beta=\cont_{y_0}$.
+
+The exponential law lifts $\bar\beta$ to a continuous map $\beta:I^n=I^\ni\times[0,1]\to Y$ and the previous conditions become the conditions $\beta|_{I^\ni\times0}=f\circ\alpha$ and $\beta(\de I^\ni\times[0,1]\cup I^\ni\times1)=y_0$. Then $(\alpha,\beta)$ represent a class in $\pi_n(f)$. This process is fully reversible and works in $1$-parameter families.
+
+\end{proof}
+
+\chapter{Eilenberg-MacLane Spaces}
+
+Executive summary.\rightnote{This is a non very rigorous summary, says the Professor.} Let $A$ be an abelian group, $n\geq1$.
+Eilenberg-MacLane spaces are spaces such that:
+\[\pi_i(K(A,n))=\begin{cases}
+A & i=n\\
+0 & i\neq n
+\end{cases}.\]
+
+We want to show that they exist and are unique up to homotopy and that they represent cohomology:
+\[H^n(X,A)\cong[X,K(A,n)].\]
+
+Let $n\geq1$, let $A$ be a group, abelian if $n\geq2$.
+An \textbf{Eilenberg-MacLane space} of type $(A,n)$, called "a $K(A,n)$", is a path-connected based space together with an isomorphism $\pi_n(X,x_0)\to A$ such that $\pi_i(X,x_0)=0$ for all $i\geq1$, with $i\neq n$.
+
+\begin{examples}
+The circle $S^1$ is a $K(\Z,1)$: its universal cover $\R$ is contractible, so we have that $\pi_i(S^1,*)\cong\pi_i(\R,0)=0$ for $i\geq2$, and $\pi_1(S^1,*)\cong\operatorname{Deck}(\operatorname{exp}:\R\to S^1)\cong\Z$.
+
+Let $X$ be a path-connected space with a contractible universal cover $\til X$. Then $X$ is a $K(G,1)$ for $G=\operatorname{Deck}(p)$.
+
+We have a cover $S^\infty\to\rp{\infty}$ with $\operatorname{Deck}\cong\Z/2$. So $\rp{\infty}=K(\Z/2,1)$.
+
+The torus $S^1\times S^1$ has $R^2$ as a universal cover, with deck transformation group $\Z^2$. Then the torus is a $K(\Z^2,1)$.
+
+Same for the Klein bottle, it is a $K(\Z\rtimes\Z,1)$.
+\end{examples}
+
+\begin{example}[A more interesting one]
+$\cp{\infty}$ is a $K(\Z,2)$. We have that:
+\begin{itemize}[label={-}]
+    \item $\cp{\infty}$ admits a CW-structure with exactly one cell in every even dimension, so $\cp{\infty}$ is simply-connected by cellular approximation.
+    \item $\pi_2(\cp{\infty},*)=H_2(\cp{\infty};\Z)\cong\Z$ by Hurewicz theorem.
+\end{itemize}
+We also have that a generator of $\pi_2(\cp{\infty},*)$ is represented by any choice of homeomorphism $S^2\cong\cp{1}\into\cp{\infty}$.
+
+We claim that $\pi_n(\cp{\infty},*)\cong0$ for $n\geq3$.
+
+The map $S^{2m+1}\cong S(\CC^{m+1})\to\cp{m}$, $x\mapsto\CC\cdot x$, is a fibre bundle with fibre $S^1$. So we get a long exact sequence of homotopy groups:
+\[\cdots\to\pi_n(S^1,1)\to\pi_n(S(\CC^{m+1},*))\to\pi_n(\cp{m},*)\xto{\de}\pi_\ni(S^1,*)\to\cdots\]
+since $\pi_n(S(\CC^{m+1},*))=0$ for $n\leq2m$ and $\pi_\ni(S^1,*)=0$ for $n\geq3$, $\pi_n(\cp{m},*)=0$ for $3\leq n\leq 2m$. Then $\pi_n(\cp{m},*)\to\pi_n(\cp{\infty},*)$ is an isomorphism for $n\leq2m$ by cellular approximation.
+\end{example}
+
+\begin{example}
+If $X$ and $Y$ are EM-spaces for $A,B$ in the same dimension $n$, then $X\times Y$ is an EM-space for $A\times B$ in dimension $n$.
+\end{example}
