@@ -1,0 +1,113 @@
+% Lecture 15
+
+\lecture[Uniqueness of EM-spaces. We start our journey towards representability of singular cohomology.]{2021-12-06}
+
+There is one last preparatory result needed to prove uniqueness of EM-spaces.\rightnote{I missed both lectures this week...}
+
+\begin{theorem}
+Let $n\geq1$ and $Y$ an $(n-1)$-connected CW-complex. Let $Z$ be a based space with $\pi_m(Z,z)=0$ for $m>n$. Then for every group morphism $\Phi:\pi_n(Y,y)\to\pi_n(Z,z)$ there is a continuous map $f:Y\to Z$ with $f(y)=x$ and $\pi_n(f)=\Phi$. Moreover, any two such realizations of $\Phi$ are based homotopic. Equivalently, the map:
+\[\pi_n:[Y,Z]_*\to\Hom_\Grp(\pi_n(Y,y),\pi_n(Z,z))\]
+is bijective.
+\end{theorem}
+
+\begin{proof}
+If the theorem holds for some $Y$, then it holds for every homotopy equivalent $Y$. So without loss of generality, $Y^{(\ni)}=\cb{y}$. For a given morphism $\Phi:\pi_n(Y,y)\to\pi_n(Z,z)$ we construct a continuous map $f^{(n)}:Y^{(n)}\to Z$ such that the following diagram of group morphisms commutes:
+\[\begin{tikzcd}
+\pi_n(Y^{(n)},y) \ar[dr,"\incl_*"] \ar[rr,"f^{(n)}_*"] & & \pi_n(Z,z) \\
+& \pi_n(Y,y) \ar[ur,"\Phi"] &
+\end{tikzcd}
+\tag{$*$}\]
+Let $I$ be an index set for the $n$-cells of $Y$. Let $\chi_i:D^n\to Y^{(n)}$, $i\in I$, be a characteristic map for the $i$-th $n$-cell. Because $Y^{(\ni)}=\cb{y}$, we have $\chi_i(S^\ni)=y$, so this map factors over $D^n/\de D^n$. Let $\bar\chi_i$ be the following composite:
+\[\begin{tikzcd}
+S^n \ar[r,"\cong"] \ar[rr,bend left,"\bar\chi_i"] & D^n/\de D^n \ar[r] & Y^{(n)} \ar[r,hook] & Y \\
+& D^n \ar[u,two heads] \ar[ur,"\chi_i"] & & 
+\end{tikzcd}\]
+
+The map $\bar\chi_i$ represents an element in $\pi_n(Y,y)$. Then $\Phi([\incl\circ\bar\chi_i])\in\pi_n(Z,z)$. We choose a representative $\omega_i$ for this class:
+\[D^n\onto D^n/\de D^n\cong S^n\xto{\omega_i}Z.\]
+We define:
+\[f^{(n)}:Y^{(n)}\cong\frac{I\times D^n}{I\times\de D^n}\xto{\amalg\bar\omega_i}Z.\]
+Then the diagram $(*)$ commutes by construction because the class of the characteristic maps of the $n$-cells generate $\pi_n(Y^{(n)},y)$.
+
+Now we extend $f^{(n)}$ to the $(n+1)$-skeleton of $Y$. Let $\chi_j:D^{n+1}\to Y^{(n+1)}$, $j\in J$, be a characteristic map for the $j$-th $(n+1)$-cell. Then the attaching map is $\chi_j|_{S^n}:S^n\to Y^{(n)}$. Because $Y^{(n)}$ is path-connected, $\chi_j|_{S^n}$ is freely homotopic to a based map $\alpha_j:S^n\to Y^{(n)}$. Because $(D^{n+1},S^n)$ has the HEP and because $\chi_j|_{S^n}$ comes from a continuous map on $D^{n+1}$, also $\alpha_j$ admits a continuous extension to $D^{n+1}$. So the composite
+\[S^n\xto{\alpha_j}Y^{(n)}\into Y\]
+represents the zero element in $\pi_n(Y,y)$. Since $(*)$ commutes we have $0=f^{(n)}_*([g])=[f^{(n)}\circ\alpha_j]$, so $f^{(n)}\circ\alpha_j:S^n\to Z$ has a continuous extension to $D^{n+1}$. Hence by the HEP also $f^{(n)}\circ\chi_j|_{S^n}:S^n\to Z$ admits a continuous extension to $D^n$. Choose such an extension $g_j:D^{n+1}\to Z$ and define
+\[f^{n+1}=f^{(n)}\cup\bigcup_{j\in J}g_j:Y^{(n+1)}=Y^{(n)}\cup_{J\times S^n}J\times D^{n+1}\to Z.\]
+By theorem \ref{theorem:extension-theorem} $f^{(n+1)}:Y^{(n+1)}\to Z$ can be extended continuously to $Y$ (consider the relative CW-complex $(Y,Y^{(n+1)})$ with relative cells of dimensions greater than $n+1$). Let $f:Y\to Z$ be any such extension.
+
+We claim that $\pi_n(f)=\Phi$. This follows from $(*)$ because $\incl_*:\pi_n(Y^{(n)},y)\to\pi_n(Y,y)$ is surjective by cellular approximation.
+
+Now we can prove uniqueness up to homotopy of the map $f$. Let $f,f':Y\to Z$ be two continuous based maps with $\pi_n(f)=\Phi=\pi_n(f')$. Since $Y^{(\ni)}=\cb{y}$, $f$ and $f'$ are equal on the $(n-1)$-skeleton.
+
+We choose characteristic maps $\chi_i:D^n\to Y^{(n)}$, $i\in I$, for all $n$-cells. Then consider:
+\[
+\begin{tikzcd}
+D^n/\de D^n \ar[r,"\bar\chi_i"] & Y^{(n)} \ar[d] \ar[r,"f/f'"] & Z\\
+& Y^{(n+1)} \ar[r,hook] & Y \ar[u]
+\end{tikzcd}
+\]
+because $f$ and $f'$ have the same effect on $\pi_n$, $f\circ\bar\chi_i$ is based homotopic to $f'\circ\bar\chi_i$. We can then choose based homotopies $H_i:D^n\times[0,1]\to Z$ and we can glue them into a single homotopy
+\[H=\bigcup_{i\in I}H_i:Y^{(n)}\times[0,1]\to Z\]
+which shows that $f|_{Y^{(n)}}$ and $f'|_{Y^{(n)}}$ are based homotopic.
+
+Now we apply the "extension theorem" \ref{theorem:extension-theorem} from last lecture to the relative CW-complex $(Y\times[0,1],Y\times\cb{0}\cup Y^{(n)}\times[0,1]\cup Y\times\cb{1})$ whose relative cells all have dimension greater than $n$.By the theorem we get a continuous extension $\bar H:Y\times[0,1]\to Z$ of the map
+\[f\cup H\cup f':Y\times0\cup Y^{(n)}\times[0,1]\cup Y\times1\to Z.\]
+Then $\bar H$ is the desired based homotopy from $f$ to $f'$.
+\end{proof}
+
+\begin{theorem}
+Let $(X,\phi)$ and $(Y,\psi)$ be EM-spaces of type $(A,n)$ and $(B,n)$. Then if $X$ is a CW-complex the map
+\begin{align*}
+    \pi_n:[X,Y]_*&\to\Hom_\Grp(A,B)\\
+    [f:X\to Y]&\mapsto\psi\circ\pi_n(f)\circ\phi^\inv
+\end{align*}
+is bijective.
+\end{theorem}
+
+\begin{proof}
+\begin{align*}
+    [X,Y]_*\underset{\cong}{\xto{\pi_n}}\Hom_\Grp(\pi_n(X,x),\pi_n(Y,y))&\xto{\cong}\Hom_\Grp(A,B)\\
+    x&\mapsto\psi\circ x\circ\phi^\inv.
+\end{align*}
+\end{proof}
+
+\begin{corollary}
+Let $A$ be a group, abelian if $n\ge2$, and let $(X,\phi), (Y,\psi)$ be two EM-spaces of type $(A,n)$ that are CW-complexes. Then there is a based homotopy equivalence $f:X\to Y$ that makes the following diagram commute:
+\[
+\begin{tikzcd}
+\pi_n(X,x) \ar[dr,"\phi"',"\cong"] \ar[rr,"\pi_n(f)"] & & \pi_n(Y,y) \ar[dl,"\psi","\cong"']\\
+& A &
+\end{tikzcd}
+\]
+\end{corollary}
+
+\begin{proof}
+The existence of a map $f$ that makes the diagram commute is given by the previous theorem and $f$ induces isomorphisms on all homotopy groups for all basepoints. Since $X$ and $Y$ are CW-complexes, $f$ is a homotopy equivalence by Whitehead's theorem.
+\end{proof}
+
+\begin{example}
+From the uniqueness of EM-space we have that $\rp{\infty}$ is homotopy equivalent to $|B\Z/2|$ and $S^1$ is homotopy equivalent to $|B\Z|$. Observe that $S^1$ is a finite one dimensional CW-complex, while $|B\Z|$ is an infinite dimensional one.
+\end{example}
+
+\section{Towards Representability}
+
+Our goal is now to construct a natural isomorphism
+\[H^n(X;A)\cong[X,K(A,n)]\]
+for any CW-complex $X$.
+
+We observe first that for an abelian group $A$ and $n>1$, an EM-space $K(A,n)$ can be seen as an "abelian group up to homotopy". Indeed, given a $K(A,n)$ which is a CW-complex, we can define a "group structure up to homotopy" considering a based continuous map $\mu:K(A,n)\times K(A,n)\to K(A,n)$, which is unique up to homotopy, that realizes addition, i.e. makes the following diagram commute:
+\[
+\begin{tikzcd}
+\pi_n(K(A,n)\times K(A,n),(*,*)) \ar[d,"\cong"] \ar[r,"\mu_*"] & \pi_n(K(A,n),*)\\
+\pi_n(K(A,n),*)\times \pi_n(K(A,n),*) \ar[d,"\phi\times\phi"',"\cong"] & A \ar[u,"\phi^\inv"']\\
+A\times A \ar[ur,"+"'] &
+\end{tikzcd}
+\]
+
+Similarly we can construct a continuous based map $\iota$ which realizes the inverse map $a\mapsto a^\inv$.
+
+The map $\mu$ is "associative up to homotopy": this is because the two based continuous maps $\mu\circ(\mu\times\id),\mu\circ(\id\times\mu):K(A,n)^3\to K(A,n)$ realize the maps $(a,b,c)\mapsto(a+b)+c$ and $(a,b,c)\mapsto a+(b+c)$, hence $\pi_n(\mu\circ(\mu\times\id))=\pi_n(\mu\circ(\id\times\mu))$, since addition in $A$ is associative, and therefore $\mu\circ(\mu\times\id)$ and $\mu\circ(\id\times\mu)$ are homotopic as based maps.
+
+Similarly, considering the map $\tau:K(A,n)^2\to K(A,n)^2$, $(x,y)\mapsto(y,x)$, we have that $\mu$ and $\mu\circ\tau$ are based homotopic maps.
+
+\ 

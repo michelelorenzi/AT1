@@ -2,7 +2,7 @@
 
 \lecture[We actually prove the story about the long exact sequence associated to a fibre bundle.]{2021-11-10}
 
-Before we get to the two promised lemmas, we prove an auxiliary one.\rightnote{\Attention\ Didn't sleep much the night before this one, I hope I didn't type anything too stupid!}
+Before we get to the promised results, we prove an auxiliary one.\rightnote{\Attention\ Didn't sleep much the night before this one, I hope I didn't type anything too stupid!}
 
 \begin{lemma}\label{lemma:equivalent-HCP}
 Let $p:E\to B$ be a map. The following are equivalent:
@@ -47,7 +47,6 @@ Then the desired solution is
 The case where $(X,X')$ has finitely many relative cells follows by induction, the infinite case by passing to the colimit.
 
 $(4)\implies(1)$ This is the special case $(X,\emptyset)$.
-
 \end{proof}
 
 \begin{remark}
@@ -63,11 +62,13 @@ Note: CW-complexes are colimits of their skeleta.
 We have $X\cong\colim_n\sk_n X$ and $X\times[0,1]\cong\colim_n(\sk_n X\times[0,1])$.
 \end{remark}
 
-\begin{proposition}
+Now we can prove the results promised at the end of last lecture.
+
+\begin{lemma**}
 Let $p:E\to B$ be a Serre fibration, $Y\subset B$ and $x\in p^{-1}(Y)$. Then $p$ induces an isomorphism
 \[p_*\pi_n(E,p^{-1}(Y),x)\xto{\cong}\pi_n(B,Y,p(x))\]
 for all $n\geq1$.
-\end{proposition}
+\end{lemma**}
 
 \begin{proof}\ 
 
@@ -94,6 +95,15 @@ Injectivity. Let $\alpha_1,\alpha_2:(I^n,\de I^n,s_0)\to(E,p^{-1}(Y),x)$ represe
 
 Again we can assume that $\alpha_1(I^\ni\times\cb{0})=\alpha_2(I^\ni\times\cb{0})=\cb{x}$. In addition we can assume that $H$ sends $(I^\ni\times\cb{0})\times I$ constantly to $p(x)$. We again lift $c_{p(x)}$ to $c_x$ and view $\alpha_1$ and $\alpha_2$ as lifts of $H$ on the subspace $I^\ni\times\cb{0}\times\cb{0}\cup I^\ni\times\cb{0}\times\cb{1}$. Since $(I^\ni\times\cb{0}\times I,I^\ni\times\cb{0}\times\cb{0}\cup I^\ni\times\cb{0}\times\cb{1})$ is a relative CW-complex, we can apply the relative HLP to lift $H$ to a map $\til H:I^n\times I\to E$, giving a relative homotopy from $\alpha_1$ to $\alpha_2$.
 \end{proof}
+
+We remember that this has as a consequence the long exact sequence associated to a Serre fibration.
+
+\begin{theorem}
+Let $Y=\cb{b}$, $F=p^{-1}(b)$. We get a long exact sequence:
+\[\cdots\to\pi_n(F,x)\to\pi_n(E,x)\to\pi_n(E,F,x)\cong\pi_n(B,b)\to\cdots\]
+\end{theorem}
+
+Many examples of Serre fibrations come from fibre bundles, thanks to the next theorem.
 
 \begin{theorem}
 Every fibre bundle is a Serre fibration.
@@ -131,7 +141,6 @@ Let $\cb{U_i}_{i\in I}$ be an open covering of $B$, such that $p^{-1}(U_i)\xto{p
 \input{Pictures/Lec8Pic3}\medskip
 
 We can then extend $H$ iteratively over the smaller cubes "row by row". In every situation this amounts to choosing a solution to the relative lifting problem for a globally trivial fibre bundle.
-
 \end{proof}
 
 \begin{remark}
@@ -140,7 +149,7 @@ Not every fibre bundle is a Hurewicz fibration (but actual counter-examples are 
 
 \begin{remark}
 
-An interesting question: are lifting of homotopies unique? It turns out that they are unique up to homotopy!
+An interesting question: are lifting of homotopies unique? It turns out that they are unique up to homotopy!\todo{I wasn't paying attention, it might be interesting to reconstruct the argument!}
 \begin{center}
     \begin{tikzcd}[column sep=large]
     X\times\cb{0} \arrow[r] \arrow[d] & E \arrow[d,"p"] \\
@@ -150,6 +159,6 @@ An interesting question: are lifting of homotopies unique? It turns out that the
     X\times I\times\cb{0} \cup X\times I\times\cb{1} \arrow[r] \arrow[d] & E \arrow[d,"p"] \\
     X\times I\times I \arrow[r] & B
     \end{tikzcd}
-\end{center}\normalmarginpar\todo{I wasn't paying attention, it might be interesting to reconstruct the argument!}
+\end{center}\normalmarginpar
 
 \end{remark}

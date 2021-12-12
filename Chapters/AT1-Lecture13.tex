@@ -1,0 +1,156 @@
+% Lecture 13
+
+\lecture[We introduce Eilenberg-MacLane spaces and classifying spaces.]{2021-11-29}
+
+There's one last important easy example of EM-space.
+
+\begin{example}
+For $n\geq2$, we have $\Omega K(A,n)=K(A,n-1)$.\rightnote{Sometimes the notation with EM-spaces gets a bit sloppy.}
+\end{example}
+
+We want to show existence and uniqueness (up to homotopy) of EM-spaces. For the existence part, it is better to treat the dimension 1 case separately (the reason is that in this case we do not have Hurewicz's theorem).
+
+\section{Construction of Classifying Spaces.}
+
+A space of type $(G,1)$ is also denoted $BG$, and called the \tbf{classifying space} for $G$.
+
+We use a construction that is similar to the one we saw in AT1Sheet4-1.
+
+\begin{construction}[Bar construction]
+Let $X$ be a set. We define a simplicial set $EX$ by setting $(EX)_n=\Hom(\cb{0,1,\dots,n},X)(\cong X^{n+1}$ via $f\mapsto(f(0),f(1),\dots,f(n))$) where the simplicial structure map $\alpha^*:(EX)n\to(EX)_m$ induced by $\alpha:[m]\to[n]$ is $\alpha^*(f)=f\circ\alpha$. Equivalently we have: $\alpha^*(x_0,\dots,x_n)=(x_{\alpha(0)},\dots,x_{\alpha(m)})$.
+
+If $g:X\to Y$ is any map, a morphism of simplicial sets $g_*:EX\to EY$ is given by
+\[g_*(f)=g\circ f\text{ or }g_*(\xso)=(g(x_0),\dots,g(x_n)).\]
+
+Altogether we get a functor $E:\Set\to\sSet$.
+\end{construction}
+
+\begin{proposition}
+If $X$ is not empty, then $EX$ is simplicially contractible.
+\end{proposition}
+
+\begin{proof}
+Pick any element $y\in X$. We will write down an explicit morphism of simplicial sets
+\[H:EX\times\Delta[1]\to EX\]
+that contracts $EX$ onto $y$.
+
+For $0 \le i \le n+1$, let $k_i:[n]\to[1]$ be the weakly monotone map with
+\[k_i(i-1)=0\text{ and }k_i(i)=1.\]
+We define $H_n:(EX)_n\times\Delta[1]_n=X^{n+1}\times\Delta([n],[1])\to X^{n+1}$ as
+\[H_n((\xso),k_i)=(x_0,\dots,x_{i-1},y,\dots,y).\]
+
+It is straightforward to check that these maps do form a morphism of simplicial sets and we have:
+\[H_n((\xso),\const_0)=H_n((\xso),k_{n+1})=(\xso),\]
+\[H_n((\xso),\const_1)=H_n((\xso),k_0)=(y,\dots,y).\]
+\end{proof}
+
+Now let $G$ be any group. Then $G$ acts on itself by right translation. So for $g\in G$ we get a morphism $E_{rg}:EG\to EG$, where $rg$ is right multiplication by $g$. This defines an action of $G$ on $EG$ by morphisms of simplicial set, i.e. it makes $EG$ into a $G$-simplicial set.
+
+A \textbf{$G$-simplicial set} is a functor $Y:\Delta^\op\to G\text{-}\Set$. More explicitly, a $G$-simplicial set is the data of an underlying simplicial set $Y$ and a $G$-action on $Y_n$ for any $n\geq0$ such that $\alpha^*:Y_n\to Y_m$ is $G$-equivariant for all $\alpha:[m]\to[n]$ in $\Delta$.
+
+The \textbf{simplicial orbit set} is the composite functor:
+\[Y/G:\Delta^\op\xto{Y}G\text{-Set}\xto{-/G}\Set,\]
+i.e. $(Y/G)_n=Y_n/G$, the set of $G$-orbits on $Y_n$.
+\[\alpha^*:Y_n/G=(Y/G)_n\to(Y/G)_m=Y_m/G,\ yG\mapsto\alpha^*(y)G\]
+
+This comes with a morphism of simplicial sets $Y\to Y/G$ with $p_n:Y_n\to Y_n/G$, $y\mapsto yG$.
+
+\begin{theorem}
+Let $G$ be a group and $Y$ a free $G$-simplicial set, i.e. the $G$ action on $Y_n$ is free for all $n\geq0$. Then $G$ acts freely and properly discontinuously on $|Y|$ and the continuous map $|p|:|Y|\to|Y/G|$ is a covering space with deck transformation group $G$.
+\end{theorem}
+
+Note: we did not prove the theorem, but the key part should be that $|-|:\Set\to\Top$ is a left adjoint, so it preserves all colimits, giving (somehow) that $|Y|/G\cong|Y/G|$.\todo{Not sure about what he was trying to say...} If $G$ happens to be finite, we only need the freeness of the action on $|Y|$ and the fact that $|Y|$ is Hausdorff.
+
+We apply this theorem to $Y=EG$. The right translation action of $G$ on itself is free, so the map:
+\[|p|:|EG|\to|(EG)/G|\cong|EG|/G\]
+is a covering space with deck transformation group $G$. Since $|EG|$ is contractible $|(EG)/G|$ is a $K(G,1)$.
+
+\begin{remark}
+The \textbf{bar-construction} $BG$ of a group $G$ is the simplicial set $(BG)_n=G^n$ and
+\[d^*_i(g_1,\dots,g_n)=\begin{cases}
+(g_2,\dots,g_n) & i=0\\
+(g_1,\dots,g_ig_{i+1},\dots,g_n) & 1\leq i\leq n-1\\
+(g_1,\dots,g_\ni)
+\end{cases}\]
+\[s^*_i(g_1,\dots,g_n)=(g_1,\dots,g_{i-1},1,g_{i+1},\dots,g_n)\]
+
+\begin{lemma}
+The simplicial sets $EG/G$ and $BG$ are isomorphic. Therefore $|BG|$ is homeomorphic to $|EG/G|$, hence a $K(G,1)$.
+\end{lemma}
+
+\begin{proof}
+Consider $q:EG\to BG$ defined in dimension $n$ by:
+\begin{align*}
+    q_n:(EG)_n=G^{n+1}&\to G^n=(BG)_n\\
+    (\nno{g}{n})&\mapsto(g_0g_1^{-1},g_1g_2^{-1},\dots,g_\ni g_n^{-1}).
+\end{align*}
+The map $q_n$ is constant on $G$-orbits by the composite right translation action. Then $q_n$ factors through a bijection $(EG)_n/G\xto{\cong}(BG)_n.$
+\end{proof}
+\end{remark}
+
+We also have explicit isomorphism (see AT1Sheet4-1):
+\begin{align*}
+    G&\to\pi_1(|BG|,1)\\
+    g&\mapsto\cb{[0,1]\to|BG|}\\
+    t&\mapsto[(g,(t,1-t))]\cont G\times\sx{1}\to|BG|
+\end{align*}
+
+\tbf{What do classifying spaces classify?} --- A short digression on what the classifying space $BG=K(G,1)$ actually classifies. Let $G$ be a group. A \textbf{$G$-principal bundle} is a $G$-space $X$ with the following property: for every $xG\in X/G$ there is an open neighbourhood $U$ of $xG$ in $X/G$ and a $G$-equivariant homeomorphism $p^{-1}(U)\to U\times G$ (making the usual diagram commute) where $p:X\to X/G$ is the quotient map.
+
+\begin{example}
+$|EG|$ with the $G$ action is a principal $G$-bundle.
+\end{example}
+
+\begin{itemize}[label={-}]
+    \item The action of principal $G$-bundles are in particular free.
+    \item Principal $G$-bundles admit base change. Consider a principal $G$-bundle and a continuous map $f:Y\to X/G$:
+    \[\begin{tikzcd} & X \ar[d,"p"] \\
+    Y \ar[r,"f"] & X/G\end{tikzcd}\]
+    Then $Y\times_{X/G}X$ comes with a continuous $G$-action by $(y,x)g=(y,xg)$, i.e. $Y\times_{X/G}X$ is another principal $G$-bundle with \[(Y\times_{X/G}X)/G\xto{\cong} Y.\]
+\end{itemize}
+
+\begin{theorem}
+For all paracompact spaces $Y$ and all groups $G$, the map:
+\begin{align*}
+    [Y,|BG|]&\to \operatorname{Prin}_G(Y)\\
+    [f]&\mapsto[f^*(|EG|\to\underbrace{|EG/G|}_{=|BG|})]
+\end{align*}
+is a bijection.
+\end{theorem}
+
+\section{Construction of EM-Spaces}
+
+The first step towards construction of EM-spaces is to have a way to "kill homotopy groups".
+
+\begin{theorem}[Killing homotopy groups]\label{theorem:killing-homotopy-groups}
+Let $n\geq0$ and let $(Y,y)$ be a based space. Then there is a relative CW-complex $(X,Y)$ such that:
+\begin{itemize}
+    \item[(i)] all relative cells have dimension $\geq n+1$,
+    \item[(ii)] The inclusion induces isomorphisms $\pi_i(Y,y)\to\pi_i(X,y)$ for all $0\leq i<n$,
+    \item[(iii)] For all $i\geq n$, $\pi_i(X,y)=0$.
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+We set $X^{(0)}=X^{(1)}=\cdots=X^{(n)}=Y$ and we construct the higher cells by induction, so that:
+\begin{itemize}
+    \item[(a)] $X^{(i+1)}$ is obtained from $X^{(i)}$ by attaching $(i+1)$-cells; in particular, the inclusion $X^{(i)}\into X^{(i+1)}$ induce isomorphisms of homotopy groups up to dimension $i-1$ (by cellar approximation),
+    \item[(b)] the homotopy groups $\pi_i(X^{(i+1),y})$ is trivial.
+\end{itemize}
+
+Then $X=\cup_{i\geq0}X^{(i)}$ with the weak topology is the desired CW-complex relative to $Y$. Then we have $\pi_i(X^{(N)},y)\cong\pi_i(X,y)$ for all large enough $N$, in particular $\pi_i(X,y)\cong 0$ for $i\geq n$ and $\pi_i(X,y)\cong\pi_i(Y,y)$ for $i<n$.
+
+We describe the inductive procedure. Suppose that $X^{(i)}$ has already been constructed. Choose generators $\cb{x_j}_{j\in J}$ for the group $\pi_i(X^{(i)},y)$, choose representatives $f_j:S^i\to X^{(i)}$ of the classes $x_j$.
+
+Define $X^{(i+1)}=X^{(i)}\cup_{S^i\times J}D^{i+1}\times J$ using the maps $f_j$ as attaching maps.
+
+We observe:
+\begin{enumerate}
+    \item The map $\pi_i(X^{(i)},y)\to\pi_i(X^{(i+1)},y)$ is surjective by cellular approximation.
+    \item The map $\pi_i(X^{(i)},y)\to\pi_i(X^{(i+1)},y)$ is the zero map; it suffices to show that the set $\cb{x_j}_{j\in J}$ of generators goes to zero. For all $j\in J$ the composite
+    \[S^i\xto{f_j}X^{(i)}\into X^{(i+1)}\]
+    extends to a continuous map on $D^{i+1}$, so it represents the trivial class in $\pi_i(X^{(i+1)},y)$.
+\end{enumerate}
+
+From this we get $\pi_i(X^{(i+1)},y)=0$.
+\end{proof}
