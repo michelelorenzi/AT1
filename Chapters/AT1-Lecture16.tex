@@ -1,0 +1,31 @@
+% Lecture 16
+
+\lecture[]{2021-12-07}
+
+Given the above discussion, for all CW-complexes $X$, the set $[X,K(A,n)]$ becomes an abelian group by $[f]+[g]=[\mu\circ(f,g)]$.
+
+\begin{remark}\todo{I don't really understand this remark}
+One can realize a $K(A,n)$ as a topological abelian group, e.g. $|\til A[\Delta^n/\de]|$. $\til A[\Delta^n/\de]$ is a simplicial abelian group, and $|-|:\sSet\to\Top_\text{cpt. gen.}$ commutes with products, which implies that $|\til A[\Delta^n/\de]|$ is an abelian topological group with product given by:
+\[|\til A[\Delta^n/\de]|^2\xto{\cong}|\til A[\Delta^n/\de]\times\til A[\Delta^n/\de]|\xto{|\mu|}|\til A[\Delta^n/\de]|.\]
+\end{remark}
+
+\begin{example}\todo[color=red]{I really don't understand this example}
+We know that $\rp{\infty}=K(\Z/2,1)$ and $\cp{\infty}=K(\Z,2)$. We also talked about how $\rp{\infty}$ classifies principal $\Z/2$-bundles (i.e. two-fold coverings). Then we have:
+\[
+\begin{tikzcd}
+    \left[X,\rp{\infty}\right] \ar[r,"\cong"] & \operatorname{Prin}_{\Z/2}(X) \ar[r,"\cong"] & \Pic_\R(X)\\[-4ex]
+    f \ar[rr,mapsto] & & f^* (\text{tautological line bundle})\\[-4ex]
+    & E\to X \ar[r,mapsto] & E\times_{C_2}\R\to X\\[-4ex]
+    & F-s_0(X)/\R_{>0}\to X & F\to X \ar[l,mapsto]
+\end{tikzcd}
+\]
+where $s_0$ is the zero section. Under this bijection, the group structure on the left is the tensor product.
+
+Similarly we have:
+\[[X,\cp{\infty}]\xto{\cong}\Pic_\CC(X)\]
+sending $[f:X\to\cp{\infty}]$ to the universal complex line bundle over $\cp{\infty}$ and again with the addition corresponding to the tensor product of line bundles.
+\end{example}
+
+\section{The Fundamental Cohomology Class}
+
+\todo[inline,color=red]{to be added!}

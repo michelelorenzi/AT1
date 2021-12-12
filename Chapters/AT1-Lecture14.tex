@@ -1,0 +1,71 @@
+% Lecture 14
+
+\lecture[Existence of EM-spaces (btw, today is supposedly Dies Academicus...).]{2021-12-1}
+
+We can now prove the existence of EM-spaces.\rightnote{I missed this lecture because I thought on the Dies Academicus there were no lectures. Apparently the Dies Academicus starts at 10, though. -.-}
+
+\begin{theorem}
+Let $n\geq2$ and let $A$ be an abelian group. Then there is an EM-space of type $(A,n)$ that is a CW-complex.
+\end{theorem}
+
+\begin{proof}
+We choose a free resolution of $A$ as an abelian group:
+\[0\to\Z[I]\xto{d}\Z[J]\xto{\epsilon}A\to0,\]
+i.e. a short exact sequence of abelian groups with $I,J$ some sets.
+
+We define a CW-complex with skeleta:
+\[X^{(0)}=\cdots=X^{(\ni)}=\cb{x},\]
+\[X^{(n)}=\cb{x}\cup_{J\times S^\ni}J\times D^n\cong\bigvee_J S^n.\]
+By cellular approximation $X^{(n)}$ is $(n-1)$-connected. The Hurewicz theorem then provides an isomorphism
+\[h:\pi_n(X^{(n)},x)\xto{\cong}H_n(X^{(n)};\Z\cong\Z[J]).\]
+
+For every index $i\in I$ we chose a map $\alpha_i:S^n\to X^{(n)}$ such that $h([\alpha_i])=d(i)\in\Z[J]$. We define
+\[X^{(n+1)}=X^{(n)}\cup_{I\times S^n}I\times D^{n+1}\]
+using the $\alpha_i$'s as attaching maps. Then $X^{(n+1)}$ is a CW-complex with one $0$-cell, an $n$-cell for every element of $J$ and an $(n+1)$-cell for every element of $I$. So the cellular chain complex of $X^{(n+1)}$ is concentrated in degrees $0$, $n$ and $n+1$ and in the relevant dimension it looks as follows:
+{\small
+\[0\to C^\text{cell}_{n+1}(X^{(n+1)};\Z)=\underbrace{H_{n+1}(X^{(n+1)},X^{(n)};\Z)}_{\cong\Z[I]}\xto{\de}C^\text{cell}_n(X^{(n+1)};\Z)=\underbrace{H_n(X^{(n)},\cb{x};\Z)}_{\cong\Z[J]}\to0.\]}Hence we have $H_n^\text{cell}(X^{(n+1)};\Z)=\coker(\de)\cong\coker(d:\Z[I]\to\Z[J])\cong A$.
+
+$X^{(n+1)}$ is again $(n-1)$-connected, so the Hurewicz theorem provides an isomorphism
+\[\pi_n(X^{(n+1)},x)\xto{\cong}H_n(X^{(n+1)};\Z)\cong H^\text{cell}_n(X^{(n+1)};\Z)\cong A.\]
+
+Now we can use kill the homotopy groups as we have seen in Theorem \ref{theorem:killing-homotopy-groups}, obtaining a relative CW-complex $(X,X^{(n+1)})$ with relative cells in dimensions $n+2$ and higher and such that:
+\[\pi_i(X,x)\cong\pi_i(X^{(n+1)},x)\cong\begin{cases}
+0 & \text{for } 1\le i < n\\
+A & \text{for } i = n
+\end{cases}\]
+and $\pi_i(X,x)=0$ for $i\ge n+1$. So $X$ is a CW-complex and a $K(A,n)$.
+\end{proof}
+
+There is also an alternative construction of $K(A,n)$ as the geometric realization of some simplicial set.\todo{I am missing this part but I plan to add details eventually.}
+
+\section{Uniqueness of EM-Spaces}
+
+We first prove an auxiliary lemma.
+
+\begin{lemma}\label{theorem:extension-theorem}
+Let $(X,Y)$ be a relative CW-complex, $Z$ any space. Suppose that for all $m\geq1$ such that $(X,Y)$ has at least one relative $n$-cell, then $\pi_\ni(Z,z)=0$ for all $z\in Z$. Then every continuous map $f:Y\to Z$ has a continuous extension to $X$.
+\end{lemma}
+
+\begin{proof}
+We construct inductively continuous maps $f^{(n)}:X^{(n)}\to Z$ on the relative skeleta, that successively extend each other. Then $g=\cup f^{(n)}:X=\cup X^{(n)}\to Z$ does the job.
+
+We start with $f=f^{(-1)}:X^{(-1)}=Y\to Z$. We extend $f^{(-1)}$ to $f^{(0)}:X^{(0)}=Y\amalg J_0\to Z$ by mapping the relative $0$-cells arbitrarily to $Z$.
+
+Let now $m\ge1$ and suppose that $f^{(m-1)}$ has been constructed. If there are no relative $m$-cells, we set $f^{(m)}=f^{(m-1)}$. Otherwise choose characteristic maps for the relative $m$-cells, call $\alpha_j$ the attaching maps and consider the following composite:
+\[S^{m-1}\xto{\alpha_j}X^{(m-1)}\xto{ f^{(m-1)}}Z.\]
+Pick a basepoint $x\in S^{m-1}$. Then $f^{(m-1)}\circ\alpha_j$ represents an element in $\pi_{m-1}(Z,z)$, with $z=f^{(m-1)}(\alpha_j(x))$.
+
+Now suppose that $n\ge2$. Because $Y$ is $(n-1)$-connected, its $n$-skeleton is still $(n-1)$-connected. Since the Hurewicz map is an isomorphism, considering
+\[\pi_n(Y^{(n)},y)\to H_n(Y^{(n)};\Z)\cong H^\text{cell}_n(Y^{(n)};\Z)=\ker(\underbrace{C^\text{cell}_n(Y^{(n)};\Z)}_{\text{free abelian}}\xto{d^\text{cell}}C^\text{cell}_\ni(Y^{(n)};\Z))\]
+we have that $H_n(Y^{(n)};\Z)$ and hence $\pi_n(Y^{(n)},y)$ are free abelian groups.
+
+We choose a basis $I$ of the free abelian group $\pi_n(Y^{(n)},y)$ and represent the basis elements by continuous maps $\alpha_i:S^n\to Y^{(n)}$. These $\alpha_i$'s together define a map
+\[\alpha=\bigvee_{i\in I}\alpha_i:\bigvee_I S^n\to Y^{(n)}\]
+with source and target $(n-1)$-connected CW-complexes. The map $\alpha$ induces an isomorphism on $H_n(-;\Z)$ because it sends the natural basis of $\vee_I S^n$ to the chosen basis of $H_n(Y^{(n)};\Z)$. Note also that source and target of $\alpha$ have trivial homology above dimension $n$. Hence $\alpha$ is a homology isomorphism between simply-connected CW-complexes, hence a homotopy equivalence.
+
+By cellular approximation we can assume that $\alpha$ is cellular for the CW-structure on $\vee_I S^n$ with one $0$-cell and a $n$-cell for every $i\in I$. Then we form
+\[Y'=Y\cup_{Y^{(n)}}\bigvee_I S^n\]
+where the gluing is along a cellular homotopy inverse $g:Y^{(n)}\to \vee_I S^n$. The space $Y'$ then comes with a CW-structure with one $0$-cell and no cells in dimensions $1,\dots,\ni$ and the map
+\[Y\to Y\cup_{Y^{(n)}}\bigvee_I S^n=Y'\]
+is a homotopy equivalence (using the homotopy extension property).
+\end{proof}

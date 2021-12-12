@@ -52,10 +52,10 @@ is open. Let $(f,x)\in Z^X\times X$ be in $\ev^{-1}(O)$, so $f(x)\in O$. Since $
 Let $X,Y$ and $Z$ be spaces.
 \begin{numerate}
     \setcounter{enumi}{-1}
-    \item For every continuous map $f:X\times Y\to Z$, the adjoint map $\Phi(f):Y\to Z^X$, $\Phi(f)(y)(x)=f(x,y)$ is continuous. So $\Phi$ defines a map $Z^{X\times Y}\to(Z^X)^Y$.
+    \item For every continuous map $f:X\times Y\to Z$, the adjoint map $\Phi(f):Y\to Z^X$ defined by $\Phi(f)(y)(x)=f(x,y)$ is continuous. So $\Phi$ defines a map $Z^{X\times Y}\to(Z^X)^Y$.
     \item The map $\Phi:Z^{X\times Y}\to(Z^X)^Y$ is continuous.
     \item If $X$ is locally compact (and Hausdorff), then $\Phi$ is bijective.\rightnote{\upshape Locally compact includes Hausdorff for Schwede.}
-    \item If $X$ is locally compact and $X$, $Y$ are Hausdorff, then $\Phi$ is a homeomorphism.
+    \item If $X$ is locally compact and $Y$ is Hausdorff, then $\Phi$ is a homeomorphism.
 \end{numerate}
 \end{theorem}
 
@@ -65,7 +65,7 @@ Let $X,Y$ and $Z$ be spaces.
 
 (1) The compact-open topology on $Z^X$ has a subbasis consisting of the sets $W(K,O)$ for $K\subset X$ compact and $O\subset Z$ open. By theorem \ref{theorem:compact-subbasis-topology} the compact-open topology on $(Z^X)^Y$ has a subbasis of the form $W(K',W(K,O))$ for $K\subset X$ compact, $K'\subset Y$ compact, $O\subset Z$ open. But $\Phi^{-1}(W(K',W(K,O)))=W(K\times K',O)$ which is open in the compact-open topology on $Z^{X\times Y}$ because $K\times K'$ is again compact.
 
-(2) On the set-theoretic level, every map $Y\to Z^X$ is of the form $\Phi(f)$ for some unique map $f:X\times Y\to Z$. So $\Phi$ is continuous by (1) and injective. We have to show that when $X$ is locally compact and $g:Y\to Z^X$ is continuous, $\Phi^{-1}(g)$ is continuous. But since the evaluation map is continuous by (0), the composite
+(2) On the set-theoretic level, every map $Y\to Z^X$ is of the form $\Phi(f)$ for some unique map $f:X\times Y\to Z$. So $\Phi$ is continuous by (1) and injective. We have to show that when $X$ is locally compact and $g:Y\to Z^X$ is continuous, $\Phi^{-1}(g)$ is continuous. But since the evaluation map is continuous, by (0) the composite
 \[\Psi(g):X\times Y\cong Y\times X\xto{g\times\id}Z^X\times X\xto{\ev}Z\]
 is continuous, hence we have:
 \[\Phi(\Psi(g))(y)(x)=\Psi(g)(x,y)=\ev(g(y),x)=g(y)(x)\text{ for all }x\in X,y\in Y\]
