@@ -234,7 +234,8 @@ Since $A$ is open in the sup-topology, there is an $\epsilon>0$ so that $A$ cont
 For $x\in X$ the set $f^{-1}(B(f(x),\epsilon/5))$ is an open neighbourhood of $x$ in $X$. Since $X$ is compact\rightnote{Note: compact spaces, meaning quasi-compact \textit{and} Hausdorff, are locally compact, but quasi-compact spaces may not be!}, this contains a compact neighbourhood $K_x$ of $x$. Since $X$ is compact, there are finitely many $x_1,\dots,x_m$ such that $X=K_{x_1}\cup\dots\cup K_{x_m}$.
 Set $K_i:=K_{x_i}$ and $O_i:=$ open $\epsilon/5$-neighbourhood of $f(K_i)$ in $Z$.
 
-For all $z,z'\in O_i$, we have $d(z,z')\leq 4\epsilon/5<\epsilon$.\alvaropls
+For all $z,z'\in O_i$, we have $d(z,z')\leq 4\epsilon/5<\epsilon$.
+\input{Pictures/Lec9Pic2}
 
 Suppose that $g\in W(K_1,O_1)\cap\dots\cap W(K_m,O_m)$. Then for all $x\in X$ there is $1\leq i\leq m$ with $x\in K_i$. Since $g\in W(K_i,O_i)$, we have $g(x)\in O_i$. We also have $x\in K_i=K_{x_i}$, so $d(f(x),f(x_i))\leq\epsilon/5$ so $f(x)\in O_i$. Hence $d(g(x),f(x))<\epsilon$. Since this holds for all $x\in X$, $d(f,g)<\epsilon$. So $W(K_1,O_1)\cap\dots\cap W(K_m,O_m)\subset B_{\sup}(f,\epsilon)\subset A$.
 \end{proof}
