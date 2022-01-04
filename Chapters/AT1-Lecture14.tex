@@ -43,17 +43,25 @@ There is also an alternative construction of $K(A,n)$ as the geometric realizati
 We first prove an auxiliary lemma.
 
 \begin{lemma}\label{theorem:extension-theorem}
-Let $(X,Y)$ be a relative CW-complex, $Z$ any space. Suppose that for all $m\geq1$ such that $(X,Y)$ has at least one relative $n$-cell, then $\pi_\ni(Z,z)=0$ for all $z\in Z$. Then every continuous map $f:Y\to Z$ has a continuous extension to $X$.
+Let $(X,Y)$ be a relative CW-complex, $Z$ any space. Suppose that for all $m\geq1$ such that $(X,Y)$ has at least one relative $m$-cell, then $\pi_{m-1}(Z,z)=0$ for all $z\in Z$. Then every continuous map $f:Y\to Z$ has a continuous extension to $X$.
 \end{lemma}
 
 \begin{proof}
-We construct inductively continuous maps $f^{(n)}:X^{(n)}\to Z$ on the relative skeleta, that successively extend each other. Then $g=\cup f^{(n)}:X=\cup X^{(n)}\to Z$ does the job.
+We construct inductively continuous maps $f^{(n)}:X^{(n)}\to Z$ on the relative skeleta, that successively extend each other. Then $g=\cup f^{(n)}:X=\cup X^{(n)}\to Z$ does the job.\rightnote{Just to be sure: do not forget that this works because CW-complexes have the final topology with respect to the inclusions of their skeleta.}
 
 We start with $f=f^{(-1)}:X^{(-1)}=Y\to Z$. We extend $f^{(-1)}$ to $f^{(0)}:X^{(0)}=Y\amalg J_0\to Z$ by mapping the relative $0$-cells arbitrarily to $Z$.
 
 Let now $m\ge1$ and suppose that $f^{(m-1)}$ has been constructed. If there are no relative $m$-cells, we set $f^{(m)}=f^{(m-1)}$. Otherwise choose characteristic maps for the relative $m$-cells, call $\alpha_j$ the attaching maps and consider the following composite:
 \[S^{m-1}\xto{\alpha_j}X^{(m-1)}\xto{ f^{(m-1)}}Z.\]
-Pick a basepoint $x\in S^{m-1}$. Then $f^{(m-1)}\circ\alpha_j$ represents an element in $\pi_{m-1}(Z,z)$, with $z=f^{(m-1)}(\alpha_j(x))$.
+Pick a basepoint $x\in S^{m-1}$. Then $f^{(m-1)}\circ\alpha_j$ represents an element in $\pi_{m-1}(Z,z)$, with $z=f^{(m-1)}(\alpha_j(x))$. By hypothesis we have $\pi_{m-1}(Z,z)=0$, hence $f^{(m-1)}\circ\alpha_j$ all represent the trivial class, i.e. they can be extended to the disk $D^m$, which gives us a way to extend $f^{(m-1)}$ to a map $f^{(m)}$ defined on $X^{(m)}$.
+\end{proof}
+
+\begin{theorem}\label{theorem:single-0-cell-complex}
+Every $(\ni)$-connected CW-complex $Y$ is homotopy equivalent to a CW-complex whose $(\ni)$-skeleton is one $0$-cell.
+\end{theorem}
+
+\begin{proof}
+Suppose that $n=1$. We can choose a tree in $Y$ (i.e. a 1-dimensional subcomplex containing all the $0$-cells) and collapse it to obtain the desired CW-complex with just one cell (the quotient map will be an homotopy equivalence).
 
 Now suppose that $n\ge2$. Because $Y$ is $(n-1)$-connected, its $n$-skeleton is still $(n-1)$-connected. Since the Hurewicz map is an isomorphism, considering
 \[\pi_n(Y^{(n)},y)\to H_n(Y^{(n)};\Z)\cong H^\text{cell}_n(Y^{(n)};\Z)=\ker(\underbrace{C^\text{cell}_n(Y^{(n)};\Z)}_{\text{free abelian}}\xto{d^\text{cell}}C^\text{cell}_\ni(Y^{(n)};\Z))\]

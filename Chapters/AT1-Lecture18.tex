@@ -1,0 +1,138 @@
+% Lecture 18
+
+\lecture[We apply the results on representability of singular cohomology.]{2021-12-15}
+
+Addendum to last time: the results on CW-approximations hold for all spaces $Z$, not necessarily path-connected. Indeed, a space $Z$ is the union of its path components, hence by choosing CW-approximations for each path component separately and taking the disjoint union we obtain a CW-approximation for $Z$ (note: we might get some strange CW-complex).
+
+\section{Some Applications: Classifying Cohomology Operations}
+
+\begin{theorem}
+Let $f:X\to Y$ be a weak homotopy equivalence. Then $f$ induces isomorphisms $f_*:H_n(X;A)\to H_n(Y;A)$ and $f^*:H^n(Y;A)\to H^n(X;A)$ for all abelian groups $A$.
+\end{theorem}
+
+\begin{proof}
+By the UCTs, it suffices to prove the homological case for $A=\Z$.
+
+Because the simplices $\ns$ are all path-connected, $H_n(X;A)$ decomposes as the direct sum of the homology of the path components:
+\[\bigoplus_{i\in\pi_0(X)}H_n(X_i;A)\to H_n(X;A)\]
+and similarly for $Y$. Since $f_*:\pi_0(X)\to\pi_0(Y)$ is bijective, it suffices to show the claim for each $X_i$. So we can assume without loss of generality that $X$ and $Y$ are path-connected.
+
+We let $Z(f)=X\times[0,1]\cup_f Y$ be the mapping cylinder of $f$. Then $f$ factors as
+\[X\xto{(-,0)}Z(f)\xto{\ p\ }Y\]
+where the first map is a closed embedding and the second the projection. Since the homotopy equivalence $p$ is a weak equivalence and induces isomorphisms on $H_n(-;\Z)$, we can assume without loss of generality that $X$ is a closed subspace of $Y$ (by replacing $Y$ with $Z(f)$).
+
+Since $f_*:\pi_1(X,x)\to\pi_1(Y,x)$ and $f_*:\pi_n(X,x)\to\pi_n(Y,x)$ for $n\ge2$ are isomorphisms, the Hurewicz theorem (in its relative version \ref{theorem:hurewicz}) applies. By the long exact sequence we have that $\pi_k(Y,X,x)=0$ for all $k\ge1$, hence by Hurewicz $H_n(Y,X;\Z)=0$ for all $n\ge1$. So $f_*:H_n(X;\Z)\to H_n(Y;\Z)$ is an isomorphism by the homology long exact sequence.
+\end{proof}
+
+Question: what are all natural transformations
+\[H^2(-;\Z)\to H^6(-;\Z)\]
+as functors $\Top\to\Set$?
+
+Some examples are $x\mapsto x^3= x\smile x\smile x$ (the cup product taken three times) or $x\mapsto kx^3$ for $k\in\Z$. Are these all of them?
+
+\begin{theorem}\label{theorem:cohomology-operations}
+Let $A$ be an abelian group, $n\ge0$. Let $F:\Top^\op\to\Set$ be any functor that sends weak equivalences to isomorphisms. Then the map
+\begin{align*}
+    \Nat_{\Top^\op\to\Set}(H^n(-;A),F)&\to F(K(A,n))\\
+    \tau=\cb{\tau_X:H^n(X;A)\to F(X)}&\mapsto \tau_{K(A,n)}(\iota)
+\end{align*}
+is bijective.
+\end{theorem}
+
+\begin{example}
+We have a bijection
+\[\Nat(H^2(-;\Z),H^6(-;\Z))\xto{\cong}H^6(K(\Z,2);\Z)\cong H^6(\cp{\infty};\Z)\cong\Z\cb{\iota^3}\]
+sending $x\mapsto kx^3$ on the left to $k\iota^3$ on the right.
+\end{example}
+
+In general, $\Nat(H^n(-;A),H^m(-;B))\cong H^m(K(A,n);B)$ are called the cohomology operations of type $(A,n,B,m)$.
+
+Note:\rightnote{\Attention\ I do not understand well these results, I might have written something dumb here and there.} the cohomology operations of a given type are usually really difficult to compute. A couple of facts about this story: $H^*(K(\FF_2,n);\FF_2)$ for $n\ge2$ is a polynomial algebra in infinitely many explicitly known generators (for $n=1$ on one generator) given by the "Steenrod operations"; for $p$ an odd prime, $H^*(K(\FF_p,n);\FF_p)$ is a polynomial $\otimes$ exterior algebra. We know that $H^m(K(\Z,n);\Z)$ is finitely generated, so it can be decomposed into free and $p$-partition groups; $H^m(K(\Z,n);\Z)\otimes\Z_{(p)}=H^m(K(\Z_{(p)},n),\Z_{(p)})$ related to $A=B=\FF_p$. Also:
+\[H^*(K(\Q,n);\Q)\cong\begin{cases}
+\Q[\iota] &\text{if } n\text{ is even}\\
+\Lambda_\Q[\iota] &\text{if } n\text{ is odd}
+\end{cases}
+\]
+
+\begin{proof}
+The essential ingredients are the Yoneda lemma and CW-approximations, as expected.
+
+Injectivity. Suppose that $\tau$ and $\mu$ are two natural transformations from $H^n(-;A)$ to $F$ such that $\tau_{K(A,n)}(\iota)=\mu_{K(A,n)}(\iota)$.
+
+If $X$ is a CW-complex and $x\in H^n(X;A)$, there is a continuous map $f:X\to K(A,n)$ such that $f^*(\iota)=x$. So by naturality of $\tau$ and $\mu$:
+\[\tau_X(x)=\tau_X(f^*(\iota))=f^*(\tau_{K(A,n)}(\iota))=f^*(\mu_{K(A,n)}(\iota))=\mu_X(f^*(\iota))=\mu_X(x),\]
+hence $\tau_X=\mu_X$ for all CW-complexes $X$.
+
+If $Y$ is any space, choose a CW-approximation $\alpha:X\xto{\sim} Y$. Let $y\in H^n(Y;A)$. Then by naturality:
+\[\alpha^*(\mu_Y(y))=\mu_X(\alpha^*(y))=\tau_X(\alpha^*(y))=\alpha^*(\tau_Y(y))\]
+where the middle equality is by the previous special case. Since $\alpha^*:F(Y)\to F(X)$ is an isomorphism by hypothesis, this proves $\mu_Y(y)=\tau_Y(y)$, hence $\mu=\tau$.
+
+Surjectivity. First we need to prove an intermediate result.
+
+Claim. Let $F$ be a functor that sends weak equivalences to isomorphisms. Then $F$ takes homotopic maps to the same map (Warning: the converse is \tit{not} true!).
+
+\begin{claimproof}
+Let $f,g:X\to Y$ be two homotopic continuous maps and choose an homotopy $H:X\times[0,1]\to Y$ from $f$ to $g$. Let $i_0,i_1:X\to X\times[0,1]$ be the two "extremal" inclusions, $p:X\times[0,1]\to X$ the projection. These maps are homotopy equivalences, hence weak equivalences. So $F(p):F(X)\to F(X\times[0,1])$ is an isomorphism. We have
+\[F(i_0)\circ F(p)=F(p\circ i_0)=F(\id_X)=F(p\circ i_1)=F(i_1)\circ F(p).\]
+Because $F(p)$ is an isomorphism, we conclude that $F(i_0)=F(i_1)$. Now
+\[F(f)=F(H\circ i_0)=F(i_0)\circ F(H)=F(i_1)\circ F(H)=F(H\circ i_1)=F(g).\]
+\end{claimproof}
+
+To prove surjectivity, for any element $u\in F(K(A,n))$ we will construct a natural transformation $\Phi^u:H^n(-;A)\to F$ such that $\Phi^u_{K(A,n)}(\iota)=u$.
+
+Let $Y$ be a space and choose a CW-approximation $\alpha:X\xto{\sim}Y$. We let $y\in H^n(Y;A)$ be a class. Since $X$ is a CW-complex, there is a continuous map $f:X\to K(A,n)$ such that $\alpha^*(y)=f^*(\iota)$ in $H^n(X;A)$. We define $\Phi^u_Y(y)=(\alpha^*)^\inv(f^*(u))$. Note that we have:
+\[F(K(A,n))\xto{f^*}F(X)\underset{\cong}{\xleftarrow{\alpha^*}}F(Y)\]
+
+Claim. $\Phi^u_Y(y)$ is independent of the choices of $\alpha$ and $f$.
+
+\begin{claimproof}
+Let $\beta:X'\xto{\sim}Y$ be another CW-approximation. Let $g:X'\to K(A,n)$ be another continuous map such that $\beta^*(y)=(f')^*(\iota)$.
+
+By uniqueness of CW-approximations there is a homotopy equivalence $\psi:X\to X'$ such that
+\[
+\begin{tikzcd}
+X \ar[dr,"\alpha"'] \ar[rr,"\psi"] & & X' \ar[dl,"\beta"]\\
+& Y &
+\end{tikzcd}
+\]
+commutes up to homotopy. Then:
+\[(g\circ\psi)^*(\iota)=\psi^*((g)^*(\iota))=\psi^*(\beta^*(y))=(\beta\circ\psi)^*(y)=\alpha^*(y)=f^*(\iota).\]
+
+Because $X$ is a CW-complex, the maps $g\circ\psi,f:X\to K(A,n)$ are homotopic. Hence we have $F(f)=F(g\circ\psi)=F(\psi)\circ F(g)$. So the following diagram commutes:
+\[
+\begin{tikzcd}[row sep=small,column sep={10em,between origins}]
+& F(X) & \\
+F(K(A,n)) \ar[ur,"f^*"] \ar[dr,"g^*"] & & F(Y) \ar[ul,"\alpha^*"',"\cong"] \ar[dl,"\beta^*","\cong"']\\
+& F(X') \ar[uu,"\cong","\psi^*"']
+\end{tikzcd}
+\]
+So the potentially different definitions of $\Phi^u_Y(y)$ agree.
+\end{claimproof}
+
+Clearly $\Phi^u_{K(A,n)}(\iota)=u$ since we can take both $\alpha$ and $f$ to be $\id:K(A,n)\to K(A,n)$. Hence we are left to prove that $\Phi^u$ is indeed a natural transformation.
+
+Claim. $\Phi^u=\cb{\Phi^u_Y}$ is a natural transformation.
+
+\begin{claimproof}
+Let $h:Y\to Z$ be any continuous map, and let $z\in H^n(\Z;A)$. Let $\alpha:X\to Y$ be any CW-approximation to $Y$. We choose a CW-approximation for $Z$ relative to the map $h\circ\alpha:X\to Z$ (which we can do by using theorem \ref{theorem:cw-approximation} in the general, i.e. relative to a map, version). This is a CW-complex $\bar X$ containing $X$ as a subcomplex and a weak equivalence $\beta:\bar X\to Z$ such that $\beta|_X=h\circ\alpha$. Consider the following diagram:
+\[
+\begin{tikzcd}
+& X \ar[dl,"g"] \ar[d,hook,"i"]\ar[r,"\sim"',"\alpha"] & Y \ar[d,"h"]\\
+K(A,n) & \bar X \ar[l,"f"] \ar[r,"\sim","\beta"'] & Z
+\end{tikzcd}
+\]
+where $f:\bar X\to K(A,a)$ is any continuous map such that $f^*(\iota)=\beta^*(z)$ and $g=f|_X$. The map $g:X\to K(A,n)$ satisfies:
+\[g^*(\iota)=(f\circ i)^*(\iota)=i^*(f^*(\iota))=i^*(\beta^*(z))=\alpha^*(h^*(z)),\]
+hence we can use $\alpha:X\to Y$, $g:X\to K(A,n)$ to define $\Phi^u_Y(h^*(z))$. Then we have: \[\Phi^u_Y(h^*(z))=(\alpha^*)^\inv(i^*(f^*(u)))=h^*((\beta^*)^\inv(f^*(u)))=h^*(\Phi^u_Z(z))\]
+i.e. $\Phi^u$ is a natural transformation.
+\end{claimproof}
+\end{proof}
+
+What are all natural transformations, on paracompact spaces, of functors $\Top_\text{para}\to\Set$, $\Pic_\R\to\Pic_\CC$?
+
+Surely we have:
+
+\[[\xi:L\to X]\mapsto[\xi_\CC:L\otimes_\R\CC\to X],\]
+\[[\xi:L\to X]\mapsto[X\times\CC\xto{\pr} X].\]
+These two turn out to be all natural operations:
+\[\Nat(\Pic_\R,\Pic_\CC)\cong\Nat(H^1(-,\FF_2),\Pic_\CC)\cong\Pic_\CC(\rp{\infty})\cong H^2(\rp{\infty};\Z)\cong\Z/2.\]

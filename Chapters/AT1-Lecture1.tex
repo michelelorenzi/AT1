@@ -26,7 +26,7 @@ Homotopy groups are so hard to compute in general that, as a matter of fact, \em
 
 An important result about homotopy groups is a theorem due to Hurewicz relating the first non-trivial homotopy and homology groups under certain hypotheses:
 
-\begin{theorem}[Hurewicz]
+\begin{theorem}[Hurewicz]\label{theorem:absolute-hurewicz}
 Let $n\geq2$ and let $X$ be an $(n-1)$-connected based space. Then $H_i(X;A)=0$ for all $0<i<n$ and any abelian group $A$ and the Hurewicz map
 \[h:\pi_n(X,x_0)\to H_n(X;\Z)\]
 is an isomorphism.
@@ -43,7 +43,7 @@ Choosing the other generator of $H^n(S^n;\Z)$, the Hurewicz map changes into its
 \end{remark}
 
 \begin{remark}
-Recall: for path connected $X$, $h:\pi_1(X,x_0)\to H_1(X,\Z)$ is surjective with kernel the commutator subgroup, so it factors to an isomorphism $\pi_1(X,x_0)^{\text{ab}}\to H_1(X;\Z)$. Hurewicz theorem is a generalization of this fact, whose first proof is due to Poincaré.
+Recall: for path connected $X$, $h:\pi_1(X,x_0)\to H_1(X,\Z)$ is surjective with kernel the commutator subgroup, so it factors to an isomorphism $\pi_1(X,x_0)^{\text{ab}}\to H_1(X;\Z)$. The Hurewicz theorem is a generalization of this fact, whose first proof is due to Poincaré.
 \end{remark}
 
 We know prove two properties of the Hurewicz map, namely its naturality and the fact that it is actually a group homomorphism.
@@ -100,7 +100,7 @@ This leads to the definition of a \textbf{modified relative Hurewicz map}. For $
 
 Now we can state the relative Hurewicz theorem.
 
-\begin{theorem}[Hurewicz]
+\begin{theorem}[Hurewicz]\label{theorem:hurewicz}
 Let $(X,A)$ be a pair of path connected spaces such that for all $x_0\in A$, the map $\pi_1(A,x_0)\to\pi_1(X,x_0)$ is an isomorphism. Let $n\geq2$ and suppose that $\pi_i(X,A,x_0)=0$ for $1\leq i\leq n-1$. Then the modified relative Hurewicz map $h^\dagger$ is an isomorphism.
 \end{theorem}
 
