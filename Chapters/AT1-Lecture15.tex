@@ -1,17 +1,17 @@
 % Lecture 15
 
-\lecture[Uniqueness of EM-spaces. We start our journey towards representability of singular cohomology.]{2021-12-06}
+\lecture[Uniqueness of EM-spaces. We start making our way towards representability of singular cohomology.]{2021-12-06}
 
-There is one last preparatory result needed to prove uniqueness of EM-spaces.\rightnote{I missed both lectures this week...}
+There\rightnote{I missed both lectures this week...} is one last preparatory (but really important and useful in itself) result needed to prove uniqueness of EM-spaces.
 
-\begin{theorem}
+\begin{theorem}\label{theorem:correspondence-maps-and-group-morphisms}
 Let $n\geq1$ and $Y$ an $(n-1)$-connected CW-complex. Let $Z$ be a based space with $\pi_m(Z,z)=0$ for $m>n$. Then for every group morphism $\Phi:\pi_n(Y,y)\to\pi_n(Z,z)$ there is a continuous map $f:Y\to Z$ with $f(y)=x$ and $\pi_n(f)=\Phi$. Moreover, any two such realizations of $\Phi$ are based homotopic. Equivalently, the map:
 \[\pi_n:[Y,Z]_*\to\Hom_\Grp(\pi_n(Y,y),\pi_n(Z,z))\]
 is bijective.
 \end{theorem}
 
 \begin{proof}
-If the theorem holds for some $Y$, then it holds for every homotopy equivalent $Y$. So without loss of generality, $Y^{(\ni)}=\cb{y}$. For a given morphism $\Phi:\pi_n(Y,y)\to\pi_n(Z,z)$ we construct a continuous map $f^{(n)}:Y^{(n)}\to Z$ such that the following diagram of group morphisms commutes:
+If the theorem holds for some $Y$, then it holds for every homotopy equivalent $Y$. So without loss of generality we can assume (considering theorem \ref{theorem:single-0-cell-complex}), $Y^{(\ni)}=\cb{y}$. For a given morphism $\Phi:\pi_n(Y,y)\to\pi_n(Z,z)$ we construct a continuous map $f^{(n)}:Y^{(n)}\to Z$ such that the following diagram of group morphisms commutes:
 \[\begin{tikzcd}
 \pi_n(Y^{(n)},y) \ar[dr,"\incl_*"] \ar[rr,"f^{(n)}_*"] & & \pi_n(Z,z) \\
 & \pi_n(Y,y) \ar[ur,"\Phi"] &
@@ -55,7 +55,7 @@ Now we apply the "extension theorem" \ref{theorem:extension-theorem} from last l
 Then $\bar H$ is the desired based homotopy from $f$ to $f'$.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{theorem:correspondence-maps-and-group-morphisms-EM}
 Let $(X,\phi)$ and $(Y,\psi)$ be EM-spaces of type $(A,n)$ and $(B,n)$. Then if $X$ is a CW-complex the map
 \begin{align*}
     \pi_n:[X,Y]_*&\to\Hom_\Grp(A,B)\\
@@ -65,10 +65,11 @@ is bijective.
 \end{theorem}
 
 \begin{proof}
-\begin{align*}
-    [X,Y]_*\underset{\cong}{\xto{\pi_n}}\Hom_\Grp(\pi_n(X,x),\pi_n(Y,y))&\xto{\cong}\Hom_\Grp(A,B)\\
-    x&\mapsto\psi\circ x\circ\phi^\inv.
-\end{align*}
+By the previous theorem (\ref{theorem:correspondence-maps-and-group-morphisms}) we have:
+\[
+    [X,Y]_*\underset{\cong}{\xto{\pi_n}}\Hom_\Grp(\pi_n(X,x),\pi_n(Y,y))\xto{\cong}\Hom_\Grp(A,B)
+\]
+where the second map simply sends $x$ to $\psi\circ x\circ\phi^\inv$.
 \end{proof}
 
 \begin{corollary}
@@ -86,16 +87,16 @@ The existence of a map $f$ that makes the diagram commute is given by the previo
 \end{proof}
 
 \begin{example}
-From the uniqueness of EM-space we have that $\rp{\infty}$ is homotopy equivalent to $|B\Z/2|$ and $S^1$ is homotopy equivalent to $|B\Z|$. Observe that $S^1$ is a finite one dimensional CW-complex, while $|B\Z|$ is an infinite dimensional one.
-\end{example}
+From the uniqueness of EM-space we have that $\rp{\infty}$ is homotopy equivalent to $|B\Z/2|$ and $S^1$ is homotopy equivalent to $|B\Z|$. Observe that $S^1$ is a finite one dimensional CW-complex, while $|B\Z|$ is an infinite dimensional one (we will return on this in chapter \ref{example:cw-bz-2}).
+\end{example}\label{example:cw-bz-1}
 
-\section{Towards Representability}
+\section{Representability of Cohomology}
 
 Our goal is now to construct a natural isomorphism
 \[H^n(X;A)\cong[X,K(A,n)]\]
 for any CW-complex $X$.
 
-We observe first that for an abelian group $A$ and $n>1$, an EM-space $K(A,n)$ can be seen as an "abelian group up to homotopy". Indeed, given a $K(A,n)$ which is a CW-complex, we can define a "group structure up to homotopy" considering a based continuous map $\mu:K(A,n)\times K(A,n)\to K(A,n)$, which is unique up to homotopy, that realizes addition, i.e. makes the following diagram commute:
+We observe first that for an abelian group $A$ and $n>1$, an EM-space $K(A,n)$ can be seen as an "abelian group up to homotopy". Indeed, given a $K(A,n)$ which is a CW-complex, using theorem \ref{theorem:correspondence-maps-and-group-morphisms-EM} we can define a "group structure up to homotopy" considering a based continuous map $\mu:K(A,n)\times K(A,n)\to K(A,n)$, which is unique up to homotopy, that realizes addition, i.e. makes the following diagram commute:
 \[
 \begin{tikzcd}
 \pi_n(K(A,n)\times K(A,n),(*,*)) \ar[d,"\cong"] \ar[r,"\mu_*"] & \pi_n(K(A,n),*)\\

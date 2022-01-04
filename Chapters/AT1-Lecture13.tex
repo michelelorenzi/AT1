@@ -11,6 +11,7 @@ For $n\geq2$, we have $\Omega K(A,n)=K(A,n-1)$.\rightnote{Sometimes the notation
 We want to show existence and uniqueness (up to homotopy) of EM-spaces. For the existence part, it is better to treat the dimension 1 case separately (the reason is that in this case we do not have Hurewicz's theorem).
 
 \section{Construction of Classifying Spaces.}
+\label{section:construction-of-classifying-spaces}
 
 A space of type $(G,1)$ is also denoted $BG$, and called the \tbf{classifying space} for $G$.
 
@@ -66,13 +67,13 @@ We apply this theorem to $Y=EG$. The right translation action of $G$ on itself i
 is a covering space with deck transformation group $G$. Since $|EG|$ is contractible $|(EG)/G|$ is a $K(G,1)$.
 
 \begin{remark}
-The \textbf{bar-construction} $BG$ of a group $G$ is the simplicial set $(BG)_n=G^n$ and
+The \textbf{bar-construction} $BG$ of a group $G$ (introduced in AT1Sheet 4) is the simplicial set $(BG)_n=G^n$ with structure maps:
 \[d^*_i(g_1,\dots,g_n)=\begin{cases}
 (g_2,\dots,g_n) & i=0\\
 (g_1,\dots,g_ig_{i+1},\dots,g_n) & 1\leq i\leq n-1\\
 (g_1,\dots,g_\ni)
 \end{cases}\]
-\[s^*_i(g_1,\dots,g_n)=(g_1,\dots,g_{i-1},1,g_{i+1},\dots,g_n)\]
+\[s^*_i(g_1,\dots,g_n)=(g_1,\dots,g_{i-1},1,g_{i+1},\dots,g_n).\]
 
 \begin{lemma}
 The simplicial sets $EG/G$ and $BG$ are isomorphic. Therefore $|BG|$ is homeomorphic to $|EG/G|$, hence a $K(G,1)$.
@@ -92,7 +93,7 @@ We also have explicit isomorphism (see AT1Sheet4-1):
 \begin{align*}
     G&\to\pi_1(|BG|,1)\\
     g&\mapsto\cb{[0,1]\to|BG|}\\
-    t&\mapsto[(g,(t,1-t))]\cont G\times\sx{1}\to|BG|
+    t&\mapsto[(g,(t,1-t))]\cont G\times\sx{1}\to|BG|.
 \end{align*}
 
 \tbf{What do classifying spaces classify?} --- A short digression on what the classifying space $BG=K(G,1)$ actually classifies. Let $G$ be a group. A \textbf{$G$-principal bundle} is a $G$-space $X$ with the following property: for every $xG\in X/G$ there is an open neighbourhood $U$ of $xG$ in $X/G$ and a $G$-equivariant homeomorphism $p^{-1}(U)\to U\times G$ (making the usual diagram commute) where $p:X\to X/G$ is the quotient map.

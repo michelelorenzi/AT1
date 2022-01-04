@@ -43,7 +43,7 @@ Let $f:\ring I^n\to\ring I^n $ be an open embedding, $p\in\ring I^n$. We have th
     \end{tikzcd}
 \end{center}
 \end{definition}
-where the maps are all isomorphisms by homotopies and excision, hence they induce the dashed arrow. This is an automorphism of $H_n\pair\cong\Z$ and thus $d=\pm1$. One can show this is independent of $p$, hence we call it the local degree of $f$, and write $\deg(f)=d$.
+where the maps are all isomorphisms by homotopies and excision, hence they induce the dashed arrow. This is an automorphism of $H_n\pair\cong\Z$ and thus $d=\pm1$. One can show this is independent of $p$, hence we call it the \tbf{local degree} of $f$, and write $\deg(f)=d$.
 
 \begin{lemma}
 For $1\leq i\leq k$, let $\Uu_i\subset f_i(\ring I^n)$ be any non-empty open set. Then $g$ is homotopic relative to $I^n\sm f(\mathring{I}^n)$ to a map that sends $f(I^n)\sm\mathcal{U}_i$ to $A$.
@@ -76,7 +76,7 @@ Well-definedness and continuity of the function follow from the universal proper
 Thus to show that $H'$ is continuous, it suffices to show that the maps $H'\circ (f_i\times I)$ and $H'|_{(I^n\sm f(\ring I^n))\times I}$ are continuous, which follows from the construction.\todo{Not sure how this works, to be honest}
 \end{proof}
 
-\begin{proof}[Proof of the homotopy addition theorem]\renewcommand{\qedsymbol}{\textit{To be continued...}} Induction on $k$.
+\begin{proof}[Proof of the homotopy addition theorem (\ref{theorem:HAT})]\renewcommand{\qedsymbol}{\textit{To be continued...}} Induction on $k$.
 
 $(k=1)$ Take a cube $Z_1\subset f_i(\mathring{I}^n)$. By the lemma we may assume that $g(I^n\sm\mathring{Z}_1)\subset A$. Our goal is to construct some $f_1':(I^n,\de I^n)\to(I^n,\de I^n)$ with $[gf_1]=[gf_1']$. There exists\normalmarginpar\marginnote{\footnotesize The homotopy $Q$ is the same kind of "pushing out" homotopy that we already considered in the proof of the lemma.} a homotopy $Q$ from $\id_{I^n}$ to a map $p$ such that:
 \begin{itemize}
