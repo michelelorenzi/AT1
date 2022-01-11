@@ -1,0 +1,76 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline List of Lectures}{iv}{chapter*.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {I}Hurewicz Theorem}{1}{chapter.1}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Introduction}{1}{section*.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline A First Look to Hurewicz Theorem}{1}{section*.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {unnumparr}{\nonumberline Naturality of the Hurewicz map.\hskip .5em\relax ---\hskip .5em\relax }{2}{section*.5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {unnumparr}{\nonumberline The Hurewicz map is a group homomorphism.\hskip .5em\relax ---\hskip .5em\relax }{2}{section*.6}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Some Consequences of Hurewicz Theorem}{4}{section*.7}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Getting Rid of the Basepoint}{5}{section*.8}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline The Homotopy Addition Theorem}{6}{section*.10}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline My First Non-Trivial Homotopy Group}{10}{section*.12}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Reminder on Simplicial Sets}{12}{section*.13}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Proof of Hurewicz Theorem}{16}{section*.16}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {II}Fibre Bundles and Fibrations}{20}{chapter.2}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Generalities on Fibre Bundles}{20}{section*.17}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Hopf Fibration}{21}{section*.18}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline The Long Exact Sequence Associated to a Serre Fibration}{24}{section*.19}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline More on Fibre Bundles and Fibrations}{28}{section*.21}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {unnumparr}{\nonumberline Induced fibres bundles/fibrations.\hskip .5em\relax ---\hskip .5em\relax }{29}{section*.22}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {III}Mapping Spaces}{32}{chapter.3}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Compact-open Topology}{32}{section*.23}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Path Spaces and Loop Spaces}{37}{section*.24}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\nonumberline Loop Shifts the Homotopy Groups}{38}{section*.25}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Mapping Spaces and Serre Fibrations}{39}{section*.26}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Turning Maps into Fibrations, up to Homotopy}{40}{section*.27}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Relative Homotopy Groups of a Map}{42}{section*.29}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {IV}Eilenberg-MacLane Spaces and Representability of Cohomology}{45}{chapter.4}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Construction of Classifying Spaces.}{46}{section*.31}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Construction of EM-Spaces}{48}{section*.33}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Uniqueness of EM-Spaces}{50}{section*.35}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Representability of Cohomology}{54}{section*.37}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\nonumberline The Fundamental Cohomology Class}{55}{section*.40}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline CW Approximation}{60}{section*.43}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline Some Applications: Classifying Cohomology Operations}{62}{section*.46}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {V}Spaces and Simplicial Sets: an Introduction to Homotopy Theory (?)}{66}{chapter.5}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\nonumberline The Preferred CW-structure on the Geometric Realization}{66}{section*.48}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\nonumberline Minimal Representatives}{67}{section*.49}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\nonumberline The Skeleta filtration}{69}{section*.50}% 
