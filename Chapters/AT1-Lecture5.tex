@@ -4,8 +4,10 @@
 
 Given two simplicial sets $X$ and $Y$, their product $X\times Y$ is the functor \[\Delta^\op\xto{(X,Y)}\Set\times\Set\xto{\times}\Set\] i.e. $(X\times Y)_n=X_n\times Y_n$ and $\alpha^*_{X\times Y}=\alpha^*_X\times\alpha^*_Y$.
 
-The \textbf{simplicial $n$-simplex} is the represented simplicial set $\Delta[n]:=\Delta(-,[n])$. By the Yoneda lemma, for every simplicial set $X$, the map $\sSet(\Delta[n],X)\to X_n$, $(f:\Delta[n]\to X)\mapsto f_n(\id_{[n]})$, is bijective.
+The \textbf{simplicial $n$-simplex} is the represented simplicial set $\Delta[n]:=\Delta(-,[n])$. By the Yoneda lemma, for every simplicial set $X$, the map $$\sSet(\Delta[n],X)\to X_n \qquad (f:\Delta[n]\to X)\mapsto f_n(\id_{[n]})$$
+is bijective.
 
+% It is better not to use $Y$ as both simplicial set and space in the same page. Personally I would use $Z$, $W$ to represent simplicial sets.
 A \textbf{homotopy between morphisms} $f,g:X\to Y$ in $\sSet$ is a morphism $H:X\times\Delta[1]\to Y$ such that $H\circ i_0=f$ and $H\circ i_1=g$, where $i_0,i_1:X\to X\times\Delta[1]$ (note: the morphism $i_j$ has components $(i_j)_n:X_n\to X_n\times\Delta([n],[1])$, $x\mapsto(x,\text{cost}_j)$).
 
 The topological simplex $\nabla^n=\cb{(\xso)\in\R^{n+1}\mid x_i\geq0,\ \sum x_i=1}$ has a preferred CW-structure with $\sk_k(\nabla^n)=\cb{(\xso)\in\nabla^n\mid\text{at most }k+1\text{ cordinates are non-zero}}$, i.e. $\sk_k(\ns)$ is the union of all $k$-dimensional faces of $\ns$:
@@ -44,7 +46,7 @@ from the identity to a morphism with image in $\S(X,A,k)$ that is relative to $\
 
 We first prove a proposition.
 
-Let $X$ be a simplicial set and $x\in X_n$, for $n\geq0$. Then the $n$-simplex $x$ is \textbf{degenerate} if there is a surjective morphism $\sigma:[n]\to [k]$ with $k<n$, and $y\in X_k$ such that $X=\sigma^*(y)$ (i.e. $x\in\im(\sigma^*:X_k\to X_n)$).
+Let $X$ be a simplicial set and $x\in X_n$, for $n\geq0$. Then the $n$-simplex $x$ is \textbf{degenerate} if there is a surjective morphism $\sigma:[n]\to [k]$ with $k<n$, and $y\in X_k$ such that $x=\sigma^*(y)$ (i.e. $x\in\im(\sigma^*:X_k\to X_n)$).
 
 \begin{proposition}\label{proposition:non-degenerate-simplices}
 Let $X$ be a simplicial set and $x\in X_n$ any simplex. Then there is a unique pair $(\sigma,y)$ consisting of:
@@ -155,7 +157,7 @@ that is, in the simplicial dimension $n$, we need to specify a map
 
 We do this via an adjunction bijection:
 \begin{multline*}
-    \Hom_\sSet(Z\times\Delta[1],\S(X))\cong\\
+    \Hom_\sSet(Z\times\Delta[1],\S(X))\\
     \cong\cb{\psi_f:\nabla^n\times\nabla^1\to X \text{ for all } n\geq0, z\in Z_n,\text{ such that } \psi_{\alpha^*(z)}=\psi_Z(\alpha_*\circ\nabla^1)}
 \end{multline*}
 

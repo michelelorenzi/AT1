@@ -38,7 +38,7 @@ The strategy to prove this theorem is inductive: we want to reduce the problem t
 Let $f:\ring I^n\to\ring I^n $ be an open embedding, $p\in\ring I^n$. We have that $f$ induces a commutative diagram:
 \begin{center}
     \begin{tikzcd}
-    H_n(\ring I^n,\ring I^n\sm\cb{p}) \arrow[r, "i_*"] \arrow[d, "f_*" left] \arrow[dr, "f_*"] & H_n(I^n,I^n\sm\cb{p}) & H_n\pair \arrow[l, "i_*" above] \arrow[d, red, dashed, "d-"] \\
+    H_n(\ring I^n,\ring I^n\sm\cb{p}) \arrow[r, "i_*"] \arrow[d, "f_*" left] \arrow[dr, "f_*"] & H_n(I^n,I^n\sm\cb{p}) & H_n\pair \arrow[l, "i_*" above] \arrow[d, red, dashed, "d"] \\
     H_n(f(\ring I^n), f(\ring I^n)\sm\cb{f(p)}) \arrow[r, "i_*" below] & H_n(f(I^n),f(I^n)\sm\cb{f(p)}) & H_n\pair \arrow[l, "i_*" below]
     \end{tikzcd}
 \end{center}
@@ -60,17 +60,17 @@ which we can show is well defined. Let $x\in f_i(\de I^n)$, with preimage $y$, t
 
 Claim. We have a pushout
 \begin{center}
-    \begin{tikzcd}
-    \de I^n\times I \arrow[d, "i"] \arrow[r, "f_i|_{\de I^n}\times\id"] & (I^n\sm f_i(\ring I^n))\times I \arrow[d] \\
-    I^n\times I \arrow[r] & (I^n\times I)\amalg_{\de I^n\times I^n} ((I^n\sm f_i(\mathring{I}^n))\times I)
+    \begin{tikzcd}[column sep=20mm]
+    \de I^n\times I \arrow[d, "i"] \arrow[r, "f_i|_{\de I^n}\times\id"] & (I^n\sm f_i(\ring I^n))\times I \arrow[d, "i"] \\
+    I^n\times I \arrow[r, "f_i\times\id"] & I^n\times I
     \end{tikzcd}
 \end{center}
 Then,
-\[(I^n\times I)\amalg_{\de I^n\times I^n} ((I^n\sm f_i(\mathring{I}^n))\times I)\xto{(f_i\times\id,i)} I^n\times I\]
+\[(I^n\times I)\amalg_{\de I^n\times I} ((I^n\sm f_i(\mathring{I}^n))\times I)\xto{(f_i\times\id,i)} I^n\times I\]
 is a homeomorphism.
 
 \begin{claimproof}
-Well-definedness and continuity of the function follow from the universal property of the pushout. One can check that it is is bijective by a direct computation. Hence we have a continuous bijection from a quasi-compact space to an Hausdorff space, which is then a homeomorphism. 
+Well-definedness and continuity of the function follow from the universal property of the pushout. One can check that it is bijective by a direct computation. Hence we have a continuous bijection from a quasi-compact space to an Hausdorff space, which is then a homeomorphism. 
 \end{claimproof}
 
 Thus to show that $H'$ is continuous, it suffices to show that the maps $H'\circ (f_i\times I)$ and $H'|_{(I^n\sm f(\ring I^n))\times I}$ are continuous, which follows from the construction.\todo{Not sure how this works, to be honest}
@@ -78,13 +78,13 @@ Thus to show that $H'$ is continuous, it suffices to show that the maps $H'\circ
 
 \begin{proof}[Proof of the homotopy addition theorem (\ref{theorem:HAT})]\renewcommand{\qedsymbol}{\textit{To be continued...}} Induction on $k$.
 
-$(k=1)$ Take a cube $Z_1\subset f_i(\mathring{I}^n)$. By the lemma we may assume that $g(I^n\sm\mathring{Z}_1)\subset A$. Our goal is to construct some $f_1':(I^n,\de I^n)\to(I^n,\de I^n)$ with $[gf_1]=[gf_1']$. There exists\normalmarginpar\marginnote{\footnotesize The homotopy $Q$ is the same kind of "pushing out" homotopy that we already considered in the proof of the lemma.} a homotopy $Q$ from $\id_{I^n}$ to a map $p$ such that:
+$(k=1)$ Take a cube $Z_1\subset f_1(\mathring{I}^n)$. By the lemma we may assume that $g(I^n\sm\mathring{Z}_1)\subset A$. Our goal is to construct some $f_1':(I^n,\de I^n)\to(I^n,\de I^n)$ with $[gf_1]=[gf_1']$. There exists\normalmarginpar\marginnote{\footnotesize The homotopy $Q$ is the same kind of "pushing out" homotopy that we already considered in the proof of the lemma.} a homotopy $Q$ from $\id_{I^n}$ to a map $p$ such that:
 \begin{itemize}
     \item $p|_{Z_1}=\id_{Z_1}$
-    \item $p(I^n\sm\mathring{Z}_1)\subset\de I^n$
+    \item $p(I^n\sm f_1(\mathring{I}^n))\subset\de I^n$
     \item $Q((I^n\sm\mathring{Z}_1)\times I)\subset I^n\sm \mathring{Z}_1$
 \end{itemize}
-Now, $Qf_1$ is a homotopy of maps of pairs $(I^n,\de I^n)\to(I^n,I^n\sm\mathring{Z}_1)$. Then $gQf_1$ will be a homotopy of maps of pairs $(I^n,\de I^n)\to(X,A)$, hence $[gpf_1]=[gf_1]$ in $\pi_n(X,A)^\#$. Then $f_1':= pf_1$ is a map of pairs $(I^n,\de I^n)\to(I^n,\de I^n)$ and $f_1\simeq f_1'$ as maps of pairs $(I^n,\de I^n)\to(I^n,I^n\sm \mathring{Z}_1)$.
+Now, $Qf_1$ is a homotopy of maps of pairs $f_1,pf_1: (I^n,\de I^n)\to(I^n,I^n\sm\mathring{Z}_1)$. Then $gQf_1$ will be a homotopy of maps of pairs $(I^n,\de I^n)\to(X,A)$, hence $[gpf_1]=[gf_1]$ in $\pi_n(X,A)^\#$. Then $f_1':= pf_1$ is a map of pairs $(I^n,\de I^n)\to(I^n,\de I^n)$ and $f_1\simeq f_1'$ as maps of pairs $(I^n,\de I^n)\to(I^n,I^n\sm \mathring{Z}_1)$.
 
 Claim.\reversemarginpar\marginnote{\footnotesize We are dealing with two different notions of degree, the usual one for $f'_1$ and the local degree for $f_1$.} $\deg f_1$ equals the degree of $f_1'$ as a map $(I^n,\de I^n)\to(I^n,\de I^n)$.
 

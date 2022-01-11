@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  11 JAN 2022 21:00
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  12 JAN 2022 00:15
 entering extended mode
 **./AT1.tex
 (AT1.tex
@@ -2045,10 +2045,10 @@ Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
 
 (Pictures/Lec4Pic1.tex) (Pictures/Lec4Pic2.tex [9]) [10] [11]
 Package marginnote Info: Margin note 18.1 is on absolute page 18 on input line 
-112.
-Package marginnote Info: right page because not two side mode on input line 112
+114.
+Package marginnote Info: right page because not two side mode on input line 114
 .
-Package marginnote Info: xpos seems to be 161.83495pt on input line 112.
+Package marginnote Info: xpos seems to be 161.83495pt on input line 114.
 )
 (Chapters/AT1-Lecture5.tex
 Package marginnote Info: Margin note 18.2 is on absolute page 18 on input line 
@@ -2057,21 +2057,20 @@ Package marginnote Info: right page because not two side mode on input line 3.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
  [12] [13] [14]
 Package marginnote Info: Margin note 21.1 is on absolute page 21 on input line 
-111.
-Package marginnote Info: right page because not two side mode on input line 111
+113.
+Package marginnote Info: right page because not two side mode on input line 113
 .
-Package marginnote Info: xpos seems to be 389.96959pt on input line 111.
- (Pictures/Lec5Pic1.tex)
-(Pictures/Lec5Pic2.tex [15])) (Chapters/AT1-Lecture6.tex
-Package marginnote Info: Margin note 22.1 is on absolute page 22 on input line 
+Package marginnote Info: xpos seems to be 389.96959pt on input line 113.
+ (Pictures/Lec5Pic1.tex) [15]
+(Pictures/Lec5Pic2.tex)) (Chapters/AT1-Lecture6.tex
+Package marginnote Info: Margin note 22.1 is on absolute page 23 on input line 
 5.
 Package marginnote Info: right page because not two side mode on input line 5.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 5.
  [16]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 20.
-
-(Pictures/Lec6Pic1.tex [17]) (Pictures/Lec6Pic2.tex [18]) [19]
+ (Pictures/Lec6Pic1.tex [17]) (Pictures/Lec6Pic2.tex [18]) [19]
 chapter II.
 [20
 
@@ -2326,10 +2325,10 @@ Package logreq Info: Writing requests to 'AT1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57099 strings out of 427748
- 1165236 string characters out of 3150981
- 1655313 words of memory out of 3000000
- 60357 multiletter control sequences out of 15000+200000
+ 57100 strings out of 427748
+ 1165259 string characters out of 3150981
+ 1655311 words of memory out of 3000000
+ 60358 multiletter control sequences out of 15000+200000
  661966 words of font info for 108 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
  82i,21n,115p,9084b,5045s stack positions out of 5000i,500n,10000p,200000b,50000s

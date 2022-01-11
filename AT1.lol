@@ -22,7 +22,7 @@
 \defcounter {refsection}{0}\relax 
 \vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{A lot of simplicial stuff.}\par 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Lecture~6 (3\textsuperscript {rd}~\DTMmonthname {11},~2021)}{16}{section*.16}% 
+\contentsline {chapter}{\nonumberline Lecture~6 (3\textsuperscript {rd}~\DTMmonthname {11},~2021)}{17}{section*.16}% 
 \defcounter {refsection}{0}\relax 
 \vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Hurewicz theorem at last! Then some generalities about fibre bundles.}\par 
 \defcounter {refsection}{0}\relax 

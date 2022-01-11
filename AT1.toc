@@ -23,7 +23,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\nonumberline Reminder on Simplicial Sets}{12}{section*.13}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\nonumberline Proof of Hurewicz Theorem}{16}{section*.16}% 
+\contentsline {section}{\nonumberline Proof of Hurewicz Theorem}{17}{section*.16}% 
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {II}Fibre Bundles and Fibrations}{20}{chapter.2}% 
 \defcounter {refsection}{0}\relax 
