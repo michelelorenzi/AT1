@@ -103,8 +103,8 @@ $(n=0)$ The map $f:\nabla^0\to X$ is determined by its image $f(e_0)\in X$. Sinc
 
 $(n\geq1)$ We distinguish three cases:
 
-Case 1. $f:\nabla^n\to X_n$ is degenerate as a simplex of the simplicial set $\S(X)$. Then $f=\sigma^*(g)$ for a unique pair $(\sigma,g)$ with $\sigma:[n]\onto[k]$, $k<n$ and $g:\nabla^k\to X$ continuous. By (c) we have to define $\psi_f$ as the composite
-\[\nabla^n\times\nabla^1\xto{\sigma_*\times\id}\nabla^k\times\nabla^1\xto{\psi_g} X\]
+Case 1. $f:\nabla^n\to X$ is degenerate as a simplex of the simplicial set $\S(X)$. Then $f=\sigma^*(g)$ for a unique pair $(\sigma,g)$ with $\sigma:[n]\onto[m]$, $m<n$ and $g:\nabla^m\to X$ continuous. By (c) we have to define $\psi_f$ as the composite
+\[\nabla^n\times\nabla^1\xto{\sigma_*\times\id}\nabla^m\times\nabla^1\xto{\psi_g} X\]
 
 Case 2. $f:\nabla^n\to X$ is non-degenerate and $k<n$. We note that by property $(c)$, the map $\psi_f:\nabla^n\times\nabla^1\to X$ is already fixed on $(\de\nabla^n)\times\nabla^1$; by $(a)$ it is also determined on $\nabla^n\times e_0$.
 
@@ -157,8 +157,8 @@ that is, in the simplicial dimension $n$, we need to specify a map
 
 We do this via an adjunction bijection:
 \begin{multline*}
-    \Hom_\sSet(Z\times\Delta[1],\S(X))\\
-    \cong\cb{\psi_f:\nabla^n\times\nabla^1\to X \text{ for all } n\geq0, z\in Z_n,\text{ such that } \psi_{\alpha^*(z)}=\psi_Z(\alpha_*\circ\nabla^1)}
+    \Hom_\sSet(Z\times\Delta[1],\S(X))\cong \Mor(|Z\times\Delta[1]|,X)\\
+    \cong\cb{\psi_z:\nabla^n\times\nabla^1\to X \text{ for all } n\geq0, z\in Z_n,\text{ such that } \psi_{\alpha^*(z)}=\psi_z(\alpha_*\circ\nabla^1)}
 \end{multline*}
 
 \textit{Sketch} (full argument as an exercise).

@@ -46,7 +46,7 @@ Let $G$ be a topological group. A principal $G$-bundle is a $G$-space $E$ such t
 
 \begin{example}
 The group action of the additive group of the real numbers with the discrete topology on itself (with the standard topology):
-\[\R^d\times\R\to\R\]
+\[\R\times\R\to\R\]
 is an example of free action which does not satisfy property (2).
 \end{example}
 
@@ -94,11 +94,14 @@ The Hopf fibration decomposes $S^3$ as a disjoint union of circles, continuously
 It can be shown that any two of them are linked!
 
 Considering $\eta:S^3\to S^2$ and $x_1\neq x_2\in S^2$
-\[s:S^3\supset\eta^{-1}(x_1)\times\eta^{-1}(x_2)\to S^2,\ (x,y)\to\frac{x-y}{||x-y||}\]
+\[s:\eta^{-1}(x_1)\times\eta^{-1}(x_2)\to S^2,\ (x,y)\to\frac{x-y}{||x-y||}\]
+% I really doubt if we have $\eta^{-1}(x_1)\times\eta^{-1}(x_2)$ contained in $S^3$ in a natural way.
 is continuous. Choosing orientations on $S^2$ and $\eta^{-1}(x_1)\times\eta^{-1}(x_2)\cong S^1\times S^1$, we can consider the mapping degree of $s$. This is an example of an invariant for links called the \textbf{linking number} and it will be $\pm1$ in this case.
+\rightnote{I would recommand \href{https://www.youtube.com/watch?v=yNpqLMpfxA8&list=PL3C690048E1531DC7&index=7}{Dimension: a walk through mathematics} for the animation of Hopf fibration.}
 \end{remark}\smallskip
 
-\begin{center}\rightnote{Someday I'll really wrap my head around this picture... (but maybe it's just not \textit{that} illuminating?)}
+\begin{center}\rightnote{Someday I'll really wrap my head around this picture... (but maybe it's just not \textit{that} illuminating?)
+}
     \includegraphics[scale=0.45]{Pictures/HopfFibration.jpg}
 \end{center}
 

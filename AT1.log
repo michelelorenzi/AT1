@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  12 JAN 2022 00:15
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  12 JAN 2022 17:57
 entering extended mode
 **./AT1.tex
 (AT1.tex
@@ -1737,28 +1737,28 @@ Class scrbook Info: using compatibility default `afterindent=bysign'
 \c@unnumparr=\count475
 ) (shortcutsAT1.sty
 \arrowlength=\skip104
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 291.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 292.
 
 
 ("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ot1lmr.
 fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 291.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 292.
 
 
 ("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omllmm.
 fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 291
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 292
 .
 
 ("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmsy
 .fd"
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 291
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 292
 .
 
 ("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omxlmex
@@ -1766,24 +1766,24 @@ LaTeX Font Info:    Try loading font information for OMX+lmex on input line 291
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 291.
+(Font)              <10> on input line 292.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 291.
+(Font)              <7> on input line 292.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 291.
-LaTeX Font Info:    Try loading font information for U+msa on input line 291.
+(Font)              <5> on input line 292.
+LaTeX Font Info:    Try loading font information for U+msa on input line 292.
 
 ("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\u
 msa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 291.
+LaTeX Font Info:    Try loading font information for U+msb on input line 292.
 
 ("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\u
 msb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 291.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 292.
 
 
 ("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/stmaryrd\u
@@ -2082,18 +2082,23 @@ Package marginnote Info: right page because not two side mode on input line 5.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 5.
  [21] [22]
 Package marginnote Info: Margin note 29.1 is on absolute page 29 on input line 
-101.
-Package marginnote Info: right page because not two side mode on input line 101
+100.
+Package marginnote Info: right page because not two side mode on input line 100
 .
-Package marginnote Info: xpos seems to be 165.46352pt on input line 101.
+Package marginnote Info: xpos seems to be 274.52203pt on input line 100.
+Package marginnote Info: Margin note 29.2 is on absolute page 29 on input line 
+104.
+Package marginnote Info: right page because not two side mode on input line 104
+.
+Package marginnote Info: xpos seems to be 165.46352pt on input line 104.
 File: Pictures/HopfFibration.jpg Graphic file (type bmp)
 <Pictures/HopfFibration.jpg>
  [23]
 Package marginnote Info: Margin note 30.1 is on absolute page 30 on input line 
-115.
-Package marginnote Info: right page because not two side mode on input line 115
+118.
+Package marginnote Info: right page because not two side mode on input line 118
 .
-Package marginnote Info: xpos seems to be 332.4185pt on input line 115.
+Package marginnote Info: xpos seems to be 332.4185pt on input line 118.
  [24])
 (Chapters/AT1-Lecture8.tex
 Package marginnote Info: Margin note 31.1 is on absolute page 31 on input line 
@@ -2325,10 +2330,10 @@ Package logreq Info: Writing requests to 'AT1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57100 strings out of 427748
- 1165259 string characters out of 3150981
- 1655311 words of memory out of 3000000
- 60358 multiletter control sequences out of 15000+200000
+ 57101 strings out of 427748
+ 1165272 string characters out of 3150981
+ 1655333 words of memory out of 3000000
+ 60359 multiletter control sequences out of 15000+200000
  661966 words of font info for 108 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
  82i,21n,115p,9084b,5045s stack positions out of 5000i,500n,10000p,200000b,50000s
