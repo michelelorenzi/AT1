@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  12 JAN 2022 17:57
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  12 JAN 2022 22:10
 entering extended mode
 **./AT1.tex
 (AT1.tex
@@ -2330,10 +2330,10 @@ Package logreq Info: Writing requests to 'AT1.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57101 strings out of 427748
- 1165272 string characters out of 3150981
- 1655333 words of memory out of 3000000
- 60359 multiletter control sequences out of 15000+200000
+ 57109 strings out of 427748
+ 1165485 string characters out of 3150981
+ 1654333 words of memory out of 3000000
+ 60367 multiletter control sequences out of 15000+200000
  661966 words of font info for 108 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
  82i,21n,115p,9084b,5045s stack positions out of 5000i,500n,10000p,200000b,50000s
