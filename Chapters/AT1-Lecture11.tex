@@ -52,7 +52,7 @@ Let $Z$ be any space, $(X,A)$ a relative CW-complex with $X$ and $A$ finite CW-c
 \begin{proof}
 We show that $\incl^*$ has the HLP with respect to all CW-complexes $Q$. So we consider a lifting diagram
 \[\begin{tikzcd}
-Q\times0 \arrow[d,hook] \arrow[r,"f"] & Z \arrow[d,"\incl^*"] \\
+Q\times0 \arrow[d,hook] \arrow[r,"f"] & Z^X \arrow[d,"\incl^*"] \\
 Q\times[0,1] \arrow[r,"\Phi"] & Z^A
 \end{tikzcd}\]
 Since $X$ and $A$ are locally compact we can use the exponential law to adjoint $f$ and $\Phi$ to continuous maps
@@ -63,7 +63,7 @@ The condition $\incl^*\circ f=\Phi|_{Q\times0}$ becomes the relation that $\til 
 We consider the glued maps
 \[\til f\cup\til\Phi:X\times Q\times 0\cup A\times Q\times[0,1]\to Z.\]
 
-Since $(X\times Q,A\times Q)$ is a relative CW-complex, it has the HEP so there is a continuous extension $H:X\times Q\times[0,1]\to Z$ that extends $\til f$ and $\til\Phi$. The adjoint $H^\#:Q\times[0,1]\to Z^X$ of $H$ then solves the original lifting problem.
+Since $(X\times Q \times [0,1],X\times Q\times 0\cup A\times Q\times[0,1])$ is a relative CW-complex, it has the HEP so there is a continuous extension $H:X\times Q\times[0,1]\to Z$ that extends $\til f$ and $\til\Phi$. The adjoint $H^\#:Q\times[0,1]\to Z^X$ of $H$ then solves the original lifting problem.
 \end{proof}
 
 For the relative CW-complex $([0,1],\cb{0,1})$ the theorem says that the restriction map
@@ -102,7 +102,7 @@ so the homotopy $\til H^*$ ends in the constant map at $z_0$.
 For all $w\in EZ$, $\til H^*(w,0)(s)=w(t(s,0))=w(s)$, so $\til H^*(w,0)=w$.
 \end{proof}
 
-Now we can see that $\pi_n(\Omega,*)\cong\pi_{n+1}(Z,z_0)$ is a group morphism.
+Now we can see that $\pi_n(\Omega Z,*)\cong\pi_{n+1}(Z,z_0)$ is a group morphism.
 
 \begin{proof}[Second proof/construction of the isomorphism $\pi_n(\Omega Z,*)\cong\pi_{n+1}(Z,z_0)$]
 
@@ -125,14 +125,19 @@ of a homotopy equivalence followed by a Serre fibration.
 \end{theorem}
 
 \begin{proof}
-Let $Ef=X\times_Y Y^{[0,1]}=\cb{(x,w)\in X\times Y^{[0,1]}\mid f(x)=w(0)}$. More precisely, $Ef$ is the pullback:
+Let 
+$$Ef=X\times_Y Y^{[0,1]}=\cb{(x,w)\in X\times Y^{[0,1]}\mid f(x)=w(0)}.$$
+More precisely, $Ef$ is the pullback:
 \[\begin{tikzcd}
 Ef \arrow[d] \arrow[r] & Y^{[0,1]} \arrow[d] &[-6ex] w \ar[d,mapsto] \\
 X \arrow[r,"f"] & Y & w(0)
 \end{tikzcd}\]
 
-We define natural continuous maps $h:X\to Ef$ by $h(x)=(x,\const_{f(x)})$ and $p:Ef\to Y$ by $p(x,w)=w(1)$.
-
+We define natural continuous maps 
+\begin{align*}
+    &h:X\longrightarrow Ef\qquad x\longmapsto (x,\const_{f(x)})\\
+    &p:Ef\longrightarrow Y \qquad (x,w)\longmapsto w(1).
+\end{align*}
 Clearly we have $f=p\circ h$.
 
 We observe that $Ef$ can be described as a slightly different pullback:

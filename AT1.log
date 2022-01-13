@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  13 JAN 2022 11:25
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  13 JAN 2022 21:25
 entering extended mode
 **./AT1.tex
 (AT1.tex
@@ -2177,13 +2177,13 @@ Package marginnote Info: Margin note 45.1 is on absolute page 45 on input line
 Package marginnote Info: right page because not two side mode on input line 49.
 
 Package marginnote Info: xpos seems to be 165.16008pt on input line 49.
- [39] [40]) (Chapters/AT1-Lecture12.tex
-Package marginnote Info: Margin note 47.1 is on absolute page 48 on input line 
+ [39] [40] [41])
+(Chapters/AT1-Lecture12.tex
+Package marginnote Info: Margin note 48.1 is on absolute page 48 on input line 
 3.
 Package marginnote Info: right page because not two side mode on input line 3.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
-
-[41] [42] [43] [44]
+ [42] [43] [44]
 chapter IV.
 Package marginnote Info: Margin note 51.1 is on absolute page 51 on input line 
 131.
