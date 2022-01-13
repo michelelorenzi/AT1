@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  12 JAN 2022 22:10
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  13 JAN 2022 11:25
 entering extended mode
 **./AT1.tex
 (AT1.tex
@@ -2157,28 +2157,28 @@ Package marginnote Info: right page because not two side mode on input line 3.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
  [34]
 Package marginnote Info: Margin note 41.1 is on absolute page 41 on input line 
-57.
-Package marginnote Info: right page because not two side mode on input line 57.
+59.
+Package marginnote Info: right page because not two side mode on input line 59.
 
-Package marginnote Info: xpos seems to be 379.66884pt on input line 57.
+Package marginnote Info: xpos seems to be 379.66884pt on input line 59.
  [35] [36])
 (Chapters/AT1-Lecture11.tex
-Package marginnote Info: Margin note 43.1 is on absolute page 43 on input line 
+Package marginnote Info: Margin note 43.1 is on absolute page 44 on input line 
 3.
 Package marginnote Info: right page because not two side mode on input line 3.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
-Package marginnote Info: Margin note 43.2 is on absolute page 43 on input line 
+Package marginnote Info: Margin note 43.2 is on absolute page 44 on input line 
 5.
 Package marginnote Info: right page because not two side mode on input line 5.
 Package marginnote Info: xpos seems to be 267.54672pt on input line 5.
- [37]
-Package marginnote Info: Margin note 44.1 is on absolute page 45 on input line 
+ [37] [38]
+Package marginnote Info: Margin note 45.1 is on absolute page 45 on input line 
 49.
 Package marginnote Info: right page because not two side mode on input line 49.
 
 Package marginnote Info: xpos seems to be 165.16008pt on input line 49.
- [38] [39] [40]) (Chapters/AT1-Lecture12.tex
-Package marginnote Info: Margin note 47.1 is on absolute page 47 on input line 
+ [39] [40]) (Chapters/AT1-Lecture12.tex
+Package marginnote Info: Margin note 47.1 is on absolute page 48 on input line 
 3.
 Package marginnote Info: right page because not two side mode on input line 3.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 3.

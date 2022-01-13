@@ -46,11 +46,11 @@
 \defcounter {refsection}{0}\relax 
 \vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Legend has it that if you repeat compact-open for two hours loop spaces will appear.}\par 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Lecture~11 (22\textsuperscript {nd}~\DTMmonthname {11},~2021)}{37}{section*.24}% 
+\contentsline {chapter}{\nonumberline Lecture~11 (22\textsuperscript {nd}~\DTMmonthname {11},~2021)}{38}{section*.24}% 
 \defcounter {refsection}{0}\relax 
 \vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{We continue studying mapping spaces.}\par 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Lecture~12 (24\textsuperscript {th}~\DTMmonthname {11},~2021)}{41}{section*.28}% 
+\contentsline {chapter}{\nonumberline Lecture~12 (24\textsuperscript {th}~\DTMmonthname {11},~2021)}{42}{section*.28}% 
 \defcounter {refsection}{0}\relax 
 \vspace \smallskipamount \hspace {1.5em}\parbox {\dimexpr \textwidth - 2em- 1.5em}{Homotopy fibre and the homotopy groups of a map (wew).}\par 
 \defcounter {refsection}{0}\relax 
