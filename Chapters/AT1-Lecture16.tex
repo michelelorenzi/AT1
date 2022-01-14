@@ -56,7 +56,7 @@ For all $n\ge0$ and all abelian groups $A$, the evaluation map $\ev_{\iota}$ is 
 \begin{proof}
 Given the convention above, without loss of generality we can assume $n\ge1$.
 
-We start with a \enquote{universal example}, from which the general case will easily follow. Let $X=K(A,n)\times K(A,n)$ and $p_1,p_2:K(A,n)^2\to K(A,n)$ the projections. Observe that the sum $[p_1]+[p_2]$ is represented by the map $\mu$ realizing group addition:
+We start with a \enquote{universal example}, from which the general case will easily follow. Let $Y=K(A,n)\times K(A,n)$ and $p_1,p_2:K(A,n)^2\to K(A,n)$ the projections. Observe that the sum $[p_1]+[p_2]$ is represented by the map $\mu$ realizing group addition:
 \[
 K(A,n)\times K(A,n)\xto{(p_1,p_2)=\id}K(A,n)\times K(A,n)\xto{\mu}K(A,n),\]
 \[\text{i.e. } [p_1]+[p_2]=[\mu\circ(p_1,p_2)]=[\mu].
@@ -69,7 +69,7 @@ We will use the following isomorphism:
 \[ H^n(K(A,n)^2;A)\xto{\cong}\Hom(H_n(K(A,n)^2;\Z),A)\xto{\cong}\Hom(\pi_n(K(A,n)^2,*),A)\xto{\cong}\Hom(A\times A,A)\]}
 where the first isomorphism comes from the UCT and the second is the Hurewicz isomorphism. Under this isomorphism $\mu^*(\iota)$ corresponds to the addition $A\times A\to A$ and the projections to the corresponding projections $A\times A\to A$. But in $\Hom(A\times A,A)$ clearly we do have that the sum of the projections is the addition, hence the same holds in $H^n(K(A,n)^2;A)$.
 
-Now for the general case, let $X$ be an arbitrary space and $f,g:X\to K(A,n)$ continuous maps. Then we have:
+Now for the general case, let $Y$ be an arbitrary space and $f,g:Y\to K(A,n)$ continuous maps. Then we have:
 \begin{align*}
 (f+g)^*(\iota)=(\mu\circ(f,g))^*(\iota)=(f,g)^*(\mu^*(\iota))&=(f,g)^*(p_1^*(\iota)+p_2^*(\iota))\\
 &=(f,g)^*(p_1^*(\iota))+(f,g)^*(p_2^*(\iota))\\
@@ -84,13 +84,16 @@ is a bijection.
 \end{lemma}
 
 \begin{proof}
-We start by showing surjectivity. We will use that for $n\ge1$ any $K(A,n)$ is path-connected and that the inclusion of the basepoint $\cb{y}\into Y$ has the HEP\rightnote{Note (for those who studied the HEP long ago): clearly not every inclusion of a point has the HEP, this works (as always in this course) because $Y$ is a CW-complex.}. In particular, given any continuous map $f:X\to Y$, we can choose a path $w:[0,1]\to K(A,n)$ from $f(y)$ to $x\in K(A,n)$. The HEP for $(\cb{y},Y)$ lets us choose a homotopy $H:Y\times[0,1]\to K(A,n)$ starting with $f$ and such that $H(y,-)=w$. Then $g=H(-,1)$ is freely homotopic to $f$ and based, hence the forgetful map sends $[g]$ to $[f]$.
+We start by showing surjectivity. We will use that for $n\ge1$ any $K(A,n)$ is path-connected and that the inclusion of the basepoint $\cb{y}\into Y$ has the HEP\rightnote{Note (for those who studied the HEP long ago): clearly not every inclusion of a point has the HEP, this works (as always in this course) because $Y$ is a CW-complex.}. In particular, given any continuous map $f:Y\to K(A,n)$, we can choose a path $w:[0,1]\to K(A,n)$ from $f(y)$ to $x\in K(A,n)$. The HEP for $(\cb{y},Y)$ lets us choose a homotopy $H:Y\times[0,1]\to K(A,n)$ starting with $f$ and such that $H(y,-)=w$. Then $g=H(-,1)$ is freely homotopic to $f$ and based, hence the forgetful map sends $[g]$ to $[f]$.
 
 To show injectivity, we first consider the case $n=1$. Let $f,g:Y\to K(A,1)$ be based maps that are freely homotopic. Then we have:
 \[f_*=g_*:H_1(Y;\Z)\to H_1(K(A,1);\Z).\]
 Since $A$ is abelian, the map $\pi_1(K(A,1),x)\to H_1(K(A,1),\Z)$ is an isomorphism, hence we have:
 \[f_*=g_*:\pi_1(Y,y)\to \pi_1(K(A,1),x).\]
 By Theorem \ref{theorem:correspondence-maps-and-group-morphisms}\todo[color=red]{Does the theorem not require $Y$ to be connected?}, $f$ and $g$ are then based homotopic.
+
+%Answer to "todo": When $Y$ is not connected, suppose $Y=Y_1 \sqcup Y_2$ where $Y_1$ is the connected component of $y$. Then
+%\[[Y,K(A,n)]_* \cong [Y_1,K(A,n)]_* \times [Y_2,K(A,n)] \cong [Y_1,K(A,n)] \times [Y_2,K(A,n)] \cong [Y,K(A,n)]\]
 
 Now let $n\ge2$. We will exploit the fact that a $K(A,n)$ is then simply connected. Let $Z$ be (more generally) any simply-connected space, $f,g:Y\to Z$ two based continuous maps that are freely homotopic. Let $H:Y\times[0,1]\to Z$ be a free homotopy from $f$ to $g$. Then $w=H(y,-):[0,1]\to Z$ is a loop at the basepoint of $Z$. Since $Z$ is simply-connected, this loop is homotopic to the constant loop at the endpoint, relative to it, say by a homotopy $G:[0,1]\times[0,1]\to Z$. The HEP of the pair $(Y\times[0,1],Y\times\cb{0}\cup\cb{y}\times[0,1]\cup Y\times\cb{1})$ applied to
 \[K:(Y\times\cb{0}\cup\cb{y}\times[0,1]\cup Y\times\cb{1})\times[0,1]\xto{\const_f\cup\,G\,\cup\, \const g} Z\]
@@ -101,10 +104,10 @@ We are now ready to prove the result we promised.
 
 \begin{theorem}
 For all $n\ge0$, all abelian groups $A$ and all CW-complexes $Y$, the evaluation map
-\begin{align*}
-    [Y,K(A,n)]&\to H^n(Y;A)\\
-    [f]&\mapsto f^*(\iota)
-\end{align*}
+$$
+\ev_{\iota}: [Y,K(A,n)]\longrightarrow H^n(Y;A)\qquad
+[f:Y\to K(A,n)]\longmapsto f^*(\iota).
+$$
 is a group isomorphism.
 \end{theorem}
 
@@ -113,11 +116,11 @@ If $n=0$, we defined $K(A,0)$ as $A$ with the discrete topology, so clearly
 \[[Y,K(A,n)]=\Hom_\Set(\pi_0(Y),A)\cong H^0(Y;A)\]
 with addition in $[Y,K(A,n)]$ corresponding to pointwise addition in $\Hom_\Set(\pi_0(Y),A)$.
 
-Now let $n\ge1$. The theorem holds for $Y\ne\emptyset$ (since both sides are then $0$), so without loss of generality we can assume $Y$ is non-empty. We choose a basepoint $y\in Y$. We will start by proving the theorem in a special case, which will then be used to conclude in generality.
+Now let $n\ge1$. The theorem holds for $Y=\emptyset$ (since both sides are then $0$), so without loss of generality we can assume $Y$ is non-empty. We choose a basepoint $y\in Y$. We will start by proving the theorem in a special case, which will then be used to conclude in generality.
 
-Special case. Suppose $Y$ is $(n-1)$-connected. Then $H_\ni(Y;\Z)$ is trivial (if $n\ge2$, by Hurewicz) or at least free (if $n=1$), hence $\Ext(H_\ni(Y;\Z))$ vanishes and the morphism $\Phi:H^n(Y;A)\to\Hom(H_n(Y;\Z),A)$ from the UCT is an isomorphism. We also have that for $n\ge2$ the Hurewicz map $h:\pi_n(Y,y)\to H_n(Y;\Z)$ is an isomorphism, while for $n=1$ it is the universal homomorphism into the abelianization. In both cases precomposition yields an isomorphism
+\textbf{Special case.} Suppose $Y$ is $(n-1)$-connected. Then $H_\ni(Y;\Z)$ is trivial (if $n\ge2$, by Hurewicz) or at least free (if $n=1$), hence $\Ext^1(H_\ni(Y;\Z),\Z)$ vanishes and the morphism $\Phi:H^n(Y;A)\to\Hom(H_n(Y;\Z),A)$ from the UCT is an isomorphism. We also have that for $n\ge2$ the Hurewicz map $h:\pi_n(Y,y)\to H_n(Y;\Z)$ is an isomorphism, while for $n=1$ it is the universal homomorphism into the abelianization. In both cases precomposition yields an isomorphism
 \[\Hom(h,A):\Hom_\Grp(H_n(Y;\Z),A)\xto{\cong}\Hom_\Grp(\pi_n(Y,y),A).\]
 The composite
-\[[Y,K(A,n)]_*\xto{[f]\mapsto f^*(\iota)} H^n(Y;A)\underset{\cong}{\xto{\Phi}}\Hom(H_n(Y;\Z),A)\underset{\cong}{\xto{\Hom(h,A)}}\Hom_\Grp(\pi_n(Y,y),A)\]
-sends $[f]$ to $\pi_n(f):\pi_n(Y,y)\to\pi_n(K(A,n),*)\to A$, hence we know that it is a bijection by Theorem \ref{theorem:correspondence-maps-and-group-morphisms} (since $Y$ is a $(n-1)$-connected CW-complex and $K(A,n)$ has vanishing homotopy groups for $k>n$). Since the composite, the second and the third maps are bijections, the valuation at $\iota$ map $[f]\mapsto f^*(\iota)$ must also be.
+\[[Y,K(A,n)]_*\xto{\ev_{\iota}} H^n(Y;A)\underset{\cong}{\xto{\Phi}}\Hom(H_n(Y;\Z),A)\underset{\cong}{\xto{\Hom(h,A)}}\Hom_\Grp(\pi_n(Y,y),A)\]
+sends $[f]$ to $\pi_n(f):\pi_n(Y,y)\to\pi_n(K(A,n),*)\to A$, hence we know that it is a bijection by Theorem \ref{theorem:correspondence-maps-and-group-morphisms} (since $Y$ is a $(n-1)$-connected CW-complex and $K(A,n)$ has vanishing homotopy groups for $k>n$). Since the composite, the second and the third maps are bijections, the valuation map $\ev_{\iota}$ must also be.
 \end{proof}

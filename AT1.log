@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  14 JAN 2022 16:30
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  14 JAN 2022 20:57
 entering extended mode
 **./AT1.tex
 (AT1.tex
@@ -2238,7 +2238,7 @@ Package marginnote Info: Margin note 62.1 is on absolute page 63 on input line
 87.
 Package marginnote Info: right page because not two side mode on input line 87.
 
-Package marginnote Info: xpos seems to be 433.17352pt on input line 87.
+Package marginnote Info: xpos seems to be 410.12708pt on input line 87.
  [56] [57]) (Chapters/AT1-Lecture17.tex
 Package marginnote Info: Margin note 64.1 is on absolute page 64 on input line 
 3.
@@ -2247,25 +2247,25 @@ Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
 
 [58] [59]
 Package marginnote Info: Margin note 66.1 is on absolute page 66 on input line 
-94.
-Package marginnote Info: right page because not two side mode on input line 94.
+100.
+Package marginnote Info: right page because not two side mode on input line 100
+.
+Package marginnote Info: xpos seems to be 406.12703pt on input line 100.
 
-Package marginnote Info: xpos seems to be 406.12703pt on input line 94.
 
-
-LaTeX Warning: Citation 'Hatcher' on page 60 undefined on input line 96.
+LaTeX Warning: Citation 'Hatcher' on page 60 undefined on input line 103.
 
 Package marginnote Info: Margin note 66.2 is on absolute page 66 on input line 
-107.
-Package marginnote Info: right page because not two side mode on input line 107
+114.
+Package marginnote Info: right page because not two side mode on input line 114
 .
-Package marginnote Info: xpos seems to be 212.70633pt on input line 107.
+Package marginnote Info: xpos seems to be 304.8683pt on input line 114.
 
-LaTeX Warning: Citation 'Hatcher' on page 60 undefined on input line 107.
+LaTeX Warning: Citation 'Hatcher' on page 60 undefined on input line 114.
 
 [60]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 123.
+LaTeX Font Warning: Command \small invalid in math mode on input line 130.
 
 [61]) (Chapters/AT1-Lecture18.tex
 Package marginnote Info: Margin note 68.1 is on absolute page 68 on input line 
