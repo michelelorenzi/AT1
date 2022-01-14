@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  13 JAN 2022 21:25
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  14 JAN 2022 16:30
 entering extended mode
 **./AT1.tex
 (AT1.tex
@@ -2045,10 +2045,10 @@ Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
 
 (Pictures/Lec4Pic1.tex) (Pictures/Lec4Pic2.tex [9]) [10] [11]
 Package marginnote Info: Margin note 18.1 is on absolute page 18 on input line 
-114.
-Package marginnote Info: right page because not two side mode on input line 114
+115.
+Package marginnote Info: right page because not two side mode on input line 115
 .
-Package marginnote Info: xpos seems to be 161.83495pt on input line 114.
+Package marginnote Info: xpos seems to be 161.83495pt on input line 115.
 )
 (Chapters/AT1-Lecture5.tex
 Package marginnote Info: Margin note 18.2 is on absolute page 18 on input line 
@@ -2234,11 +2234,11 @@ Package marginnote Info: Margin note 60.1 is on absolute page 61 on input line
 Package marginnote Info: right page because not two side mode on input line 3.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
  [54] [55]
-Package marginnote Info: Margin note 62.1 is on absolute page 62 on input line 
-86.
-Package marginnote Info: right page because not two side mode on input line 86.
+Package marginnote Info: Margin note 62.1 is on absolute page 63 on input line 
+87.
+Package marginnote Info: right page because not two side mode on input line 87.
 
-Package marginnote Info: xpos seems to be 433.17352pt on input line 86.
+Package marginnote Info: xpos seems to be 433.17352pt on input line 87.
  [56] [57]) (Chapters/AT1-Lecture17.tex
 Package marginnote Info: Margin note 64.1 is on absolute page 64 on input line 
 3.
@@ -2263,22 +2263,23 @@ Package marginnote Info: xpos seems to be 212.70633pt on input line 107.
 
 LaTeX Warning: Citation 'Hatcher' on page 60 undefined on input line 107.
 
+[60]
 
 LaTeX Font Warning: Command \small invalid in math mode on input line 123.
 
-[60]) (Chapters/AT1-Lecture18.tex
-Package marginnote Info: Margin note 67.1 is on absolute page 68 on input line 
+[61]) (Chapters/AT1-Lecture18.tex
+Package marginnote Info: Margin note 68.1 is on absolute page 68 on input line 
 3.
 Package marginnote Info: right page because not two side mode on input line 3.
 Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
- [61] [62]
+ [62]
 Package marginnote Info: Margin note 69.1 is on absolute page 69 on input line 
 50.
 Package marginnote Info: right page because not two side mode on input line 50.
 
 Package marginnote Info: xpos seems to be 123.19592pt on input line 50.
- [63] [64])
-(Chapters/AT1-Lecture19.tex [65]
+ [63] [64]) (Chapters/AT1-Lecture19.tex
+[65]
 chapter V.
 Package marginnote Info: Margin note 72.1 is on absolute page 72 on input line 
 5.

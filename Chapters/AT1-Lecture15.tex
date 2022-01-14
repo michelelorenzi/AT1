@@ -5,7 +5,7 @@
 There\rightnote{I missed both lectures this week...} is one last preparatory (but really important and useful in itself) result needed to prove uniqueness of EM-spaces.
 
 \begin{theorem}\label{theorem:correspondence-maps-and-group-morphisms}
-Let $n\geq1$ and $Y$ an $(n-1)$-connected CW-complex. Let $Z$ be a based space with $\pi_m(Z,z)=0$ for $m>n$. Then for every group morphism $\Phi:\pi_n(Y,y)\to\pi_n(Z,z)$ there is a continuous map $f:Y\to Z$ with $f(y)=x$ and $\pi_n(f)=\Phi$. Moreover, any two such realizations of $\Phi$ are based homotopic. Equivalently, the map:
+Let $n\geq1$ and $Y$ an $(n-1)$-connected CW-complex. Let $Z$ be a based space with $\pi_m(Z,z)=0$ for $m>n$. Then for every group morphism $\Phi:\pi_n(Y,y)\to\pi_n(Z,z)$ there is a continuous map $f:Y\to Z$ with $f(y)=z$ and $\pi_n(f)=\Phi$. Moreover, any two such realizations of $\Phi$ are based homotopic. Equivalently, the map:
 \[\pi_n:[Y,Z]_*\to\Hom_\Grp(\pi_n(Y,y),\pi_n(Z,z))\]
 is bijective.
 \end{theorem}
@@ -23,16 +23,16 @@ S^n \ar[r,"\cong"] \ar[rr,bend left,"\bar\chi_i"] & D^n/\de D^n \ar[r] & Y^{(n)}
 & D^n \ar[u,two heads] \ar[ur,"\chi_i"] & & 
 \end{tikzcd}\]
 
-The map $\bar\chi_i$ represents an element in $\pi_n(Y,y)$. Then $\Phi([\incl\circ\bar\chi_i])\in\pi_n(Z,z)$. We choose a representative $\omega_i$ for this class:
+The map $\bar\chi_i$ represents an element in $\pi_n(Y,y)$. Then $\Phi([\incl\circ\chi_i])\in\pi_n(Z,z)$. We choose a representative $\omega_i$ for this class:
 \[D^n\onto D^n/\de D^n\cong S^n\xto{\omega_i}Z.\]
 We define:
 \[f^{(n)}:Y^{(n)}\cong\frac{I\times D^n}{I\times\de D^n}\xto{\amalg\bar\omega_i}Z.\]
 Then the diagram $(*)$ commutes by construction because the class of the characteristic maps of the $n$-cells generate $\pi_n(Y^{(n)},y)$.
 
 Now we extend $f^{(n)}$ to the $(n+1)$-skeleton of $Y$. Let $\chi_j:D^{n+1}\to Y^{(n+1)}$, $j\in J$, be a characteristic map for the $j$-th $(n+1)$-cell. Then the attaching map is $\chi_j|_{S^n}:S^n\to Y^{(n)}$. Because $Y^{(n)}$ is path-connected, $\chi_j|_{S^n}$ is freely homotopic to a based map $\alpha_j:S^n\to Y^{(n)}$. Because $(D^{n+1},S^n)$ has the HEP and because $\chi_j|_{S^n}$ comes from a continuous map on $D^{n+1}$, also $\alpha_j$ admits a continuous extension to $D^{n+1}$. So the composite
-\[S^n\xto{\alpha_j}Y^{(n)}\into Y\]
-represents the zero element in $\pi_n(Y,y)$. Since $(*)$ commutes we have $0=f^{(n)}_*([g])=[f^{(n)}\circ\alpha_j]$, so $f^{(n)}\circ\alpha_j:S^n\to Z$ has a continuous extension to $D^{n+1}$. Hence by the HEP also $f^{(n)}\circ\chi_j|_{S^n}:S^n\to Z$ admits a continuous extension to $D^n$. Choose such an extension $g_j:D^{n+1}\to Z$ and define
-\[f^{n+1}=f^{(n)}\cup\bigcup_{j\in J}g_j:Y^{(n+1)}=Y^{(n)}\cup_{J\times S^n}J\times D^{n+1}\to Z.\]
+\[g: S^n\xto{\alpha_j}Y^{(n)}\into Y\]
+represents the zero element in $\pi_n(Y,y)$. Since $(*)$ commutes we have $0=\Phi([g])=[f^{(n)}\circ\alpha_j]$, so $f^{(n)}\circ\alpha_j:S^n\to Z$ has a continuous extension to $D^{n+1}$. Hence by the HEP also $f^{(n)}\circ\chi_j|_{S^n}:S^n\to Z$ admits a continuous extension to $D^{n+1}$. Choose such an extension $g_j:D^{n+1}\to Z$ and define
+\[f^{(n+1)}=f^{(n)}\cup\bigcup_{j\in J}g_j:Y^{(n+1)}=Y^{(n)}\cup_{J\times S^n}J\times D^{n+1}\to Z.\]
 By theorem \ref{theorem:extension-theorem} $f^{(n+1)}:Y^{(n+1)}\to Z$ can be extended continuously to $Y$ (consider the relative CW-complex $(Y,Y^{(n+1)})$ with relative cells of dimensions greater than $n+1$). Let $f:Y\to Z$ be any such extension.
 
 We claim that $\pi_n(f)=\Phi$. This follows from $(*)$ because $\incl_*:\pi_n(Y^{(n)},y)\to\pi_n(Y,y)$ is surjective by cellular approximation.
@@ -42,7 +42,7 @@ Now we can prove uniqueness up to homotopy of the map $f$. Let $f,f':Y\to Z$ be 
 We choose characteristic maps $\chi_i:D^n\to Y^{(n)}$, $i\in I$, for all $n$-cells. Then consider:
 \[
 \begin{tikzcd}
-D^n/\de D^n \ar[r,"\bar\chi_i"] & Y^{(n)} \ar[d] \ar[r,"f/f'"] & Z\\
+D^n/\de D^n \ar[r,"\bar\chi_i"] & Y^{(n)} \ar[d] \ar[r,"{f|_{Y^{(n)}},f'|_{Y^{(n)}}}"] &[20mm] Z\\
 & Y^{(n+1)} \ar[r,hook] & Y \ar[u]
 \end{tikzcd}
 \]
@@ -69,7 +69,7 @@ By the previous theorem (\ref{theorem:correspondence-maps-and-group-morphisms}) 
 \[
     [X,Y]_*\underset{\cong}{\xto{\pi_n}}\Hom_\Grp(\pi_n(X,x),\pi_n(Y,y))\xto{\cong}\Hom_\Grp(A,B)
 \]
-where the second map simply sends $x$ to $\psi\circ x\circ\phi^\inv$.
+where the second map simply sends $h$ to $\psi\circ h\circ\phi^\inv$.
 \end{proof}
 
 \begin{corollary}

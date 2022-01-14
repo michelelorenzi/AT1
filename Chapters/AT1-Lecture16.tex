@@ -10,13 +10,13 @@ One can realize a $K(A,n)$ as a topological abelian group, e.g. $|\til A[\Delta^
 \end{remark}
 
 \begin{example}\todo[color=red]{I really don't understand this example}
-We know that $\rp{\infty}=K(\Z/2,1)$ and $\cp{\infty}=K(\Z,2)$. We also talked about how $\rp{\infty}$ classifies principal $\Z/2$-bundles (i.e. two-fold coverings). Then we have:
+We know that $\rp{\infty}=K(\Z/2,1)$ and $\cp{\infty}=K(\Z,2)$. We also talked about how $\rp{\infty}$ classifies principal $\Z/2$-bundles (i.e. two-fold coverings). Then for every paracompact space $X$, we have:
 \[
 \begin{tikzcd}
     \left[X,\rp{\infty}\right] \ar[r,"\cong"] & \operatorname{Prin}_{\Z/2}(X) \ar[r,"\cong"] & \Pic_\R(X)\\[-4ex]
     f \ar[rr,mapsto] & & f^* (j)\\[-4ex]
     & E\to X \ar[r,mapsto] & E\times_{C_2}\R\to X\\[-4ex]
-    & F-s_0(X)/\R_{>0}\to X & F\to X \ar[l,mapsto]
+    & \big(F-s_0(X)\big)/\R_{>0}\to X & F\to X \ar[l,mapsto]
 \end{tikzcd}
 \]
 where $j$ is the tautological line bundle on $\rp{\infty}$ and $s_0$ is the zero section. Under this bijection, the group operation on the left corresponds to the tensor product on the right (?).
@@ -40,16 +40,17 @@ Since $X$ is $(\ni)$-connected, the Hurewicz homomorphism $h:\pi_n(X,x)\to H_n(X
 is an isomorphism. Then we can define $\iota=\Phi^\inv(\phi\circ h^\inv)$.
 \end{proof}
 
-We want to see that the fundamental class $\iota\in H^n(X;A)$ gives rise to a natural isomorphism:
-\begin{align*}
-[X,K(A,n)]&\to H^n(X;A)\\
-[f:X\to K(A,n)]&\mapsto f^*(\iota).
-\end{align*}
+We want to see that the fundamental class $\iota\in H^n(K(A,n);A)$ gives rise to a natural isomorphism:
+$$
+\ev_{\iota}: [Y,K(A,n)]\longrightarrow H^n(Y;A)\qquad
+[f:Y\to K(A,n)]\longmapsto f^*(\iota).
+$$
+%In the version of date January 8th, you forget to change $f:X\to K(A,n)$ to $f:Y\to K(A,n)$
 
-The convention for $n=0$ is that $K(A,0)$ is just the group $A$ with the discrete topology, the map $\mu:K(A,0)^2\to K(A,0)$ is the addition on $A$ and $i: K(A,0)\to K(A,0)$ is the inverse map, while $\iota\in H^0(A,A)$ is represented by the identity cocycle.
+The convention for $n=0$ is that $K(A,0)$ is just the group $A$ with the discrete topology, the map $\mu:K(A,0)^2\to K(A,0)$ is the addition on $A$ and $i: K(A,0)\to K(A,0)$ is the inverse map, while $\iota\in \Hom(A,A)$ is represented by the identity cocycle.
 
 \begin{theorem}
-For all $n\ge0$ and all abelian groups $A$, the evaluation at $\iota$ is a group morphism.
+For all $n\ge0$ and all abelian groups $A$, the evaluation map $\ev_{\iota}$ is a group morphism.
 \end{theorem}
 
 \begin{proof}
@@ -88,7 +89,7 @@ We start by showing surjectivity. We will use that for $n\ge1$ any $K(A,n)$ is p
 To show injectivity, we first consider the case $n=1$. Let $f,g:Y\to K(A,1)$ be based maps that are freely homotopic. Then we have:
 \[f_*=g_*:H_1(Y;\Z)\to H_1(K(A,1);\Z).\]
 Since $A$ is abelian, the map $\pi_1(K(A,1),x)\to H_1(K(A,1),\Z)$ is an isomorphism, hence we have:
-\[f_*=g_*:\pi_1(Y,y)\to \pi_1(K(A,1)x).\]
+\[f_*=g_*:\pi_1(Y,y)\to \pi_1(K(A,1),x).\]
 By Theorem \ref{theorem:correspondence-maps-and-group-morphisms}\todo[color=red]{Does the theorem not require $Y$ to be connected?}, $f$ and $g$ are then based homotopic.
 
 Now let $n\ge2$. We will exploit the fact that a $K(A,n)$ is then simply connected. Let $Z$ be (more generally) any simply-connected space, $f,g:Y\to Z$ two based continuous maps that are freely homotopic. Let $H:Y\times[0,1]\to Z$ be a free homotopy from $f$ to $g$. Then $w=H(y,-):[0,1]\to Z$ is a loop at the basepoint of $Z$. Since $Z$ is simply-connected, this loop is homotopic to the constant loop at the endpoint, relative to it, say by a homotopy $G:[0,1]\times[0,1]\to Z$. The HEP of the pair $(Y\times[0,1],Y\times\cb{0}\cup\cb{y}\times[0,1]\cup Y\times\cb{1})$ applied to
