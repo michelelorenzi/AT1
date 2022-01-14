@@ -42,7 +42,7 @@ is bijective.
 \begin{example}
 We have a bijection
 \[\Nat(H^2(-;\Z),H^6(-;\Z))\xto{\cong}H^6(K(\Z,2);\Z)\cong H^6(\cp{\infty};\Z)\cong\Z\cb{\iota^3}\]
-sending $x\mapsto kx^3$ on the left to $k\iota^3$ on the right.
+sending $x\mapsto kx^3$ on the left and to $k\iota^3$ on the right.
 \end{example}
 
 In general, $\Nat(H^n(-;A),H^m(-;B))\cong H^m(K(A,n);B)$ are called the cohomology operations of type $(A,n,B,m)$.
@@ -80,8 +80,8 @@ Because $F(p)$ is an isomorphism, we conclude that $F(i_0)=F(i_1)$. Now
 
 To prove surjectivity, for any element $u\in F(K(A,n))$ we will construct a natural transformation $\Phi^u:H^n(-;A)\to F$ such that $\Phi^u_{K(A,n)}(\iota)=u$.
 
-Let $Y$ be a space and choose a CW-approximation $\alpha:X\xto{\sim}Y$. We let $y\in H^n(Y;A)$ be a class. Since $X$ is a CW-complex, there is a continuous map $f:X\to K(A,n)$ such that $\alpha^*(y)=f^*(\iota)$ in $H^n(X;A)$. We define $\Phi^u_Y(y)=(\alpha^*)^\inv(f^*(u))$. Note that we have:
-\[F(K(A,n))\xto{f^*}F(X)\underset{\cong}{\xleftarrow{\alpha^*}}F(Y)\]
+Let $Y$ be a space and choose a CW-approximation $\alpha:X\xto{\sim}Y$. We let $y\in H^n(Y;A)$ be a class. Since $X$ is a CW-complex, there is a continuous map $f:X\to K(A,n)$ such that $\alpha^*(y)=f^*(\iota)$ in $H^n(X;A)$. We define $\Phi^u_Y(y)=(\alpha^*)^\inv(F(f)(u))$. Note that we have:
+\[F(K(A,n))\xto{F(f)}F(X)\underset{\cong}{\xleftarrow{\alpha^*}}F(Y)\]
 
 Claim. $\Phi^u_Y(y)$ is independent of the choices of $\alpha$ and $f$.
 
