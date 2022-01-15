@@ -66,13 +66,13 @@ Claim. If $(y,s)\in X_n\times\ns$ and $(\bar y,\bar s)\in X_{\bar n}\times\sx{\b
 \begin{claimproof}
 It suffices to show this when $(y,s)$ and $(\bar y,\bar s)$ are "elementary equivalent", i.e. there is a morphism $\alpha:[n]\to[\bar n]$ such that
 \[(y,s)=(\alpha^*(\bar y),s)\sim(\bar y,\alpha_*(s))=(\bar y,\bar s).\]
-We let $(\delta,u,\sigma,x)$ be the data in the construction of $\rho(y,s)$ and we choose a factorization (which is necessarily unique) $\alpha\circ\delta=\bar\delta\circ\bar\sigma$ for a surjective morphism $\bar\sigma:[k]\to[\bar k]$ and an injective morphism $\bar\delta:[\bar k]\to[\bar n]$. Then
-\[\bar s=\alpha_*(s)=\alpha_*(\delta_*(u))=\bar\delta_*(\bar\sigma_*(u)).\]
+We let $(\delta,u,\sigma,x)$ be the data in the construction of $\rho(y,s)$ and we choose a factorization (which is necessarily unique) $\alpha\circ\delta=\bar\delta\circ\beta$ for a surjective morphism $\beta:[k]\to[\bar k]$ and an injective morphism $\bar\delta:[\bar k]\to[\bar n]$. Then
+\[\bar s=\alpha_*(s)=\alpha_*(\delta_*(u))=\bar\delta_*(\beta_*(u)).\]
 
-Since $u\in\ring\nabla^{k}$ and $\sigma$ is surjective, $\bar\sigma_*(u)\in\ring\nabla^{\bar k}$. Hence $\bar s=\bar\delta_*(\bar\sigma_*(u))$ must be the unique expression in the first step of the construction of $\rho(\bar y,\bar s)$, since $\bar\delta_*$ is injective and $\bar\sigma_*(u)$ is an interior point. We write $\bar\delta^*(\bar y)=\hat\sigma^*(\hat x)$ for a surjective morphism $\hat\sigma:[\bar k]\to[\hat l]$ and a non-degenerate element $\hat x\in X_{\hat l}^\text{nd}$. Then we have:
-\[\sigma^*(x)=\delta^*(y)=\delta^*(\alpha^*(\bar y))=\bar\sigma^*(\bar\delta^*(\bar y))=\bar\sigma^*(\hat\sigma^*(\hat x))=(\hat\sigma\circ\bar\sigma)^*(\hat x).\]
-By the uniqueness of pairs of degeneracies and non-degenerate simplices (of proposition \ref{proposition:non-degenerate-simplices}), we must have $l=\hat l$, $x=\hat x$, $\sigma=\hat\sigma\circ\bar\sigma$. So $\bar\delta^*(\bar y)=\hat\sigma^*(\hat x)=\hat\sigma^*(x)$ and $(\bar\delta,\bar\sigma_*(u),\hat\sigma,x)$ must be the data in the construction of $\rho(\bar y,\bar s)$. Hence:
-\[\rho(\bar y,\bar s)=(x,\hat\sigma_*(\bar\sigma_*(u)))=(x,\sigma_*(u))=\rho(y,s).\]
+Since $u\in\ring\nabla^{k}$ and $\beta$ is surjective, $\beta_*(u)\in\ring\nabla^{\bar k}$. Hence $\bar s=\bar\delta_*(\beta_*(u))$ must be the unique expression in the first step of the construction of $\rho(\bar y,\bar s)$, since $\bar\delta_*$ is injective and $\beta_*(u)$ is an interior point. We write $\bar\delta^*(\bar y)=\bar\sigma^*(\bar x)$ for a surjective morphism $\bar\sigma:[\bar k]\to[\bar l]$ and a non-degenerate element $\bar x\in X_{\bar l}^\text{nd}$. Then we have:
+\[\sigma^*(x)=\delta^*(y)=\delta^*(\alpha^*(\bar y))=\beta^*(\bar\delta^*(\bar y))=\beta^*(\bar\sigma^*(\bar x))=(\bar\sigma\circ\beta)^*(\bar x).\]
+By the uniqueness of pairs of degeneracies and non-degenerate simplices (of proposition \ref{proposition:non-degenerate-simplices}), we must have $l=\bar l$, $x=\bar x$, $\sigma=\bar\sigma\circ\beta$. So $\bar\delta^*(\bar y)=\bar\sigma^*(\bar x)=\bar\sigma^*(x)$ and $(\bar\delta,\beta_*(u),\bar\sigma,x)$ must be the data in the construction of $\rho(\bar y,\bar s)$. Hence:
+\[\rho(\bar y,\bar s)=(x,\bar\sigma_*(\beta_*(u)))=(x,\sigma_*(u))=\rho(y,s).\]
 \end{claimproof}
 
 (1) Suppose $(y,s)\in X_n\times\ns$ is of minimal dimension in its equivalence class. In the construction of $\rho(y,s)$ we must have $n\ge k\ge l$, therefore $n=k=l$, since $(y,s)\sim \rho(y,s)$. Clearly the injective map $\delta:[k]=[n]\into[n]$ and the surjective map $\sigma:[k]=[l]\onto[l]$ must be equal $\id_{[n]}$. Hence $\rho(y,s)=(y,s)$.
@@ -81,7 +81,7 @@ If $(\bar y,\bar s)$ is another representative of the same minimal dimension, th
 \[(y,s)=\rho(y,s)=\rho(\bar y,\bar s)=(\bar y,\bar s).\]
 This also shows that $\rho(y,s)$ produces the unique minimal representative.
 
-(2) The necessity falls out of the construction of $\rho$, which produces the minimal representative of a given class. Conversely, suppose $y$ is non-degenerate and $s$ an interior point. If $s=\delta_*(u)$ for another interior point $u$, then $\delta$ must be the identity, but then $\delta^*(y)=y=\sigma^*(x)$, hence also $\sigma$ must be the identity, so $(y,s)=\rho(y,s)$ is the minimal representative.
+(2) The necessity falls out of the construction of $\rho$, which produces the minimal representative of a given class. Conversely, suppose $y$ is non-degenerate and $s$ an interior point. If $s=\delta_*(u)$ for another interior point $u$, then $\delta$ must be the identity, but then $y=\delta^*(y)=\sigma^*(x)$, hence also $\sigma$ must be the identity, so $(y,s)=\rho(y,s)$ is the minimal representative.
 
 (3) Suppose $(x,t)$ minimal, and $(y,s)$ equivalent (but not elementary equivalent) to it. We want to find a unique triple $(\delta,\sigma,u)$ of an injective map, a surjective map and an interior point such that $\delta^*(y)=\sigma^*(x)$, $s=\delta_*(u)$ and $t=\sigma_*(u)$. The existence comes from the construction of $\rho(y,s)$, while the uniqueness is because no choices were involved (every step is uniquely determined).
 \end{proof}
@@ -139,7 +139,7 @@ i.e. $\sk^m X$ is the smallest simplicial subset that contains $X_m$.
 Clearly one has to convince himself that this is a simplicial set, which is not difficult.
 
 \begin{example}
-Every constant simplicial set is zero-dimensional, i.e. $X=\sk^0 X$. Conversely if $X=\sk^0 X$, then $X$ is isomorphic to the constant simplicial set on the zero-simplices $X_0$.
+Every constant simplicial set\footnote{We say the simplicial set $X$ is constant, if $X_n=X_0$ for any $n>0$, and all the face maps and the degeneracy maps are equal to the identity.} is zero-dimensional, i.e. $X=\sk^0 X$. Conversely if $X=\sk^0 X$, then $X$ is isomorphic to the constant simplicial set on the zero-simplices $X_0$.
 \end{example}
 
 \begin{example}

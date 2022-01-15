@@ -44,13 +44,13 @@ hence $x\in(\sk^m Y)_n$.
 \begin{remark}
 Thanks to (5) of the previous proposition, we can make $\sk^m$ into an endofunctor of $\sSet$ by setting:
 \[\sk^m f:=f|_{\sk^m X}:\sk^m X\to\sk^m Y.\]
-Then the inclusions $\sk^m\into X$ and $\sk^m X\into\sk^{m+1} X$ define natural transformations $\sk^m\to\id$ and $\sk^m\to\sk^{m+1}$ of endofunctors of $\sSet$.
+Then the inclusions $\sk^m X\into X$ and $\sk^m X\into\sk^{m+1} X$ define natural transformations $\sk^m\to\id$ and $\sk^m\to\sk^{m+1}$ of endofunctors of $\sSet$.
 \end{remark}
 
 The following proposition (\ref{proposition:cw-structure-on-realization-preparation}) contains the technical work needed to show that the geometric realization of a simplicial set is a CW-complex with canonical CW-structure given by the realization of the simplicial skeleta (the statement is slightly more general and deals with generic simplicial subsets, we will specialize the result in theorem \ref{theorem:cw-structure-on-realization}).
 
 \begin{remark}
-In order to state and prove proposition \ref{proposition:cw-structure-on-realization-preparation} we need some preparation. First, we observe that there exists a natural transformation
+In order to state and prove Proposition \ref{proposition:cw-structure-on-realization-preparation} we need some preparation. First, we observe that there exists a natural transformation
 $x^\flat:\Delta^m\to X$, that we call the \tbf{characteristic morphism} of $x\in X_m$, determined via the Yoneda lemma by $x^\flat_m(\id_{[m]})=x$ (hence $x^\flat_n(\alpha)=\alpha^*(x)$). Second, in the hypotheses of the proposition, we observe that the following square commutes (by naturality of the inclusion of the skeleton):
 \[
 \begin{tikzcd}
@@ -75,7 +75,7 @@ is a pushout of simplicial sets.
 \item The commutative square of spaces:
 \[
 \begin{tikzcd}[column sep=large]
-\coprod_{x\in X_m\sm Y_m}|\de\Delta^m| \ar[d,"\amalg\,|x^\flat||_{\de\Delta^m}"'] \ar[r,"|\incl|"] & \coprod_{x\in X_m\sm Y_m}|\Delta^m| \ar[d,"|\amalg\,x^\flat|"]\\
+\coprod_{x\in X_m\sm Y_m}|\de\Delta^m| \ar[d,"\amalg\,|x^\flat||_{\de\Delta^m}"'] \ar[r,"|\incl|"] & \coprod_{x\in X_m\sm Y_m}|\Delta^m| \ar[d,"\amalg\,|x^\flat|"]\\
 {|Y|} \ar[r,"|\incl|"] & {|X|}
 \end{tikzcd}
 \]
@@ -138,7 +138,7 @@ Note: another consequence of the theorem is that $|X|$ is Hausdorff. It might be
 \begin{proof}
 We prove $(1)$ and $(2)$, the rest are immediate consequences.
 
-Observe that we have $(\sk^{m-1} X)_{m-1}=X_{m-1}=(\sk^M X)_{m-1}$, and for every $n>m$, all simplices of $(\sk^n)_m$ are degenerate. So $(\sk^m X,\sk^{m-1} X)$ satisfies the hypothesis of proposition \ref{proposition:cw-structure-on-realization-preparation}. Hence $|\sk^m X|$ can be obtained from $|\sk^{m-1} X|$ by attaching $m$-cells indexed by $(\sk^m X)_m\sm(\sk^{m-1} X)_m^\text{nd}$, the set of non-degenerate $m$-simplices of $X$.
+Observe that we have $(\sk^{m-1} X)_{m-1}=X_{m-1}=(\sk^m X)_{m-1}$, and for every $n>m$, all simplices of $(\sk^m X)_n$ are degenerate. So $(\sk^m X,\sk^{m-1} X)$ satisfies the hypothesis of proposition \ref{proposition:cw-structure-on-realization-preparation}. Hence $|\sk^m X|$ can be obtained from $|\sk^{m-1} X|$ by attaching $m$-cells indexed by $\left((\sk^m X)_m\sm(\sk^{m-1} X)_m\right)^\text{nd} \cong X_m^{\text{nd}}$, the set of non-degenerate $m$-simplices of $X$.
 
 Since $|-|$ is a left adjoint, it preserves colimits. Since $X$ is a colimit (in $\sSet$) of the sequence $\cb{\sk^m X}_{m\ge0}$, $|X|$ is a colimit (in $\Top$) of the sequence:
 \[|\sk^0 X|\to|\sk^1 X|\to\cdots\to|\sk^m X|\to\cdots\]
@@ -174,5 +174,5 @@ We have $|B\Z/2|\cong K(\Z/2,1)\cong\rp{\infty}$ (see the section in chapter \re
 \end{example}
 
 \begin{example}\label{example:cw-bz-2}
-We have $|B\Z|=K(\Z,1)\cong S^1$. Following the same reasoning as in the last example, we see that the non-degenerate simplices of $B\Z$ in any dimension are infinitely many. We already noted this fact in chapter \ref{example:cw-bz-1}: $S^1$ and $|B\Z|$ are homeomorphic CW-complexes, but the former is one-dimensional, the latter infinite-dimensional.
+We have $|B\Z|=K(\Z,1)\cong S^1$. Following the same reasoning as in the last example, we see that the non-degenerate simplices of $B\Z$ in any dimension are infinitely many. We already noted this fact in chapter \ref{example:cw-bz-1}: $S^1$ and $|B\Z|$ are homeomorphic CW-complexes, but the former is one-dimensional, the latter is infinite-dimensional.
 \end{example}
