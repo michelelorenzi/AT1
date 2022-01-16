@@ -2,7 +2,7 @@
 
 \ 
 
-\lecture[]{2021-12-22}
+\lecture[Finally we get to the preferred CW-structure on the geometric realization of a simplicial complex.]{2021-12-22}
 
 The next proposition sheds some light on the definition of the skeleta of a simplicial set, showing that they are the right analogue of the skeleta of CW-complexes.
 
@@ -116,7 +116,7 @@ Recall that we have mutually inverse homeomorphisms:
 
 We claim that these homeomorphisms map $|\de\Delta^m|$ homeomorphically onto the boundary of the topological simplex $\de\sx{m}=\cb{(\nno{t}{m})\in\sx{m}\mid t_i=0\text{ for some }0\le i\le m}$.
 
-First, observe that the map $|\de\Delta^m|\to|\Delta^m|$ is injective by corollary \ref{corollary:criterion-for-injectivity-of-map-between-realizations} (which follows from the theory of minimal representatives). Secondly, since $\de\Delta^m$ has only finitely many non-degenerate simplices, $|\de\Delta^m|$ is compact by corollary \ref{corollary:criterion-for-compactness-of-realization} (which is also a consequence of the theory of minimal representatives). since $|\Delta^m|$ Hausdorff (being homeomorphic to $\sx{m}$), this is a closed map and hence a homeomorphism onto its image. Now, the non-degenerate simplices of $\de\Delta^m$ are all injective morphisms $\alpha:[k]\to[m]$ except $\id_{[m]}$ (which is surjective); by corollary \ref{corollary:compostition-of-realization}, the image of $|\de\Delta^m|$ is then the union of the images of the maps $\alpha_*:\sx{k}\to\sx{m}$ for all injective morphisms $\alpha:[k]\to[m]$ other than $\id_{[m]}$, hence it coincides with $\de\sx{m}$, the boundary of $\sx{m}$.
+First, observe that the map $|\de\Delta^m|\to|\Delta^m|$ is injective by corollary \ref{corollary:criterion-for-injectivity-of-map-between-realizations} (which follows from the theory of minimal representatives). Secondly, since $\de\Delta^m$ has only finitely many non-degenerate simplices, $|\de\Delta^m|$ is compact by corollary \ref{corollary:criterion-for-compactness-of-realization} (which is also a consequence of the theory of minimal representatives). since $|\Delta^m|$ Hausdorff (being homeomorphic to $\sx{m}$), this is a closed map and hence a homeomorphism onto its image. Now, the non-degenerate simplices of $\de\Delta^m$ are all injective morphisms $\alpha:[k]\to[m]$ except $\id_{[m]}$ (which is surjective); by corollary \ref{corollary:composition-of-realization}, the image of $|\de\Delta^m|$ is then the union of the images of the maps $\alpha_*:\sx{k}\to\sx{m}$ for all injective morphisms $\alpha:[k]\to[m]$ other than $\id_{[m]}$, hence it coincides with $\de\sx{m}$, the boundary of $\sx{m}$.
 \end{proof}
 
 We are now ready to introduce the preferred CW-structure on the realization of a simplicial set, and summarize all its key properties, which follow from all the theory we have developed so far.

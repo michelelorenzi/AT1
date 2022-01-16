@@ -43,11 +43,11 @@ There is also an alternative construction of $K(A,n)$ as the geometric realizati
 We first prove an auxiliary lemma.
 
 \begin{lemma}\label{theorem:extension-theorem}
-Let $(X,Y)$ be a relative CW-complex, $Z$ any space. Suppose that for all $m\geq1$ such that $(X,Y)$ has at least one relative $m$-cell, then $\pi_{m-1}(Z,z)=0$ for all $z\in Z$. Then every continuous map $f:Y\to Z$ has a continuous extension to $X$.
+Let $(X,Y)$ be a relative CW-complex, $Z$ any space. Suppose that for all $m\geq1$ such that $(X,Y)$ has at least one relative $m$-cell, $\pi_{m-1}(Z,z)=0$ holds for all $z\in Z$. Then every continuous map $f:Y\to Z$ has a continuous extension to $X$.
 \end{lemma}
 
 \begin{proof}
-We construct inductively continuous maps $f^{(n)}:X^{(n)}\to Z$ on the relative skeleta, that successively extend each other. Then $g=\cup f^{(n)}:X=\cup X^{(n)}\to Z$ does the job.\rightnote{Just to be sure: do not forget that this works because CW-complexes have the final topology with respect to the inclusions of their skeleta.}
+We construct inductively continuous maps $f^{(n)}:X^{(n)}\to Z$ on the relative skeleta, that successively extend each other. Then $g=\cup f^{(n)}:X=\cup X^{(n)}\to Z$ does the job.\rightnote{Just to be sure:\\ do not forget that maps constructed like this are continuous because CW-complexes have the final topology with respect to the inclusions of their skeleta.}
 
 We start with $f=f^{(-1)}:X^{(-1)}=Y\to Z$. We extend $f^{(-1)}$ to $f^{(0)}:X^{(0)}=Y\amalg J_0\to Z$ by mapping the relative $0$-cells arbitrarily to $Z$.
 
