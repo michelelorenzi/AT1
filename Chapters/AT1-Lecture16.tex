@@ -40,9 +40,9 @@ Since $X$ is $(\ni)$-connected, the Hurewicz homomorphism $h:\pi_n(X,x)\to H_n(X
 is an isomorphism. Then we can define $\iota=\Phi^\inv(\phi\circ h^\inv)$.
 \end{proof}
 
-We want to see that the fundamental class $\iota\in H^n(X;A)$ gives rise to a natural isomorphism:
+We want to see that for a CW-complex $Y$ the fundamental class $\iota\in H^n(K(A,n);A)$ gives rise to a natural isomorphism:
 \begin{align*}
-[X,K(A,n)]&\to H^n(X;A)\\
+[Y,K(A,n)]&\to H^n(Y;A)\\
 [f:X\to K(A,n)]&\mapsto f^*(\iota).
 \end{align*}
 
@@ -89,7 +89,7 @@ To show injectivity, we first consider the case $n=1$. Let $f,g:Y\to K(A,1)$ be 
 \[f_*=g_*:H_1(Y;\Z)\to H_1(K(A,1);\Z).\]
 Since $A$ is abelian, the map $\pi_1(K(A,1),x)\to H_1(K(A,1),\Z)$ is an isomorphism, hence we have:
 \[f_*=g_*:\pi_1(Y,y)\to \pi_1(K(A,1)x).\]
-By Theorem \ref{theorem:correspondence-maps-and-group-morphisms}\todo[color=red]{Does the theorem not require $Y$ to be connected?}, $f$ and $g$ are then based homotopic.
+By theorem \ref{theorem:correspondence-maps-and-group-morphisms}\todo[color=red]{Does the theorem not require $Y$ to be connected?}, $f$ and $g$ are then based homotopic.
 
 Now let $n\ge2$. We will exploit the fact that a $K(A,n)$ is then simply connected. Let $Z$ be (more generally) any simply-connected space, $f,g:Y\to Z$ two based continuous maps that are freely homotopic. Let $H:Y\times[0,1]\to Z$ be a free homotopy from $f$ to $g$. Then $w=H(y,-):[0,1]\to Z$ is a loop at the basepoint of $Z$. Since $Z$ is simply-connected, this loop is homotopic to the constant loop at the endpoint, relative to it, say by a homotopy $G:[0,1]\times[0,1]\to Z$. The HEP of the pair $(Y\times[0,1],Y\times\cb{0}\cup\cb{y}\times[0,1]\cup Y\times\cb{1})$ applied to
 \[K:(Y\times\cb{0}\cup\cb{y}\times[0,1]\cup Y\times\cb{1})\times[0,1]\xto{\const_f\cup\,G\,\cup\, \const g} Z\]
@@ -118,5 +118,5 @@ Special case. Suppose $Y$ is $(n-1)$-connected. Then $H_\ni(Y;\Z)$ is trivial (i
 \[\Hom(h,A):\Hom_\Grp(H_n(Y;\Z),A)\xto{\cong}\Hom_\Grp(\pi_n(Y,y),A).\]
 The composite
 \[[Y,K(A,n)]_*\xto{[f]\mapsto f^*(\iota)} H^n(Y;A)\underset{\cong}{\xto{\Phi}}\Hom(H_n(Y;\Z),A)\underset{\cong}{\xto{\Hom(h,A)}}\Hom_\Grp(\pi_n(Y,y),A)\]
-sends $[f]$ to $\pi_n(f):\pi_n(Y,y)\to\pi_n(K(A,n),*)\to A$, hence we know that it is a bijection by Theorem \ref{theorem:correspondence-maps-and-group-morphisms} (since $Y$ is a $(n-1)$-connected CW-complex and $K(A,n)$ has vanishing homotopy groups for $k>n$). Since the composite, the second and the third maps are bijections, the valuation at $\iota$ map $[f]\mapsto f^*(\iota)$ must also be.
+sends $[f]$ to $\pi_n(f):\pi_n(Y,y)\to\pi_n(K(A,n),*)\to A$, hence we know that it is a bijection by theorem \ref{theorem:correspondence-maps-and-group-morphisms} (since $Y$ is a $(n-1)$-connected CW-complex and $K(A,n)$ has vanishing homotopy groups for $k>n$). Since the composite, the second and the third maps are bijections, the valuation at $\iota$ map $[f]\mapsto f^*(\iota)$ must also be.
 \end{proof}

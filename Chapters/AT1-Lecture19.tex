@@ -2,6 +2,8 @@
 
 \chapter{Spaces and Simplicial Sets: an Introduction to Homotopy Theory (?)}\label{chapter:the-cool-chapter}
 
+\Attention\ For the last part of the course, Professor Schwede decided to put me out of a job and upload \href{https://www.math.uni-bonn.de/people/schwede/sset_vs_spaces.pdf}{his own typed notes} (in English!). I will continue updating my notes as a way to study the material, but it goes without saying that the official version is more reliable.\medskip
+
 \lecture[A lot of simplicial stuff, pt.2 (is this even topology anymore?).]{2021-12-20}
 
 The long term goal for the rest of the semester is to show that there is an equivalence of homotopy theories (whatever this means):
@@ -11,7 +13,7 @@ It is possible to prove (but it is beyond the scope of this course) that in fact
 
 The short term goal for this lecture and the next one is to show the existence of a preferred\rightnote{In this course, we do not like the word \enquote{canonical}.} CW-structure on $|X|$, the geometric realization of a simplicial set $X$.
 
-\section{The Preferred CW-structure on the Geometric Realization}
+\section{The Preferred CW-structure on a Geometric Realization}
 Recall the \hyperref[section:reminder-on-sset]{basic theory of simplicial sets} as exposed in chapter I.
 
 The geometric realization of a simplicial set is the space:
@@ -108,7 +110,7 @@ Since $f_n$ is injective, $s_i^*(d_i^*(x))=x$, which contradicts the assumption 
 Then by uniqueness of minimal representatives we must have $(f_n(x),t)=(f_m(x'),t')$, hence in particular $n=m$, $t=t'$ and $x=x'$, i.e. $[x,t]=[x',t']$.
 \end{proof}
 
-\begin{corollary}\label{corollary:compostition-of-realization}
+\begin{corollary}\label{corollary:composition-of-realization}
 Let $X$ be any simplicial set.
 \begin{numerate}
 \item The composite

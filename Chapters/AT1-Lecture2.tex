@@ -6,7 +6,7 @@
 
 Before resuming with the proof of the relative Hurewicz theorem we prove an application of it, a version of Whitehead's theorem which uses homology groups in place of homotopy groups.
 
-\begin{theorem}
+\begin{theorem}\label{theorem:homology-whitehead}
 Let $f:X\to Y$ be a map between simply connected CW-complexes such that $f_*:H_i(X;\Z)\to H_i(Y;\Z)$ is an isomorphism for all $i\geq 0$. Then $f$ is an homotopy equivalence.
 \end{theorem}
 
@@ -43,7 +43,7 @@ Let $n\geq1$. For $n>1$ assume known that $\pi_\ni(\sni,z)$ is free abelian of r
 \begin{proof}
 We first see the case when $\deg(f)=1$.
 
-$(n=1)$ Since $\de D^1=\cb{\pm1}$ and $\deg(f)=1$ we have $f|_{\de D^1}=\id_{\de D^1}$. Then the linear homotopy $H(x,t)=tf(x)+(1-t)x$ is a relative homotopy between $f$ and the identity $id_{D^1}$.
+$(n=1)$ Since $\de D^1=\cb{\pm1}$ and $\deg(f)=1$ we have $f|_{\de D^1}=\id_{\de D^1}$. Then the linear homotopy $H(x,t)=tf(x)+(1-t)x$ is a relative homotopy between $f$ and the identity $\id_{D^1}$.
 
 $(n\geq2)$ Consider the commutative square:
 \begin{center}
@@ -52,7 +52,9 @@ $(n\geq2)$ Consider the commutative square:
     H_n(\dn,\de\dn;\Z) \arrow[r, "\de", "\cong" below] & H_\ni(S^\ni;\Z)
     \end{tikzcd}
 \end{center}
-Since $\pi_\ni(S^\ni,z)$ is free of rank $1$, the Hurewicz map $h:\pi_\ni(S^\ni,z)\to H_\ni(S^\ni;\Z)$ is an isomorphism. Then $(f|_{\de\dn})_*:\pi_\ni(\sni,z)\to\pi_\ni(\sni,z)$ is the identity, therefore $f|_{\de\dn}$ is homotopic to the identity of $\sni$. Now let $H:\sni\times [0,1]\to\sni$ be a homotopy. This gives a map $D^n\times0\cup\sni\times[0,1]\cup \dn\times1\xto{f\cup H\cup\id}\dn$. Since $\dn\times[0,1]$ can be obtained from $D^n\times0\cup\sni\times[0,1]\cup \dn\times1$ by attaching an $(n+1)$-cell and $\dn$ is contractible\normalmarginpar\marginnote{\footnotesize Why do we need $\dn$ contractible? Think of $S^1\hookrightarrow D^2$}, there is a continuous extension $\bar{H}:\dn\times[0,1]\to\dn$. This is the desired pair homotopy from $f$ to $\id_{\dn}$.
+Since $\pi_\ni(S^\ni,z)$ is free of rank $1$, the Hurewicz map $h:\pi_\ni(S^\ni,z)\to H_\ni(S^\ni;\Z)$ is an isomorphism. Then $(f|_{\de\dn})_*:\pi_\ni(\sni,z)\to\pi_\ni(\sni,z)$ is the identity, therefore $f|_{\de\dn}$ is homotopic to the identity of $\sni$. Now let $H:\sni\times [0,1]\to\sni$ be a homotopy, this gives a map
+\[D^n\times0\cup\sni\times[0,1]\cup \dn\times1\xto{f\cup H\cup\id}\dn.\]
+Since $\dn\times[0,1]$ can be obtained from $D^n\times0\cup\sni\times[0,1]\cup \dn\times1$ by attaching an $(n+1)$-cell and $\dn$ is contractible\normalmarginpar\marginnote{\footnotesize Why do we need $\dn$ contractible? This is essentially the fact that maps $S^n\to X$ are homotopic to the constant map if and only if they extend to a map $D^{n+1}\to X$.}, there is a continuous extension $\bar{H}:\dn\times[0,1]\to\dn$. This is the desired pair homotopy from $f$ to $\id_{\dn}$.
 
 If $\deg(f)=-1$, we let $r:\dn\to\dn$ be the reflection in the first coordinate. Then $\deg(r\circ f)=1$, hence $r\circ f$ is pair homotopic to $\id_{\dn}$ and so $f=r\circ r\circ f$ is pair homotopic to $r$.
 \end{proof}
