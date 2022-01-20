@@ -70,13 +70,19 @@ Let $(X,A)$ be a pair of path-connected spaces. Let $n\geq2$ or $n=1$ and $A$ a 
 \begin{proof}
 We will define a homomorphism in the opposite direction. Let $f:(I^n,\de I^n)\to (X,A)$ be a pair map. $f$ need not send $J^\ni$ to $x_0$, but $J^\ni$ is contractible and $A$ path-connected. So $f|_{J^\ni}$ is homotopic in A to the constant map at the basepoint. Let $H:J^\ni\times[0,1]\to A$ be such a homotopy from $f|_{J^\ni}$ to the constant map $x_0$. The HEP for $(\de I^n,J^\ni)$ lets us extend $H$ to a homotopy $H':\de I^n\times[0,1]\to A$ from $f|_{\de I^n}$ to some map $H'(1,-)$ that sends $J^\ni$ to $x_0$. The HEP for $(I^n,\de I^n)$ with target space $X$ lets us extend $H'$ to $H'':I^n\times[0,1]\to X$ from $f$ to a map that sends $J^\ni$ to $x_0$. Moreover $H''$ is a pair homotopy of maps $(I^n,\de I^n)\to (X,A)$.
 
-We now define a map $\Psi:[(I^n,\de I^n)\to (X,A)]\to \pi_n(X,A,x_0)^\dagger$ by sending $[f]$ to $[H''(-,1)]$. We claim that this is well defined.
+We now define a map \[\Psi:[(I^n,\de I^n)\to (X,A)]\to \pi_n(X,A,x_0)^\dagger\]
+by sending $[f]$ to $[H''(-,1)]$. We claim that this is well defined.
  
 Claim. Let $f,f':(I^n,\de I^n, J^\ni)\to(X,A,x_0)$ be triple maps that are pair homotopic as maps $(I^n,\de I^n)\to (X,A)$. Then they represent the same element in $\pi_n(X,A,x_0)^\dagger$.
- 
-\textit{Proof of the claim.} Let $H:I^n\times[0,1]\to X$ be a pair homotopy from $f$ to $f'$. We choose a point $z\in J^\ni$ and a triple homotopy $K:\triple\times[0,1]\to\triple$ from the identity to a map with $K(J^\ni\times 1)=\{z\}$. Formally what we are applying two times the HEP (for $(\de I^n,J^\ni)$ and for $(I^n,\de I^n)$, as before). Then $f$ is triple homotopic to $f\circ K(-,1)$, $f'$ is triple homotopic to $f'\circ K(-,1)$, so that $f\circ K(-,1)$ is pair homotopic to $f'\circ K(-,1)$. In particular $\til{H}=H \circ K(-,1)$ satisfies $\til{H}(J^\ni,t)=H(z,t)$ for all $t\in [0,1]$. Now for all $x\in J^\ni$, the loop at $x_0$ in $A$, $\til{H}(x,-)$, is independent of the point $x\in J^\ni$ and it always agrees with $\omega=\til{H}(z,-)$. By identifying $I^{n+1}$ as $I^n\times[0,1]$ we can view $\til{H}$ as a triple homotopy between $\omega * (f\circ K(-,1))$ and $f'\circ K(-,1)$.\normalmarginpar\todo{I'm not \textit{too} sure I really get this...} In the end we have $[f]=[\omega * (f\circ K(-,1))]=[f'\circ K(-,1)]=[f']$ in $\pinr^\dagger$ (the second equality holds in $\pinr^\dagger$ by construction, the third one is because of the homotopy we found).
 
-\textit{Corollary of the claim.} The map $\Psi:[(I^n,\de I^n),(X,A)]\to\pinr^\dagger$ we defined before the claim is well defined, so it has a unique extension on the free abelian group which factors to a homomorphism $\pi_n(X,A)^\#\to\pinr^\dagger$ which is then an isomorphism by design.
+\begin{claimproof}
+Let $H:I^n\times[0,1]\to X$ be a pair homotopy from $f$ to $f'$. We choose a point $z\in J^\ni$ and a triple homotopy
+\[K:\triple\times[0,1]\to\triple\]
+from the identity to a map with $K(J^\ni\times 1)=\{z\}$. Formally what we are applying two times the HEP (for $(\de I^n,J^\ni)$ and for $(I^n,\de I^n)$, as before). Then $f$ is triple homotopic to $f\circ K(-,1)$, $f'$ is triple homotopic to $f'\circ K(-,1)$, so that $f\circ K(-,1)$ is pair homotopic to $f'\circ K(-,1)$. In particular $\til{H}=H(K(-,1),-)$ satisfies $\til{H}(J^\ni,t)=H(z,t)$ for all $t\in [0,1]$. Now for all $x\in J^\ni$, the loop at $x_0$ in $A$, $\til{H}(x,-)$, is independent of the point $x\in J^\ni$ and it always agrees with $\omega=H(z,-)$. By identifying $I^{n+1}$ as $I^n\times[0,1]$ we can view $\til{H}$ as a triple homotopy between $\omega * (f\circ K(-,1))$ and $f'\circ K(-,1)$.\normalmarginpar\todo[color=red]{This proof probably has a problem! I still need to check it...} In the end we have
+\[[f]=[\omega * (f\circ K(-,1))]=[f'\circ K(-,1)]=[f']\] in $\pinr^\dagger$ (the second equality holds in $\pinr^\dagger$ by construction, the third one is because of the homotopy we found).
+\end{claimproof}
+
+As a result of the claim the map $\Psi:[(I^n,\de I^n),(X,A)]\to\pinr^\dagger$ is well-defined, so it has a unique extension on the free abelian group which factors to a homomorphism $\pi_n(X,A)^\#\to\pinr^\dagger$ which is then an isomorphism by design.
 \end{proof}
  
 Punchline: In the situation of the relative Hurewicz theorem it suffices to show that the map $\pi_n(X,A)^\#\to H_n(X,A;\Z)$ is an isomorphism (i.e. we don't have to deal with basepoints!).

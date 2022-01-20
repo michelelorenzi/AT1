@@ -11,7 +11,7 @@ The \textbf{homotopy fibre} of a continuous map $f:X\to Y$ over a point $y_0\in 
 Informally the homotopy fibre is what we get when we turn the map into a Serre fibration, then take the actual fibre.
 
 Because $p:Ef\to Y$ is a Serre fibration, the homotopy groups of $\ho_{y_0}(f)$ participate in a long exact sequence:
-\[\cdots\to\pi_{n+1}(Y,y_0)\xto{\de}\pi_n(\ho_{y_0}(f),x)\to\pi_n(X,x)\xto{f_*}\pi_n(Y,y_0)\to\cdots\]
+\[\cdots\to\pi_{n+1}(Y,y_0)\xto{\de}\pi_n(\ho_{y_0}(f),(x,\const_{f(x)}))\to\pi_n(X,x)\xto{f_*}\pi_n(Y,y_0)\to\cdots\]
 
 The slogan is: the homotopy fibres measure how far $f$ is from a real homotopy equivalence.
 
@@ -24,7 +24,7 @@ For $f:X\to Y$ the analogy goes:
  $Z(f)=X\times[0,1]\cup_{X\times1}Y$:
  & $Ef=X\times_Y Y^{[0,1]}$: \\ 
  \[\begin{tikzcd}[column sep=large]
-    X \arrow[r,"\text{cl. emb.}"] \arrow[dr,"f"] & Z(f)\arrow[d,"\pr_1\cup\id_Y","\simeq"']\\
+    X \arrow[r,"\text{cl. emb.}"] \arrow[dr,"f"] & Z(f)\arrow[d,"(f \circ \pr_1)\cup\id_Y","\simeq"']\\
      & Y
     \end{tikzcd}\] & \[\begin{tikzcd}[column sep=large]
     X \arrow[r,"\sim"] \arrow[dr,"f"] & Ef\arrow[d,"p"]\\

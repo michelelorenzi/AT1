@@ -44,7 +44,7 @@ hence $x\in(\sk^m Y)_n$.
 \begin{remark}
 Thanks to (5) of the previous proposition, we can make $\sk^m$ into an endofunctor of $\sSet$ by setting:
 \[\sk^m f:=f|_{\sk^m X}:\sk^m X\to\sk^m Y.\]
-Then the inclusions $\sk^m\into X$ and $\sk^m X\into\sk^{m+1} X$ define natural transformations $\sk^m\to\id$ and $\sk^m\to\sk^{m+1}$ of endofunctors of $\sSet$.
+Then the inclusions $\sk^m\into X$ and $\sk^m X\into\sk^{m+1} X$ define natural transformations $\sk^m\to\id$ and $\sk^m X\to\sk^{m+1}$ of endofunctors of $\sSet$.
 \end{remark}
 
 The following proposition (\ref{proposition:cw-structure-on-realization-preparation}) contains the technical work needed to show that the geometric realization of a simplicial set is a CW-complex with canonical CW-structure given by the realization of the simplicial skeleta (the statement is slightly more general and deals with generic simplicial subsets, we will specialize the result in theorem \ref{theorem:cw-structure-on-realization}).
@@ -138,7 +138,7 @@ Note: another consequence of the theorem is that $|X|$ is Hausdorff. It might be
 \begin{proof}
 We prove $(1)$ and $(2)$, the rest are immediate consequences.
 
-Observe that we have $(\sk^{m-1} X)_{m-1}=X_{m-1}=(\sk^M X)_{m-1}$, and for every $n>m$, all simplices of $(\sk^n)_m$ are degenerate. So $(\sk^m X,\sk^{m-1} X)$ satisfies the hypothesis of proposition \ref{proposition:cw-structure-on-realization-preparation}. Hence $|\sk^m X|$ can be obtained from $|\sk^{m-1} X|$ by attaching $m$-cells indexed by $(\sk^m X)_m\sm(\sk^{m-1} X)_m^\text{nd}$, the set of non-degenerate $m$-simplices of $X$.
+Observe that we have $(\sk^{m-1} X)_{m-1}=X_{m-1}=(\sk^M X)_{m-1}$, and for every $n>m$, all simplices of $(\sk^n X)_m$ are degenerate. So $(\sk^m X,\sk^{m-1} X)$ satisfies the hypothesis of proposition \ref{proposition:cw-structure-on-realization-preparation}. Hence $|\sk^m X|$ can be obtained from $|\sk^{m-1} X|$ by attaching $m$-cells indexed by $(\sk^m X)_m\sm(\sk^{m-1} X)_m^\text{nd}$, which is the set of non-degenerate $m$-simplices of $X$.
 
 Since $|-|$ is a left adjoint, it preserves colimits. Since $X$ is a colimit (in $\sSet$) of the sequence $\cb{\sk^m X}_{m\ge0}$, $|X|$ is a colimit (in $\Top$) of the sequence:
 \[|\sk^0 X|\to|\sk^1 X|\to\cdots\to|\sk^m X|\to\cdots\]

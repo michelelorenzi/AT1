@@ -134,11 +134,11 @@ Suppose $\pi:E\to B$ is a locally trivial fibre bundle with fibre $\R^n$. For it
 
 An equivalent perspective is the following. Suppose we chose a cover of $B$ by open subsets $\cb{U_i}_{i\in I}$ and local trivializations for each $U_i$, $u_i:\pi^{-1}(U_i)\xto{\cong} U_i\times\R^n$. For each pair of indices $i,j$ the "change of charts"
 \[(U_i\cap U_j)\times\R^n\xto{u_i^{-1}}\pi^{-1}(U_i\cap U_j)\xto{u_j}(U_i\cap U_j)\times\R^n\]
-is a homeomorphism on the projection to the first factors. So $u_j\circ u_i^{-1}$ is of the form
-\[(u_j\circ u_i^{-1})(x,v)=(x,\Psi(x))\]
+is a homeomorphism on the projection to the first factors. So $\Phi=u_j\circ u_i^{-1}$ is of the form
+\[(u_j\circ u_i^{-1})(x,v)=(x,\Psi(x,v))\]
 for some map $\Psi:(U_i\cap U_j)\times\R^n\to\R^n$. The map $\Phi$ is adjoint to a function
 \[U_i\cap U_j\to\homeo(\R^n,\R^n), x\mapsto\Psi(x,-)\]
-In a vector bundle, the map factors through $\GL_n(\R)=\text{ linear isos }(\R^n,\R^n)$.
+In a vector bundle, the map factors through $\GL_n(\R)$, the linear automorphisms of $\R^n$.
 
 Several related concepts/refinements of fibre bundles can also be conveniently formulated this way, by specifying a \textbf{structure group}, for example there is a hierarchy:
 \begin{itemize}
