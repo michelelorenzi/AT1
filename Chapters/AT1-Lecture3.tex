@@ -15,7 +15,7 @@ The main goal of today's lesson is to prove the following theorem.
 \begin{theorem}[Homotopy Addition Theorem]\label{theorem:HAT}
 Assume we have $\nn{f}{k}:I^n\to I^n$ such that $f_i|_{\ring I^n}$ is an open embedding and the sets $f_i(\ring I^n)$ are pairwise disjoint. Furthermore, let $g:\pair\to (X,A)$ such that $g(I^n\sm\bigcup_{i=1}^k f_i(\ring I^n))\subset A$. Then
 \[[g]=\sum_{i=1}^k(\deg f_i)[g\circ f_i]\]
-in $\pi_n\pair^\#$.
+in $\pi_n(X,A)\#$.
 \end{theorem}
 
 \begin{remark}
@@ -46,7 +46,7 @@ Let $f:\ring I^n\to\ring I^n $ be an open embedding, $p\in\ring I^n$. We have th
 where the maps are all isomorphisms by homotopies and excision, hence they induce the dashed arrow. This is an automorphism of $H_n\pair\cong\Z$ and thus $d=\pm1$. One can show this is independent of $p$, hence we call it the \tbf{local degree} of $f$, and write $\deg(f)=d$.
 
 \begin{lemma}
-For $1\leq i\leq k$, let $\Uu_i\subset f_i(\ring I^n)$ be any non-empty open set. Then $g$ is homotopic relative to $I^n\sm f(\mathring{I}^n)$ to a map that sends $f(I^n)\sm\mathcal{U}_i$ to $A$.
+For $1\leq i\leq k$, let $\Uu_i\subset f_i(\ring I^n)$ be any non-empty open set. Then $g$ is homotopic relative to $I^n\sm f_i(\mathring{I}^n)$ to a map that sends $f_i(I^n)\sm\mathcal{U}_i$ to $A$ for all $i$.
 \end{lemma}
 
 \begin{remark}
@@ -58,19 +58,19 @@ There is a homotopy relative $\de I^n$ from the identity to a map that sends eve
 \[H':I^n\times I\to X,\quad H'(x,t)=\begin{cases}H(f^{-1}(x),t) & x\in f_i(I^n) \\ g(x) & x\not\in f_i(\mathring{I}^n)\end{cases}\]
 which we can show is well defined. Let $x\in f_i(\de I^n)$, with preimage $y$, then\normalmarginpar\marginnote{\footnotesize It suffices to check this because $f_i(\de I^n)\cap f_j(\ring I^n)$ is empty for all $i,j$.} \[g(x)=H(y,t)=H(y,0)=gf_i(y)\] so that it is well defined as a map of sets. Then $H'(x,0)=g(x)$ and $H'(x,1)\in A$ for $x\not\in f(\mathring{Q})$, in particular $H'(x,1)\in A$ for $x\not\in\mathcal{U}_i$. It remains to prove that $H'$ is continuous.
 
-Claim. We have a pushout
+Claim. We have a commutative square
 \begin{center}
-    \begin{tikzcd}
-    \de I^n\times I \arrow[d, "i"] \arrow[r, "f_i|_{\de I^n}\times\id"] & (I^n\sm f_i(\ring I^n))\times I \arrow[d] \\
-    I^n\times I \arrow[r] & (I^n\times I)\amalg_{\de I^n\times I^n} ((I^n\sm f_i(\mathring{I}^n))\times I)
+    \begin{tikzcd}[column sep=20mm]
+    \de I^n\times I \arrow[d, "i"] \arrow[r, "f_i|_{\de I^n}\times\id"] & (I^n\sm f_i(\ring I^n))\times I \arrow[d, "i"] \\
+    I^n\times I \arrow[r, "f_i\times\id"] & I^n\times I
     \end{tikzcd}
 \end{center}
 Then,
-\[(I^n\times I)\amalg_{\de I^n\times I^n} ((I^n\sm f_i(\mathring{I}^n))\times I)\xto{(f_i\times\id,i)} I^n\times I\]
+\[(I^n\times I)\amalg_{\de I^n\times I} ((I^n\sm f_i(\mathring{I}^n))\times I)\xto{(f_i\times\id,i)} I^n\times I\]
 is a homeomorphism.
 
 \begin{claimproof}
-Well-definedness and continuity of the function follow from the universal property of the pushout. One can check that it is is bijective by a direct computation. Hence we have a continuous bijection from a quasi-compact space to an Hausdorff space, which is then a homeomorphism. 
+Well-definedness and continuity of the function follow from the universal property of the pushout. One can check that it is bijective by a direct computation. Hence we have a continuous bijection from a quasi-compact space to an Hausdorff space, which is then a homeomorphism. 
 \end{claimproof}
 
 Thus to show that $H'$ is continuous, it suffices to show that the maps $H'\circ (f_i\times I)$ and $H'|_{(I^n\sm f(\ring I^n))\times I}$ are continuous, which follows from the construction.\todo{Not sure how this works, to be honest}
@@ -78,7 +78,7 @@ Thus to show that $H'$ is continuous, it suffices to show that the maps $H'\circ
 
 \begin{proof}[Proof of the homotopy addition theorem (\ref{theorem:HAT})]\renewcommand{\qedsymbol}{\textit{To be continued...}} Induction on $k$.
 
-$(k=1)$ Take a cube $Z_1\subset f_i(\mathring{I}^n)$. By the lemma we may assume that $g(I^n\sm\mathring{Z}_1)\subset A$. Our goal is to construct some $f_1':(I^n,\de I^n)\to(I^n,\de I^n)$ with $[gf_1]=[gf_1']$. There exists\normalmarginpar\marginnote{\footnotesize The homotopy $Q$ is the same kind of "pushing out" homotopy that we already considered in the proof of the lemma.} a homotopy $Q$ from $\id_{I^n}$ to a map $p$ such that:
+$(k=1)$ Take a cube $Z_1\subset f_1(\mathring{I}^n)$. By the lemma we may assume that $g(I^n\sm\mathring{Z}_1)\subset A$. Our goal is to construct some $f_1':(I^n,\de I^n)\to(I^n,\de I^n)$ with $[gf_1]=[gf_1']$. There exists\normalmarginpar\marginnote{\footnotesize The homotopy $Q$ is the same kind of "pushing out" homotopy that we already considered in the proof of the lemma.} a homotopy $Q$ from $\id_{I^n}$ to a map $p$ such that:
 \begin{itemize}
     \item $p|_{Z_1}=\id_{Z_1}$
     \item $p(I^n\sm\mathring{Z}_1)\subset\de I^n$

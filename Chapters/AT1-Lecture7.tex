@@ -19,7 +19,7 @@ For every $n\geq 3$ there is an isomorphism $\pi_n(S^3,*)\cong\pi_n(S^2,*)$. In 
 
 \begin{proof}
 For $n\geq3$ we have
-\[\cdots\to\pi_n(S^1,*)=0\to\pi_n(S^3,*)\xto{\eta_*}\pi_n(S^3,*)\to\pi_\ni(S^1,*)=0\to\cdots\]
+\[\cdots\to\pi_n(S^1,*)=0\to\pi_n(S^3,*)\xto{\eta_*}\pi_n(S^2,*)\to\pi_\ni(S^1,*)=0\to\cdots\]
 which yields the claim.
 
 In particular, for $n=3$ we get that $\eta_*:\pi_3(S^3,*)\cong\Z\to\pi_3(S^2,*)$ is an isomorphism which sends $[\id_{S^3}]$, generator of $\pi_3(S^3,*)$, to $[\eta\circ\id_{S^3}]=[\eta]$.
@@ -47,7 +47,7 @@ Let $G$ be a topological group. A principal $G$-bundle is a $G$-space $E$ such t
 \begin{example}
 The group action of the additive group of the real numbers with the discrete topology on itself (with the standard topology):
 \[\R^d\times\R\to\R\]
-is an example of free action which does not satisfy property (2).
+is an example of free action which does not satisfy property (2).\todo{Not sure}
 \end{example}
 
 \begin{proposition}
@@ -98,6 +98,8 @@ Considering $\eta:S^3\to S^2$ and $x_1\neq x_2\in S^2$
 is continuous. Choosing orientations on $S^2$ and $\eta^{-1}(x_1)\times\eta^{-1}(x_2)\cong S^1\times S^1$, we can consider the mapping degree of $s$. This is an example of an invariant for links called the \textbf{linking number} and it will be $\pm1$ in this case.
 \end{remark}\smallskip
 
+%\rightnote{Xiaoxiang Zhou suggested \href{https://www.youtube.com/watch?v=yNpqLMpfxA8&list=PL3C690048E1531DC7&index=7}{Dimension: a walk through mathematics} for an animation of the Hopf fibration.}
+
 \begin{center}\rightnote{Someday I'll really wrap my head around this picture... (but maybe it's just not \textit{that} illuminating?)}
     \includegraphics[scale=0.45]{Pictures/HopfFibration.jpg}
 \end{center}
@@ -144,7 +146,7 @@ For the proof of the existence of the long exact sequence associated to a fibre 
 
 \begin{proposition**}
 Let $p:E\to B$ be a Serre fibration, $Y\subset B$ a subspace and $x\in p^{-1}(Y)$. Then the projection induces an isomorphism (for $n\geq 1$):
-\[p_*:\pi_n(E,p^{-1}(Y),*)\xto{\cong}\pi_n(B,Y,p(x))\]
+\[p_*:\pi_n(E,p^{-1}(Y),x)\xto{\cong}\pi_n(B,Y,p(x))\]
 \end{proposition**}
 
 \begin{corollary**}

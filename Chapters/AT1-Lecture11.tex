@@ -13,12 +13,12 @@ Because $K$ is compact and $Y$ Hausdorff, $K$ is closed in $Y$; so $q^{-1}(K)$ i
 \begin{example}
 The map $q:[0,1]\to S^1=\cb{z\in\CC:|z|=1}$, $q(x)=e^{2\pi ix}$ is a quotient map, so
 \[q^*:X^{S^1}\to\cb{f\in X^{[0,1]}\mid f(0)=f(1)}\]
-is a homeomorphism. For any base point $x_0\in X$, this homeomorphism restricts to a homomorphism
+is a homeomorphism. For any base point $x_0\in X$, this homeomorphism restricts to a homeomorphism
 \[(X,x_0)^{(S^1,1)}\to\Omega X.\]
 
-If $(Y,y_0)$ is a pointed space, the pointed version of $[Y,Z]=\pi_0(Z^Y)$ yields a well-defined surjective map $[Y,Z]_*\to\pi_0((Z,z_0)^{(Y,y_0))}$. If $Y$ is locally compact, this is a bijection.
+If $(Y,y_0)$ is a pointed space, the pointed version of $[Y,Z]\onto\pi_0(Z^Y)$ yields a well-defined surjective map $[Y,Z]_*\to\pi_0((Z,z_0)^{(Y,y_0))}$. If $Y$ is locally compact, this is a bijection.
 
-For $Y=S^1$, this gives a bijection $\pi_1(Z,z_0)\cong\pi_0((Z,z_0)^{(S^1,1)})=\pi_0(\Omega Y)$.
+For $Y=S^1$, this gives a bijection $\pi_1(Z,z_0)\cong\pi_0((Z,z_0)^{(S^1,1)})=\pi_0(\Omega Z)$.
 \end{example}
 
 \subsection{Loop Shifts the Homotopy Groups}
@@ -52,7 +52,7 @@ Let $Z$ be any space, $(X,A)$ a relative CW-complex with $X$ and $A$ finite CW-c
 \begin{proof}
 We show that $\incl^*$ has the HLP with respect to all CW-complexes $Q$. So we consider a lifting diagram
 \[\begin{tikzcd}
-Q\times0 \arrow[d,hook] \arrow[r,"f"] & Z \arrow[d,"\incl^*"] \\
+Q\times0 \arrow[d,hook] \arrow[r,"f"] & Z^X \arrow[d,"\incl^*"] \\
 Q\times[0,1] \arrow[r,"\Phi"] & Z^A
 \end{tikzcd}\]
 Since $X$ and $A$ are locally compact we can use the exponential law to adjoint $f$ and $\Phi$ to continuous maps
@@ -102,11 +102,11 @@ so the homotopy $\til H^*$ ends in the constant map at $z_0$.
 For all $w\in EZ$, $\til H^*(w,0)(s)=w(t(s,0))=w(s)$, so $\til H^*(w,0)=w$.
 \end{proof}
 
-Now we can see that $\pi_n(\Omega,*)\cong\pi_{n+1}(Z,z_0)$ is a group morphism.
+Now we can see that $\pi_n(\Omega Z,*)\cong\pi_{n+1}(Z,z_0)$ is a group morphism.
 
 \begin{proof}[Second proof/construction of the isomorphism $\pi_n(\Omega Z,*)\cong\pi_{n+1}(Z,z_0)$]
 
-We have seen that the space $EZ=\cb{w\in Z^{[0,1]}\mid w(0=z_0)}$ is contractible.
+We have seen that the space $EZ=\cb{w\in Z^{[0,1]}\mid w(0)=z_0)}$ is contractible.
 
 The map $e:EZ\to Z$, $e(w)=w(1)$ is a Serre fibration, so for every point in $Z$, we get a long exact sequence of homotopy groups. For $z_0\in Z$, the fibre of $e$ at $z_0$ is $\Omega Z$; hence the long exact sequence of homotopy groups is:
 \[\dots\to\pi_{n+1}(EZ,*)=0\xto{e_*}\pi_{n+1}(Z,z_0)\xto{\de}\pi_n(\Omega Z,*)\xto{\incl_*}\pi_n(EZ,*)=0\to\cdots\]

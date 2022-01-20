@@ -2,9 +2,11 @@
 
 \lecture[A lot of simplicial stuff.]{2021-10-27}
 
-Given two simplicial sets $X$ and $Y$, their product $X\times Y$ is the functor \[\Delta^\op\xto{(X,Y)}\Set\times\Set\xto{\times}\Set\] i.e. $(X\times Y)_n=X_n\times Y_n$ and $\alpha^*_{X\times Y}=\alpha^*_X\times\alpha^*_Y$.
+Given two simplicial sets $X$ and $Y$, their product $X\times Y$ is the functor \[\Delta^\op\xto{(X,Y)}\Set\times\Set\xto{\times}\Set,\] i.e. $(X\times Y)_n=X_n\times Y_n$ and $\alpha^*_{X\times Y}=\alpha^*_X\times\alpha^*_Y$.
 
-The \textbf{simplicial $n$-simplex} is the represented simplicial set $\Delta[n]:=\Delta(-,[n])$. By the Yoneda lemma, for every simplicial set $X$, the map $\sSet(\Delta[n],X)\to X_n$, $(f:\Delta[n]\to X)\mapsto f_n(\id_{[n]})$, is bijective.
+The \textbf{simplicial $n$-simplex} is the represented simplicial set $\Delta[n]:=\Delta(-,[n])$. By the Yoneda lemma, for every simplicial set $X$, the map
+\[\sSet(\Delta[n],X)\to X_n,\quad (f:\Delta[n]\to X)\mapsto f_n(\id_{[n]})\]
+is bijective.
 
 A \textbf{homotopy between morphisms} $f,g:X\to Y$ in $\sSet$ is a morphism $H:X\times\Delta[1]\to Y$ such that $H\circ i_0=f$ and $H\circ i_1=g$, where $i_0,i_1:X\to X\times\Delta[1]$ (note: the morphism $i_j$ has components $(i_j)_n:X_n\to X_n\times\Delta([n],[1])$, $x\mapsto(x,\text{cost}_j)$).
 
@@ -44,7 +46,7 @@ from the identity to a morphism with image in $\S(X,A,k)$ that is relative to $\
 
 We first prove a proposition.
 
-Let $X$ be a simplicial set and $x\in X_n$, for $n\geq0$. Then the $n$-simplex $x$ is \textbf{degenerate} if there is a surjective morphism $\sigma:[n]\to [k]$ with $k<n$, and $y\in X_k$ such that $X=\sigma^*(y)$ (i.e. $x\in\im(\sigma^*:X_k\to X_n)$).
+Let $X$ be a simplicial set and $x\in X_n$, for $n\geq0$. Then the $n$-simplex $x$ is \textbf{degenerate} if there is a surjective morphism $\sigma:[n]\to [k]$ with $k<n$, and $y\in X_k$ such that $x=\sigma^*(y)$ (i.e. $x\in\im(\sigma^*:X_k\to X_n)$).
 
 \begin{proposition}\label{proposition:non-degenerate-simplices}
 Let $X$ be a simplicial set and $x\in X_n$ any simplex. Then there is a unique pair $(\sigma,y)$ consisting of:
@@ -101,8 +103,8 @@ $(n=0)$ The map $f:\nabla^0\to X$ is determined by its image $f(e_0)\in X$. Sinc
 
 $(n\geq1)$ We distinguish three cases:
 
-Case 1. $f:\nabla^n\to X_n$ is degenerate as a simplex of the simplicial set $\S(X)$. Then $f=\sigma^*(g)$ for a unique pair $(\sigma,g)$ with $\sigma:[n]\onto[k]$, $k<n$ and $g:\nabla^k\to X$ continuous. By (c) we have to define $\psi_f$ as the composite
-\[\nabla^n\times\nabla^1\xto{\sigma_*\times\id}\nabla^k\times\nabla^1\xto{\psi_g} X\]
+Case 1. $f:\nabla^n\to X$ is degenerate as a simplex of the simplicial set $\S(X)$. Then $f=\sigma^*(g)$ for a unique pair $(\sigma,g)$ with $\sigma:[n]\onto[m]$, $m<n$ and $g:\nabla^m\to X$ continuous. By (c) we have to define $\psi_f$ as the composite
+\[\nabla^n\times\nabla^1\xto{\sigma_*\times\id}\nabla^m\times\nabla^1\xto{\psi_g} X\]
 
 Case 2. $f:\nabla^n\to X$ is non-degenerate and $k<n$. We note that by property $(c)$, the map $\psi_f:\nabla^n\times\nabla^1\to X$ is already fixed on $(\de\nabla^n)\times\nabla^1$; by $(a)$ it is also determined on $\nabla^n\times e_0$.
 
@@ -156,7 +158,7 @@ that is, in the simplicial dimension $n$, we need to specify a map
 We do this via an adjunction bijection:
 \begin{multline*}
     \Hom_\sSet(Z\times\Delta[1],\S(X))\cong\\
-    \cong\cb{\psi_f:\nabla^n\times\nabla^1\to X \text{ for all } n\geq0, z\in Z_n,\text{ such that } \psi_{\alpha^*(z)}=\psi_Z(\alpha_*\circ\nabla^1)}
+    \cong\cb{\psi_f:\nabla^n\times\nabla^1\to X \text{ for all } n\geq0,\ z\in Z_n,\text{ such that } \psi_{\alpha^*(z)}=\psi_z(\alpha_*\circ\nabla^1)}
 \end{multline*}
 
 \textit{Sketch} (full argument as an exercise).
@@ -172,6 +174,6 @@ Step 4. Combine steps 1-3.
     \Hom_\sSet(Z\times\Delta[1],\S(X))&\underset{\text{Step 1}}{\cong}\cb{\psi_z:\Delta[n]\times\Delta[1]\to\S(X)\mid(\psi_z)_m(\alpha,k)=H_m(\alpha^*(z),k)} \\
     &\underset{\text{Step 2}}{\cong}\cb{\psi_z^\#:|\Delta[n]\times\Delta[1]|\to X} \\
     &\underset{\text{Step 3}}{\cong}\cb{\hat\psi_z:\ns\times\sx{1}\to X}
-\end{align*}\reversemarginpar\todo{I might have written some dumb things}
+\end{align*}\reversemarginpar\todo[color=red]{I might have written some dumb things}
 
 \end{proof}
