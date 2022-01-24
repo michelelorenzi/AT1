@@ -34,7 +34,7 @@ is an isomorphism.
 
 Where the \textbf{Hurewicz map} is defined in the following way. Let $n\geq1$ and let $c\in H_n(S^n;\Z)$ be a generator. For a based space $(X,x_0)$ define
 \[h:\pi_n(X,x_0)\to H_n(X;\Z),\ [f:S^n\to X]\mapsto f_*(c)\]
-where $f_*:H_n(S^n;\Z)\to H_n(X,\Z)$ is the map induced by $f$ on homology groups. I.e. the Hurewicz map $h$ is the evaluation at the fundamental class of $S^n$.
+where $f_*:H_n(S^n;\Z)\to H_n(X,\Z)$ is the map induced by $f$ on homology groups, i.e. the Hurewicz map $h$ is the evaluation at the fundamental class of $S^n$.
 
 Proving this theorem will keep us busy for the next few lectures.
 
@@ -58,10 +58,10 @@ We know prove two properties of the Hurewicz map, namely its naturality and the 
 
 \begin{proof}
 Let $\alpha:S^n\to X$ represent a class in $\pi_n(X,x_0)$. Then
-\[f_*(h^X[\alpha])=f_*(\alpha_*(c))=(f\alpha)_*(c)=h^Y[f\circ\alpha]=h^Y(f_*[\alpha])\]
+\[f_*(h^X[\alpha])=f_*(\alpha_*(c))=(f\circ\alpha)_*(c)=h^Y[f\circ\alpha]=h^Y(f_*[\alpha])\]
 \end{proof}
 
-\unnumpar{The Hurewicz map is a group homomorphism} Let $p:S^n\to S^n\vee S^n$ be a pinch map\marginnote{\footnotesize The pinch map is the subject of one of the exercises in the first exercise sheet ("The" pinch map, because as we will see it is unique up to homotopy).}, i.e. a continuous based map such that both compositions with the projections $S^n\vee S^n\rightrightarrows S^n$ are based-homotopic to the identity. The group structure on $\pi_n(X,x_0)$ (for $n\geq2$) is as follows (thinking of spheres):
+\unnumpar{The Hurewicz map is a group homomorphism} Let $p:S^n\to S^n\vee S^n$ be a pinch map\marginnote{\footnotesize We will study\\ the pinch map in AT1Sheet1.2 ("The" pinch map, because as we will see it is unique up to homotopy).}, i.e. a continuous based map such that both compositions with the projections $S^n\vee S^n\rightrightarrows S^n$ are based-homotopic to the identity. The group structure on $\pi_n(X,x_0)$ (for $n\geq2$) is as follows (thinking of spheres):
 \[[f]+[f']:=[(f\vee f')\circ p].\]
 It will be an exercise this week to show that if $i_1,i_2:S^n\to S^n\vee S^n$ are the two summand inclusions the following relations holds:
 \[p_*(c)=(i_1)_*(c)+(i_2)_*(c) \text{ in } H_n(S^n\vee S^n;\Z)\]

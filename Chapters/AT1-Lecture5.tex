@@ -158,22 +158,27 @@ that is, in the simplicial dimension $n$, we need to specify a map
 We do this via an adjunction bijection:
 \begin{multline*}
     \Hom_\sSet(Z\times\Delta[1],\S(X))\cong\\
-    \cong\cb{\psi_f:\nabla^n\times\nabla^1\to X \text{ for all } n\geq0,\ z\in Z_n,\text{ such that } \psi_{\alpha^*(z)}=\psi_z(\alpha_*\circ\nabla^1)}
+    \cong\cb{\psi=\cb{\psi_z:\nabla^n\times\nabla^1\to X\text{ for all } n\geq0,\ z\in Z_n}\mid\psi_{\alpha^*(z)}=\psi_z\circ(\alpha_*  \times\id_{\nabla^1})}
 \end{multline*}
 
 \textit{Sketch} (full argument as an exercise).
 
-Step 1. Given $H:Z\times\Delta[1]\to Y$ and $z\in Z_n$, we define $\psi_z:\Delta[n]\times\Delta[1]\to Y$ by $(\psi_z)_m(\alpha,k)=H_m(\alpha^*(z),k)$ (this is bijective by the Yoneda lemma).
+Step 1. Given $H:Z\times\Delta[1]\to Y$ and $z\in Z_n$, we define $\psi^H_z:\Delta[n]\times\Delta[1]\to Y$ by
+\[(\psi_z)_m(\alpha,\kappa)=H_m(\alpha^*(z),\kappa),\]
+and using the Yoneda lemma we can show that the assignment $H\mapsto\cb{\psi^H_z}$ is bijective.
 
-Step 2. $\S:\Top\to\sSet$ is right adjoint to $|-|:\sSet\to\Top$ and there is a preferred homeomorphism $|\Delta[n]|\cong\ns$, $(\alpha:[m]\to[n],t)\mapsto\alpha_*(t)$, with inverse $s\mapsto[\id_{[n]},s]$.
+Step 2. $\S:\Top\to\sSet$ is right adjoint to $|-|:\sSet\to\Top$. This is AT1Sheet3.1
 
-Step 3. The map $|\Delta[n]\times\Delta[1]|\xto{(|\pr_1|,|\pr_2|)}|\Delta[n]|\times|\Delta[1]|\cong\ns\times\sx{1}$ is a homeomorphism.
+Step 3. There is a preferred homeomorphism $|\Delta[n]|\cong\ns$ given by
+\[(\alpha:[m]\to[n],t)\mapsto\alpha_*(t),\text{ with inverse }s\mapsto[\id_{[n]},s],\] and the map
+\[|\Delta[n]\times\Delta[1]|\xto{(|\pr_1|,|\pr_2|)}|\Delta[n]|\times|\Delta[1]|\cong\ns\times\sx{1}\]
+is a homeomorphism. This is AT1Sheet3.2.
 
 Step 4. Combine steps 1-3.
 \begin{align*}
-    \Hom_\sSet(Z\times\Delta[1],\S(X))&\underset{\text{Step 1}}{\cong}\cb{\psi_z:\Delta[n]\times\Delta[1]\to\S(X)\mid(\psi_z)_m(\alpha,k)=H_m(\alpha^*(z),k)} \\
-    &\underset{\text{Step 2}}{\cong}\cb{\psi_z^\#:|\Delta[n]\times\Delta[1]|\to X} \\
-    &\underset{\text{Step 3}}{\cong}\cb{\hat\psi_z:\ns\times\sx{1}\to X}
-\end{align*}\reversemarginpar\todo[color=red]{I might have written some dumb things}
+    \Hom_\sSet(Z\times\Delta[1],\S(X))&\underset{\text{Step 1}}{\cong}\cb{\cb{\psi_z:\Delta[n]\times\Delta[1]\to\S(X)\text{ for all } n\geq0,\ z\in Z_n}\mid\cdots}\\
+    &\underset{\text{Step 2}}{\cong}\cb{\cb{\psi_z^\#:|\Delta[n]\times\Delta[1]|\to X}\mid\cdots}\\
+    &\underset{\text{Step 3}}{\cong}\cb{\cb{\hat\psi_z:\ns\times\sx{1}\to X}\mid\cdots}
+\end{align*}
 
 \end{proof}
