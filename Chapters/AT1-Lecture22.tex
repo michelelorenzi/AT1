@@ -116,7 +116,7 @@ u(t_0,t_1) & \text{if }t_2=0.
 Since $Z$ is simply-connected, there is a continuous extension $z:\sx{2}\to Z$ of $\langle u,v,w\rangle$. Then we have found $z\in\S(Z)_2$ is such that $d_0^*(z)=v$, $d_1^*(z)=w$ and $d_2^*(z)=u$.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{theorem:adjunction-counit-is-a-weak-equivalence}
 For every topological space $Z$, the continuous map $\epsilon_z:|\S(Z)|\to Z$ is a weak homotopy equivalence.
 \end{theorem}
 
@@ -138,7 +138,7 @@ To sum up: in the commutative square of spaces (given by naturality of the couni
 {|\S(Z)|} \ar[r,"\epsilon_Z"] & Z
 \end{tikzcd}
 \]
-since both vertical maps are universal coverings with isomorphic deck transformation groups, the map $\epsilon_z$ induces an isomorphism of fundamental groups for arbitrary basepoints.\todo[color=red]{I don't understand this argument!} Moreover, the maps $|\S(p)|$ and $p$ (being covering maps) and $\epsilon_{\til Z}$ (being a weak equivalence by Case 1) all induce isomorphisms on $\pi_n$ for $n\ge2$, hence so does $\epsilon_Z$, i.e. it is a weak equivalence.
+since\leftnote{This argument works because $\epsilon_{\til Z}$ is $G$-equivariant, which is essentially by construction.} both vertical maps are universal coverings with isomorphic deck transformation groups, the map $\epsilon_Z$ induces an isomorphism of fundamental groups for arbitrary basepoints. Moreover, the maps $|\S(p)|$ and $p$ (being covering maps) and $\epsilon_{\til Z}$ (being a weak equivalence by Case 1) all induce isomorphisms on $\pi_n$ for $n\ge2$, hence so does $\epsilon_Z$, i.e. it is a weak equivalence.
 
 Case 3. $Z$ is any path-connected space. We choose a CW-approximation $f:Y\to Z$, i.e. a weak equivalence with $Y$ a CW-complex. Consider the commutative square:
 \[

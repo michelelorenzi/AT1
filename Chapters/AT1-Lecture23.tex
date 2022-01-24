@@ -1,15 +1,31 @@
 % Lecture 23
 
-\lecture[]{17-01-2022}
+\section{Equivalences of Homotopy Categories}
 
-Write something for introduction...
+\lecture[We finally get to the result we wanted. Spaces and simplicial sets are essentially (at least for the purposes of homotopy theory) the same!]{17-01-2022}
 
-Let $\Cc$ be a category and $\Ww$ a class of morphisms. A funcctor $F:\Cc\to\Dd$ is $\Ww$-inverting if $F$ sends all morphisms in $\Ww$ to isomorphisms in $\Dd$. A functor $\gamma:\Cc\to\Cc[\Ww^\inv]$ is a localization at $\Ww$ if it is initial among $\Ww$-inverting functors from $\Cc$.
+So far we have proved that the realization of every simplicial set admits a CW-structure (theorem \ref{theorem:cw-structure-on-realization}), that the singular complex functor is homotopical, i.e. it takes weak equivalences to homotopy equivalences (theorem \ref{theore:singular-complex-functor-is-homotopical}), and that the adjunction counit $\epsilon_Z:|\S(Z)|\to Z$ is a weak homotopy equivalence (theorem \ref{theorem:adjunction-counit-is-a-weak-equivalence}).
 
-In more detail, $\gamma\Cc\to\Cc[\Ww^\inv]$ is a localization of $\Ww$ if and only if:
+We can finally prove that the geometric realization and singular complex functors descend to equivalences of homotopy categories of topological spaces and simplicial sets. More precisely, we will see that there is a diagram of equivalence of categories:
+
+\[
+\begin{tikzcd}
+    \Ho(\Top_\text{CW}) \ar[dd,bend right,"\text{inclusion}"',"\cong"] & \\
+     & \sSet[\weq^\inv] \ar[ul,bend right,"|-|"',"\cong"]\\
+     \Top[\weq^\inv] \ar[ur,bend right, "\S"',"\cong"] & 
+\end{tikzcd}
+\]
+
+In the diagram, $\ho(\Top_\text{CW})$ is the \tbf{homotopy category of CW-complexes.} Its objects are all spaces that admit the structure of a CW-complex; its morphisms are homotopy classes of continuous maps. The two other categories are certain localizations, a notion that we will now introduce.
+
+\subsection{Localization of Categories}
+
+Let $\Cc$ be a category and $\Ww$ a class of morphisms of $\Cc$. A functor $F:\Cc\to\Dd$ is $\Ww$\tbf{-inverting} if it sends all morphisms in $\Ww$ to isomorphisms in $\Dd$. A \tbf{localization of }$\Cc$\tbf{ at }$\Ww$ is a functor $\gamma:\Cc\to\Cc[\Ww^\inv]$ that is initial among $\Ww$-inverting functors.
+
+In more detail, $\gamma:\Cc\to\Cc[\Ww^\inv]$ is a localization of $\Cc$ at $\Ww$ if and only if:
 \begin{itemize}[label={-}]
     \item $\gamma$ is $\Ww$-inverting,
-    \item for every functor $F:\Cc\to\Dd$ that is $\Ww$-inverting, there is a unique functor $G:\Cc[\Ww^\inv]\to\Dd$ with $G\circ\gamma=F$.
+    \item $\gamma$ has the property that for every $\Ww$-inverting functor $F:\Cc\to\Dd$, there exists a unique functor $G:\Cc[\Ww^\inv]\to\Dd$ such that $G\circ\gamma=F$.
 \end{itemize}
 \[
 \begin{tikzcd}
@@ -18,9 +34,10 @@ In more detail, $\gamma\Cc\to\Cc[\Ww^\inv]$ is a localization of $\Ww$ if and on
 \end{tikzcd}
 \]
 
-Some comments on the definition:
+Before going on, there is a number of important observations to make on localizations.
+
 \begin{itemize}[label={-}]
-    \item Localizations, if they exist, are unique up to preferred isomorphism. Suppose $\gamma:\Cc\to\Dd$ and $\mu:\Cc\to\Ee$ two localizations at the same class of morphisms $\Ww$. Then $\gamma$ and $\mu$ are $\Ww$-inverting, so the universal properties provide unique functors $G:\Dd\to\Ee$ and $H:\Ee\to\Dd$ such that $G\circ\gamma=\mu$ and $H\circ\mu=\gamma$.
+    \item Localizations, if they exist, are unique up to preferred isomorphism (as is always the case with universal constructions). The usual drill. Suppose $\gamma:\Cc\to\Dd$ and $\mu:\Cc\to\Ee$ are two localizations at the same class of morphisms $\Ww$. Then $\gamma$ and $\mu$ are $\Ww$-inverting, so the universal properties provide unique functors $G:\Dd\to\Ee$ and $H:\Ee\to\Dd$ such that $G\circ\gamma=\mu$ and $H\circ\mu=\gamma$.
     \[
     \begin{tikzcd}
      & \Cc \ar[dr,"\gamma"] \ar[dl,"\mu"] \ar[rr,"\gamma"] & & \Dd\\
@@ -28,130 +45,150 @@ Some comments on the definition:
     \end{tikzcd}
     \]
     Then $H\circ G$ satisfies
-    \[H\circ G\circ\gamma=H\circ\mu=\gamma=\id_\Dd\circ\gamma\]
+    \[H\circ G\circ\gamma=H\circ\mu=\gamma=\id_\Dd\circ\gamma,\]
     hence $H\circ G=\id_\Dd$ by uniqueness. Similarly $G\circ H=\id_\Ee$.
     
-    \item Localizations are bijective on objects: let $X$ be a set and let $EX$ be the category with object set $X$ and a unique morphism $(y,x):x\to y$ for each pair of objects. Then $(x,y):y\to x$ is inverse to $(y,x)$, so $EX$ is a groupoid. $EX$ is called the \tbf{indiscrete category} with object set $X$.
+    \item A brief warning about set-theoretic issues: in principle there may be some when working with localizations (the \href{https://www.math.uni-bonn.de/people/schwede/sset_vs_spaces.pdf}{official notes} give one, i.e. localizations always exist but up to some fiddling with universes), but in our case we are going to give concrete constructions for everything, hence we will stick to a naive approach.\todo{Possibly maybe eventually write something about this..?}
     
-    Note: every map $\ob(\Cc)\to X=\ob(EX)$ can be uniquely extended to a functor $\Cc\to EX$, i.e.
-    \[[\Cc,EX]\cong\Hom_\Set(\ob(\Cc),X).\]
+    \item Localizations are bijective on objects. Let $X$ be a set and let $EX$ be the category with object set $X$ and a unique morphism $(y,x):x\to y$ for each pair of objects. Then the morphism $(x,y):y\to x$ is inverse to $(y,x)$, so $EX$ is a groupoid. $EX$ is called the \tbf{indiscrete category} with object set $X$.
     
-    Since $EX$ is a groupoid, every functor $\Cc\to EX$ is $\Ww$-inverting. So the universal property of the localization $\gamma:\Cc\to\Cc[\Ww^\inv]$ becomes a bijection
-    \[*****\]
-    i.e. $\ob(\gamma):\ob(\Cc)\to\ob(\Cc[\Ww^\inv])$ is bijective.
+    Since\rightnote{Last remark on set-theoretic issues: I feel a little bit uneasy with the argument we use to show that localization is bijective on objects, but I will set aside my qualms about foundations until I have the time to read something about it.} $EX$ is a groupoid, every functor $\Cc\to EX$ is $\Ww$-inverting, hence it extends uniquely over $\gamma$ to a functor $\Cc[\Ww^\inv]\to EX$. However, we also have that any map $\ob(\Cc)\to X=\ob(EX)$ can be uniquely extended to a functor $\Cc\to EX$. Altogether we have that any map $\ob(\Cc)\to X$ extends uniquely over $\gamma$ to a map $\ob(\Cc[\Ww^\inv])\to X$, which means that $\ob(\gamma):\ob(\Cc)\to\ob(\Cc[\Ww^\inv])$ is bijective.
     
-    \item One can always choose a localization, if one exists, to satisfy $\ob(\Cc[\Ww^\inv])=\ob(\Cc)$ and that $\gamma$ is the identity on objects.
+    \item As a consequence of the previous item, one can always chose a localization of $\Cc$ at $\Ww$, if it exists, to satisfy $\ob(\Cc[\Ww^\inv])=\ob(\Cc)$ with $\gamma$ the identity on objects.
     
     \item Localizations of categories are somewhat analogous to localizations of rings: a localization of a ring $R$ at a subset $S$ is a ring homomorphism $\gamma:R\to R[S^\inv]$ that is initial among $S$-inverting ring morphisms.
     
-    \item If the ring $R$ is commutative and $S$ is closed under multiplication, then a localization can be constructed by means of \enquote{fractions}: $R[S^\inv]$ are equivalence classes of pairs $(r,s)\in R\times S$, where the equivalence is that $(r,s)\sim(r',s')$ when there is a $t\in S$ such that $rs't=r'st$; then the equivalence class of $(r,s)$ is written $\frac{r}{s}$ and $R\to R[S^\inv]$, $r\mapsto \frac{r}{1}$ is a localization.
+    If the ring $R$ is commutative and $S$ is closed under multiplication, then a localization can be constructed by means of \enquote{fractions}: $R[S^\inv]$ are equivalence classes of pairs $(r,s)\in R\times S$, where the equivalence is that $(r,s)\sim(r',s')$ when there is a $t\in S$ such that $rs't=r'st$; then the equivalence class of $(r,s)$ is written $r/s$ and
+    \[R\to R[S^\inv],\ r\mapsto \frac{r}{1}\]
+    is a localization.
     
-    \item In the context of non-commutative rings, localizations exists but there need not be any concrete description of $R[S^\inv]$ that resembles fractions. There are conditions (\enquote{calculus of fractions}, \enquote{Ore condition}) that give a \enquote{fraction-like} description of $R[S^\inv]$.
+    \item In the context of non-commutative rings, localizations exist but there need not be any concrete description of $R[S^\inv]$ that resembles fractions. There exist sufficient conditions (known as \enquote{calculus of fractions} or the \enquote{\href{https://en.wikipedia.org/wiki/Ore_condition}{Ore condition}}) that give a \enquote{fraction-like} description of $R[S^\inv]$. For the calculus of fractions, a reference given by the Professor is a book by Gabriel and Zisman \cite{gabriel-zisman}.
 \end{itemize}
 
-A localization $\gamma:\Cc\to\Cc[\Ww^\inv]$ induces a bijection
-\[[\Cc[\Ww^\inv],\Dd]\xto{-\circ\gamma}\cb{\Ww-inverting functore \Cc\to\Dd}.\]
+A localization $\gamma:\Cc\to\Cc[\Ww^\inv]$ induces a bijection from the set of functors $\Cc[\Ww^\inv]\to \Dd$ to the set of $\Ww$-inverting functors $\Cc\to\Dd$. The next proposition shows that this is also true of natural transformations.
 
-For categories $\Cc,\Dd$, we write $\Fun(\Cc,\Dd)$ for the category of functors $\Cc\to\Dd$ and natural transformations between them.
+Note: for categories $\Cc,\Dd$, we write $\Fun(\Cc,\Dd)$ for the category of functors $\Cc\to\Dd$ and natural transformations between them.
 
-\begin{proposition}
-Let $\gamma:\Cc\to\Cc[\Ww^\inv]$ be a localization at $\Ww$. Then for every category $\Dd$ the functor
-\[\gamma^*:\Fun(\Cc[\Ww^\inv])\to\Fun(\Cc,\Dd)\]
-is an isomorphism onto the full subcategory of $\Fun(\Cc,Dd)$ spanned by the $\Ww$-inverting functors.
+\begin{proposition}\label{proposition:localization-induces-embedding}
+Let $\gamma:\Cc\to\Cc[\Ww^\inv]$ be a localization at a class of morphisms $\Ww$. Then for every category $\Dd$ the functor
+\[\Fun(\gamma,\Dd):\Fun(\Cc[\Ww^\inv],\Dd)\to\Fun(\Cc,\Dd)\]
+is an isomorphism onto the full subcategory of $\Fun(\Cc,\Dd)$ spanned by the $\Ww$-inverting functors.
 \end{proposition}
 
 \begin{proof}
-On objects, this is the defining universal property. We let $I$ be a category with two objects $0,1$ and only one non-identity morphism $a:0\to1$. Then functors $\Cc\to\Fun(I,\Dd)$ correspond to natural transformations of functors $\Cc\to\Dd$.
-Suppose $\tau:F\to G$ is a natural transformation of functors $F,G:\Cc\to\Dd$. This yields a single functor $\tau^\flat:\Cc\to\Fun(I,\Dd)$ by
+On objects, this is the defining universal property. At the level of morphisms, we exploit the fact that natural transformations can be interpreted as functors, as follows. Let $I$ be the category with two objects $0$ and $1$ and only one non-identity morphism $a:0\to1$. Functors $\Cc\to\Fun(I,\Dd)$ correspond to natural transformations of functors $\Cc\to\Dd$.
+Indeed, suppose $\tau:F\to G$ is a natural transformation of functors $F,G:\Cc\to\Dd$. This yields a single functor $\tau^\flat:\Cc\to\Fun(I,\Dd)$ by
 \begin{itemize}[label={-}]
     \item on objects:
-    \[\tau^\flat(c)(0)=F(c),\ \tau^\flat(c)(1)=G(c)\]
-    \[\tau^\flat(c)(0\to1)=(\tau_c:F(c)\to G(c))\]
+    \[\tau^\flat(c)(0)=F(c),\ \tau^\flat(c)(1)=G(c),\]
+    \[\tau^\flat(c)(0\to1)=(\tau_c:F(c)\to G(c)),\]
     \item on morphisms:
-    \[\tau^\flat(f:c\to d)(0)=F(f)\]
-    \[\tau^\flat(f:c\to d)(1)=G(f)\]
+    \[\tau^\flat(f:c\to c')(0)=F(f),\]
+    \[\tau^\flat(f:c\to c')(1)=G(f).\]
 \end{itemize}
 
-Now we can apply the localization property of $\gamma:\Cc\to\Cc[\Ww^\inv]$ to the category $\Fun(I,\Dd)$. We get a bijection
-\[*****\]
+Now we can apply the localization property of $\gamma:\Cc\to\Cc[\Ww^\inv]$ to functors with target $\Fun(I,\Dd)$. We get a bijection between the set of functors $\Cc[\Ww^\inv]\to\Fun(I,\Dd)$ and the set of $\Ww$-inverting functors $\Cc\to\Fun(I,\Dd)$. Translating functors to $\Fun(I,\Dd)$ to natural transformations of functors $\Cc\to\Dd$, this becomes the statement that precomposition with $\gamma$ is a bijection from the set of natural transformations of functors $\Cc[\Ww^\inv]\to\Dd$ to the set of natural transformations with $\Ww$-inverting functors $\Cc\to\Dd$. But this is exactly the statement that
+\[\Fun(\gamma,\Dd):\Fun(\Cc[\Ww^\inv],\Dd)\to\Fun(\Cc,\Dd)\]
+is bijective on $\Hom$-sets.
 \end{proof}
 
 \begin{remark}
 There is a weaker notion of localization that takes seriously the fact that categories form a $2$-category.
 
 A functor $\gamma:\Cc\to\Cc[\Ww^\inv]$ is a \tbf{weak localization} at $\Ww$ if for every category $\Dd$, the functor
-\[\gamma^*:\Fun(\Cc[\Ww^\inv],\Dd)\to\Fun(\Cc,\Dd)\]
+\[\Fun(\gamma,\Dd):\Fun(\Cc[\Ww^\inv],\Dd)\to\Fun(\Cc,\Dd)\]
 is an equivalence onto the full subcategory of $\Ww$-inverting functors.
 
-Localizations are weak localizations, the latter are more general.
+Proposition \ref{proposition:localization-induces-embedding} shows that localizations are weak localizations, but the latter are more general: if $\gamma:\Cc\to\Cc[\Ww^\inv]$ is a localization and $F:\Cc[\Ww^\inv]\to\Ee$ an equivalence of categories that is not an isomorphism, then the composite $F\gamma:\Cc\to\Ee$ is a weak localization, but not a localization, at $\Ww$.
 \end{remark}
 
-\subsection{Construction of a Localization in Top}
+\subsection{Construction of a Localization of Top}
 
-We define a category $\Top[\weq^\inv]$:
-\begin{itemize}[label={-}]
-    \item objects are all topological spaces,
-    \item morphisms are $\Hom_\Top(|\S(X)|,|\S(Y)|)$ modulo homotopies of maps,
-    \item composition is the usual.
+We define a category $\Top[\weq^\inv]$ as follows:
+\begin{itemize}
+    \item the objects are all topological spaces,
+    \item the morphisms are $\Hom_\Top(|\S(A)|,|\S(B)|)$ modulo homotopies of maps,
+    \item composition is composition of homotopy classes of maps.
 \end{itemize}
 
-We define a functor $\gamma:\Top\to\Top[\weq^\inv]$,
+We define a functor $\gamma:\Top\to\Top[\weq^\inv]$ as follows:
 \begin{itemize}[label={-}]
-    \item on objects $\gamma(X)=X$,
-    \item on morphisms $\gamma(f:X\to Y)=[|\S(f)|]$.
+    \item on objects $\gamma(A)=A$,
+    \item on morphisms $\gamma(f:A\to B)=[\,|\S(f)|:|\S(A)|\to|\S(B)|\,]$.
 \end{itemize}
 
-The functor $\gamma:\Top\to\Top[\weq^\inv]$ inverts weak equivalences. Indeed, let $f:X\to Y$ be a weak equivalence, then $\S(f):\S(X)\to\S(Y)$ is a homotopy equivalence of simplicial sets, so $|\S(f)|$ is a homotopy equivalence and this is an isomorphism in $\Top[\weq^\inv]$.
+The functor $\gamma:\Top\to\Top[\weq^\inv]$ inverts weak equivalences. Indeed, let $f:A\to B$ be a weak equivalence, then $\S(f):\S(A)\to\S(B)$ is a homotopy equivalence of simplicial sets, so $|\S(f)|$ is a homotopy equivalence by Whitehead and this is an isomorphism in $\Top[\weq^\inv]$.
 
-\begin{theorem}
+\begin{theorem}\label{theorem:localization-of-top}
 The functor $\gamma:\Top\to\Top[\weq^\inv]$ is a localization at the class of weak homotopy equivalences.
 \end{theorem}
+
+\begin{warning}
+The proof we saw in the lecture had a problem: the diagram $(*)$ was assumed to be commutative (it deceptively looks like a naturality square), while it only commutes up to homotopy. I am hence following the proof in the \href{https://www.math.uni-bonn.de/people/schwede/sset_vs_spaces.pdf}{official notes}, but this requires referencing a result that we saw in the \tit{following} lecture (proposition \ref{proposition:adjunction-unit-is-a-weak-equivalence}) and one that we did not see at all (proposition \ref{proposition:calculus-of-fractions-in-sset}, which I have added where it seemed to fit best).
+\end{warning}
 
 \begin{proof}
 We let $F:\Top\to\Dd$ be any functor that inverts weak equivalences. We must show that there is a unique functor $G:\Top[\weq^\inv]\to\Dd$ such that $G\circ\gamma=F$.
 
-We note that morphisms in $\Top[\weq^\inv]$ can be written as \enquote{fractions} as follows. For a continuous map $\alpha:|\S(X)|\to|\S(Y)|$ we get a commutative square in $\Top$:
+First we note that morphisms in $\Top[\weq^\inv]$ can be written as \enquote{fractions} as follows. For a continuous map $\alpha:|\S(A)|\to|\S(B)|$ we get a square in $\Top$:
 \[
-\begin{tikzcd}
- {|\S|\S(X)||} \ar[d,"{|\S(\alpha)|}"] \ar[r,"{|\S(\epsilon_X)|}"] & {|\S(X)|} \ar[d,"\alpha"]\\
- {|\S|\S(Y)||} \ar[r,"{|\S(\epsilon_Y)|}"] & {|\S(Y)|}
+\begin{tikzcd}[column sep=large]
+ {|\S|\S(A)||} \ar[d,"{|\S(\alpha)|}"'] \ar[r,"{|\S(\epsilon_A)|}"] & {|\S(A)|} \ar[d,"\alpha"]\\
+ {|\S|\S(B)||} \ar[r,"{|\S(\epsilon_B)|}"] & {|\S(B)|}
+\end{tikzcd}\tag{$*$}
+\]
+This diagram will typically \tit{not} commute (it is not a naturality square). We argue, however, that the diagram commutes up to homotopy. To this end we consider the square:
+\[
+\begin{tikzcd}[column sep=large]
+ {|\S(A)|} \ar[d,"\alpha"] \ar[r,"{|\eta_{\S(A)}|}"] & {|\S|\S(A)||} \ar[d,"{|\S(\alpha)|}"] \ar[r,"{|\S(\epsilon_A)|}"] & {|\S(A)|} \ar[d,"\alpha"]\\
+ {|\S(B)|} \ar[r,"{|\eta_{\S(B)}|}"] & {|\S|\S(B)||} \ar[r,"{|\S(\epsilon_B)|}"] & {|\S(B)|}
 \end{tikzcd}
 \]
-We can then pass to homotopy classes:
+Then we get
+\begin{multline*}
+    |\S(\epsilon_B)|\circ|\S(\alpha)|\circ|\eta_{\S(A)}|\sim|\S(\epsilon_B)|\circ|\eta_{\S(B)}|\circ\alpha=|\S(\epsilon_B)\circ\eta_{\S(B)}|\circ\alpha=\\
+    =\alpha\circ|\S(\epsilon_A)\circ\eta_{\S(A)}|=\alpha\circ|\S(\epsilon_A)|\circ|\eta_{\S(A)}|
+\end{multline*}
+where the first homotopy is provided by proposition \ref{proposition:calculus-of-fractions-in-sset} for $X=\S(A)$ and $Y=\S(B)$ and we use two instances of the \href{http://nlab-pages.s3.us-east-2.amazonaws.com/nlab/show/triangle+identities}{triangle identities} of the adjunction $|\!-\!|\dashv\S$. The morphism $\eta_{\S(A)}$ is a weak equivalence by proposition \ref{proposition:adjunction-unit-is-a-weak-equivalence}, so $|\S(A)|$ is a homotopy equivalence. We can thus \enquote{cancel} $|\eta_{\S(A)}|$ up to homotopy, and the previous equality implies that the maps
+\[|\S(\epsilon_B)|\circ|\S(\alpha)|,\alpha\circ|\S(\epsilon_A)|:|\S|\S(A)|\to|\S(B)|\]
+are homotopic.
+
+Since $(*)$ commutes up to homotopy, we can pass to homotopy classes to obtain a commutative square (in $\Top[\weq^\inv]$):
 \[
 \begin{tikzcd}
- {|\S(X)|} \ar[d,"\gamma(\alpha)"] \ar[r,"\gamma(\epsilon_X)"] & X \ar[d,"{[\alpha]}"]\\
- {|\S(Y)|} \ar[r,"\gamma(\epsilon_Y)"] & Y
+ {|\S(A)|} \ar[d,"\gamma(\alpha)"'] \ar[r,"\gamma(\epsilon_A)"] & A \ar[d,"{[\alpha]}"]\\
+ {|\S(B)|} \ar[r,"\gamma(\epsilon_B)"] & B
 \end{tikzcd}
 \]
-in $\Top[\weq^\inv]$. Since $\epsilon_X$ and $\epsilon_Y$ are weak equivalences, so $\gamma$ inverts them, hence
-\[[\alpha]=\gamma(\epsilon_Y\circ\alpha)\circ\gamma(\epsilon_X)^\inv.\]
+Since $\epsilon_X$ and $\epsilon_Y$ are weak equivalences, $\gamma$ inverts them, hence
+\[[\alpha]=\gamma(\epsilon_B\circ\alpha)\circ\gamma(\epsilon_A)^\inv.\]
 
-We have a functor $F:\Top\to\Dd$ which inverts weak equivalences and we want an unique $G:\Top[\weq^\inv]\to\Dd$ such that $G\circ\gamma=F$.
+Now we return to our original problem: we have a functor $F:\Top\to\Dd$ which inverts weak equivalences and we want an unique $G:\Top[\weq^\inv]\to\Dd$ such that $G\circ\gamma=F$.
 
-Uniqueness. On objects,
-\[F(X)=G(\gamma(X))=G(X).\]
-On morphisms let $[\alpha]:X\to Y$ be a morphism in $\Top[\weq^\inv]$, so $\alpha:|\S(X)|\to|\S(Y)|$ is a continuous map. Then
-\[G[\alpha]=G(\gamma(\epsilon_Y\circ\alpha)\circ\gamma(\epsilon_X)^\inv)=G(\gamma(\epsilon_Y\circ\alpha))\circ G(\gamma(\epsilon_X))^\inv=F(\epsilon\circ\alpha)\circ F(\epsilon_X)^\inv\]
+Uniqueness. On objects $G$ is uniquely determined because we must have
+\[F(A)=G(\gamma(A))=G(A).\]
+To see that $G$ is also uniquely determined on morphisms, let $[\alpha]:A\to B$ be a morphism in $\Top[\weq^\inv]$, with $\alpha:|\S(A)|\to|\S(B)|$ a continuous map. Then
+\[G[\alpha]=G(\gamma(\epsilon_B\circ\alpha)\circ\gamma(\epsilon_A)^\inv)=G(\gamma(\epsilon_B\circ\alpha))\circ G(\gamma(\epsilon_A))^\inv=F(\epsilon\circ\alpha)\circ F(\epsilon_A)^\inv\]
 so $G$ is determined by $F$ also on morphisms.
 
-Existence. We construct $G$ as follows. On objects,
-\[G(X):=F(X).\]
-On morphisms,
-\[G[\alpha:|\S(X)|\to|\S(Y)|]:=F(\epsilon_Y)\circ F(\alpha)\circ F(\epsilon_X)^\inv.\]
-To show that $G$ is well-defined we need to prove that $F:\Top\to\Dd$ takes the same value on homotopic maps.
-
-Let $H:X\times[0,1]\to Y$ be an homotopy from $f=H(-,0)$ to $g=H(-,1)$. We let $i_0,i_1:X\to X\times[0,1]$ be the \enquote{end inclusions}, $p:X\times[0,1]\to X$ the projection. Then $p$ is a weak equivalence, so $F(p)$ is an isomorphism. We have
-\[F(p)\circ F(i_0)=F(p\circ i_0)=F(\id_X)=F(p\circ i_1)=F(p)\circ F(i_1)\]
+Existence. With the uniqueness part of the proof in mind, we construct $G$ as follows. On objects,
+\[G(A):=F(A).\]
+On morphisms (given that $F$ inverts weak equivalences),
+\[G\,[\,\alpha:|\S(A)|\to|\S(B)|{\,}]:=F(\epsilon_B)\circ F(\alpha)\circ F(\epsilon_A)^\inv.\]
+To show that $G$ is well-defined we need to prove that $F:\Top\to\Dd$ takes the same value on homotopic maps. We use an argument which we have already seen (essentially identical) in the proof of proposition \ref{theorem:cohomology-operations}. Let $H:A\times[0,1]\to B$ be an homotopy from $f=H(-,0)$ to $g=H(-,1)$. We let $i_0,i_1:A\to A\times[0,1]$ be the \enquote{end inclusions}, $p:A\times[0,1]\to A$ the projection. Then $p$ is a weak equivalence, so $F(p)$ is an isomorphism. We have
+\[F(p)\circ F(i_0)=F(p\circ i_0)=F(\id_A)=F(p\circ i_1)=F(p)\circ F(i_1)\]
 and $F(p)$ is an isomorphism, hence $F(i_0)=F(i_1)$. Then
 \[F(f)=F(H\circ i_0)=F(H)\circ F(i_0)=F(H)\circ F(i_1)=F(H\circ i_1)=F(g).\]
 
-G is functorial. Let $\beta:|\S(Y)|\to|\S(Z)|$ be a continuous map. We have
+Now we need to check that $G$ is actually functorial. Let $\beta:|\S(B)|\to|\S(D)|$ be a continuous map. We have
 \begin{align*}
-    G[\beta]\circ G[\alpha]&=F(\epsilon_Z)\circ F(\beta)\circ F(\epsilon_Y)^\inv\circ F(\epsilon_Y)\circ F(\alpha)\circ F(\epsilon_X)^\inv\\
-    &=F(\epsilon_Z)\circ F(\beta\circ\alpha)\circ F(\epsilon_X)^\inv\\
-    &=G[\beta\circ\alpha]=G([\beta]\circ[\alpha]).
+    G[\beta]\circ G[\alpha]&=F(\epsilon_D)\circ F(\beta)\circ F(\epsilon_B)^\inv\circ F(\epsilon_B)\circ F(\alpha)\circ F(\epsilon_A)^\inv\\
+    &=F(\epsilon_D)\circ F(\beta\circ\alpha)\circ F(\epsilon_A)^\inv\\
+    &=G[\beta\circ\alpha]=G([\beta]\circ[\alpha]),
 \end{align*}
-It remains to show that $G\circ\gamma=F$. This is clear on objects. On morphisms: let $f:X\to Y$ be any continuous map
-\[G(\gamma(f))=G[|\S(f)|]=F(\epsilon_Y)\circ F(|\S(f)|)\circ F(\epsilon_X)^\inv=F(f)\circ F(\epsilon_X)\circ F(\epsilon_X)^\inv=F(f).\]
+and clearly $G[\id_{|\S(A)|}]=\id_{G(A)}$.
+
+Finally, it remains to show that $G\circ\gamma=F$. This is clear on objects. To see it on morphisms, let $f:X\to Y$ be any continuous map, then
+\[G(\gamma(f))=G[\,|\S(f)|{\,}]=F(\epsilon_B)\circ F(|\S(f)|)\circ F(\epsilon_A)^\inv=F(f)\circ F(\epsilon_A)\circ F(\epsilon_A)^\inv=F(f),\]
+using naturality of the adjunction counit.
 \end{proof}

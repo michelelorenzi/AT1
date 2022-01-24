@@ -38,7 +38,7 @@ The strategy to prove this theorem is inductive: we want to reduce the problem t
 Let $f:\ring I^n\to\ring I^n $ be an open embedding, $p\in\ring I^n$. We have that $f$ induces a commutative diagram:
 \begin{center}
     \begin{tikzcd}
-    H_n(\ring I^n,\ring I^n\sm\cb{p}) \arrow[r, "i_*"] \arrow[d, "f_*" left] \arrow[dr, "f_*"] & H_n(I^n,I^n\sm\cb{p}) & H_n\pair \arrow[l, "i_*" above] \arrow[d, red, dashed, "d-"] \\
+    H_n(\ring I^n,\ring I^n\sm\cb{p}) \arrow[r, "i_*"] \arrow[d, "f_*" left] \arrow[dr, "f_*"] & H_n(I^n,I^n\sm\cb{p}) & H_n\pair \arrow[l, "i_*" above] \arrow[d, red, dashed, "d\cdot-"] \\
     H_n(f(\ring I^n), f(\ring I^n)\sm\cb{f(p)}) \arrow[r, "i_*" below] & H_n(f(I^n),f(I^n)\sm\cb{f(p)}) & H_n\pair \arrow[l, "i_*" below]
     \end{tikzcd}
 \end{center}
@@ -80,9 +80,9 @@ Thus to show that $H'$ is continuous, it suffices to show that the maps $H'\circ
 
 $(k=1)$ Take a cube $Z_1\subset f_1(\mathring{I}^n)$. By the lemma we may assume that $g(I^n\sm\mathring{Z}_1)\subset A$. Our goal is to construct some $f_1':(I^n,\de I^n)\to(I^n,\de I^n)$ with $[gf_1]=[gf_1']$. There exists\normalmarginpar\marginnote{\footnotesize The homotopy $Q$ is the same kind of "pushing out" homotopy that we already considered in the proof of the lemma.} a homotopy $Q$ from $\id_{I^n}$ to a map $p$ such that:
 \begin{itemize}
-    \item $p|_{Z_1}=\id_{Z_1}$
-    \item $p(I^n\sm\mathring{Z}_1)\subset\de I^n$
-    \item $Q((I^n\sm\mathring{Z}_1)\times I)\subset I^n\sm \mathring{Z}_1$
+    \item $p|_{Z}=\id_{Z}$, where $Z$ is a cube inside $Z_1$,
+    \item $p(I^n\sm\mathring{Z}_1)\subset\de I^n$,
+    \item $Q((I^n\sm\mathring{Z}_1)\times I)\subset I^n\sm \mathring{Z}_1$.
 \end{itemize}
 Now, $Qf_1$ is a homotopy of maps of pairs $(I^n,\de I^n)\to(I^n,I^n\sm\mathring{Z}_1)$. Then $gQf_1$ will be a homotopy of maps of pairs $(I^n,\de I^n)\to(X,A)$, hence $[gpf_1]=[gf_1]$ in $\pi_n(X,A)^\#$. Then $f_1':= pf_1$ is a map of pairs $(I^n,\de I^n)\to(I^n,\de I^n)$ and $f_1\simeq f_1'$ as maps of pairs $(I^n,\de I^n)\to(I^n,I^n\sm \mathring{Z}_1)$.
 

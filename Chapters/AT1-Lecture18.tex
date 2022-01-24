@@ -45,7 +45,7 @@ We have a bijection
 sending $x\mapsto kx^3$ on the left and to $k\iota^3$ on the right.
 \end{example}
 
-In general, $\Nat(H^n(-;A),H^m(-;B))\cong H^m(K(A,n);B)$ are called the cohomology operations of type $(A,n,B,m)$.\todo[color=yellow]{AT1Sheet10-3 has some interesting stuff about this maybe I will add.}
+In general, $\Nat(H^n(-;A),H^m(-;B))\cong H^m(K(A,n);B)$ are called the cohomology operations of type $(A,n,B,m)$.\todo[color=yellow]{AT1Sheet10.3 has some interesting stuff about this, maybe add it}
 
 Note:\rightnote{\Attention\ I do not understand well these results, I might have written something dumb here and there.} the cohomology operations of a given type are usually really difficult to compute. A couple of facts about this story: $H^*(K(\FF_2,n);\FF_2)$ for $n\ge2$ is a polynomial algebra in infinitely many explicitly known generators (for $n=1$ on one generator) given by the "Steenrod operations"; for $p$ an odd prime, $H^*(K(\FF_p,n);\FF_p)$ is a polynomial $\otimes$ exterior algebra. We know that $H^m(K(\Z,n);\Z)$ is finitely generated, so it can be decomposed into free and $p$-partition groups; $H^m(K(\Z,n);\Z)\otimes\Z_{(p)}=H^m(K(\Z_{(p)},n),\Z_{(p)})$ related to $A=B=\FF_p$. Also:
 \[H^*(K(\Q,n);\Q)\cong\begin{cases}
@@ -69,7 +69,7 @@ where the middle equality is by the previous special case. Since $\alpha^*:F(Y)\
 
 Surjectivity. First we need to prove an intermediate result.
 
-Claim. Let $F$ be a functor that sends weak equivalences to isomorphisms. Then $F$ takes homotopic maps to the same map (Warning: the converse is \tit{not} true!).
+Claim. Let $F$ be a (contravariant) functor that sends weak equivalences to isomorphisms. Then $F$ takes homotopic maps to the same map (Warning: the converse is \tit{not} true!).
 
 \begin{claimproof}
 Let $f,g:X\to Y$ be two homotopic continuous maps and choose an homotopy $H:X\times[0,1]\to Y$ from $f$ to $g$. Let $i_0,i_1:X\to X\times[0,1]$ be the two "extremal" inclusions, $p:X\times[0,1]\to X$ the projection. These maps are homotopy equivalences, hence weak equivalences. So $F(p):F(X)\to F(X\times[0,1])$ is an isomorphism. We have

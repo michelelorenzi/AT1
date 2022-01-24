@@ -2,143 +2,187 @@
 
 \lecture[]{2022-01-19}
 
-An equivalence between $\Top[\weq^\inv]$ and $\Ho(\top_\text{CW})$.
+We can now show that there is an equivalence $\Top[\weq^\inv]$ and $\Ho(\Top_\text{CW})$.
 
 The functor $|-|\circ\S:\Top\to\Top$ takes weak equivalences to homotopy equivalences and takes values in $\Top_\text{CW}$, so the composite
 \[\Top\xto{|-|\circ\S}\Top_\text{CW}\xto{\text{proj}}\Ho(\Top_\text{CW})\]
-inverts weak equivalences. So the universal property of the localizaton provides a unique functor
-\[\lambda:\Top[\weq^\inv]\to\Ho(\Top_\text{CW})\]
+inverts weak equivalences. The universal property of the localization then provides a unique functor
+\[\Phi:\Top[\weq^\inv]\to\Ho(\Top_\text{CW})\]
 such that the following square of categories and functors commutes
 \[
 \begin{tikzcd}
-\Top \ar[d,"\gamma"] \ar[r,"\S"] & \sSet \ar[r,"{|-|}"] & \Top_\text{CW}\\
+\Top \ar[d,"\gamma"] \ar[r,"\S"] & \sSet \ar[r,"{|-|}"] & \Top_\text{CW} \ar[d,"\text{proj}"]\\
 \Top[\weq^\inv] \ar[rr,dashed,"\exists!\Phi"] & & \Ho(\Top_\text{CW})
 \end{tikzcd}
 \]
+and we claim that this is an equivalence of categories.
 
 \begin{theorem}
 The functor $\Phi$ is an equivalence of categories.
 \end{theorem}
 
 \begin{proof}
-On objects $\Phi$ is given by $\Phi(X)=|\S(X)|$, on morphisms $\Phi$ is
-\[\Top[\weq^\inv](X,Y)=\Ho(\Top_\text{CW})(|\S(X)|,|\S(Y)|)\xto{\id}\Ho(\Top_\text{CW}(|\S(X)|,|\S(Y)|).\]
-So $\Phi$ is fully faithful. We want to show that $\Phi$ is essentially surjective on objects. Let $K\in\Ho(\Top_\text{CW})$ be any object. Then the adjunction counit $\epsilon_K:|\S(K)|\to K$ is a weak equivalence, hence an homotopy equivalence by the Whitehead theorem, since source and target admit CW-structures. So the homotopy class of $\epsilon_K$ is an isomorphism in $\Ho(\Top_\text{CW})$, i.e. an isomorphism
-\[\Phi(K)=|\S(K)|\xto{[\epsilon_K]}K?????\]
-So $\Phi$ is an equivalence
+Unraveling the definitions, we see that on objects $\Phi$ is given by $\Phi(A)=|\S(A)|$ and on morphisms $\Phi$ is
+\[\Top[\weq^\inv](A,B)=\Ho(\Top_\text{CW})(|\S(A)|,|\S(B)|)\xto{\id}\Ho(\Top_\text{CW}(|\S(A)|,|\S(B)|).\]
+So $\Phi$ is fully faithful. We want to show that $\Phi$ is essentially surjective on objects. Let $K\in\Ho(\Top_\text{CW})$ be any object. Then the adjunction counit $\epsilon_K:|\S(K)|\to K$ is a weak equivalence, hence an homotopy equivalence by the Whitehead theorem, since source and target admit CW-structures. So the homotopy class of $\epsilon_K$ is an isomorphism in $\Ho(\Top_\text{CW})$
+\[[\epsilon_K]:|\S(K)|=\Phi(K)\xto{\cong}K,\]
+i.e. $\Phi$ is (fully faithful and) essentially surjective, hence an equivalence of categories.
 \end{proof}
 
-A morphism $f:X\to Y$ of simplicial sets is a \tbf{(simplicial) weak equivalence} if $|f|:|X|\to|Y|$ is a homotopy equivalence.
+\subsection{Construction of a Localization of sSet}
+
+We define weak equivalences in $\sSet$ in the following way: a morphism  of simplicial sets $f:X\to Y$ is a \tbf{(simplicial) weak equivalence} if $|f|:|X|\to|Y|$ is a homotopy equivalence.
 
 \begin{examples}
-Homotopy equivalences of simplicial sets are weak equivalences. But weak equivalences are typically not homotopy equivalences.
+Since geometric realization preserves homotopy relations (see AT1Sheet11.2 or the proof of proposition \ref{proposition:adjunction-preserves-homotopy}, where it is implicit), homotopy equivalences of simplicial sets are weak equivalences. But weak equivalences are typically not homotopy equivalences.
 Let $f:\de\Delta^2\to\Delta^1/\de\Delta^1$
-be the morphisms such that $d_0,d_1\in(\de\Delta^1)_1$ map to the degenerate $1$-simplex of $\Delta^1/\de\Delta^1$ and maps $d_2$ to the non-degenerate $1$-simplex of $\Delta^1/\de\Delta^1$.\alvaropls
+be the morphism such that $d_0,d_1\in(\de\Delta^1)_1$ map to the degenerate $1$-simplex of $\Delta^1/\de\Delta^1$ and $d_2$ maps to the non-degenerate $1$-simplex of $\Delta^1/\de\Delta^1$.\alvaropls
 
-This $f$ is a weak equivalence but not a homotopy equivalence. Indeed, suppose $g:\Delta^1/\de\Delta^1\to\de\Delta^2$ is a morphism of simplicial sets, then $g$ must send the non-degenerate $1$-simplex $\id_{[1]}$ to a $1$-simplex of $\de\Delta^2$ where two vertices are the same: only the degenerate simplices have this property. So $|g|$ is a constant map at one of the $3$ vertices. In particular, $|g|$ is not a homotopy equivalence.
+Then $f$ is a weak equivalence, because under the homeomorphisms
+\[|\de\Delta^2|\cong\de\sx{1}\ \text{ and }\ |\Delta^1/\de\Delta^1|\cong\sx{1/\de\sx{1}}\cong[0,1]/\cb{0,1}\]
+the realization of $f$ is the continuous map $\de\sx{2}\to[0,1]/\cb{0,1}$ that identifies two of the three sides of $\de\sx{2}$ to a point and maps the third side linearly onto the target, which is a homotopy equivalence. But $f$ is not a simplicial homotopy equivalence. Indeed, suppose we have a morphism of simplicial sets $g:\Delta^1/\de\Delta^1\to\de\Delta^2$, then $g$ must send the non-degenerate $1$-simplex $\id_{[1]}\in\Delta^1/\de\Delta^1$ to a $1$-simplex of $\de\Delta^2$ whose two vertices are the same: only the degenerate simplices have this property. Then $g$ must be constant at one of the three vertices of $\de\Delta^2$ and so $|g|$ a constant map at one of the $3$ vertices of $\de\sx{2}$. In particular, $|g|$ is not a homotopy equivalence.
 
 More generally, examples of weak equivalences that are not homotopy equivalences are the maps
 \[\de\Delta^n\to\Delta^{n-1}/\de\Delta^{n-1}\]
 that collapse one of the horns.
 \end{examples}
 
-\begin{proposition}
-For every simplicial set $X$, the adjuntion unit $\eta_X:X\to\S|X|$ is a weak equivalence.
+\begin{proposition}\label{proposition:adjunction-unit-is-a-weak-equivalence}
+For every simplicial set $X$, the adjunction unit $\eta_X:X\to\S|X|$ is a weak equivalence.
 \end{proposition}
 
 \begin{proof}
-The triangle equality of the adjunction show that the composite
+One of the triangle identities of an adjunction show that the composite
 \[|X|\xto{|\eta_X|}|\S|X||\xto{\epsilon_{|X|}}|X|\]
-is the identity. Then $|\eta_X|$ is a homotopy equivalence, hence an homotopy equivalence.
+is the identity. Then $|\eta_X|$ is a homotopy equivalence, hence an homotopy equivalence.\rightnote{We are using that the counit is a weak equivalence and Whitehead.}
 \end{proof}
 
-Construction of a localization $\sSet[\weq^\inv]$.
+As we already did for $\Top$, we want to construct a localization of $\sSet$ at the class of weak equivalences.
 
-The objects are all simplicial sets, the morphisms are $\Hom_{\Ho(\Top_\text{CW})(|X|,|Y|)}$. We define a localization:
-\[\gamma:\sSet\to\sSet[\weq^\inv]\]
-which is the identity on objects and $\gamma(f)=[(f)]$ on morphisms.
+We define the category $\sSet[\weq^\inv]$ as follows:
+\begin{itemize}
+    \item the objects are all simplicial sets,
+    \item the morphisms are $\Hom_{\Ho(\Top_\text{CW})}(|X|,|Y|)$,
+    \item composition is composition of homotopy classes of maps.
+\end{itemize}
 
-\begin{theorem}
+We define a functor $\gamma:\Top\to\Top[\weq^\inv]$ as follows:
+\begin{itemize}[label={-}]
+    \item on objects $\gamma(X)=X$,
+    \item on morphisms $\gamma(f:X\to Y)=[\,|f|:|X|\to |Y|\,]$.
+\end{itemize}
+
+\begin{warning}
+Here I add a proposition which is in the \href{https://www.math.uni-bonn.de/people/schwede/sset_vs_spaces.pdf}{official notes}, but we did not see in class.
+\end{warning}
+
+The next proposition shows that it is possible to write any morphism in $\sSet[\weq^\inv]$ as a \enquote{fraction} of a morphism of simplicial sets and the inverse of a weak equivalence. Note that we already showed the same for $\Top[\weq^\inv]$ in the proof of theorem \ref{theorem:localization-of-top}, but in fact in that proof we appeal to the results we are about to show. Observe also that this is a special property of the localizations we are working with, but it does not hold in general.
+
+\begin{proposition}\label{proposition:calculus-of-fractions-in-sset}
+Let $X$ and $Y$ be simplicial sets, $\alpha:|X|\to|Y|$ a continuous map between their geometric realizations.
+\begin{numerate}
+    \item The square of spaces and continuous maps
+    \[
+    \begin{tikzcd}
+    {|X|} \ar[d,"\alpha"] \ar[r,"{|\eta_X|}"] & {|\S|X||} \ar[d,"{|\S(\alpha)|}"]\\
+    {|Y|} \ar[r,"{|\eta_Y|}"] & {|\S|Y||}
+    \end{tikzcd}\tag{$*$}
+    \]
+    commutes up to homotopy.
+    
+    \item The relation
+    \[[\alpha]=\gamma(\eta_Y)^\inv\circ\gamma(\S(\alpha)\circ\eta_X)\]
+    holds as morphisms from $X$ to $Y$ in $\sSet[\weq^\inv]$.
+\end{numerate}
+\end{proposition}
+
+\begin{proof}
+$(1)$ Composing with the adjunction counit, from $(*)$ we get the diagram:
+\[
+    \begin{tikzcd}
+    {|X|} \ar[d,"\alpha"] \ar[r,"{|\eta_X|}"] & {|\S|X||} \ar[d,"{|\S(\alpha)|}"] \ar[r,"\epsilon_{|X|}"] & {|X|} \ar[d,"\alpha"]\\
+    {|Y|} \ar[r,"{|\eta_Y|}"] & {|\S|Y||} \ar[r,"\epsilon_{|Y|}"] & {|Y|}
+    \end{tikzcd}
+\]
+where the right half commutes by naturality. Then, thanks to the triangle identities of the adjunction $|\!-\!|\dashv\S$, we have
+\[\epsilon_{|Y|}\circ|\S(\alpha)|\circ|\eta_X|=\alpha\circ\epsilon_{|X|}\circ|\eta_X|=\epsilon_{|Y|}\circ|\eta_Y|\circ\alpha\]
+The map $\epsilon_{|Y|}$ is a weak equivalence between CW-complexes, hence a homotopy equivalence. We can thus \enquote{cancel} $\epsilon_|Y|$ up to homotopy, and the previous equality implies that the maps
+\[|\S(\alpha)|\circ|\eta_X|,|\eta_Y|\circ\alpha:|X|\to|\S|Y||\]
+are homotopic.
+
+$(2)$ Since $(*)$ commutes up to homotopy, the associated square of homotopy classes commutes, hence we get a commutative square in $\sSet[\weq^\inv]$:
+\[
+\begin{tikzcd}
+X \ar[d,"{[\alpha]}"'] \ar[r,"\gamma(\eta_X)"] & {\S|X|} \ar[d,"\gamma(\S(\alpha))"]\\
+Y \ar[r,"\gamma(\eta_Y)"] & {\S|X|}
+\end{tikzcd}
+\]
+Equivalently, we have $\gamma(\eta_Y)\circ[\alpha]=\gamma(\S(\alpha)\circ\eta_X)$. The morphism $\eta_Y:Y\to\S|Y|$ is a weak equivalence by proposition \ref{proposition:adjunction-unit-is-a-weak-equivalence}, so $\gamma(\eta_Y)$ is an isomorphism, and the desired relation follows.
+\end{proof}
+
+\begin{theorem}\label{theorem:localization-of-sset}
 The functor $\gamma:\sSet\to\sSet[\weq^\inv]$ is a localization at the class of weak equivalences.
 \end{theorem}
 
 \begin{proof}
-We already know that $\gamma$ inverts weak equivalences. Now let $F:\sSet\to\Dd$ be any functor that inverts weak equivalences.
+We already know that, essentially by construction, $\gamma$ inverts weak equivalences. The rest of the proof (very) closely resembles the proof we have seen for the localization of $\Top$ (theorem \ref{theorem:localization-of-top}). We just give an outline.
 
-We will use a \enquote{calculus of fraction} for $\sSet[\weq^\inv]$: let $\alpha:|X|\to|Y|$ be any continuous map. Consider the commutative diagram of spaces
-\[
-\begin{tikzcd}
-{|X|} \ar[d,"\alpha"] \ar[r,"\epsilon_{|X|}"] & {|\S|X||} \ar[d,"{|\S(\alpha)|}"]\\
-{|Y|} \ar[r,"\epsilon_{|Y|}"] & {|\S|Y||}
-\end{tikzcd}
-\]
+Let $F:\sSet\to\Dd$ be any functor that inverts weak equivalences, we must show that there is an unique functor $G:\sSet[\weq^\inv]\to\Dd$ such that $F=G\gamma:\sSet\to\Dd$.
 
-Problems!!!!!
+Uniqueness. The functor $G$ is clearly uniquely determined by $F$ on objects and the \enquote{fraction relation} of proposition \ref{proposition:calculus-of-fractions-in-sset} shows that it is uniquely determined by $F$ also on morphisms.
 
-The diagram
-\[
-\begin{tikzcd}
-{|X|} \ar[d,"\alpha"] \ar[r,"{|\eta_{X}|}"] & {|\S|X||} \ar[d,"{|\S(\alpha)|}"]\\
-{|Y|} \ar[r,"{|\eta_Y|}"] & {|\S|Y||}
-\end{tikzcd}
-\]
-commutes up to homotopy. We pass to homotopy classes of maps and we get a commutative square
-\[*****\]
-hence $[\alpha]=\gamma(\eta_Y)^\inv\circ\gamma(\S(\alpha)\circ\eta_X)$.
+Existence. The uniqueness argument tells us how to define the functor $G$: we must set $G(X):=F(X)$ on objects and $G[\alpha]:=F(\eta_Y)^\inv\circ F(\S(\alpha))\circ F(\eta_X)$ on morphisms (where we observe that $F$ takes $\eta_Y$ to an isomorphism, since by proposition \ref{proposition:adjunction-unit-is-a-weak-equivalence} the adjunction unit $\eta_Y$ is a weak equivalence).
 
-Uniqueness. Let $G:\sSet[\weq^\inv]\to\Dd$ be any functor such that $G\circ\gamma=F$, then on objects
-\[G(X)=G(\gamma(X))=F(X),\]
-on morphisms
-\[*****\]
+To show well-definedness, the argument that we used in the proof of theorem \ref{theorem:localization-of-top} (and also of theorem \ref{theorem:cohomology-operations}) can be easily adapted to the context of simplicial sets.
 
-Existence. Given $F:\sSet\to\Dd$, inverting equivalences, we define $G:\sSet[\weq^\inv]\to\Dd$ by $G(X)=F(X)$ on objects and $G[\alpha]=F(\eta_Y)^\inv\circ F(\S(\alpha))\circ F(\eta_X)$. This is well-defined, if $\alpha'\simeq\alpha:|X|\to|Y|$, then $F(\alpha')=F(\alpha)$... (this argument we did two times already)
-
-Functoriality. Let $\alpha:|X|\to|Y|$ and $\ni:|Y|\to|Z|$ be continuous maps, $X,Y,Z$ simplicial sets. Then
-\[*****\]
-$G\circ\gamma=F$ similar to what we did for spaces.
+Similarly, functoriality of $G$ and the relation $G\gamma=F:\sSet\to\Dd$ can be shown as in the proof of theorem \ref{theorem:localization-of-top}.
 \end{proof}
 
-Equivalence between $\Top[\weq^\inv]$ and $\sSet[\weq^\inv]$.
+\subsection{The Promised Equivalence}
 
-The gr functor and the sc functor both preserve weak equivalences, hence they uniquely descend to the localizations as follows
+We are now ready to construct the equivalence between $\Top[\weq^\inv]$ and $\sSet[\weq^\inv]$.
+
+The geometric realization functor and the singular complex functor both preserve weak equivalences, hence they uniquely descend to the localizations as follows
 \[
-\begin{tikzcd}
+\begin{tikzcd}[column sep=large]
 \sSet \ar[d,"\gamma"] \ar[r,"{|-|}"] & \Top \ar[d,"\gamma"] \ar[r,"\S"] & \sSet \ar[d,"\gamma"]\\
 \sSet[\weq^\inv] \ar[r,dashed,"\exists!\alpha"] & \Top[\weq^\inv] \ar[r,dashed,"\exists!\beta"] & \sSet[\weq^\inv]
 \end{tikzcd}
 \]
 
 \begin{theorem}
-The two composites $\beta\circ\alpha:\sSet[\weq^\inv]\to\sSet[\weq^\inv]$ and $\alpha\circ\beta:\Top[\weq^\inv]\to\Top[\weq^\inv]$ are naturally isomorphic to their respective identity functors. In particular, they are equivalence of categories
+The two composite functors $\beta\circ\alpha:\sSet[\weq^\inv]\to\sSet[\weq^\inv]$ and $\alpha\circ\beta:\Top[\weq^\inv]\to\Top[\weq^\inv]$ are naturally isomorphic to their respective identity functors. In particular, they are equivalence of categories.
 \end{theorem}
 
 \begin{proof}
-We give the argument only for $\beta\circ\alpha$. Composing the adjunction counit $\eta:\id_\sSet\to\S\circ|-|$ with the functor $\gamma:\sSet\to\sSet[\weq^\inv]$, yields a natural transformation
-\[\gamma\circ\eta:\gamma\to\gamma\circ\S\circ|-|=\beta\circ\gamma\circ|-|=\beta\circ\alpha\circ\gamma.\]
-The universal property of $\gamma$ for natural transformations provides a natural transformation $\tau:\id_{\sSet[\weq^\inv]}\to\beta\circ\alpha$ such that $\gamma\circ\eta=\tau\circ\gamma$. For every simplicial set $X$, this means that
+We give the argument only for $\beta\circ\alpha$, the other being completely analogous. Composing the adjunction unit $\eta:\id_\sSet\to\S\circ|-|$ with the functor $\gamma:\sSet\to\sSet[\weq^\inv]$ yields a natural transformation
+\[\gamma\circ\eta:\gamma\to\gamma\circ\S\circ|-|=\beta\circ\gamma\circ|-|=\beta\circ\alpha\circ\gamma\]
+between two functors $\sSet\to\sSet[\weq^\inv]$ that both invert weak equivalences. The universal property of $\gamma$ for natural transformations (proposition \ref{proposition:localization-induces-embedding}) provides a unique natural transformation \[\tau:\id_{\sSet[\weq^\inv]}\to\beta\circ\alpha\]
+such that $\gamma\circ\eta=\tau\circ\gamma$. For every simplicial set $X$, this means that
 \[\tau_X=\tau_{\gamma(X)}=\gamma(\eta_X)\]
-is an isomorphism. So $\tau$ is a natural isomorphism.
+is an isomorphism, since the adjunction unit is a weak equivalence. So $\tau$ is a natural isomorphism.
 \end{proof}
 
-The previous argument applies very generally. *****
+\comment{
+Note: the previous argument applies very generally
 
 \begin{theorem}
-The induced functor $\alpha:\Cc[\Ww^\inv]\to\Dd[\Vv^\inv]$ and $\beta:\Dd[\Vv^\inv]\to\Cc[\Ww^\inv]$ are equivalences.
+The induced functors $\alpha:\Cc[\Ww^\inv]\to\Dd[\Vv^\inv]$ and $\beta:\Dd[\Vv^\inv]\to\Cc[\Ww^\inv]$ are equivalences.
 \end{theorem}
+}
 
 \begin{corollary}
 There is an equivalence of categories
 \begin{align*}
-    \sSet[\weq^\inv]&\cong\Ho(\Top_\text{CW})\\
-    C&\mapsto|X|\\
-    [\alpha:|X|\to|Y|]&\mapsto[\alpha]
+    \sSet[\weq^\inv]&\cong\Ho(\Top_\text{\upshape CW})
 \end{align*}
+given by $X\mapsto|X|$ on objects and $[\alpha:|X|\to|Y|]\mapsto[\alpha]$ on morphisms.
 \end{corollary}
 
 \begin{remark}
 There is another category that is equivalent to the previous ones:
 \[\Ho(\sSet_\text{Kan})\]
-the homotopy category of \tbf{Kan-complexes}.
+the homotopy category of \tbf{Kan-complexes}. But this is another story...\todo[color=yellow]{It would be nice to add some stuff about this...}
 \end{remark}
 
 
