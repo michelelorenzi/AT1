@@ -1,15 +1,16 @@
-\[\begin{tikzcd}
-	\begin{tikzpicture}[x=2em, y=2em]
-    \draw[very thick, black!50]
+{\flushright
+\begin{tikzcd}
+	\begin{tikzpicture}[x=1.2em, y=1.2em]
+    \draw[thick, black!50]
         (0,0)--(2,0)
         (2.075,1)--(0.1,1)--(0,0)
         (0,0)--(0.5,0.4)--(0.1,1)
         (0.5,0.4)--(2.5,0.4);
-	\draw[very thick] (2.02,0)--(2.5,0.4)--(2.11,0.95)--(2.02,0);
+	\draw[thick] (2.02,0)--(2.5,0.4)--(2.11,0.95)--(2.02,0);
     \end{tikzpicture}
-	 && A \\
-	\begin{tikzpicture}[x=2em, y=2em,baseline=0.5em]
-    \begin{scope}[very thick]
+	 & A \\
+	\begin{tikzpicture}[x=1.2em, y=1.2em,baseline=0.5em]
+    \begin{scope}[thick]
     \fill[fill=blue, opacity=0.3]
         (0,0)--(2,0)--(2.1,1)--(0.1,1)--(0,0);
     \fill[fill=blue!50!black, opacity=0.3]
@@ -27,9 +28,9 @@
         (0.5,0.4)--(2.05,0.4);
     \end{scope}
     \end{tikzpicture}
-    && X \\
-	\begin{tikzpicture}[x=2em, y=2em,baseline=0.5em]
-    \begin{scope}[very thick]
+    & X \\
+	\begin{tikzpicture}[x=1.2em, y=1.2em,baseline=0.5em]
+    \begin{scope}[thick]
     \fill[fill=blue, opacity=0.3]
         (0,0)--(2,0)--(2.1,1)--(0.1,1)--(0,0);
     \fill[fill=blue!50!black, opacity=0.3]
@@ -48,9 +49,10 @@
         (0.5,0.4)--(2.5,0.4);
     \end{scope}
     \end{tikzpicture}
-	\arrow["\bigcup\psi", from=1-1, to=1-3]
+	\arrow["{\bigcup\psi}", from=1-1, to=1-2]
 	\arrow[from=1-1, to=2-1]
 	\arrow[from=2-1, to=3-1]
-	\arrow["{\psi_f}"', from=3-1, to=2-3]
-	\arrow["\lambda"', dashed, from=2-1, to=1-3]
-\end{tikzcd}\]
+	\arrow["{\psi_f}"', from=3-1, to=2-2]
+	\arrow["\lambda"', dashed, from=2-1, to=1-2]
+\end{tikzcd}
+}
