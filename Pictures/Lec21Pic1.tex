@@ -1,0 +1,33 @@
+\[
+\Lambda^1_0 = \begin{tikzpicture}[baseline=-.15em]
+\filldraw (0,0) circle (2pt) node[anchor=north east]{\scriptsize0};
+\end{tikzpicture}
+\quad\quad\quad
+\Lambda^2_0 = 
+\begin{tikzpicture}[baseline=0.5em]
+\draw[very thick]
+(1,0)--(0,0)--(.5,.866);
+\filldraw
+(1,0) circle (2pt) node[anchor=north west]{\scriptsize2}
+(0,0) circle (2pt) node[anchor=north east]{\scriptsize0}
+(.5,.866) circle (2pt) node[anchor=south east]{\scriptsize1};
+\end{tikzpicture}
+\quad\quad\quad
+\Lambda^3_0 =
+\begin{tikzpicture}[baseline=0.5em]
+\fill[blue!20] (-.2,0)--(1,0)--(.5,.866);
+\fill[blue!80!black, opacity=0.4] (-.2,0)--(.4,-.3)--(1,0);
+\fill[blue, opacity=0.3] (-.2,0)--(.4,-.3)--(.5,.866);
+\draw[very thick]
+(.4,-.3)--(-.2,0)--(.5,.866)
+(.5,.866)--(.4,-.3)--(1,0)--(.5,.866)
+(1,0)--(.45,0);
+\draw[very thick, dashed]
+(-.2,0)--(.45,0);
+\filldraw
+(1,0) circle (2pt) node[anchor=south west]{\scriptsize2}
+(-.2,0) circle (2pt) node[anchor=north east]{\scriptsize0}
+(.5,.866) circle (2pt) node[anchor=south east]{\scriptsize1}
+(.4,-.3) circle (2pt) node[anchor=north west]{\scriptsize3};
+\end{tikzpicture}
+\]
