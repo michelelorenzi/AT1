@@ -6,47 +6,53 @@
 
 This lecture was given by Tobias Lenz, a PhD student of Schwede. I was late to the class, so most of the notes for this lecture are copied from Qi Zhu's notes, thank you Qi Zhu!
 
+\begin{warning}
+I took the liberty to rearrange the content of the lecture a little, to improve the exposition. Note that Tobias kindly provided \href{https://uni-bonn.sciebo.de/s/OcE4uI7eVAPzhXg}{his own handwritten notes}.
+\end{warning}
+
 \begin{remark}
 There's a standing assumption for all of today's lecture: $\pi_k(S^k)\cong\Z$ for all $1\leq k<n$.
 \end{remark}
 
-The main goal of today's lesson is to prove the following theorem.
-
-\begin{theorem}[Homotopy Addition Theorem]\label{theorem:HAT}
-Assume we have $\nn{f}{k}:I^n\to I^n$ such that $f_i|_{\ring I^n}$ is an open embedding and the sets $f_i(\ring I^n)$ are pairwise disjoint. Furthermore, let $g:\pair\to (X,A)$ such that $g(I^n\sm\bigcup_{i=1}^k f_i(\ring I^n))\subset A$. Then
-\[[g]=\sum_{i=1}^k(\deg f_i)[g\circ f_i]\]
-in $\pi_n(X,A)\#$.
-\end{theorem}
-
-\begin{remark}
-Note that we have $f_i(\de I^n)\cap f_j(\ring I^n)=\emptyset$ for all $i,j$. This will play a (small) role later in the lecture.
-\end{remark}
-
-\begin{remark}
-Two remarks about the theorem:
-\begin{itemize}
-    \item When homotopy theory was new, people thought this was obvious and didn't feel the need for a proof until Eilenberg suggested so.
-    \item Tobias: \emph{\enquote{I'm not sure if I can finish the proof today but I was promised an award if I do!}}
-\end{itemize}
-\end{remark}
-
-\input{Pictures/Lec3Pic1}\label{fig:HAT1}\medskip
-
-The strategy to prove this theorem is inductive: we want to reduce the problem to the case $k=1$ which is easy.
-
-\begin{definition}
-Let $f:\ring I^n\to\ring I^n $ be an open embedding, $p\in\ring I^n$. We have that $f$ induces a commutative diagram:
+Recall the notion of local degree. Let $f:\ring I^n\to\ring I^n $ be an open embedding, $p\in\ring I^n$. We have that $f$ induces a commutative diagram:
 \begin{center}
     \begin{tikzcd}
     H_n(\ring I^n,\ring I^n\sm\cb{p}) \arrow[r, "i_*"] \arrow[d, "f_*" left] \arrow[dr, "f_*"] & H_n(I^n,I^n\sm\cb{p}) & H_n\pair \arrow[l, "i_*" above] \arrow[d, red, dashed, "d\cdot-"] \\
     H_n(f(\ring I^n), f(\ring I^n)\sm\cb{f(p)}) \arrow[r, "i_*" below] & H_n(f(I^n),f(I^n)\sm\cb{f(p)}) & H_n\pair \arrow[l, "i_*" below]
     \end{tikzcd}
 \end{center}
-\end{definition}
-where the maps are all isomorphisms by homotopies and excision, hence they induce the dashed arrow. This is an automorphism of $H_n\pair\cong\Z$ and thus $d=\pm1$. One can show this is independent of $p$, hence we call it the \tbf{local degree} of $f$, and write $\deg(f)=d$.
+where the maps are all isomorphisms by homotopies and excision, hence they induce the dashed arrow. This is an automorphism of $H_n\pair\cong\Z$ and thus $d=\pm1$. One can show this is independent of $p$, hence we call it the \tbf{local degree} of $f$, and write $\deg(f)=d$.\todo[color=yellow]{There would be more to say about the local degree...}
 
-\begin{lemma}
-For $1\leq i\leq k$, let $\Uu_i\subset f_i(\ring I^n)$ be any non-empty open set. Then $g$ is homotopic relative to $I^n\sm f_i(\mathring{I}^n)$ to a map that sends $f_i(I^n)\sm\mathcal{U}_i$ to $A$ for all $i$.
+The main goal of today's lesson is to prove the following theorem.
+
+\begin{theorem}[Homotopy Addition Theorem]\label{theorem:HAT}
+Assume we have $\nn{f}{k}:I^n\to I^n$ such that $f_i|_{\ring I^n}$ is an open embedding and the sets $f_i(\ring I^n)$ are pairwise disjoint. Furthermore, let $g:\pair\to (X,A)$ such that $g(I^n\sm\bigcup_{i=1}^k f_i(\ring I^n))\subset A$. Then
+\[[g]=\sum_{i=1}^k(\deg f_i)[g\circ f_i]\rightnote{\upshape Here $\deg f_i$ is the local degree!}\]
+in $\pi_n(X,A)\#$.
+\end{theorem}
+
+\begin{remark}
+Note that we have $f_i(\de I^n)\cap f_j(\ring I^n)=\emptyset$ for all $i,j$.
+\end{remark}
+
+\input{Pictures/Lec3Pic1}\label{fig:HAT1}\medskip
+
+\begin{remark}
+Two additional remarks about the theorem:
+\begin{itemize}
+    \item In the early days of homotopy theory people thought this was obvious\rightnote{The statement we gave might appear opaque, but it does seem intuitively true once one thinks about it.} and did not feel the need for a proof, until Eilenberg suggested so.
+    \item Tobias: \emph{\enquote{I'm not sure if I can finish the proof today but I was promised an award if I do!}} Spoiler: he could not finish it.
+\end{itemize}
+\end{remark}
+
+The strategy to prove the homotopy addition theorem is inductive: we want to reduce the problem to the case $k=1$ which is easier, as in that case we can \enquote{blow up} $f_1$ to a map of pairs $(I^n,\de I^n)\to(I^n,\de I^n)$ and we understand well this kind of maps thanks to lemma \ref{lemma:degree-of-sphere-self-maps}. To apply this reduction, we want to \enquote{separate} the images of the $f_i$'s by vertical \enquote{walls}, as in the following illustration.\todo{It might be useful to modify the image for intuition}
+
+\input{Pictures/Lec4Pic1}\medskip
+
+This might seem easy but it is in fact the most delicate part of the proof, as the obvious approach, i.e. shrinking the source of the $f_i$'s, could produce maps $gf'_i$ which are not pair homotopic to $gf_i$. To avoid this, we must first modify $g$ into an homotopic map that sends everything outside of a given small subset of the image of every $f_i$ to $A$.
+
+\begin{lemma}\label{lemma:technical-lemma-for-HAT}
+For $1\leq i\leq k$, let $\Uu_i\subset f_i(\ring I^n)$ be any non-empty open set. Then $g$ is homotopic relative to $I^n\sm f_i(\mathring{I}^n)$ to a map $g'$ that sends $f_i(I^n)\sm\mathcal{U}_i$ to $A$ for all $i$.\alvaropls\rightnote{\upshape It suffices to check this claim for a single $f_i$, since $f_i(\de I^n)\cap f_j(\ring I^n)$ is empty for all $i,j$.}
 \end{lemma}
 
 \begin{remark}
@@ -55,8 +61,9 @@ If $[g]=[g']$ in $\pi_n(X,A)^\#$ then $[g\circ f_j]=[g'\circ f_j]$ for all $1\le
 
 \begin{proof}
 There is a homotopy relative $\de I^n$ from the identity to a map that sends everything outside of $\ring Q$ to $\de I^n$, where $Q$ is a cube inside $f^{-1}_i(\mathcal{U}_i)$ (basically we take a cube $Q$ inside $f^{-1}_i(\mathcal{U}_i)$ and we blow it to the big cube $\de I^n$ containing $f^{-1}_i(\mathcal{U}_i)$). Composing with $gf_i$ yields a homotopy $H$ of maps of pairs $(I^n,\de I^n)\to(X,A)$ from $gf_i$ to a map that sends everything outside $\ring Q$ to $A$. We have a map of sets:
-\[H':I^n\times I\to X,\quad H'(x,t)=\begin{cases}H(f^{-1}(x),t) & x\in f_i(I^n) \\ g(x) & x\not\in f_i(\mathring{I}^n)\end{cases}\]
-which we can show is well defined. Let $x\in f_i(\de I^n)$, with preimage $y$, then\normalmarginpar\marginnote{\footnotesize It suffices to check this because $f_i(\de I^n)\cap f_j(\ring I^n)$ is empty for all $i,j$.} \[g(x)=H(y,t)=H(y,0)=gf_i(y)\] so that it is well defined as a map of sets. Then $H'(x,0)=g(x)$ and $H'(x,1)\in A$ for $x\not\in f(\mathring{Q})$, in particular $H'(x,1)\in A$ for $x\not\in\mathcal{U}_i$. It remains to prove that $H'$ is continuous.
+\[H':I^n\times I\to X,\quad H'(x,t)=\begin{cases}H(f_i^{-1}(x),t) & x\in f_i(I^n) \\ g(x) & x\in I\sm f_i(\mathring{I}^n)\end{cases}\]
+which we can show is well defined. Let $x\in f_i(\de I^n)$, with preimage $y$, then
+\[g(x)=H(y,t)=H(y,0)=gf_i(y)\] so that it is well defined as a map of sets. Then $H'(x,0)=g(x)$ and $H'(x,1)\in A$ for $x\not\in f(\mathring{Q})$, in particular $H'(x,1)\in A$ for $x\not\in\mathcal{U}_i$. So $g'=H'(x,1)$ is our candidate map, but it remains to prove that $H'$ is continuous.
 
 Claim. We have a commutative square
 \begin{center}
@@ -73,30 +80,32 @@ is a homeomorphism.
 Well-definedness and continuity of the function follow from the universal property of the pushout. One can check that it is bijective by a direct computation. Hence we have a continuous bijection from a quasi-compact space to an Hausdorff space, which is then a homeomorphism. 
 \end{claimproof}
 
-Thus to show that $H'$ is continuous, it suffices to show that the maps $H'\circ (f_i\times I)$ and $H'|_{(I^n\sm f(\ring I^n))\times I}$ are continuous, which follows from the construction.\todo{Not sure how this works, to be honest}
+Thus to show that $H'$ is continuous, it suffices to show that the maps $H'\circ (f_i\times I)$ and $H'|_{(I^n\sm f(\ring I^n))\times I}$ are continuous, which follows from the construction.
 \end{proof}
 
 \begin{proof}[Proof of the homotopy addition theorem (\ref{theorem:HAT})]\renewcommand{\qedsymbol}{\textit{To be continued...}} Induction on $k$.
 
-$(k=1)$ Take a cube $Z_1\subset f_1(\mathring{I}^n)$. By the lemma we may assume that $g(I^n\sm\mathring{Z}_1)\subset A$. Our goal is to construct some $f_1':(I^n,\de I^n)\to(I^n,\de I^n)$ with $[gf_1]=[gf_1']$. There exists\normalmarginpar\marginnote{\footnotesize The homotopy $Q$ is the same kind of "pushing out" homotopy that we already considered in the proof of the lemma.} a homotopy $Q$ from $\id_{I^n}$ to a map $p$ such that:
+$(k=1)$ Take a cube $Z_1\subset f_1(\mathring{I}^n)$. By lemma \ref{lemma:technical-lemma-for-HAT} we may assume that $g(I^n\sm\mathring{Z}_1)\subset A$. Our goal is to construct some $f_1':(I^n,\de I^n)\to(I^n,\de I^n)$ with $[gf_1]=[gf_1']$. There exists\rightnote{The homotopy $Q$ is the same kind of "pushing out" homotopy that we already considered in the proof of the lemma.} a homotopy $Q$ from $\id_{I^n}$ to a map $p$ such that:
 \begin{itemize}
     \item $p|_{Z}=\id_{Z}$, where $Z$ is a cube inside $Z_1$,
     \item $p(I^n\sm\mathring{Z}_1)\subset\de I^n$,
-    \item $Q((I^n\sm\mathring{Z}_1)\times I)\subset I^n\sm \mathring{Z}_1$.
+    \item $Q((I^n\sm\mathring{Z}_1)\times I)\subset I^n\sm \mathring{Z}_1$.\alvaropls
 \end{itemize}
-Now, $Qf_1$ is a homotopy of maps of pairs $(I^n,\de I^n)\to(I^n,I^n\sm\mathring{Z}_1)$. Then $gQf_1$ will be a homotopy of maps of pairs $(I^n,\de I^n)\to(X,A)$, hence $[gpf_1]=[gf_1]$ in $\pi_n(X,A)^\#$. Then $f_1':= pf_1$ is a map of pairs $(I^n,\de I^n)\to(I^n,\de I^n)$ and $f_1\simeq f_1'$ as maps of pairs $(I^n,\de I^n)\to(I^n,I^n\sm \mathring{Z}_1)$.
+Then $f_1':= pf_1$ is a map of pairs $(I^n,\de I^n)\to(I^n,\de I^n)$ and we have $f_1\simeq f_1'$ as maps of pairs $(I^n,\de I^n)\to(I^n,I^n\sm \mathring{Z}_1)$, with $Q$ witnessing the homotopy. Moreover, $Qf_1$ is a homotopy of maps of pairs $(I^n,\de I^n)\to(I^n,I^n\sm\mathring{Z}_1)$, so $gQf_1$ will be a homotopy of maps of pairs $(I^n,\de I^n)\to(X,A)$, hence $[gpf_1]=[gf_1]$ in $\pi_n(X,A)^\#$.
 
-Claim.\reversemarginpar\marginnote{\footnotesize We are dealing with two different notions of degree, the usual one for $f'_1$ and the local degree for $f_1$.} $\deg f_1$ equals the degree of $f_1'$ as a map $(I^n,\de I^n)\to(I^n,\de I^n)$.
+To conclude the base case, we want to relate the local degree of $f_1$ (which is the notion involved in the statement of the theorem), to the degree of $f'_1$ as a self map of spheres.
+
+Claim. $\deg f_1$ equals the degree of $f_1'$ as a map $(I^n,\de I^n)\to(I^n,\de I^n)$.
 
 \begin{claimproof}
-Consider the diagram:
+Pick $x\in f_1^\inv(\ring Z_1)$. Then we have a commutative diagram:
 \begin{center}
     \begin{tikzcd}[column sep=small]
-    H_n(\mathring{I}^n,\mathring{I}^n\sm\cb{x}) \arrow[r, "i_*",] \arrow[d, "(f_1)_*" left] & H_n(I^n,I^n\sm\cb{x}) \arrow[d, "(f_1)_*"] & H_n(I^n,\de I^n) \arrow[l, "i_*" above] \arrow[d, shift left, "(f_1)_*\ \," left] \arrow[d, shift right, "\ \,(f'_1)_*" right] \arrow[dr, "(f'_1)_*"] \\
+    H_n(\mathring{I}^n,\mathring{I}^n\sm\cb{x}) \arrow[r, "i_*",] \arrow[d, "(f_1)_*" left] & H_n(I^n,I^n\sm\cb{x}) \arrow[d, "(f_1)_*"] & H_n(I^n,\de I^n) \arrow[l, "i_*" above] \arrow[d, shift left, "(f_1)_*\ \," left] \arrow[d, shift right, "\ \,(f'_1)_*" right] \arrow[dr, "(f'_1)_*=\,d'\cdot-"]\\
     H_n(\mathring{I}^n, \mathring{I}^n\sm\cb{f_1(x)}) \arrow[r, "i_*"] & H_n(I^n,I^n\sm\cb{f_1(x)}) & H_n(I^n,I^n\sm \mathring{Z}_1) \arrow[l, "i_*" above] & H_n\pair \arrow[l, "i_*"]
     \end{tikzcd}
 \end{center}
-we have that the parallel arrows agree, which proves the claim.
+where the two parallel arrows agree. Each of the horizontal arrows are isomorphisms and multiplication by $\deg f_1$ is another map $H_n(I^n,\de I^n)\to H_n(I^n,\de I^n)$ which makes the diagram commute, hence the degree $d'$ of $f'_1$ must be equal to $\deg f_1$.
 \end{claimproof}
 
 Now, if $\deg f_1=1$, then $f_1'\simeq\id$ as maps of pairs, hence $(\deg f_1)[gf_1]=[gf_1']=[g]$.

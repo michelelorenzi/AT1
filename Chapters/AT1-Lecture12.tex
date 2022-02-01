@@ -5,17 +5,14 @@
 The \textbf{homotopy fibre} of a continuous map $f:X\to Y$ over a point $y_0\in Y$ is the space:
 \begin{align*}
     \ho_{y_0}(f)&=X\times_Y Y^{[0,1]}\times_Y \cb{y_0}\\
-    &=\cb{(x,w)\in X\times Y^{[0,1]}\mid f(x)=w(0),w(1)=y_0}=p^{-1}(y_0).
+    &=\cb{(x,w)\in X\times Y^{[0,1]}\mid f(x)=w(0),w(1)=y_0}=p^{-1}(y_0),
 \end{align*}
-
-Informally the homotopy fibre is what we get when we turn the map into a Serre fibration, then take the actual fibre.
+where $p$ is the Serre fibration we have defined in the proof of theorem \ref{theorem:factorization-equivalence-fibration}. Informally the homotopy fibre is what we get when we \enquote{turn the map into a Serre fibration}, then take the actual fibre.
 
 Because $p:Ef\to Y$ is a Serre fibration, the homotopy groups of $\ho_{y_0}(f)$ participate in a long exact sequence:
 \[\cdots\to\pi_{n+1}(Y,y_0)\xto{\de}\pi_n(\ho_{y_0}(f),(x,\const_{f(x)}))\to\pi_n(X,x)\xto{f_*}\pi_n(Y,y_0)\to\cdots\]
 
-The slogan is: the homotopy fibres measure how far $f$ is from a real homotopy equivalence.
-
-If $X$ and $Y$ happen to be path-connected CW-complexes, then $f$ is a homotopy equivalence if and only if $\pi_n(\ho_{y_0}(f),x)=0$ for all $n\geq0$.
+The slogan is: the homotopy fibres measure how far $f$ is from a real homotopy equivalence. Indeed, if $X$ and $Y$ happen to be path-connected CW-complexes, then $f$ is a homotopy equivalence if and only if $\pi_n(\ho_{y_0}(f),x)=0$ for all $n\geq0$.
 
 For $f:X\to Y$ the analogy goes:
 
@@ -30,9 +27,9 @@ For $f:X\to Y$ the analogy goes:
     X \arrow[r,"\sim"] \arrow[dr,"f"] & Ef\arrow[d,"p"]\\
      & Y
     \end{tikzcd}\] \\ 
- $Cf=Z(f)/X=*\cup_{X\times0}X\times[0,1]\cup_{X\times1} Y$. & $\ho_{y_0}(f)=X\times_Y Y^{[0,1]}\times_Y\cb{y_0}$. \\
+ $Cf=Z(f)/X=*\cup_{X\times0}X\times[0,1]\cup_{X\times1} Y$ & $\ho_{y_0}(f)=X\times_Y Y^{[0,1]}\times_Y\cb{y_0}$ \\
   & \\
- Long exact homology sequence. & Long exact homotopy sequence.
+ Long exact homology sequence & Long exact homotopy sequence
 \end{tabular}
 \end{center}
 
@@ -74,7 +71,7 @@ There is also an alternative (and isomorphic) description via cubes. We consider
 The advantage of this description is that for $n\geq2$ we can define a group structure on $\pi_n(f)$ by stacking representatives next to each other in the first coordinate.
 
 The long exact sequence of homotopy groups also generalizes:
-\[\cdots\to\pi_{n+1}(f)\xto{\de}\pi_n(X,x_0)\xto{f_*}\pi_n(Y,y_0)\to\pi_n(f)\to\cdots\tag{$*$}\]
+\[\cdots\to\pi_{n+1}(f)\xto{\de}\pi_n(X,x_0)\xto{f_*}\pi_n(Y,y_0)\to\pi_n(f)\to\cdots\]
 
 where $\de$ is:
 \[[\alpha:S^n\to X,\beta:D^{n+1}\to Y]\mapsto\alpha,\]
@@ -85,8 +82,7 @@ and the map $\pi_n(Y,y_0)\to\pi_n(f)$ is:
 \begin{tikzcd}
 (I^\ni,\de I^\ni) \arrow[d,hook] \arrow[r,"\const_{x_0}"] & (X,x_0) \arrow[d,"f"] \\
     (I^n,J^\ni) \arrow[r,"\beta"] & (Y,y_0)
-\end{tikzcd}
-.\]
+\end{tikzcd}\]
 
 The long exact sequence is natural in $f:X\to Y$, i.e. for every commutative square
 \begin{center}
@@ -98,14 +94,14 @@ The long exact sequence is natural in $f:X\to Y$, i.e. for every commutative squ
 we get a commutative diagram of long exact sequences.
 
 \begin{theorem}
-The long exact sequence of homotopy groups $(*)$ is exact.
+The sequence of homotopy groups
+\[\cdots\to\pi_{n+1}(f)\xto{\de}\pi_n(X,x_0)\xto{f_*}\pi_n(Y,y_0)\to\pi_n(f)\to\cdots\]
+is exact.
 \end{theorem}
 
 There are two possible proof, one "short", one instructive.
 
-\begin{proof}\ 
-
-1. Mimic the arguments for $\pi_n(Y,X,x_0)$, i.e. the special case $f=\incl:X\into Y$.
+\begin{proof}1. Mimic the arguments for $\pi_n(Y,X,x_0)$, i.e. the special case $f=\incl:X\into Y$.
 
 2. For $n\geq1$ there is a natural isomorphism $\pi_\ni(\ho_{y_0}(f),*)\cong\pi_n(f)$ such that the following diagram commutes:
 \[
@@ -128,7 +124,7 @@ The exponential law lifts $\bar\beta$ to a continuous map $\beta:I^n=I^\ni\times
 
 \chapter{Eilenberg-MacLane Spaces and Representability of Cohomology}
 
-Executive summary.\rightnote{This is a non very rigorous summary, says the Professor.} Let $A$ be an abelian group, $n\geq1$.
+Executive summary.\rightnote{This is a not very rigorous summary, says the Professor.} Let $A$ be an abelian group, $n\geq1$.
 Eilenberg-MacLane spaces are spaces such that:
 \[\pi_i(K(A,n))=\begin{cases}
 A & i=n\\
@@ -139,7 +135,7 @@ We want to show that they exist and are unique up to homotopy and that they repr
 \[H^n(X,A)\cong[X,K(A,n)].\]
 
 Let $n\geq1$, let $A$ be a group, abelian if $n\geq2$.
-An \textbf{Eilenberg-MacLane space} of type $(A,n)$, called "a $K(A,n)$", is a path-connected based space together with an isomorphism $\pi_n(X,x_0)\to A$ such that $\pi_i(X,x_0)=0$ for all $i\geq1$, with $i\neq n$.
+An \textbf{Eilenberg-MacLane space} of type $(A,n)$, called \enquote{a $K(A,n)$}, is a path-connected based space together with an isomorphism $\pi_n(X,x_0)\to A$ such that $\pi_i(X,x_0)=0$ for all $i\geq1$, with $i\neq n$.
 
 \begin{examples}
 The circle $S^1$ is a $K(\Z,1)$: its universal cover $\R$ is contractible, so we have that $\pi_i(S^1,*)\cong\pi_i(\R,0)=0$ for $i\geq2$, and $\pi_1(S^1,*)\cong\operatorname{Deck}(\operatorname{exp}:\R\to S^1)\cong\Z$.
@@ -164,8 +160,8 @@ We also have that a generator of $\pi_2(\cp{\infty},*)$ is represented by any ch
 We claim that $\pi_n(\cp{\infty},*)\cong0$ for $n\geq3$.
 
 The map $S^{2m+1}\cong S(\CC^{m+1})\to\cp{m}$, $x\mapsto\CC\cdot x$, is a fibre bundle with fibre $S^1$. So we get a long exact sequence of homotopy groups:
-\[\cdots\to\pi_n(S^1,1)\to\pi_n(S(\CC^{m+1},*))\to\pi_n(\cp{m},*)\xto{\de}\pi_\ni(S^1,*)\to\cdots\]
-since $\pi_n(S(\CC^{m+1},*))=0$ for $n\leq2m$ and $\pi_\ni(S^1,*)=0$ for $n\geq3$, $\pi_n(\cp{m},*)=0$ for $3\leq n\leq 2m$. Then $\pi_n(\cp{m},*)\to\pi_n(\cp{\infty},*)$ is an isomorphism for $n\leq2m$ by cellular approximation.
+\[\cdots\to\pi_n(S^1,1)\to\pi_n(S(\CC^{m+1}),*)\to\pi_n(\cp{m},*)\xto{\de}\pi_\ni(S^1,*)\to\cdots\]
+since $\pi_n(S(\CC^{m+1}),*)=0$ for $n\leq2m$ and $\pi_\ni(S^1,*)=0$ for $n\geq3$, $\pi_n(\cp{m},*)=0$ for $3\leq n\leq 2m$. Then we use that $\pi_n(\cp{m},*)\to\pi_n(\cp{\infty},*)$ is an isomorphism for $n\leq2m$ by cellular approximation.
 \end{example}
 
 \begin{example}

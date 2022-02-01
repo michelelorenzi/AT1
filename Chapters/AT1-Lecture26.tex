@@ -1,3 +1,154 @@
 % Lecture 26
 
-%\lecture[]{2022-01-26}
+\comment{
+\lecture[]{2022-01-26}
+
+A simplicial set is:
+
+a Kan complex...
+
+a quasicategory...
+
+ex: the nerve of every cat has unique fillers of all inner horns
+
+Let $f,g:x\to Y$ be morphisms in a quasi-category. Then $f$ and $g$ are homotopic if the following four conditions hold:
+
+*****
+
+Homotopy is an equivalence relation on the set of morphisms from $x$ to $y$.
+
+A composite of... *****
+
+Composition is well-defined on homotopy classes.
+
+\begin{theorem}
+Let $\Cc$ be a quasi-category. The \tbf{homotopy category} $h\Cc$ has objects $\Cc_0$, morphisms the homotopy classes of $\Cc$-morphisms and composition as above.
+\end{theorem}
+
+\begin{proof}
+The identity property is clear.
+
+We want to show that composition is associative: let
+\[x\xto{f}y\xto{g}z\xto{i}w\]
+be composable $\Cc$-morphisms. Let $\sigma,\tau\in\Cc_2$ be $2$-simplices with boundaries $\de\sigma=(g,h,f)$ (\enquote{$h\simeq g\circ f$}) and $\de\tau(i,h,g)$. Then choose $\alpha\in\Cc_2$ with $\de\alpha=(i,j,h)$. The data provides a $\Lambda^3_2$ horn:
+\[*****\]
+We choose a filler $\mu\in\Cc_3$ of this horn and consider $d_2^*(\mu)\in\Cc_2$. Then
+\[[i]\circ([g]\circ[f])=[i]\circ[h]=[j]=[k]\circ[f]=([i]\circ[g])\circ[f]\]
+where the penultimate equality is given by $d_2^*(\mu)$.
+\end{proof}
+
+\begin{example}
+Let $\Cc=NC$ be the nerve of some category $C$. Then $f,g:x\to y$ are homotopic if and only if *****.
+
+So in $NC$ \enquote{homotopy} specializes to \enquote{equality}. So $h(NC)=C$.
+\end{example}
+
+\begin{theorem}[Joyal]
+A quasi-category $\Cc$ is a Kan-complex if and only if $h\Cc$ is a groupoid.
+\end{theorem}
+
+\begin{example}
+There are essentially two ways of obtaining quasi-categories, from old ones (many constructions, like completion or cocompletition, slice categories et cetera, specialize to quasi-categories) or from modified nerve constructions. We focus on the second way.
+\[*****\]
+Let $\Cc$ be a $2$-category. The \tbf{Duskin nerve} $NC$ is given by:
+\begin{itemize}
+    \item $(NC)_0$ are the objects of $C$,
+    \item $(NC)_1$ are the $1$-simplices of $C$,
+    \item $(NC)_2$ are quadruples:
+    \[*****\]
+    \item $(NC)_3$ (not precise complicated diagram)
+    \[*****\]
+    such that the following two $2$-cells are equal
+    \[*****\]
+\end{itemize}
+\end{example}
+
+\begin{theorem}
+The nerve of a $(2,1)$-category ($2$-category with invertible $2$-cells) is a quasi-category.
+\end{theorem}
+
+\begin{remark}
+A category $C$ can be made into a $(2,1)$-category with only identity $2$-cells. In this case the Duskin nerve specializes to the ordinary nerve
+\end{remark}
+
+\begin{example}
+Categories can be considered as $1$-categories (ignoring natural transformations) and they form a category $\Cat_1$, or as $2$-categories and they form a category $\Cat_2$.
+We have
+\[hN(\Cat_1)=\Cat_1\]
+hence two categories are isomorphic if and only if they are isomorphic in the usual sense.
+But in
+\[h(N^\text{Duskin}(\Cat_{(2,1)}))\]
+two categories are isomorphic if and only if they are equivalent in the usual sense.
+\end{example}
+
+Let $C$ be a category enriched in Kan complexes, i.e. a set of objects $\ob(C)$, Kan complexes of morphisms $\map_C(x,y)$ for all $x,y\in\ob(C)$, composition of morphisms
+\[\circ:\map_C(y,z)\times\map_C(x,y)\to\map_C(x,z),\]
+identities $1_x\in\map_C(x,x)_0$, that is (strictly) associative and unital.
+
+\begin{example}
+$\Kan$: objects are all Kan complexes,
+\[\map_\Kan(X,Y)=\map(X,Y)\]
+where $\map(X,Y)$ is the mapping simplicial set, with simplices $\map(X,Y)_n=\Hom_\sSet(X\times\Delta^n,Y)$. If $Y$ is Kan, so is $\map(X,Y)$.
+\end{example}
+
+The \tbf{coherent nerve} of a category $C$ enriched in Kan complexes is:
+\begin{itemize}
+    \item $(NC)_0$ are the objects of $C$,
+    \item $(NC)_1$ is the set of $1$-simplices in all mapping complexes,
+    \[\Hom_{NC}(x,y)=\map_C(x,y)_1,\]
+    \item $(NC)_2$ is the set of triples $(f,g,h,\tau)$...
+    \[*****\]
+    *****
+\end{itemize}
+
+\begin{proposition}
+Let $K$ and $\Cc$ be simplicial sets.
+\begin{numerate}
+\item If $\Cc$ is a Kan complex, then so is $\map(K,\Cc)$.
+\item If $\Cc$ is a quasi-category, then so is $\map(K,\Cc)$ (quasi-category of functors $K\to\Cc$).
+\end{numerate}
+\end{proposition}
+
+The $\infty$-category of spaces is the quasi-category $N^\text{coh}(\Kan)$ and $hN^\text{coh}(\Kan)=\Ho(\sSet_\text{Kan})$
+
+The \tbf{core of a quasi-category} $\Cc$ is the simplicial subset of $\Cc$ with
+\[(\core\Cc)_n=\cb{\sigma\in\Cc_n:\text{all edges of }\sigma\text{ are equivalent}}\]
+
+\begin{theorem}
+$\core\Cc$ is a quasi-category, and in fact a Kan complex.
+\end{theorem}
+
+The $\infty$-category of $\infty$-categories is the coherent nerve of the Kan enriched category with objects all quasi-categories and morphisms simplicial sets $\core\map(\Cc,\Dd)$.
+
+$\ob(\Cat_\infty)$ are all quasi-categories, $\map_{\Cat_\infty}(\Cc,\Dd)$ are functors $\Cc\to\Dd$, then *****
+
+A functor $f:\Cc\to\Dd$ of quasi-categories is an equivalence if for every simplicial set $K$, the functor
+\[f_*:h\map(K,\Cc)\to h\map(K,\Dd)\]
+is an equivalence of ($1$-)categories.
+
+Note: if $K=*$, $\map(*,\Cc)\cong\Cc$, then $f_*:h\Cc\to h\Dd$ is an equivalence. But equivalence of homotopy categories is not sufficient: the projection
+\begin{align*}
+    \Cc&\to N(h\Cc)\\
+    x&\mapsto x\\
+    x\xto{f}y&\mapsto[f]
+\end{align*}
+induces an equivalence of homotopy categories. But this is typically \tit{not} an equivalence of categories.
+
+A functor $f:\Cc\to\Dd$ of quasi-categories is a \tbf{localization} of a set $\Ww$ of $\Cc$-morphisms. If for all quasi-categories $\Dd$, the resulting functor
+\[\gamma:\Fun(\Cc_\Ww,\Dd)\to\Fun(\Cc,\Dd)\]
+is an equivalence (of quasi-categories!) onto the full subcategory of functors that send $\Ww$ to equivalences. 
+
+\begin{itemize}
+    \item Localization of quasi-categories exist and are unique up to equivalences under $\Cc$.
+\end{itemize}
+
+\begin{theorem}
+The following quasi-categories are equivalent:
+\begin{itemize}[label={-}]
+    \item the $\infty$-category of spaces $N^\text{coh}(Kan)$,
+    \item the localization of $N(\sSet)$ at the weak equivalences,
+    \item the localization of $N(\Top)$ at the weak homotopy equivalences,
+    \item $N^\text{coh}(\Top_\text{CW})$ Kan-enriched by $\map(X,Y)=\S(\map(X,Y))$.
+\end{itemize}
+\end{theorem}
+}

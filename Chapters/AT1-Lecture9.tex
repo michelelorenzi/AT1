@@ -33,8 +33,8 @@ where $\bar\omega(t)=\omega(1-t)$ is the inverse path.
 
 We set $f=H(-,1):F_0\to F_1$ and $g=K(-,1):F_1\to F_0$.
 
-Let $L:[0,1]\times[0,1]\to B$ be a homotopy, relative $\cb{0,1}$, from $\omega\times\bar\omega$ (the concatenated path) to $\const_{b_0}$.
-\[L(-,0)=\omega\times\bar\omega,\]
+Let $L:[0,1]\times[0,1]\to B$ be a homotopy, relative $\cb{0,1}$, from the concatenated path $\omega*\bar\omega$ to $\const_{b_0}$.
+\[L(-,0)=\omega*\bar\omega,\]
 \[L(-,1)=\const_{b_0}\]
 \[L(0,t)=L(1,t)=b_0\]
 
@@ -42,26 +42,24 @@ Choose another lifting in the following diagram:
 
 \begin{center}
     \begin{tikzcd}[column sep=huge]
-    F_0\times((0\times I)\cup(I\times 0)\cup(1\times I))\times 0 \arrow[r] \arrow[d,hook] & E \arrow[d,"p"] \\
+    F_0\times((0\times I)\cup(I\times 0)\cup(1\times I)) \arrow[r] \arrow[d,hook] & E \arrow[d,"p"] \\
 
     F_0\times[0,1]\times[0,1] \arrow[ur,dashed,swap,"\bar L"] \arrow[r,swap,"L\circ\pr_{2,3}"] & B
     \end{tikzcd}
 \end{center}
-where the upper arrow is $(\const_{\incl}\,\cup\, H\times(K\circ(f\times\id))\,\cup\,\const_{g\circ f})$.\smallskip
+where the upper arrow is\alvaropls\ $(\const_{\incl}\,\cup\, H*(K\circ(f\times\id))\,\cup\,\const_{g\circ f})$.\smallskip
 
 \input{Pictures/Lec9Pic1}
 
 \vspace{-0.1cm}
 Then we can set $G=\bar L(-,-,1):F_0\times[0,1]\to E$ to obtain a homotopy from $\incl:F_0\into E$ to $\incl\circ g\circ f:F_0\to E$.
 
-Since $p\circ G=\const_{b_0}$, this homotopy $G$ takes place inside $F_0$.
-
-So $G$ is a homotopy from $\id_{F_0}$ to $g\circ f$. Reversing the roles of $b_0$ with $b_1$, $F_0$ with $F_1$ and $f$ with $g$ yields a homotopy from $\id_{F_1}$ to $f\circ g$.
+Since $p\circ G=\const_{b_0}$, this homotopy $G$ takes place inside $F_0$. So $G$ can be seen as a homotopy from $\id_{F_0}$ to $g\circ f$. Reversing the roles of $b_0$ with $b_1$, $F_0$ with $F_1$ and $f$ with $g$ yields a homotopy from $\id_{F_1}$ to $f\circ g$.
 \end{proof}
 
 \unnumpar{Induced fibres bundles/fibrations}
 
-We construct the pullback bundle\rightnote{This construction is also called base change sometimes.}. Let $p:E\to B$ and $\beta:B'\to B$ be continuous maps. The pullback is \[E'=B'\times_B E=\cb{(b',e)\in B'\times E\mid \beta(b')=p(e)}\]
+We construct the pullback bundle\rightnote{This construction is also called base change sometimes. Or fiber product.}. Let $p:E\to B$ and $\beta:B'\to B$ be continuous maps. The pullback is \[E'=B'\times_B E=\cb{(b',e)\in B'\times E\mid \beta(b')=p(e)}\]
 with subspace topology of the product topology.
 
 \begin{center}
@@ -73,7 +71,7 @@ with subspace topology of the product topology.
     \end{tikzcd}
 \end{center}
 
-This is a pullback in the sense of category theory, i.e. the following universal property holds: for all spaces $A$ and continuous maps $\alpha:A\to B'$ and $\epsilon:A\to E$ such that $\beta\alpha=p\epsilon$, there is a unique continuous map $\delta:A\to B'\times_B E$ such that $\beta'\delta=\epsilon$ and $\alpha\delta=p'$ (namely the map: $\delta(a)=(\alpha(a),\epsilon(a))$).
+This is a pullback in $\Top$ in the sense of category theory, i.e. the following universal property holds: for all spaces $A$ and continuous maps $\alpha:A\to B'$ and $\epsilon:A\to E$ such that $\beta\alpha=p\epsilon$, there is a unique continuous map $\delta:A\to B'\times_B E$ such that $\beta'\delta=\epsilon$ and $\alpha\delta=p'$, namely the map $\delta(a)=(\alpha(a),\epsilon(a))$.
 \begin{center}
     \begin{tikzcd}
     A \arrow[dr,dashed,"\exists!\delta"] \arrow[drr,bend left,"\epsilon"] \arrow[ddr,bend right,"\alpha"] & & \\
@@ -84,10 +82,10 @@ This is a pullback in the sense of category theory, i.e. the following universal
 \end{center}
 
 \begin{example}[Restriction bundle]
-Suppose $B'$ is a subspace of $B$ and $\beta:B'\to B$ the inclusion. Then
+Suppose $B'$ is a subspace of $B$ and $\beta:B'\to B$ the inclusion. Then we have
 \[B'\times_B E\cong p^{-1}(B')\]
-with homeomorphism given by
-\[(b',e)\mapsto e\]
+with homeomorphisms given by
+\[(b',e)\mapsto e,\]
 \[(p(e),e)\mapsfrom e.\]
 \end{example}
 
@@ -120,11 +118,11 @@ We argue that $p':B'\times_B E\to B'$ is trivializable over $V=\beta^{-1}(U)$ wi
 The following are mutually inverse homeomorphisms:
 \begin{align*}
     (p')^{-1}(V)&\xleftrightarrow{\ \cong\ }V\times F\\
-    (b',e)&\ \,\mapsto\ (b',\psi_2(\beta(b')))\\
-    (b',\psi^{-1}(\beta(b'),f))&\ \,\mapsfrom\ (b',f)
+    (b',e)&\ \,\mapsto\ (b',\psi_2(e))\\
+    (b',\psi^{-1}(\beta(b'),f))&\ \,\mapsfrom\ (b',f).
 \end{align*}
 
-Categorical proof: pullbacks are transitive.
+Categorical proof: the statement is an instance of the fact that \enquote{pullbacks are transitive}.
 
 In any category $\Cc$, we consider a commutative diagram:
 \begin{center}
@@ -138,8 +136,8 @@ In any category $\Cc$, we consider a commutative diagram:
 If both squares are pullbacks, then the composite square is also a pullback. Symbolic notation:
 \[B''\times_B E\cong B''\times_{B'}(B'\times_B E).\]
 
-Hence we have:
-\[(p')^{-1}(V)=V\times_{B'}(B'\times_B E)\cong V\times_B E = V\times_U(U\times_B E)\cong V\times_U(U\times F)\cong V\times F.\]
+Hence, considering the same situation as in the direct proof, we have:
+\[(p')^{-1}(V)=V\times_B E\cong V\times_{B'}(B'\times_B E)= V\times_U(U\times_B E)\cong V\times_U(U\times F)\cong V\times F.\]
 
 (ii)+(iii) We show: whenever $p:E\to B$ has the HPL for some space $X$, then $p':B'\times_B E\to B'$ also has the HLP for $X$.
 
@@ -158,7 +156,7 @@ The universal property of the pullback provides a unique continuous map
 \[\bar K:X\times[0,1]\to B'\times_B E\]
 such that $p'\circ \bar K=H$ and $\beta'\circ\bar K=K$.
 
-Two continuous maps $f,\,\bar K(-,0):X\times0\to B'\times_B E$ compose in the same way with $p'$ and with $\beta'$. The uniqueness part of the universal property then forces $f=\bar K(-,0)$.
+The two continuous maps $f,\,\bar K(-,0):X\times0\to B'\times_B E$ compose in the same way with $p'$ and with $\beta'$. The uniqueness part of the universal property then forces $f=\bar K(-,0)$.
 \end{proof}
 
 \chapter{Mapping Spaces}
@@ -185,7 +183,7 @@ Watch out: the product in $CG$ is not always the usual product topology!
 
 Some examples of classes of spaces in $CG$ are:
 \begin{itemize}[label={-}]
-    \item every locally compact Hausdorff spaces,
+    \item every locally compact Hausdorff space,
     \item every CW-complex,
     \item every manifold is in $CG$,
     \item the realization of every simplicial set,
@@ -212,7 +210,7 @@ called the supremum metric.
 \end{theorem}
 
 \begin{proof}
-(1) Omitted (see \cite[Proposition A.13]{hatcher}.
+(1) Omitted (see \cite[Proposition A.13]{hatcher}).
 
 (2) \enquote{$\subset$}: compact-open is metrically open.
 

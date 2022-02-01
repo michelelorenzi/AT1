@@ -37,7 +37,7 @@ For every space $Z$, the adjunction counit $\epsilon_Z:|\S(Z)|\to Z$ induces iso
 \begin{proof}
 The composite
 \[\S(Z)\xto{\eta_{\S(Z)}}\S|\S(Z)|\xto{\S(\epsilon_Z)}\S(Z)\]
-is the identity, hence so is the composite
+is the identity (see \href{http://nlab-pages.s3.us-east-2.amazonaws.com/nlab/show/triangle+identities}{triangle identities}), hence so is the composite
 \[H_*(Z;A)\xto{H_*(\eta_{\S(Z)})}H_*(|\S(Z)|;A)\xto{H_*(\epsilon_Z)}H_*(Z;A).\]
 The first map is an isomorphism by theorem \ref{theorem:simplicial-and-singular-homology} applied to $\S(Z)$, hence the map $H_*(\epsilon_Z)$ is an isomorphism.
 \end{proof}
@@ -147,7 +147,7 @@ Case 3. $Z$ is any path-connected space. We choose a CW-approximation $f:Y\to Z$
 {|\S(Z)|} \ar[r,"\epsilon_Z"] & Z
 \end{tikzcd}
 \]
-By theorem \ref{theore:singular-complex-functor-is-homotopical}, $\S(f):\S(Y)\to\S(Z)$ is a homotopy equivalence of simplicial sets, so $|\S(f)|$ is a homotopy equivalence. Hence $\epsilon_Z$ is a weak equivalence.
+By theorem \ref{theore:singular-complex-functor-is-homotopical}, $\S(f):\S(Y)\to\S(Z)$ is a homotopy equivalence of simplicial sets, so $|\S(f)|$ is a homotopy equivalence (since homotopy relations are preserved by geometric realization). Hence $\epsilon_Z$ is a weak equivalence.
 
 Case 4. $Z$ is any space. We show directly that the map $\pi_0(\epsilon_Z):\pi_0(|\S(Z)|)\to\pi_0(Z)$ is bijective. We first prove surjectivity. Any point $z\in Z$ has a corresponding map $\til z:\sx{0}\to Z$ in $\S(Z)_0$, the map $1\mapsto z$. Then $[\til z,1]\in |\S(Z)|$ is a $0$-cell in the preferred CW-structure that maps to $z$ under $\epsilon_Z:|\S(Z)|\to Z$, so $\epsilon_Z$ is surjective. For injectivity, we consider elements $[f,1],[g,1]\in|\S(Z)|$ that represent two given elements of $\pi_0(|\S(Z)|)$ that are taken by $\pi_0(\epsilon_Z)$ to the same element in $\pi_0(Z)$. We have maps $f,g:\sx{0}\to Z$. Then $f(1),g(1)\in Z$ lie in the same path component of $Z$, so there is a path $h:\sx{1}\to Z$ from $f(1)$ to $g(1)$. Then $h\in\S(Z)_1$ and the corresponding characteristic map
 \begin{align*}

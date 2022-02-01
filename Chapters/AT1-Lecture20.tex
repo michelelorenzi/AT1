@@ -38,7 +38,7 @@ but by (1) this diagram stabilizes from $(\sk^n X)_n=X_n$ upwards, so $X_n$ is a
 
 (5) Suppose $x=\alpha^*(y)\in(\sk^m X)_n$, for $\alpha:[n]\to[m]$, $y\in X_m$. Then
 \[f_n(x)=f_n(\alpha^*(y))=\alpha^*(\underbrace{f_m(y)}_{\in Y_m}),\]
-hence $x\in(\sk^m Y)_n$.
+hence $f_n(x)\in(\sk^m Y)_n$.
 \end{proof}
 
 \begin{remark}
@@ -51,7 +51,7 @@ The following proposition (\ref{proposition:cw-structure-on-realization-preparat
 
 \begin{remark}
 In order to state and prove proposition \ref{proposition:cw-structure-on-realization-preparation} we need some preparation. First, we observe that there exists a natural transformation
-$x^\flat:\Delta^m\to X$, that we call the \tbf{characteristic morphism} of $x\in X_m$, determined via the Yoneda lemma by $x^\flat_m(\id_{[m]})=x$ (hence $x^\flat_n(\alpha)=\alpha^*(x)$). Second, in the hypotheses of the proposition, we observe that the following square commutes (by naturality of the inclusion of the skeleton):
+$x^\flat:\Delta^m\to X$, that we call the \tbf{characteristic morphism} of $x\in X_m$, determined via the Yoneda lemma by $x^\flat_m(\id_{[m]})=x$ (hence $x^\flat_n(\alpha)=\alpha^*(x)$). Second, in the hypotheses of proposition \ref{proposition:cw-structure-on-realization-preparation}, i.e. considering a subcomplex $Y$ of a simplicial complex $X$ with $X_{m-1}=Y_{m-1}$ for some $m$, we observe that the following square commutes (by naturality of the inclusion of the skeleton):
 \[
 \begin{tikzcd}
 \de\Delta^m \ar[d,"x^\flat|_{\de\Delta^m}"] \ar[r,eq] & \sk^{m-1}\Delta^m \ar[d,"\sk^{m-1}x^\flat"] \ar[r,hook] & \Delta^m \ar[d,"x^\flat"]\\
@@ -84,16 +84,14 @@ is a pushout of topological spaces.
 \end{numerate}
 \end{proposition}
 
-\begin{proof}\ 
-
-(1) Since limits and colimits in the category of simplicial sets are computed objectwise (as we already noted in the proof of proposition \ref{proposition:getting-to-know-the-simplicial-skeleton}), it suffices that for every fixed dimension $n$, the commutative square of sets
+\begin{proof} (1) Since limits and colimits in the category of simplicial sets are computed objectwise (as we already noted in the proof of proposition \ref{proposition:getting-to-know-the-simplicial-skeleton}), it suffices that for every fixed dimension $n$, the commutative square of sets
 \[
 \begin{tikzcd}[column sep=large]
 \coprod_{x\in X_m\sm Y_m}(\de\Delta^m)_n \ar[d,"\amalg\,x^\flat_n|_{\de\Delta^m}"'] \ar[r,"\incl"] & \coprod_{x\in X_m\sm Y_m}(\Delta^m)_n \ar[d,"\amalg\,x^\flat_n"]\\
 Y_n \ar[r,"\incl"] & X_n
 \end{tikzcd}
 \]
-is a pushout. Since the horizontal maps are injective, it suffices to show that the \enquote{complements} of the images of the horizontal maps are mapped bijectively by the right vertical map, i.e. that the right vertical map induces a bijection
+is a pushout. Since the horizontal maps are injective, it suffices to show that the complements of the images of the horizontal maps are mapped bijectively by the right vertical map, i.e. that the right vertical map induces a bijection
 \[\cb{X_m\sm Y_m}\times((\Delta^m)_n\sm(\de\Delta^m)_n)\to X_n\sm Y_n,\quad(x,\alpha)\mapsto\alpha^*(x).\]
 By definition the $k$-simplices of $\de\Delta^m$ are all morphisms $\alpha:[n]\to[m]$ that are not surjective, hence we want to show bijectivity of the map
 \[\cb{X_m\sm Y_m}\times\cb{\alpha:[n]\to[m]\mid\alpha\text{ surjective}}\to X_n\sm Y_n,\quad(x,\alpha)\mapsto\alpha^*(x).\]
@@ -104,7 +102,7 @@ If $n=m$, bijectivity is immediate because we must have $\alpha=\id_{[n]}$.
 
 If $n>m$, we can show bijectivity using proposition \ref{proposition:non-degenerate-simplices} and the hypothesis that all simplices in $X_k\sm Y_k$ are degenerate for $k>m$. In particular, injectivity follows from uniqueness of the representation of a simplex as a degeneracy of a non-degenerate simplex, since elements of $(X_m\sm Y_m)$ are non-degenerate (because otherwise they would be images of a simplex of dimension smaller than $m$, but in those dimensions $X$ and $Y$ are equal). To show surjectivity, take any simplex $x\in X_n\sm Y_n$ and write $x=\alpha^*(\bar x)$ for some surjective morphism $\alpha:[n]\to[k]$ and some non-degenerate simplex $\bar x\in X_k$. Since $x$ does not belong to $Y_n$, $\bar x$ does not belong to $Y_k$, hence we must have $k\ge m$. But we must also have $k\le m$, because otherwise all simplices in $X_k\sm Y_k$ would be degenerate. Hence $k=m$ and $(\bar x,\alpha)$ is an element of the domain with image $x$.
 
-(2) The geometric realization functor $|-|:\sSet\to\Top$ is a left adjoint (to the singular complex functor $\S:\Top\to\sSet$), hence it preserves colimits\leftnote{A proof of this fact on the nLab: \href{http://nlab-pages.s3.us-east-2.amazonaws.com/nlab/show/adjoints+preserve+(co-)limits}{adjoints preserve (co-)limits}.} (in particular, finite ones, like coproducts and pushouts).
+(2) The geometric realization functor $|-|:\sSet\to\Top$ is a left adjoint\leftnote{If you missed it...\\ a proof of this fact on the nLab: \href{http://nlab-pages.s3.us-east-2.amazonaws.com/nlab/show/adjoints+preserve+(co-)limits}{adjoints preserve (co-)limits}.} (to the singular complex functor $\S:\Top\to\sSet$), hence it preserves colimits (in particular, finite ones, like coproducts and pushouts).
 
 (3) From part (2) we know that $|X|$ can be obtained from $|Y|$ by attaching copies of $|\Delta^m|$ along $|\de\Delta^m|$, indexed by $X_m\sm Y_m$. So it suffices to show that the pair $(|\Delta^m|,|\de\Delta^m|)$ is homeomorphic to $(\sx{m},\de\sx{m})$, hence to $(D^m,S^{m-1})$.
 
@@ -116,7 +114,7 @@ Recall that we have mutually inverse homeomorphisms:
 
 We claim that these homeomorphisms map $|\de\Delta^m|$ homeomorphically onto the boundary of the topological simplex $\de\sx{m}=\cb{(\nno{t}{m})\in\sx{m}\mid t_i=0\text{ for some }0\le i\le m}$.
 
-First, observe that the map $|\de\Delta^m|\to|\Delta^m|$ is injective by corollary \ref{corollary:criterion-for-injectivity-of-map-between-realizations} (which follows from the theory of minimal representatives). Secondly, since $\de\Delta^m$ has only finitely many non-degenerate simplices, $|\de\Delta^m|$ is compact by corollary \ref{corollary:criterion-for-compactness-of-realization} (which is also a consequence of the theory of minimal representatives). since $|\Delta^m|$ Hausdorff (being homeomorphic to $\sx{m}$), this is a closed map and hence a homeomorphism onto its image. Now, the non-degenerate simplices of $\de\Delta^m$ are all injective morphisms $\alpha:[k]\to[m]$ except $\id_{[m]}$ (which is surjective); by corollary \ref{corollary:composition-of-realization}, the image of $|\de\Delta^m|$ is then the union of the images of the maps $\alpha_*:\sx{k}\to\sx{m}$ for all injective morphisms $\alpha:[k]\to[m]$ other than $\id_{[m]}$, hence it coincides with $\de\sx{m}$, the boundary of $\sx{m}$.
+First, observe that the map $|\de\Delta^m|\to|\Delta^m|$ is injective by corollary \ref{corollary:criterion-for-injectivity-of-map-between-realizations} (which follows from the theory of minimal representatives). Secondly, since $\de\Delta^m$ has only finitely many non-degenerate simplices, $|\de\Delta^m|$ is compact by corollary \ref{corollary:criterion-for-compactness-of-realization} (which is also a consequence of the theory of minimal representatives). Since $|\Delta^m|$ is Hausdorff (being homeomorphic to $\sx{m}$), this is a closed map and hence a homeomorphism onto its image. Now, the non-degenerate simplices of $\de\Delta^m$ are all injective morphisms $\alpha:[k]\to[m]$ except $\id_{[m]}$ (which is surjective); by corollary \ref{corollary:composition-of-realization}, the image of $|\de\Delta^m|$ is then the union of the images of the maps $\alpha_*:\sx{k}\to\sx{m}$ for all injective morphisms $\alpha:[k]\to[m]$ other than $\id_{[m]}$, hence it coincides with $\de\sx{m}$, the boundary of $\sx{m}$.
 \end{proof}
 
 We are now ready to introduce the preferred CW-structure on the realization of a simplicial set, and summarize all its key properties, which follow from all the theory we have developed so far.
@@ -170,7 +168,7 @@ An interesting fact: we have $|\de\Delta^3|\cong S^2\cong|\Delta^2/\de\Delta^2|$
 \end{example}
 
 \begin{example}
-We have $|B\Z/2|\cong K(\Z/2,1)\cong\rp{\infty}$ (see the section in chapter \ref{section:construction-of-classifying-spaces}, although we skipped many details about classifying spaces), but the preferred CW-structure on $|B\Z/2|$ is different than the usual CW-structure on $\rp{\infty}$, with one cell in every dimension. Indeed, remembering the bar construction of AT1Sheet4, we see that the non-degenerate simplices in dimension $n$ are \[(B\Z/2)_n^\text{nd}=(\underbrace{1,\dots,1}_{n\text{-times}}),\] so the preferred CW-structure actually has one cell per dimension, but it is still not the same as the usual structure on $\rp{\infty}$ because the attaching maps behave differently (one can see this observing how attaching maps behave on the boundary of the cells, given the simplicial structure).\todo{Not really sure about why the structures are different}
+We have $|B\Z/2|\cong K(\Z/2,1)\cong\rp{\infty}$ (see the section in chapter \ref{section:construction-of-classifying-spaces}, although we skipped many details about classifying spaces), but the preferred CW-structure on $|B\Z/2|$ is different than the usual CW-structure on $\rp{\infty}$, with one cell in every dimension. Indeed, remembering the bar construction of AT1Sheet4.1, we see that the non-degenerate simplices in dimension $n$ are \[(B\Z/2)_n^\text{nd}=(\underbrace{1,\dots,1}_{n\text{-times}}),\] so the preferred CW-structure actually has one cell per dimension, but it is still not the same as the usual structure on $\rp{\infty}$ because the attaching maps behave differently (one can see this observing how attaching maps behave on the boundary of the cells, given the simplicial structure).\todo{Not really sure about why the structures are different}
 \end{example}
 
 \begin{example}\label{example:cw-bz-2}

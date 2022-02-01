@@ -45,10 +45,10 @@ Let $X$ and $Z$ be spaces and let $X$ be locally compact. Then the evaluation ma
 \begin{proof}
 Let $O$ be any open subset of $Z$. We want to show that
 \[\ev^{-1}(O)=\cb{(f,x)\in Z^X\times X:f(x)\in O}\]
-is open. Let $(f,x)\in Z^X\times X$ be in $\ev^{-1}(O)$, so $f(x)\in O$. Since $f$ is continuous, $f^{-1}(O)$ is an open neighbourhood of $x$. Since $X$ is locally compact, there is a compact neighbourhood $K$ of $x$ inside $f^{-1}(O)$. Then $f\in W(K,O)$ and $W(K,O)\times K$ is a neighbourhood of $(f,x)$ in $Z^X\times X$. Then $\ev(W(K,O)\times K)\subset O$, hence $(f,x)\in W(K,O)\times K\subset\ev^{-1}(O)$, so $\ev^{-1}$ is open.
+is open. Let $(f,x)\in Z^X\times X$ be in $\ev^{-1}(O)$, so $f(x)\in O$. Since $f$ is continuous, $f^{-1}(O)$ is an open neighbourhood of $x$. Since $X$ is locally compact, there is a compact neighbourhood $K$ of $x$ inside $f^{-1}(O)$. Then $f\in W(K,O)$ and $W(K,O)\times K$ is a neighbourhood of $(f,x)$ in $Z^X\times X$. Then $\ev(W(K,O)\times K)\subset O$, hence $(f,x)\in W(K,O)\times K\subset\ev^{-1}(O)$, so $\ev$ is continuous.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{theorem:exponential-law}
 Let $X,Y$ and $Z$ be spaces.
 \begin{numerate}
     \setcounter{enumi}{-1}
@@ -67,9 +67,9 @@ Let $X,Y$ and $Z$ be spaces.
 
 (2) On the set-theoretic level, every map $Y\to Z^X$ is of the form $\Phi(f)$ for some unique map $f:X\times Y\to Z$. So $\Phi$ is continuous by (1) and injective. We have to show that when $X$ is locally compact and $g:Y\to Z^X$ is continuous, $\Phi^{-1}(g)$ is continuous. But since the evaluation map is continuous, by (0) the composite
 \[\Psi(g):X\times Y\cong Y\times X\xto{g\times\id}Z^X\times X\xto{\ev}Z\]
-is continuous, hence we have:
-\[\Phi(\Psi(g))(y)(x)=\Psi(g)(x,y)=\ev(g(y),x)=g(y)(x)\text{ for all }x\in X,y\in Y\]
-so that $\Phi(\Psi(g))=g$.
+is continuous and we have:
+\[\Phi(\Psi(g))(y)(x)=\Psi(g)(x,y)=\ev(g(y),x)=g(y)(x)\text{ for all }x\in X,y\in Y,\]
+so that $\Phi(\Psi(g))=g$, i.e. $\Psi(g)=\Phi^\inv(g)$.
 
 (3) Now we suppose that $X$ is locally compact Hausdorff and $Y$ is Hausdorff. As we saw in (1), the sets $W(K',W(K,O))$ with $K\subset X$ and $K'\subset Y$ compact, $O\subset Z$ open, form a subbasis on $(Z^X)^Y$. Then
 \[\Phi^{-1}(W(K',W(K,O)))=W(K\times K',O)\]
@@ -101,10 +101,10 @@ Covariant functoriality: let $g:Z\to Z'$ be continuous. We define $g_*:Z^X\to (Z
 \[g_*(\psi:X\to Z)=g\circ\psi:X\to Z'.\]
 
 This map is continuous: let $K\subset X$ be compact and $O\subset Z'$ open, then
-\[g_*^{-1}(W(K,O))=\cb{\psi:X\to Z\mid (g\circ\psi)(K)\subset O}=W(K,g^{-1}(O))\]
+\[g_*^{-1}(W(K,O))=\cb{\psi:X\to Z\mid (g\circ\psi)(K)\subset O}=W(K,g^{-1}(O)),\]
 which is open in $Z^X$.
 
-Note also that for $f:X\to X'$ continous, $g:Z\to Z'$ continuous and $X,X'$ Hausdorff, the following square commutes:
+Note also that for $f:X\to X'$ continuous, $g:Z\to Z'$ continuous and $X,X'$ Hausdorff, the following square commutes:
 \begin{center}
     \begin{tikzcd}
     (Z')^{X'} \arrow[r,"f^*"] & (Z')^X\\
@@ -119,7 +119,7 @@ Let $f,g:X\to Z$ be homotopic maps, with $H:X\times[0,1]\to Z$ a homotopy betwee
 [X,Z]&\to\pi_0(Z^X)\\
 [f]\ \ &\mapsto\ \ [f]
 \end{align*}
-where $[X,Z]$ indicates the set of homotopy classes of maps $X\to Z$, is well-defined and a bijection whenever $X$ is locally compact.
+where $[X,Z]$ indicates the set of homotopy classes of maps $X\to Z$, is well-defined, surjective and a bijection whenever $X$ is locally compact.
 \end{example}
 
 \section{Path Spaces and Loop Spaces}
@@ -128,10 +128,10 @@ For a space $X$, the space $X^{[0,1]}$ is the \textbf{path space} of $X$. For a 
 
 Let $q:[0,1]\to S^1=\cb{z\in\CC\mid|z|=1}$ be the quotient map $q(x)=e^{2\pi ix}$, this induces a continuous map
 \[q^*:X^{S^1}\to X^{[0,1]},\]
-which restricts to a continuous bijection onto $\Omega X$
+which restricts to a continuous bijection onto $\Omega X$, considered as the space
 \[(X,x_0)^{(S^1,1)}=\cb{f:S^1\to X\mid f(1)=x_0}.\]
 This is in fact a homeomorphism, as a special case of the following lemma.
 
-\begin{lemma**}
+\begin{lemma}\label{lemma:quotient-map-induces-homeomorphism-on-mapping-spaces}
 Let $q:X\to Y$ be a quotient map between compact spaces. Then for every space $Z$, the continuous map $q^*:Z^Y\to Z^X$ is a homeomorphism onto the subspace of all functions $f:X\to Z$ that factor through $q$.
-\end{lemma**}
+\end{lemma}

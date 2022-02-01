@@ -8,7 +8,7 @@ There's one last important easy example of EM-space.
 For $n\geq2$, we have $\Omega K(A,n)=K(A,n-1)$.\rightnote{Sometimes the notation with EM-spaces gets a bit sloppy.}
 \end{example}
 
-We want to show existence and uniqueness (up to homotopy) of EM-spaces. For the existence part, it is better to treat the dimension 1 case separately (the reason is that in this case we do not have Hurewicz's theorem).
+We want to show existence and uniqueness (up to homotopy) of EM-spaces. For the existence part, it is better to treat the dimension 1 case separately (the reason for this is that in this case we do not have Hurewicz's theorem).
 
 \section{Construction of Classifying Spaces.}
 \label{section:construction-of-classifying-spaces}
@@ -45,7 +45,7 @@ It is straightforward to check that these maps do form a morphism of simplicial 
 \[H_n((\xso),\const_1)=H_n((\xso),k_0)=(y,\dots,y).\]
 \end{proof}
 
-Now let $G$ be any group. Then $G$ acts on itself by right translation. So for $g\in G$ we get a morphism $E_{rg}:EG\to EG$, where $rg$ is right multiplication by $g$. This defines an action of $G$ on $EG$ by morphisms of simplicial set, i.e. it makes $EG$ into a $G$-simplicial set.
+Now let $G$ be any group. Then $G$ acts on itself by right translation. So for $g\in G$ we get a morphism $E_{{r_g}}:EG\to EG$, where $r_g$ is right multiplication by $g$. This defines an action of $G$ on $EG$ by morphisms of simplicial sets, i.e. it makes $EG$ into a $G$-simplicial set.
 
 A \textbf{$G$-simplicial set} is a functor $Y:\Delta^\op\to G\text{-}\Set$. More explicitly, a $G$-simplicial set is the data of an underlying simplicial set $Y$ and a $G$-action on $Y_n$ for any $n\geq0$ such that $\alpha^*:Y_n\to Y_m$ is $G$-equivariant for all $\alpha:[m]\to[n]$ in $\Delta$.
 
@@ -60,14 +60,14 @@ This comes with a morphism of simplicial sets $Y\to Y/G$ with $p_n:Y_n\to Y_n/G$
 Let $G$ be a group and $Y$ a free $G$-simplicial set, i.e. the $G$ action on $Y_n$ is free for all $n\geq0$. Then $G$ acts freely and properly discontinuously on $|Y|$ and the continuous map $|p|:|Y|\to|Y/G|$ is a covering space with deck transformation group $G$.
 \end{theorem}
 
-Note: this is AT1Sheet11.3. A key part is that $|-|:\Set\to\Top$ is a left adjoint, so it preserves all colimits, hence $|Y|/G\cong|Y/G|$ because taking orbits by a group action (i.e. the quotient of the space by the group action) is a colimit. If $G$ happens to be finite, we only need the freeness of the action on $|Y|$ and the fact that $|Y|$ is Hausdorff.
+Note: this is essentially AT1Sheet11.3. A key part is that $|-|:\Set\to\Top$ is a left adjoint, so it preserves all colimits, hence $|Y|/G\cong|Y/G|$ because taking orbits by a group action (i.e. the quotient of the space by the group action) is a colimit. If $G$ happens to be finite, we only need the freeness of the action on $|Y|$ and the fact that $|Y|$ is Hausdorff.
 
 We apply this theorem to $Y=EG$. The right translation action of $G$ on itself is free, so the map:
 \[|p|:|EG|\to|(EG)/G|\cong|EG|/G\]
-is a covering space with deck transformation group $G$. Since $|EG|$ is contractible $|(EG)/G|$ is a $K(G,1)$.
+is a covering space with deck transformation group $G$. Since $|EG|$ is contractible, $|(EG)/G|$ is a $K(G,1)$.
 
 \begin{remark}
-The \textbf{bar-construction} $BG$ of a group $G$ (introduced in AT1Sheet 4) is the simplicial set $(BG)_n=G^n$ with structure maps:
+The \textbf{bar-construction} $BG$ of a group $G$ (introduced in AT1Sheet4.1) is the simplicial set $(BG)_n=G^n$ with structure maps:
 \[d^*_i(g_1,\dots,g_n)=\begin{cases}
 (g_2,\dots,g_n) & i=0\\
 (g_1,\dots,g_ig_{i+1},\dots,g_n) & 1\leq i\leq n-1\\
@@ -85,25 +85,20 @@ Consider $q:EG\to BG$ defined in dimension $n$ by:
     q_n:(EG)_n=G^{n+1}&\to G^n=(BG)_n\\
     (\nno{g}{n})&\mapsto(g_0g_1^{-1},g_1g_2^{-1},\dots,g_\ni g_n^{-1}).
 \end{align*}
-The map $q_n$ is constant on $G$-orbits by the composite right translation action. Then $q_n$ factors through a bijection $(EG)_n/G\xto{\cong}(BG)_n.$
+The map $q_n$ is constant on $G$-orbits by the componentwise right translation action. Then $q_n$ factors through a bijection $(EG)_n/G\xto{\cong}(BG)_n.$
 \end{proof}
 \end{remark}
 
-We also have explicit isomorphism (see AT1Sheet4-1):
-\begin{align*}
-    G&\to\pi_1(|BG|,1)\\
-    g&\mapsto\cb{[0,1]\to|BG|}\\
-    t&\mapsto[(g,(t,1-t))]\cont G\times\sx{1}\to|BG|.
-\end{align*}
+In AT1Sheet4.1 we also find an explicit isomorphism $G\to\pi_1(|BG|,1)$.
 
-\tbf{What do classifying spaces classify?} --- A short digression on what the classifying space $BG=K(G,1)$ actually classifies. Let $G$ be a group. A \textbf{$G$-principal bundle} is a $G$-space $X$ with the following property: for every $xG\in X/G$ there is an open neighbourhood $U$ of $xG$ in $X/G$ and a $G$-equivariant homeomorphism $p^{-1}(U)\to U\times G$ (making the usual diagram commute) where $p:X\to X/G$ is the quotient map.
+\tbf{What do classifying spaces classify?} --- A short digression on what the classifying space $BG=K(G,1)$ actually classifies. Let $G$ be a group. A \textbf{principal $G$-bundle}\todo[color=red]{I don't understand well how this definition relates to the one we give in chapter \ref{definition:principal-g-bundle}!} is a $G$-space $X$ with the following property: for every $xG\in X/G$ there is an open neighbourhood $U$ of $xG$ in $X/G$ and a $G$-equivariant homeomorphism $p^{-1}(U)\to U\times G$ (making the usual diagram commute) where $p:X\to X/G$ is the quotient map.
 
 \begin{example}
 $|EG|$ with the $G$ action is a principal $G$-bundle.
 \end{example}
 
 \begin{itemize}[label={-}]
-    \item The action of principal $G$-bundles are in particular free.
+    \item The actions of principal $G$-bundles are in particular free.
     \item Principal $G$-bundles admit base change. Consider a principal $G$-bundle and a continuous map $f:Y\to X/G$:
     \[\begin{tikzcd} & X \ar[d,"p"] \\
     Y \ar[r,"f"] & X/G\end{tikzcd}\]
@@ -133,13 +128,13 @@ Let $n\geq0$ and let $(Y,y)$ be a based space. Then there is a relative CW-compl
 \end{theorem}
 
 \begin{proof}
-We set $X^{(0)}=X^{(1)}=\cdots=X^{(n)}=Y$ and we construct the higher cells by induction, so that:
+We set $X^{(0)}=X^{(1)}=\cdots=X^{(n)}=Y$ and we construct the higher skeleta by induction, so that for $i\ge n$:
 \begin{itemize}
     \item[(a)] $X^{(i+1)}$ is obtained from $X^{(i)}$ by attaching $(i+1)$-cells; in particular, the inclusion $X^{(i)}\into X^{(i+1)}$ induce isomorphisms of homotopy groups up to dimension $i-1$ (by cellar approximation),
     \item[(b)] the homotopy groups $\pi_i(X^{(i+1)},y)$ are trivial.
 \end{itemize}
 
-Then $X=\cup_{i\geq0}X^{(i)}$ with the weak topology is the desired CW-complex relative to $Y$. Then we have $\pi_i(X^{(N)},y)\cong\pi_i(X,y)$ for all large enough $N$, in particular $\pi_i(X,y)\cong 0$ for $i\geq n$ and $\pi_i(X,y)\cong\pi_i(Y,y)$ for $i<n$.
+Then $X=\cup_{i\geq0}X^{(i)}$ with the weak topology is the desired CW-complex relative to $Y$. Indeed, we have $\pi_i(X^{(N)},y)\cong\pi_i(X,y)$ for all $N\ge i+1$, in particular $\pi_i(X,y)\cong 0$ for $i\geq n$ and $\pi_i(X,y)\cong\pi_i(Y,y)$ for $i<n$.
 
 We describe the inductive procedure. Suppose that $X^{(i)}$ has already been constructed. Choose generators $\cb{x_j}_{j\in J}$ for the group $\pi_i(X^{(i)},y)$, choose representatives $f_j:S^i\to X^{(i)}$ of the classes $x_j$.
 

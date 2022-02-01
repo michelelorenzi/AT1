@@ -1,4 +1,4 @@
-\[\begin{tikzcd}
+\[\begin{tikzcd}[column sep=large]
 	\begin{tikzpicture}[x=2em, y=2em]
     \draw[very thick, black!50]
         (0,0)--(2,0)
@@ -48,7 +48,7 @@
         (0.5,0.4)--(2.5,0.4);
     \end{scope}
     \end{tikzpicture}
-	\arrow["\bigcup\psi", from=1-1, to=1-3]
+	\arrow["\bigcup\psi_{d_i^*(f)}{(-,e_1)}", from=1-1, to=1-3]
 	\arrow[from=1-1, to=2-1]
 	\arrow[from=2-1, to=3-1]
 	\arrow["{\psi_f}"', from=3-1, to=2-3]

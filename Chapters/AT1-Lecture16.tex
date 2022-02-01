@@ -35,14 +35,14 @@ is the isomorphism $\phi:\pi_n(X,x)\to A$, where $\Phi:H^n(X;A)\to\Hom(H_n(X;\Z)
 \end{propdef}
 
 \begin{proof}
-Since $X$ is $(\ni)$-connected, the Hurewicz homomorphism $h:\pi_n(X,x)\to H_n(X,\Z)$ is an isomorphism; for $n=1$ this is true because $A$ is abelian. Because $H_\ni(X,\Z)$ is trivial (for $n\ge2$) or free (if $n=1$), the $\Ext$-term in the UCT vanishes, so:
+Since $X$ is $(\ni)$-connected, the Hurewicz homomorphism $h:\pi_n(X,x)\to H_n(X,\Z)$ is an isomorphism if $n\ge2$; for $n=1$ this is true because $A$ is abelian. Since $H_\ni(X,\Z)$ is trivial (for $n\ge2$) or free (if $n=1$), the $\Ext$-term in the UCT vanishes, so
 \[\Phi:H^n(X;A)\xto{\cong}\Hom(H_n(X;\Z),A)\]
 is an isomorphism. Then we can define $\iota=\Phi^\inv(\phi\circ h^\inv)$.
 \end{proof}
 
 We want to see that for a CW-complex $Y$ the fundamental class $\iota\in H^n(K(A,n);A)$ gives rise to a natural isomorphism:
 \[
-[Y,K(A,n)]\to H^n(Y;A),\ [f:Y\to K(A,n)]\mapsto f^*(\iota).
+[Y,K(A,n)]\to H^n(Y;A),\quad [f:Y\to K(A,n)]\mapsto f^*(\iota).
 \]
 
 The convention for $n=0$ is that $K(A,0)$ is just the group $A$ with the discrete topology, the map $\mu:K(A,0)^2\to K(A,0)$ is the addition on $A$ and $i: K(A,0)\to K(A,0)$ is the inverse map, while $\iota\in H^0(A,A)$ is represented by the identity cocycle.
@@ -64,8 +64,7 @@ Then we want to show that in the special case of $[\mu]=[p_1]+[p_2]$ evaluation 
 \[\mu^*(\iota)=p_1^*(\iota)+p_2^*(\iota).\]
 We will use the following isomorphism:
 {\small
-\[ H^n(K(A,n)^2;A)\xto{\cong}\Hom(H_n(K(A,n)^2;\Z),A)\xto{\cong}\Hom(\pi_n(K(A,n)^2,*),A)\xto{\cong}\Hom(A\times A,A)\]}
-where the first isomorphism comes from the UCT and the second is the Hurewicz isomorphism. Under this isomorphism $\mu^*(\iota)$ corresponds to the addition $A\times A\to A$ and the projections to the corresponding projections $A\times A\to A$. But in $\Hom(A\times A,A)$ clearly we do have that the sum of the projections is the addition, hence the same holds in $H^n(K(A,n)^2;A)$.
+\[ H^n(K(A,n)^2;A)\xto{\cong}\Hom(H_n(K(A,n)^2;\Z),A)\xto{\cong}\Hom(\pi_n(K(A,n)^2,*),A)\xto{\cong}\Hom(A\times A,A)\]}where the first isomorphism comes from the UCT and the second is precomposition with the Hurewicz isomorphism. Under this isomorphism $\mu^*(\iota)$ corresponds (as one can show by naturality of the first two maps) to the addition $A\times A\to A$ and the projections to the corresponding projections $A\times A\to A$. But in $\Hom(A\times A,A)$ clearly we do have that the sum of the projections is the addition, hence the same holds in $H^n(K(A,n)^2;A)$.
 
 Now for the general case, let $Y$ be an arbitrary space and $f,g:Y\to K(A,n)$ continuous maps. Then we have:
 \begin{align*}

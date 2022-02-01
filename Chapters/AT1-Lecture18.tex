@@ -45,7 +45,7 @@ We have a bijection
 sending $x\mapsto kx^3$ on the left and to $k\iota^3$ on the right.
 \end{example}
 
-In general, $\Nat(H^n(-;A),H^m(-;B))\cong H^m(K(A,n);B)$ are called the cohomology operations of type $(A,n,B,m)$.\todo[color=yellow]{AT1Sheet10.3 has some interesting stuff about this, maybe add it}
+In general, $\Nat(H^n(-;A),H^m(-;B))\cong H^m(K(A,n);B)$ are called the cohomology operations of type $(A,n,B,m)$.\todo{AT1Sheet10.3 has some interesting stuff about this, maybe add it}
 
 Note:\rightnote{\Attention\ I do not understand well these results, I might have written something dumb here and there.} the cohomology operations of a given type are usually really difficult to compute. A couple of facts about this story: $H^*(K(\FF_2,n);\FF_2)$ for $n\ge2$ is a polynomial algebra in infinitely many explicitly known generators (for $n=1$ on one generator) given by the "Steenrod operations"; for $p$ an odd prime, $H^*(K(\FF_p,n);\FF_p)$ is a polynomial $\otimes$ exterior algebra. We know that $H^m(K(\Z,n);\Z)$ is finitely generated, so it can be decomposed into free and $p$-partition groups; $H^m(K(\Z,n);\Z)\otimes\Z_{(p)}=H^m(K(\Z_{(p)},n),\Z_{(p)})$ related to $A=B=\FF_p$. Also:
 \[H^*(K(\Q,n);\Q)\cong\begin{cases}
@@ -72,7 +72,7 @@ Surjectivity. First we need to prove an intermediate result.
 Claim. Let $F$ be a (contravariant) functor that sends weak equivalences to isomorphisms. Then $F$ takes homotopic maps to the same map (Warning: the converse is \tit{not} true!).
 
 \begin{claimproof}
-Let $f,g:X\to Y$ be two homotopic continuous maps and choose an homotopy $H:X\times[0,1]\to Y$ from $f$ to $g$. Let $i_0,i_1:X\to X\times[0,1]$ be the two "extremal" inclusions, $p:X\times[0,1]\to X$ the projection. These maps are homotopy equivalences, hence weak equivalences. So $F(p):F(X)\to F(X\times[0,1])$ is an isomorphism. We have
+Let $f,g:X\to Y$ be two homotopic continuous maps and choose an homotopy $H:X\times[0,1]\to Y$ from $f$ to $g$. Let $i_0,i_1:X\to X\times[0,1]$ be the two \enquote{extremal} inclusions, $p:X\times[0,1]\to X$ the projection. These maps are homotopy equivalences, hence weak equivalences. So $F(p):F(X)\to F(X\times[0,1])$ is an isomorphism. We have
 \[F(i_0)\circ F(p)=F(p\circ i_0)=F(\id_X)=F(p\circ i_1)=F(i_1)\circ F(p).\]
 Because $F(p)$ is an isomorphism, we conclude that $F(i_0)=F(i_1)$. Now
 \[F(f)=F(H\circ i_0)=F(i_0)\circ F(H)=F(i_1)\circ F(H)=F(H\circ i_1)=F(g).\]
@@ -102,7 +102,7 @@ Because $X$ is a CW-complex, the maps $g\circ\psi,f:X\to K(A,n)$ are homotopic. 
 \[
 \begin{tikzcd}[row sep=small,column sep={10em,between origins}]
 & F(X) & \\
-F(K(A,n)) \ar[ur,"f^*"] \ar[dr,"g^*"] & & F(Y) \ar[ul,"\alpha^*"',"\cong"] \ar[dl,"\beta^*","\cong"']\\
+F(K(A,n)) \ar[ur,"f^*"] \ar[dr,"g^*"'] & & F(Y) \ar[ul,"\alpha^*"',"\cong"] \ar[dl,"\beta^*","\cong"']\\
 & F(X') \ar[uu,"\cong","\psi^*"']
 \end{tikzcd}
 \]
@@ -114,16 +114,16 @@ Clearly $\Phi^u_{K(A,n)}(\iota)=u$ since we can take both $\alpha$ and $f$ to be
 Claim. $\Phi^u=\cb{\Phi^u_Y}$ is a natural transformation.
 
 \begin{claimproof}
-Let $h:Y\to Z$ be any continuous map, and let $z\in H^n(\Z;A)$. Let $\alpha:X\to Y$ be any CW-approximation to $Y$. We choose a CW-approximation for $Z$ relative to the map $h\circ\alpha:X\to Z$ (which we can do by using theorem \ref{theorem:cw-approximation} in the general, i.e. relative to a map, version). This is a CW-complex $\bar X$ containing $X$ as a subcomplex and a weak equivalence $\beta:\bar X\to Z$ such that $\beta|_X=h\circ\alpha$. Consider the following diagram:
+Let $h:Y\to Z$ be any continuous map, and let $z\in H^n(Z;A)$. Let $\alpha:X\to Y$ be any CW-approximation to $Y$. We choose a CW-approximation for $Z$ relative to the map $h\circ\alpha:X\to Z$ (which we can do by using theorem \ref{theorem:cw-approximation} in the general, i.e. relative to a map, version). This is a CW-complex $\bar X$ containing $X$ as a subcomplex and a weak equivalence $\beta:\bar X\to Z$ such that $\beta|_X=h\circ\alpha$. Consider the following diagram:
 \[
 \begin{tikzcd}
 & X \ar[dl,"g"] \ar[d,hook,"i"]\ar[r,"\sim"',"\alpha"] & Y \ar[d,"h"]\\
 K(A,n) & \bar X \ar[l,"f"] \ar[r,"\sim","\beta"'] & Z
 \end{tikzcd}
 \]
-where $f:\bar X\to K(A,a)$ is any continuous map such that $f^*(\iota)=\beta^*(z)$ and $g=f|_X$. The map $g:X\to K(A,n)$ satisfies:
+where $f:\bar X\to K(A,n)$ is any continuous map such that $f^*(\iota)=\beta^*(z)$ and $g=f|_X$. The map $g:X\to K(A,n)$ satisfies:
 \[g^*(\iota)=(f\circ i)^*(\iota)=i^*(f^*(\iota))=i^*(\beta^*(z))=\alpha^*(h^*(z)),\]
-hence we can use $\alpha:X\to Y$, $g:X\to K(A,n)$ to define $\Phi^u_Y(h^*(z))$. Then we have: \[\Phi^u_Y(h^*(z))=(\alpha^*)^\inv(i^*(f^*(u)))=h^*((\beta^*)^\inv(f^*(u)))=h^*(\Phi^u_Z(z))\]
+hence we can use $\alpha:X\to Y$, $g:X\to K(A,n)$ to define $\Phi^u_Y(h^*(z))$. Then we have: \[\Phi^u_Y(h^*(z))=(\alpha^*)^\inv(i^*(f^*(u)))=h^*((\beta^*)^\inv(f^*(u)))=h^*(\Phi^u_Z(z)),\]
 i.e. $\Phi^u$ is a natural transformation.
 \end{claimproof}
 \end{proof}

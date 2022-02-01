@@ -2,21 +2,18 @@
 
 \lecture[We continue studying mapping spaces.]{2021-11-22}
 
-We prove the lemma from last lecture.\rightnote{\Attention\ I definitely still need to digest lecture 11 and 12, don't count on everything I write.}
-
-\begin{proof}
+\tit{Proof.}\rightnote{\Attention\ I definitely still need to digest lecture 11 and 12, don't count on everything I write. Update: I think I have digested the lectures, but still don't count on everything I write.}
 First, note that $q^*$ is injective, continuous and has the desired image by the universal property of the quotient topology. We show that $q^*$ is also open as a map onto its image. We let $K\subset Y$ be compact and $O\subset Z$ be open. Then
 \[q^*(W(K,O))=\cb{g\circ q:X\to Z\mid g\in Z^Y,\ g(K)\subset O}=W(q^{-1}(K),O)\cap\im(q^*).\]
-Because $K$ is compact and $Y$ Hausdorff, $K$ is closed in $Y$; so $q^{-1}(K)$ is closed in $X$. Since $X$ is compact, $q^{-1}(K)$ is again compact. So $W(q^{-1}(K),O)\cap\im(q^*)$ is open.
-\end{proof}
+Because $K$ is compact and $Y$ Hausdorff, $K$ is closed in $Y$; so $q^{-1}(K)$ is closed in $X$. Since $X$ is compact, $q^{-1}(K)$ is again compact. So $W(q^{-1}(K),O)\cap\im(q^*)$ is open.\qed
 
 \begin{example}
-The map $q:[0,1]\to S^1=\cb{z\in\CC:|z|=1}$, $q(x)=e^{2\pi ix}$ is a quotient map, so
+The map $q:[0,1]\to S^1=\cb{z\in\CC:|z|=1}$, $q(x)=e^{2\pi ix}$ is a quotient map, hence
 \[q^*:X^{S^1}\to\cb{f\in X^{[0,1]}\mid f(0)=f(1)}\]
 is a homeomorphism. For any base point $x_0\in X$, this homeomorphism restricts to a homeomorphism
 \[(X,x_0)^{(S^1,1)}\to\Omega X.\]
 
-If $(Y,y_0)$ is a pointed space, the pointed version of $[Y,Z]\onto\pi_0(Z^Y)$ yields a well-defined surjective map $[Y,Z]_*\to\pi_0((Z,z_0)^{(Y,y_0))}$. If $Y$ is locally compact, this is a bijection.
+If $(Y,y_0)$ is a pointed space, the pointed version of $[Y,Z]\onto\pi_0(Z^Y)$ yields a well-defined surjective map $[Y,Z]_*\to\pi_0((Z,z_0)^{(Y,y_0)})$. If $Y$ is locally compact, this is a bijection.
 
 For $Y=S^1$, this gives a bijection $\pi_1(Z,z_0)\cong\pi_0((Z,z_0)^{(S^1,1)})=\pi_0(\Omega Z)$.
 \end{example}
@@ -28,13 +25,12 @@ Let $(Y,y_0)$ be a based space. The reduced suspension is the space:
 
 The quotient map $q:Y\times[0,1]\to\Sigma Y$ induces a continuous injection:
 \[q^*:(Z,z_0)^{(\Sigma Y,*)}\to Z^{Y\times[0,1]}\]
-whose image consists of all continuous maps $f:Y\times[0,1]\to Z$ that factor through the quotient map, i.e. such that $f(Y\times 0\cup\cb{y_0}\times[0,1]\cup Y\times 1)=\cb{z_0}$. If $Y$ is compact, then so are $Y\times[0,1]$ and $\Sigma Y$, and $q^*$ is even an homeomorphism onto its image:
+whose image consists of all continuous maps $f:Y\times[0,1]\to Z$ that factor through the quotient map, i.e. such that $f(Y\times 0\cup\cb{y_0}\times[0,1]\cup Y\times 1)=\cb{z_0}$. If $Y$ is compact, then so are $Y\times[0,1]$ and $\Sigma Y$, and $q^*$ is even an homeomorphism onto its image, hence (using first lemma \ref{lemma:quotient-map-induces-homeomorphism-on-mapping-spaces} and then theorem \ref{theorem:exponential-law}):
 \[(Z,z_0)^{(\Sigma Y,y_0)}\cong(\Omega Z,\const_{z_0})^{(Y,y_0)}.\]
 
-In particular:
+In particular,
 \[\Hom_{\Top_*}((\Sigma Y,*),(Z,z_0))\cong\Hom_{\Top_*}((Y,y_0),(\Omega Z,\const_{z_0})).\]
-
-So the functors $\Sigma$ and $\Omega$ are adjoint endofunctors in the category of based spaces.
+so the functors $\Sigma$ and $\Omega$ are adjoint endofunctors in the category of based spaces.
 
 On path components, we obtain a bijection
 \[[\Sigma Y,Z]_*\cong[Y,\Omega Z]_*.\]
@@ -46,7 +42,7 @@ which is even a group homomorphism (as we will see).
 \section{Mapping Spaces and Serre Fibrations}
 
 \begin{theorem}
-Let $Z$ be any space, $(X,A)$ a relative CW-complex with $X$ and $A$ finite CW-complexes.\rightnote{\upshape A slightly more general statement was mentioned but I missed it. I guess $X$ and $A$ need not be finite but something weaker?} Then the restriction map $\incl^*:Z^X\to Z^A$, $f\mapsto f|_A$ is a Serre fibration.
+Let $Z$ be any space, $(X,A)$ a relative CW-complex with $X$ and $A$ finite\rightnote{\upshape A more general statement could be easily obtained by requiring just that $X$ (and hence $A$) be locally compact. The statement we give is tailored to our purposes.} CW-complexes. Then the restriction map $\incl^*:Z^X\to Z^A$, $f\mapsto f|_A$ is a Serre fibration.
 \end{theorem}
 
 \begin{proof}
@@ -60,19 +56,17 @@ Since $X$ and $A$ are locally compact we can use the exponential law to adjoint 
 \[\til\Phi:A\times Q\times[0,1]\to Z\]
 The condition $\incl^*\circ f=\Phi|_{Q\times0}$ becomes the relation that $\til f$ and $\til\Phi$ coincide on $A\times Q\times0$.
 
-We consider the glued maps
+We consider the glued map
 \[\til f\cup\til\Phi:X\times Q\times 0\cup A\times Q\times[0,1]\to Z.\]
 
-Since $(X\times Q,A\times Q)$ is a relative CW-complex, it has the HEP so there is a continuous extension $H:X\times Q\times[0,1]\to Z$ that extends $\til f$ and $\til\Phi$. The adjoint $H^\#:Q\times[0,1]\to Z^X$ of $H$ then solves the original lifting problem.
+Since $(X\times Q,A\times Q)$ is a relative CW-complex, it has the HEP, so there is a continuous extension $H:X\times Q\times[0,1]\to Z$ that extends $\til f$ and $\til\Phi$. The adjoint $H^\#:Q\times[0,1]\to Z^X$ of $H$ then solves the original lifting problem.
 \end{proof}
 
-For the relative CW-complex $([0,1],\cb{0,1})$ the theorem says that the restriction map
+Applied to the relative CW-complex $([0,1],\cb{0,1})$ the theorem says that the restriction map
 \[Z^{[0,1]}\to Z^{\cb{0,1}}\cong Z\times Z,\ w\mapsto (w(0),w(1))\]
 is a Serre fibration for every space $Z$.
 
-We let $z_0\in Z$ be any base point. Define $EZ$ as the subspace of $Z^{[0,1]}$ of all paths that start at $z_0$.
-
-Equivalently, $EZ$ is the pullback:
+We let $z_0\in Z$ be any base point. Define $EZ$ as the subspace of $Z^{[0,1]}$ of all paths that start at $z_0$. Equivalently, $EZ$ is the pullback:
 \begin{center}
     \begin{tikzcd}
     w \ar[d,mapsto] &[-6ex] EZ \arrow[d] \arrow[r,hook] & Z^{[0,1]} \arrow[d] &[-6ex] w \ar[d,mapsto] \\
@@ -95,20 +89,20 @@ its adjoint, i.e. $\til H^*(w,t)(s)=w(H(s,t))$.
 
 We observe that
 \[\til H^*(w,t)(0)=w(H(0,t))=w(0).\]
-So whenever $w(0)=z_0$ (i.e. $w\in EZ$), then also $\til H^*(w,t)(0)=z_0$. In other words, for all $t\in[0,1]$, the map $\til H^*(-,t)$ takes $EZ$ to $EZ$. So we can restrict $\til H^*$ to a continuous map $\til H^*:EZ\times[0,1]\to EZ$; this is the desired contracting homotopy:
-\[\til H^*(w,1)(s)=w(H(s,1))=w(0)\]
-so the homotopy $\til H^*$ ends in the constant map at $z_0$.
+So whenever $w(0)=z_0$ (i.e. $w\in EZ$), then also $\til H^*(w,t)(0)=z_0$. In other words, for all $t\in[0,1]$, the map $\til H^*(-,t)$ takes $EZ$ to $EZ$. So we can restrict $\til H^*$ to a continuous map $\til H^*:EZ\times[0,1]\to EZ$, which is the desired contracting homotopy. Indeed we have
+\[\til H^*(w,1)(s)=w(H(s,1))=w(0),\]
+so the homotopy $\til H^*$ ends in the constant map at $z_0$, and for all $w\in EZ$
+\[\til H^*(w,0)(s)=w(H(s,0))=w(s),\]
+so $\til H^*(w,0)=w$.
+\end{proof} 
 
-For all $w\in EZ$, $\til H^*(w,0)(s)=w(t(s,0))=w(s)$, so $\til H^*(w,0)=w$.
-\end{proof}
-
-Now we can see that $\pi_n(\Omega Z,*)\cong\pi_{n+1}(Z,z_0)$ is a group morphism.
+Now we can see that $\pi_n(\Omega Z,*)\cong\pi_{n+1}(Z,z_0)$ is a group isomorphism.
 
 \begin{proof}[Second proof/construction of the isomorphism $\pi_n(\Omega Z,*)\cong\pi_{n+1}(Z,z_0)$]
 
 We have seen that the space $EZ=\cb{w\in Z^{[0,1]}\mid w(0)=z_0)}$ is contractible.
 
-The map $e:EZ\to Z$, $e(w)=w(1)$ is a Serre fibration, so for every point in $Z$, we get a long exact sequence of homotopy groups. For $z_0\in Z$, the fibre of $e$ at $z_0$ is $\Omega Z$; hence the long exact sequence of homotopy groups is:
+The map $e:EZ\to Z$, $e(w)=w(1)$ is a Serre fibration, so for every point in $Z$, we get a long exact sequence of homotopy groups. For $z_0\in Z$, the fibre of $e$ at $z_0$ is $\Omega Z$; hence the long exact sequence of homotopy groups of $\Omega Z\to EZ\to Z$ gives:
 \[\dots\to\pi_{n+1}(EZ,*)=0\xto{e_*}\pi_{n+1}(Z,z_0)\xto{\de}\pi_n(\Omega Z,*)\xto{\incl_*}\pi_n(EZ,*)=0\to\cdots\]
 
 So for $n\geq 1$, the connecting morphism $\de:\pi_{n+1}(Z,z_0)\to\pi_n(\Omega Z,*)$ is an isomorphism.
@@ -116,9 +110,9 @@ So for $n\geq 1$, the connecting morphism $\de:\pi_{n+1}(Z,z_0)\to\pi_n(\Omega Z
 
 \section{Turning Maps into Fibrations, up to Homotopy}
 
-This is kind of dual to the mapping cylinder.
+The constructions in this section, $Ef$ and the homotopy fibre $\ho_{y_0}$, are somehow dual to the mapping cylinder and the mapping cone, as we will see.
 
-\begin{theorem}
+\begin{theorem}\label{theorem:factorization-equivalence-fibration}
 Every continuous map $f:X\to Y$ can be factored functorially and naturally\todo[color=red]{ What does he mean by functorially and naturally?} as a composite
 \[X\xto{\cong}Ef\xto{p} Y\]
 of a homotopy equivalence followed by a Serre fibration.
@@ -142,7 +136,8 @@ We observe that $Ef$ can be described as a slightly different pullback:
 \end{tikzcd}\]
 
 Since Serre fibrations are stable under base change, the map $Ef\to X\times Y$, $(x,w)\mapsto(x,w(1))$ is a Serre fibration. Since $\pr_2:X\times Y\to Y$ is a Serre fibration and Serre fibrations are closed under composition, $p$ is a Serre fibration. 
-The map $h:X\to Ef$ is a homotopy equivalence: the homotopy inverse, which is also a left inverse, is the projection to the first factor.
+
+We are left to prove that the map $h:X\to Ef$ is a homotopy equivalence. We show that the homotopy inverse, which is also a left inverse, is the projection to the first factor.
 
 Claim. The composite $c:Ef\to Ef$ is homotopic to the identity.
 

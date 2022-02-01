@@ -36,11 +36,11 @@ In more detail, $\gamma:\Cc\to\Cc[\Ww^\inv]$ is a localization of $\Cc$ at $\Ww$
 
 Before going on, there is a number of important observations to make on localizations.
 
-\begin{itemize}[label={-}]
+\begin{itemize}
     \item Localizations, if they exist, are unique up to preferred isomorphism (as is always the case with universal constructions). The usual drill. Suppose $\gamma:\Cc\to\Dd$ and $\mu:\Cc\to\Ee$ are two localizations at the same class of morphisms $\Ww$. Then $\gamma$ and $\mu$ are $\Ww$-inverting, so the universal properties provide unique functors $G:\Dd\to\Ee$ and $H:\Ee\to\Dd$ such that $G\circ\gamma=\mu$ and $H\circ\mu=\gamma$.
     \[
     \begin{tikzcd}
-     & \Cc \ar[dr,"\gamma"] \ar[dl,"\mu"] \ar[rr,"\gamma"] & & \Dd\\
+     & \Cc \ar[dr,"\mu"] \ar[dl,"\gamma"] \ar[rr,"\gamma"] & & \Dd\\
      \Dd \ar[rr,dashed,"\exists!G"] & & \Ee \ar[ur,dashed,"\exists!H"] &
     \end{tikzcd}
     \]

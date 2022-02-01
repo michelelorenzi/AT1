@@ -7,11 +7,13 @@
 \begin{proof}[Proof of the Hurewicz theorem (\ref{theorem:hurewicz})]
 We modify the definition of $\pi_n(X,A)^\#$ by replacing $\pair$ by the homeomorphic pair $(\ns,\de\ns)$.
 
-Then the fundamental class $i\in H_n(\ns,\de\ns;\Z)$ is represented by the map $\id_\ns\in\S(\ns)_n$. The inclusion of simplicial sets (the $\cong$ comes from theorem \ref{theorem:simplicial-deformation-retraction} of last lecture)
+Then the fundamental class $i\in H_n(\ns,\de\ns;\Z)$ is represented by the map $\id_{\ns}\in\S(\ns)_n$.
+
+The inclusion of simplicial sets (the $\cong$ comes from theorem \ref{theorem:simplicial-deformation-retraction} of last lecture)
 \[\S(A)\into\S(X,A,n-1)\xinto{\cong}\S(X)\]
-induces morphisms of chain complexes
-\[C(\S(A))\to C(\S(X,A,n-1))\xto{\sim}C(\S(X))\]
-where \enquote{$\sim$} is a chain homotopy equivalence.
+induces\rightnote{Showing this is a (quite ugly and tedious) exercise.} morphisms of chain complexes
+\[C(\S(A))\to C(\S(X,A,n-1))\xto{\sim}C(\S(X)),\]
+where \enquote{$\sim$} is a chain homotopy equivalence.\newpage
 
 We compare the long exact homology sequences:
 \begin{center}
@@ -23,12 +25,12 @@ We compare the long exact homology sequences:
 \end{center}
 
 Conclusion: the inclusion $\S(X,A,n-1)\into\S(X)$ induces an isomorphism
-\[H_n\left(\frac{C(\S(X,A,n-1))}{C(\S(A))}\right)\xto{\cong} H_n(X,A)\]
+\[H_n\left(\frac{C(\S(X,A,n-1))}{C(\S(A))}\right)\xto{\cong} H_n(X,A),\]
 so that we reduced the problem to finding an isomorphism
-\[\pi_n(X,A)^\#\xto{``\cong"} H_n\left(\frac{C(\S(X,A,n-1))}{C(\S(A))}\right)\]
+\[\pi_n(X,A)^\#\xto{``\cong"} H_n\left(\frac{C(\S(X,A,n-1))}{C(\S(A))}\right).\]
 
 We note that $\S(X,A,\ni)_\ni=\S(A)_\ni$ so
-\[\left(\frac{C(\S(X,A,n-1))}{C(\S(A))}\right)_\ni=0\]
+\[\left(\frac{C(\S(X,A,n-1))}{C(\S(A))}\right)_\ni=0,\]
 which implies
 \begin{align*}
     H_n(X,A)&\cong H_n\left(\frac{C(\S(X,A,n-1))}{C(\S(A))}\right) \\
@@ -52,7 +54,7 @@ To add maps on simplices of the same dimension, we divide $\ns$ into two sub-sim
 \input{Pictures/Lec6Pic1}
 
 Claim. The canonical homomorphism
-\[\Z[f:(\ns,\de\ns)\to\pairs]\to \pi_n\pairs^\#,\quad [f]\mapsto[f]\]
+\[\Z[f:(\ns,\de\ns)\to\pairs]\to \pi_n\pairs^\#,\ [f]\mapsto[f]\]
 factors through a homomorphism
 \[\Phi: H_n\left(\frac{C(\S(X,A,n-1))}{C(\S(A))}\right)\to\pi_n\pairs^\#\]
 (which is equivalent to saying that $E''\subset E'$).
@@ -75,17 +77,22 @@ We consider the space $B=\sx{n}\cup_{\sx{n-1}}\dots\cup_{\sx{n-1}}\sx{n}$. It is
 Informally, $B$ is $\de\sx{n+1}$ "cut open", as shown in the following picture.
 \input{Pictures/Lec6Pic2}
 \smallskip
-We define $p:B\to\de\sx{n+1}$ by defining the restriction to the $i$-th copy of $\ns$ as $(d_i)_*$. The map $p$ is compatible with the equivalence relation (and hence well defined on $B$) thanks to the simplicial relations:
-\[d_i\circ d_i=d_{i+1}\circ d_i\]
-The upshot is that $p$ is a quotient map onto $\de\sx{n+1}$.
+We define $p:B\to\de\sx{n+1}$ by defining the restriction to the $i$-th copy of $\ns$ as $(d_i)_*$. The map $p$ is compatible with the equivalence relation, therefore well defined on $B$, thanks to the simplicial relations:
+\[d_i\circ d_i=d_{i+1}\circ d_i.\]
+In other words $p$ is a quotient map onto $\de\sx{n+1}$
 
-Since $g$ is defined on all of $\sx{n+1}$, its restriction to $\de\sx{n+1}$ represents the $0$ element in $\pi_n\pairs^\#$.
+Since $g$ is defined on all of $\sx{n+1}$, its restriction to $\de\sx{n+1}$ represents the $0$ element in $\pi_n\pairs^\#$.\newpage
 
+We are in the following situation:
 \[\ns\cong B\xto{p}\de\sx{n+1}\into\sx{n+1}\xto{g}X\]
+\input{Pictures/Lec6Pic3}
 
-We apply the homotopy addition theorem (in simplex version) for the maps $\nno{f}{n+1}:\sx{n}\to B=\sx{n}\cup_{\sx{n-1}}\dots\cup_{\sx{n-1}}\sx{n}$, where $f_i$ is the inclusion of the $i$-th copy.
-By the HAT:
-\[0=[g|_{\de \sx{m+1}}\circ p]=\sum_{i=0}^{m+1}(-1)^i[g\circ (d_i)_*]\]
+We can now apply the Homotopy Addition Theorem \ref{theorem:HAT} (in a modified simplex version) to the maps $\nno{f}{n+1}:\sx{n}\to B=\sx{n}\cup_{\sx{n-1}}\dots\cup_{\sx{n-1}}\sx{n}$, where $f_i$ is the inclusion of the $i$-th copy.
+
+\input{Pictures/Lec6Pic4}
+
+By the theorem:
+\[0=[g|_{\de \sx{n+1}}\circ p]=\sum_{i=0}^{n+1}(-1)^i[g\circ (d_i)_*]\]
 
 \end{claimproof}
 
@@ -108,7 +115,7 @@ A \textbf{fibre bundle} over a space $B$ is a continuous map $\pi:E\to B$ that i
     \end{tikzcd}
 \end{center}
 
-$B$ is called the \textbf{base}, $E$ the \textbf{total space}, $F$ is the \textbf{fibre}, $\pi$ is the \textbf{projection}, the maps $\pi^{-1}(U)\xto{\cong} U\times F$ the \textbf{local trivialisations}.
+$B$ is called the \textbf{base}, $E$ the \textbf{total space}, $F$ is the \textbf{fibre}, $\pi$ is the \textbf{projection}, the homeomorphisms $\pi^{-1}(U)\to U\times F$ the \textbf{local trivializations}.
 
 If we fix $F$, the set of points $b\in B$ such that $F_b=\pi^{-1}(b)$ is homeomorphic to $F$ is open. So in particular, if $B$ is connected, then all fibres are homeomorphic.
 
