@@ -18,7 +18,7 @@ Recall the notion of local degree. Let $f:\ring I^n\to\ring I^n $ be an open emb
 \begin{center}
     \begin{tikzcd}
     H_n(\ring I^n,\ring I^n\sm\cb{p}) \arrow[r, "i_*"] \arrow[d, "f_*" left] \arrow[dr, "f_*"] & H_n(I^n,I^n\sm\cb{p}) & H_n\pair \arrow[l, "i_*" above] \arrow[d, red, dashed, "d\cdot-"] \\
-    H_n(f(\ring I^n), f(\ring I^n)\sm\cb{f(p)}) \arrow[r, "i_*" below] & H_n(f(I^n),f(I^n)\sm\cb{f(p)}) & H_n\pair \arrow[l, "i_*" below]
+    H_n(f(\ring I^n), f(\ring I^n)\sm\cb{f(p)}) \arrow[r, "i_*" below] & H_n(I^n,I^n\sm\cb{f(p)}) & H_n\pair \arrow[l, "i_*" below]
     \end{tikzcd}
 \end{center}
 where the maps are all isomorphisms by homotopies and excision, hence they induce the dashed arrow. This is an automorphism of $H_n\pair\cong\Z$ and thus $d=\pm1$. One can show this is independent of $p$, hence we call it the \tbf{local degree} of $f$, and write $\deg(f)=d$.\todo[color=yellow]{There would be more to say about the local degree...}
@@ -28,7 +28,7 @@ The main goal of today's lesson is to prove the following theorem.
 \begin{theorem}[Homotopy Addition Theorem]\label{theorem:HAT}
 Assume we have $\nn{f}{k}:I^n\to I^n$ such that $f_i|_{\ring I^n}$ is an open embedding and the sets $f_i(\ring I^n)$ are pairwise disjoint. Furthermore, let $g:\pair\to (X,A)$ such that $g(I^n\sm\bigcup_{i=1}^k f_i(\ring I^n))\subset A$. Then
 \[[g]=\sum_{i=1}^k(\deg f_i)[g\circ f_i]\rightnote{\upshape Here $\deg f_i$ is the local degree!}\]
-in $\pi_n(X,A)\#$.
+in $\pi_n(X,A)^\#$.
 \end{theorem}
 
 \begin{remark}
@@ -60,7 +60,7 @@ If $[g]=[g']$ in $\pi_n(X,A)^\#$ then $[g\circ f_j]=[g'\circ f_j]$ for all $1\le
 \end{remark}
 
 \begin{proof}
-There is a homotopy relative $\de I^n$ from the identity to a map that sends everything outside of $\ring Q$ to $\de I^n$, where $Q$ is a cube inside $f^{-1}_i(\mathcal{U}_i)$ (basically we take a cube $Q$ inside $f^{-1}_i(\mathcal{U}_i)$ and we blow it to the big cube $\de I^n$ containing $f^{-1}_i(\mathcal{U}_i)$). Composing with $gf_i$ yields a homotopy $H$ of maps of pairs $(I^n,\de I^n)\to(X,A)$ from $gf_i$ to a map that sends everything outside $\ring Q$ to $A$. We have a map of sets:
+There is a homotopy relative $\de I^n$ from the identity to a map that sends everything outside of $\ring Q$ to $\de I^n$, where $Q$ is a cube inside $f^{-1}_i(\mathcal{U}_i)$ (basically we take a cube $Q$ inside $f^{-1}_i(\mathcal{U}_i)$ and we blow it to the big cube $\de I^n$ containing $f^{-1}_i(\mathcal{U}_i)$). Composing with $gf_i$ yields a homotopy $H$ of maps of pairs $(I^n,\de I^n)\to(X,A)$ relative $\de I^n$ from $gf_i$ to a map that sends everything outside $\ring Q$ to $A$. We have a map of sets:
 \[H':I^n\times I\to X,\quad H'(x,t)=\begin{cases}H(f_i^{-1}(x),t) & x\in f_i(I^n) \\ g(x) & x\in I\sm f_i(\mathring{I}^n)\end{cases}\]
 which we can show is well defined. Let $x\in f_i(\de I^n)$, with preimage $y$, then
 \[g(x)=H(y,t)=H(y,0)=gf_i(y)\] so that it is well defined as a map of sets. Then $H'(x,0)=g(x)$ and $H'(x,1)\in A$ for $x\not\in f(\mathring{Q})$, in particular $H'(x,1)\in A$ for $x\not\in\mathcal{U}_i$. So $g'=H'(x,1)$ is our candidate map, but it remains to prove that $H'$ is continuous.
