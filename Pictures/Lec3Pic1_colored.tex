@@ -1,0 +1,29 @@
+\begin{center}
+\begin{tikzpicture}[x=1.5em, y=1.5em]
+\filldraw[very thick, blue, fill=gray!10]
+    (0,0)--(0,10)--(10,10)--(10,0)--(0,0);
+\draw[very thick, red,fill=white]
+    (-4,4)--(-4,6)--(-2,6)--(-2,4)--(-4,4)
+    (-4,1)--(-4,3)--(-2,3)--(-2,1)--(-4,1)
+    (-4,7)--(-4,9)--(-2,9)--(-2,7)--(-4,7);
+\filldraw[thick, red,fill=white, use Hobby shortcut,closed=true] 
+    (1,5) .. (4,9) .. (7,5) .. (4,8) .. (3,4) .. (5,2) .. (7,5) .. (8,2) .. (5,1);
+\filldraw[thick, red,fill=white, use Hobby shortcut,closed=true] 
+    (3,5) .. (3,6) .. (5.3,6) .. (5.4,4);
+\path[draw]
+    (3,5) -- (3.5,5) -- (3.6,5.5) -- (3.8, 5.5);
+\filldraw[thick, red,fill=white, use Hobby shortcut,closed=true] 
+    (8,1) .. (8,2) .. (9.5,2) .. (9.5,1);
+\path[draw, -{\tip}, use Hobby shortcut,closed=false]
+    (9,7) .. (9.5,7.5) .. (11,8);
+\draw 
+    (7,6) node {\scriptsize$f_1(I^n)$}
+    (8.7,1.5) node {\scriptsize$f_2(I^n)$}
+    (4.7,4.9) node {\scriptsize$f_3(I^n)$}
+    (11,8) node[anchor=west] {$A$}
+    (10,5) node[anchor=west] {$\xrightarrow{\quad g\quad} X$}
+    (-2,2) node[anchor=west] {$\xrightarrow{\ f_1\ }$}
+    (-2,5) node[anchor=west] {$\xrightarrow{\ f_2\ }$}
+    (-2,8) node[anchor=west] {$\xrightarrow{\ f_3\ }$};
+\end{tikzpicture}
+\end{center}

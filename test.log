@@ -1,7 +1,7 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  5 FEB 2022 22:10
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6930 64-bit) (preloaded format=xelatex 2019.1.15)  5 FEB 2022 23:13
 entering extended mode
-**./AT1.tex
-(AT1.tex
+**./test.tex
+(test.tex
 LaTeX2e <2018-12-01>
 
 ("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/koma-scrip
@@ -1847,28 +1847,28 @@ Package biblatex Info: ... file 'english.lbx' found.
 ("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/biblatex/l
 bx\english.lbx"
 File: english.lbx 2018/11/02 v3.12 biblatex localization (PK/MW)
-) (AT1.aux)
-\openout1 = `AT1.aux'.
+) (test.aux)
+\openout1 = `test.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Info: Redefining \microtypecontext on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Info: Redefining \microtypecontext on input line 30.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -1884,15 +1884,16 @@ Package biblatex Info: XeTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `AT1.bcf'.
+\openout4 = `test.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'AT1.bbl' found.
- (AT1.bbl)
-Package biblatex Info: Reference section=0 on input line 68.
-Package biblatex Info: Reference segment=0 on input line 68.
+Package biblatex Info: ... file 'test.bbl' not found.
+
+No file test.bbl.
+Package biblatex Info: Reference section=0 on input line 30.
+Package biblatex Info: Reference segment=0 on input line 30.
 \AtBeginShipoutBox=\box65
-Package hyperref Info: Link coloring ON on input line 68.
+Package hyperref Info: Link coloring ON on input line 30.
 
 ("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\n
 ameref.sty"
@@ -1904,12 +1905,10 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count478
 )
-LaTeX Info: Redefining \ref on input line 68.
-LaTeX Info: Redefining \pageref on input line 68.
-LaTeX Info: Redefining \nameref on input line 68.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 77.
-
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
+ (Pictures/Lec3Pic1_colored2.tex
 ("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\
 mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
@@ -1917,426 +1916,29 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/microtype\
 mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [1
-
-
-
-
-]
+)) (Pictures/Lec3Pic1_colored3.tex) (Pictures/Lec3Pic1_colored4.tex)
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
- [2]
-Package tocbasic Info: character protrusion at toc deactivated on input line 97
-.
- (AT1.toc
-Overfull \hbox (1.91632pt too wide) detected at line 40
-\T1/lmr/bx/n/10 III. 
- []
-
-
-Overfull \hbox (1.24948pt too wide) detected at line 54
-\T1/lmr/bx/n/10 IV. 
- []
-
-)
-\tf@toc=\write5
-\openout5 = `AT1.toc'.
-
- [3
-
+[1
 
 ]
-Package tocbasic Info: character protrusion at lol deactivated on input line 98
-.
- (AT1.lol [4
-
-
-])
-\tf@lol=\write6
-\openout6 = `AT1.lol'.
-
- [5] (Chapters/AT1-Lecture1.tex
-chapter I.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/lmr/m/sc/20.74'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/lmr/m/sc/17.28'.
-(microtype)             Ignoring protrusion settings for this character.
-Package marginnote Info: Margin note 6.1 is on absolute page 6 on input line 9.
-
-Package marginnote Info: right page because not two side mode on input line 9.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 9.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 14.
-
-("C:\Users\Administrator\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\omslmr.
-fd"
-File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 14.
- [1
-
-
-
-]
-Package marginnote Info: Using workaround for absolute page number on input lin
-e 36.
-Package marginnote Info: Margin note 8.1 is on absolute page 8 on input line 64
-.
-Package marginnote Info: right page because not two side mode on input line 64.
-
-Package marginnote Info: xpos seems to be 145.90297pt on input line 64.
- [2] (Pictures/Lec1Pic1.tex)
-Overfull \hbox (3.18057pt too wide) in paragraph at lines 87--88
-[]\T1/lmr/m/n/10 The \T1/lmr/bx/n/10 rel-a-tive Hurewicz map \T1/lmr/m/n/10 is 
-de-fined sim-i-larly to the ab-so-lute one: with $\OML/lmm/m/it/10 c \OMS/lmsy/
-m/n/10 2 \OML/lmm/m/it/10 H[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 I[]; @I[]\OT1/lm
-r/m/n/10 ; \U/msb/m/n/10 Z\OT1/lmr/m/n/10 )$
- []
-
-[3]) (Chapters/AT1-Lecture2.tex
-Package marginnote Info: Margin note 10.1 is on absolute page 10 on input line 
-5.
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 5.
- [4]
-Package marginnote Info: Margin note 11.1 is on absolute page 11 on input line 
-55.
-Package marginnote Info: right page because not two side mode on input line 55.
-
-Package marginnote Info: xpos seems to be 496.53552pt on input line 55.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 55.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 55.
- [5]
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 82.
-) (Chapters/AT1-Lecture3.tex
-Package marginnote Info: Margin note 12.1 is on absolute page 12 on input line 
-5.
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 5.
- [6]
-(Pictures/Lec3Pic1_colored.tex) (Pictures/Lec3Pic1_colored2.tex) [7]
-Package marginnote Info: Margin note 14.1 is on absolute page 14 on input line 
-60.
-Package marginnote Info: right page because not two side mode on input line 60.
-
-Package marginnote Info: xpos seems to be 427.41382pt on input line 60.
-Package marginnote Info: Margin note 14.2 is on absolute page 15 on input line 
-82.
-Package marginnote Info: right page because not two side mode on input line 82.
-
-Package marginnote Info: xpos seems to be 492.92328pt on input line 82.
- [8]
-Package marginnote Info: Margin note 15.1 is on absolute page 15 on input line 
-90.
-Package marginnote Info: right page because not two side mode on input line 90.
-
-Package marginnote Info: xpos seems to be 131.80624pt on input line 90.
-)
-(Chapters/AT1-Lecture4.tex
-Package marginnote Info: Margin note 15.2 is on absolute page 15 on input line 
-3.
-Package marginnote Info: right page because not two side mode on input line 3.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
- (Pictures/Lec4Pic1.tex) [9] (Pictures/Lec4Pic2.tex)
-[10] [11]
-Package marginnote Info: Margin note 18.1 is on absolute page 18 on input line 
-115.
-Package marginnote Info: right page because not two side mode on input line 115
-.
-Package marginnote Info: xpos seems to be 161.83495pt on input line 115.
-) (Chapters/AT1-Lecture5.tex
-Package marginnote Info: Margin note 18.2 is on absolute page 18 on input line 
-3.
-Package marginnote Info: right page because not two side mode on input line 3.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
- [12] [13] [14]
-Package marginnote Info: Margin note 21.1 is on absolute page 21 on input line 
-113.
-Package marginnote Info: right page because not two side mode on input line 113
-.
-Package marginnote Info: xpos seems to be 389.96959pt on input line 113.
- (Pictures/Lec5Pic1.tex
-[15]) (Pictures/Lec5Pic2.tex) [16]) (Chapters/AT1-Lecture6.tex
-Package marginnote Info: Margin note 23.1 is on absolute page 23 on input line 
-5.
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 20.
- [17]
-(Pictures/Lec6Pic1.tex) [18] (Pictures/Lec6Pic2.tex) [19]
-chapter II.
-[20
-
-
-]) (Chapters/AT1-Lecture7.tex
-Package marginnote Info: Margin note 27.1 is on absolute page 27 on input line 
-5.
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 5.
- [21] [22]
-Package marginnote Info: Margin note 29.1 is on absolute page 29 on input line 
-100.
-Package marginnote Info: right page because not two side mode on input line 100
-.
-Package marginnote Info: xpos seems to be 274.52203pt on input line 100.
-Package marginnote Info: Margin note 29.2 is on absolute page 29 on input line 
-104.
-Package marginnote Info: right page because not two side mode on input line 104
-.
-Package marginnote Info: xpos seems to be 165.46352pt on input line 104.
-File: Pictures/HopfFibration.jpg Graphic file (type bmp)
-<Pictures/HopfFibration.jpg>
- [23]
-Package marginnote Info: Margin note 30.1 is on absolute page 30 on input line 
-118.
-Package marginnote Info: right page because not two side mode on input line 118
-.
-Package marginnote Info: xpos seems to be 332.4185pt on input line 118.
- [24])
-(Chapters/AT1-Lecture8.tex
-Package marginnote Info: Margin note 31.1 is on absolute page 31 on input line 
-3.
-Package marginnote Info: right page because not two side mode on input line 3.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
-Package marginnote Info: Margin note 31.2 is on absolute page 31 on input line 
-5.
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 384.19571pt on input line 5.
- [25] (Pictures/Lec8Pic1.tex) (Pictures/Lec8Pic2.tex) [26] (Pictures/Lec8Pic2an
-dahalf.tex) [27]
-Package marginnote Info: Margin note 34.1 is on absolute page 34 on input line 
-140.
-Package marginnote Info: right page because not two side mode on input line 140
-.
-Package marginnote Info: xpos seems to be 136.06474pt on input line 140.
- (Pictures/Lec8Pic3.tex))
-(Chapters/AT1-Lecture9.tex
-Package marginnote Info: Margin note 34.2 is on absolute page 34 on input line 
-5.
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 5.
- [28] (Pictures/Lec9Pic1.tex)
-Package marginnote Info: Margin note 35.1 is on absolute page 35 on input line 
-64.
-Package marginnote Info: right page because not two side mode on input line 64.
-
-Package marginnote Info: xpos seems to be 440.00826pt on input line 64.
- [29]
-Package marginnote Info: Margin note 36.1 is on absolute page 36 on input line 
-114.
-Package marginnote Info: right page because not two side mode on input line 114
-.
-Package marginnote Info: xpos seems to be 130.91782pt on input line 114.
-Missing character: There is no — in font ec-lmri8!
-Missing character: There is no — in font ec-lmri8!
- [30] [31]
-chapter III.
-[32
-
-
-]
-
-LaTeX Warning: Citation 'Hatcher' on page 33 undefined on input line 215.
-
-Package marginnote Info: Margin note 39.1 is on absolute page 39 on input line 
-234.
-Package marginnote Info: right page because not two side mode on input line 234
-.
-Package marginnote Info: xpos seems to be 136.25116pt on input line 234.
-(Pictures/Lec9Pic2.tex) [33]) (Chapters/AT1-Lecture10.tex
-Package marginnote Info: Margin note 40.1 is on absolute page 40 on input line 
-3.
-Package marginnote Info: right page because not two side mode on input line 3.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
- [34]
-Package marginnote Info: Margin note 41.1 is on absolute page 41 on input line 
-59.
-Package marginnote Info: right page because not two side mode on input line 59.
-
-Package marginnote Info: xpos seems to be 379.66884pt on input line 59.
- [35] [36])
-(Chapters/AT1-Lecture11.tex
-Package marginnote Info: Margin note 43.1 is on absolute page 44 on input line 
-3.
-Package marginnote Info: right page because not two side mode on input line 3.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
-Package marginnote Info: Margin note 43.2 is on absolute page 44 on input line 
-5.
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 267.54672pt on input line 5.
- [37] [38]
-Package marginnote Info: Margin note 45.1 is on absolute page 45 on input line 
-49.
-Package marginnote Info: right page because not two side mode on input line 49.
-
-Package marginnote Info: xpos seems to be 165.16008pt on input line 49.
- [39] [40] [41])
-(Chapters/AT1-Lecture12.tex
-Package marginnote Info: Margin note 48.1 is on absolute page 48 on input line 
-3.
-Package marginnote Info: right page because not two side mode on input line 3.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
- [42] [43] [44]
-chapter IV.
-Package marginnote Info: Margin note 51.1 is on absolute page 51 on input line 
-131.
-Package marginnote Info: right page because not two side mode on input line 131
-.
-Package marginnote Info: xpos seems to be 187.16824pt on input line 131.
-[45
-
-
-]) (Chapters/AT1-Lecture13.tex
-Package marginnote Info: Margin note 52.1 is on absolute page 52 on input line 
-3.
-Package marginnote Info: right page because not two side mode on input line 3.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
-Package marginnote Info: Margin note 52.2 is on absolute page 52 on input line 
-8.
-Package marginnote Info: right page because not two side mode on input line 8.
-Package marginnote Info: xpos seems to be 365.27223pt on input line 8.
- [46] [47] [48]) (Chapters/AT1-Lecture14.tex
-Package marginnote Info: Margin note 55.1 is on absolute page 55 on input line 
-3.
-Package marginnote Info: right page because not two side mode on input line 3.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
-Package marginnote Info: Margin note 55.2 is on absolute page 55 on input line 
-5.
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 303.0202pt on input line 5.
-
-[49]
-Package marginnote Info: Margin note 56.1 is on absolute page 56 on input line 
-50.
-Package marginnote Info: right page because not two side mode on input line 50.
-
-Package marginnote Info: xpos seems to be 469.17009pt on input line 50.
- [50]) (Chapters/AT1-Lecture15.tex
-Package marginnote Info: Margin note 57.1 is on absolute page 57 on input line 
-3.
-Package marginnote Info: right page because not two side mode on input line 3.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
-Package marginnote Info: Margin note 57.2 is on absolute page 57 on input line 
-5.
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 124.80783pt on input line 5.
- [51] [52] [53])
-(Chapters/AT1-Lecture16.tex
-Package marginnote Info: Margin note 60.1 is on absolute page 61 on input line 
-3.
-Package marginnote Info: right page because not two side mode on input line 3.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
- [54] [55]
-Package marginnote Info: Margin note 62.1 is on absolute page 63 on input line 
-87.
-Package marginnote Info: right page because not two side mode on input line 87.
-
-Package marginnote Info: xpos seems to be 410.12708pt on input line 87.
- [56] [57]) (Chapters/AT1-Lecture17.tex
-Package marginnote Info: Margin note 64.1 is on absolute page 64 on input line 
-3.
-Package marginnote Info: right page because not two side mode on input line 3.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
-
-[58] [59]
-Package marginnote Info: Margin note 66.1 is on absolute page 66 on input line 
-100.
-Package marginnote Info: right page because not two side mode on input line 100
-.
-Package marginnote Info: xpos seems to be 406.12703pt on input line 100.
-
-
-LaTeX Warning: Citation 'Hatcher' on page 60 undefined on input line 103.
-
-Package marginnote Info: Margin note 66.2 is on absolute page 66 on input line 
-114.
-Package marginnote Info: right page because not two side mode on input line 114
-.
-Package marginnote Info: xpos seems to be 304.8683pt on input line 114.
-
-LaTeX Warning: Citation 'Hatcher' on page 60 undefined on input line 114.
-
-[60]
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 130.
-
-[61]) (Chapters/AT1-Lecture18.tex
-Package marginnote Info: Margin note 68.1 is on absolute page 68 on input line 
-3.
-Package marginnote Info: right page because not two side mode on input line 3.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 3.
- [62]
-Package marginnote Info: Margin note 69.1 is on absolute page 69 on input line 
-50.
-Package marginnote Info: right page because not two side mode on input line 50.
-
-Package marginnote Info: xpos seems to be 123.19592pt on input line 50.
- [63] [64]) (Chapters/AT1-Lecture19.tex
-[65]
-chapter V.
-Package marginnote Info: Margin note 72.1 is on absolute page 72 on input line 
-5.
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 5.
-Package marginnote Info: Margin note 72.2 is on absolute page 72 on input line 
-12.
-Package marginnote Info: right page because not two side mode on input line 12.
-
-Package marginnote Info: xpos seems to be 497.92328pt on input line 12.
-[66
-
-
-] [67] [68] [69]) (Chapters/AT1-Lecture20.tex
-Package marginnote Info: Margin note 76.1 is on absolute page 76 on input line 
-5.
-Package marginnote Info: right page because not two side mode on input line 5.
-Package marginnote Info: xpos seems to be 99.58466pt on input line 5.
-
-
-LaTeX Warning: Citation 'maclane:71' on page 70 undefined on input line 35.
-
-[70] [71]
-Package marginnote Info: Margin note 78.1 is on absolute page 78 on input line 
-107.
-Package marginnote Info: right page because not two side mode on input line 107
-.
-Package marginnote Info: xpos seems to be 367.62204pt on input line 107.
- [72] [73]) (Chapters/AT1-Appendix.tex) [74]
-
-LaTeX Warning: Empty bibliography on input line 131.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 132.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 132.
-(AT1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 132.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 132.
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                AT1
-(biblatex)                and rerun LaTeX afterwards.
-
-Package logreq Info: Writing requests to 'AT1.run.xml'.
-\openout1 = `AT1.run.xml'.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
+ (test.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 34.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 34.
+Package logreq Info: Writing requests to 'test.run.xml'.
+\openout1 = `test.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 57119 strings out of 427748
- 1165708 string characters out of 3150981
- 1654414 words of memory out of 3000000
- 60374 multiletter control sequences out of 15000+200000
- 661966 words of font info for 108 fonts, out of 3000000 for 9000
+ 52689 strings out of 427748
+ 1058260 string characters out of 3150981
+ 1630022 words of memory out of 3000000
+ 56090 multiletter control sequences out of 15000+200000
+ 579861 words of font info for 60 fonts, out of 3000000 for 9000
  1328 hyphenation exceptions out of 8191
- 82i,21n,115p,9084b,5045s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 82i,19n,115p,9085b,3808s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on AT1.pdf (79 pages).
+Output written on test.pdf (1 page).

@@ -1,0 +1,34 @@
+\documentclass[a4paper, 10pt, oneside, DIV=9, chapterprefix=true, numbers=enddot,bibliography=totoc]{scrbook}
+
+\usepackage{styleAT1}
+\usepackage{shortcutsAT1}
+\usepackage[normalem]{ulem}
+\usepackage[outline]{contour}
+\contourlength{2.25pt}
+
+\newcommand{\embrace}[1]{\textup{(}#1\textup{)}}
+\newlength{\LETTERheight}
+\AtBeginDocument{\settoheight{\LETTERheight}{I}}
+\newcommand*{\longrightsquigarrow}[1]{\ \raisebox{0.24\LETTERheight}{\tikz \draw [-to,
+		line join=round, line cap=round,
+		decorate, decoration={
+			zigzag,
+			segment length=4,
+			amplitude=.9,
+			post=lineto,
+			post length=0.42ex
+		}] (0,0) -- (#1,0);}\ }
+	
+\newlength{\HeightOfTextstyleOne}
+\settoheight{\HeightOfTextstyleOne}{$\mathbf{1}$}
+\newlength{\HeightOfScriptstyleOne}
+\settoheight{\HeightOfScriptstyleOne}{$\scriptstyle\mathbf{1}$}
+\newlength{\HeightOfScriptscriptstyleOne}
+\settoheight{\HeightOfScriptscriptstyleOne}{$\scriptscriptstyle\mathbf{1}$}
+
+\usepackage{bookmark}
+\begin{document}
+\input{Pictures/Lec3Pic1_colored2}\medskip
+\input{Pictures/Lec3Pic1_colored3}\medskip
+\input{Pictures/Lec3Pic1_colored4}\medskip
+\end{document}
