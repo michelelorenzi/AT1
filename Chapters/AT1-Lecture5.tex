@@ -71,7 +71,7 @@ Then
 \[y=(\sigma\delta)^*(y)=\delta^*(\sigma^*(y))=\delta^*(\bar{\sigma}^*(\bar{y}))=(\bar{\sigma}\delta)^*(\bar{y}).\]
 We write
 \[\bar{\sigma}\delta=\delta'\sigma': [k]\to[l],\rightnote{Every morphism of $\Delta$ can be written as a composition of a surjective map and an injective one.}\]
-where $\sigma':[k]\onto[a]$ is surjective and $\delta':[a]\hto[l]$ is injective. Then \[y=(\bar\sigma\delta)(\bar y)=(\delta'\sigma')^*(\bar y)=(\sigma')^*((\delta')^*(\bar{y})).\tag{$*$}\]
+where $\sigma':[k]\onto[a]$ is surjective and $\delta':[a]\hto[l]$ is injective. Then \[y=(\bar\sigma\delta)^*(\bar y)=(\delta'\sigma')^*(\bar y)=(\sigma')^*((\delta')^*(\bar{y})).\tag{$*$}\]
 
 Since $y$ is non-degenerate, we must have $a=k$ and $\sigma'=\id_{[k]}$. Hence $k=a\leq l$. By interchanging the roles of $(\sigma,y)$ and $(\bar{\sigma},\bar{y})$ we obtain $l\leq k$, hence $l=k$.
 
@@ -109,7 +109,7 @@ Case 2. $f:\nabla^n\to X$ is non-degenerate and $k<n$. We note that by property 
 
 We extend the data to $\nabla^n\times\nabla^1$ by a choice of continuous retraction:
 \[r:\nabla^n\times\nabla^1\to (\nabla^n\times e_0)\cup(\de\nabla^n\times\nabla^1),\]
-hence set $\psi_f$ to be the composite of $r$ and $\til f=f|_{\ns\times e_0}\cup\bigcup_{i=0,\dots,n}\psi_{d_i^*(f)}$\normalmarginpar\marginnote{\footnotesize $d_i:[n-1]\to[n]$ is the unique monotone injection with $i\not\in\im(d_i)$.}:
+hence set $\psi_f$ to be the composite of $r$ and $\til f=f\cup\bigcup_{i=0,\dots,n}\psi_{d_i^*(f)}$\normalmarginpar\marginnote{\footnotesize $d_i:[n-1]\to[n]$ is the unique monotone injection with $i\not\in\im(d_i)$.}:
 \[\ns\times\sx{1}\xto{r}(\nabla^n\times e_0)\cup(\de\nabla^n\times\nabla^1)\xto{\til f} X.\]
 
 The definition satisfies $\psi_f(-,e_0)=f$ by design and $\psi_f(\sk_k(\nabla^n),e_1)\subset\psi_f(\de\nabla^n,e_1)\subset A$ by induction because the $\psi_{d_i^*(f)}$'s have property $(a)$.
@@ -118,7 +118,7 @@ Case 3. $f:\nabla^n\to X$ is non-degenerate and $n\leq k$. First, note that we c
 
 We assumed that $(X,A)$ is $k$-connected, so there are a continuous map
 \[\lambda:(\nabla^n\times e_0)\cup(\de\nabla^n\times\nabla^1)\to A,\]
-and a homotopy relative $\de\nabla^n\times e_1$ from $\lambda$ to the map $\til f=f|_{\ns\times e_0}\cup\bigcup_{i=0,\dots,n} \psi_{d_i^*(f)}$
+and a homotopy relative $\de\nabla^n\times e_1$ from $\lambda$ to the map $\til f=f\cup\bigcup_{i=0,\dots,n} \psi_{d_i^*(f)}$
 \[H:(\nabla^n\times e_0)\cup(\de\nabla^n\times\nabla^1)\times[0,1]\to X,\]
 which combine in the diagram (where the lower triangle is commutative up to homotopy):
 \begin{center}
@@ -160,16 +160,16 @@ We do this via an adjunction bijection:
 
 \textit{Sketch} (full argument as an exercise).
 
-Step 1.\rightnote{I would rephrase this as follows (see \cite[Th.7.1]{maclane:71}): every presheaf on\\ a small category can be represented as a colimit of representable presheaves (in a canonical way).} Given $H:Z\times\Delta[1]\to Y$ and $z\in Z_n$, we define $\psi^H_z:\Delta[n]\times\Delta[1]\to Y$ by
+Step 1.\rightnote{I would rephrase this as follows (see \cite[\nopp III.7.1]{maclane:71}): every presheaf on\\ a small category can be represented as a colimit of representable presheaves (in a canonical way).} Given $H:Z\times\Delta[1]\to Y$ and $z\in Z_n$, we define $\psi^H_z:\Delta[n]\times\Delta[1]\to Y$ by
 \[(\psi_z)_m(\alpha,\kappa)=H_m(\alpha^*(z),\kappa),\]
 and using the Yoneda lemma we can show that the assignment $H\mapsto\cb{\psi^H_z}$ is bijective.
 
-Step 2. $\S:\Top\to\sSet$ is right adjoint to $|-|:\sSet\to\Top$. This is AT1Sheet3.1
+Step 2. $\S:\Top\to\sSet$ is right adjoint to $|-|:\sSet\to\Top$. This is \hyperref[exercise:AT1Sheet3.1]{AT1Sheet3.1}.
 
 Step 3. There is a preferred homeomorphism $|\Delta[n]|\cong\ns$ given by
 \[(\alpha:[m]\to[n],t)\mapsto\alpha_*(t),\text{ with inverse }s\mapsto[\id_{[n]},s].\] The map
 \[|\Delta[n]\times\Delta[1]|\xto{(|\pr_1|,|\pr_2|)}|\Delta[n]|\times|\Delta[1]|\cong\ns\times\sx{1}\]
-is a homeomorphism. This is AT1Sheet3.2.
+is a homeomorphism. This is \hyperref[exercise:AT1Sheet3.2]{AT1Sheet3.2}.
 
 Step 4. Combine steps 1-3.
 \begin{align*}

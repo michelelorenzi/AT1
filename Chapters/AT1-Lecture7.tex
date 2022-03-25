@@ -56,7 +56,7 @@ It remains to show that $K^{n+1}\sm\cb{0}\to \kpn$ is a locally trivial fibre bu
 
 For $K=\CC$ and $n=1$ this gives a fibre bundle
 \[p:\CC^2\sm\cb{0}\cong S^3\to \cp{1}\cong S^2\]
-with fibre $\CC^\times\cong S^1$. This is already the Hopf fibration \enquote{up to homotopy}.
+with fibre $\CC^\times\cong S^1$. This is already the Hopf fibration \enquote{up to homeomorphism}.
 
 Let $S(K^n)\subset K^n$ be the unit sphere ($(n-1)$-dimensional if $K=\R$, $(2n-1)$-dimensional if $K=\CC$). Further, let $G(K)\subset K^\times$ be the subgroup of elements of norm $1$ ($G(\R)=\cb{\pm1}$, $G(\CC)=S^1$). Then the $K^\times$-action on $K^{n+1}\sm\cb{0}$ restricts to a $G(K)$-action on $S(K^{n+1})$ and the induced map
 \begin{center}
@@ -111,7 +111,7 @@ This amounts to the already known statements that $p_*:\pi_1(E,e)\to\pi_1(B,b)$ 
 Let $p:E\to B$ be a continuous map. A \textbf{test situation} for the homotopy lifting property (HLP) consists of a space $X$ and a commutative square:
 \begin{center}
     \begin{tikzcd}
-    X \arrow[d,"i_0"'] \arrow[r,"f"] & E \arrow[d,"p"] \\
+    X \arrow[d,"i"'] \arrow[r,"f"] & E \arrow[d,"p"] \\
     X\times[0,1] \ar[ur,dashed,"\til H"'] \arrow[r,"H"'] & B
     \end{tikzcd}
 \end{center}
@@ -122,7 +122,7 @@ A solution to the test situation is a map $\til H:X\times[0,1]\to E$
 there is also a relative version: a pair of spaces $\pairs$ and a commutative diagram:
 \begin{center}
     \begin{tikzcd}
-    X\times\cb{0}\cup(A\times[0,1]) \arrow[d, hook,"i_0"'] \arrow[r,"f"] & E \arrow[d,"p"] \\
+    X\times\cb{0}\cup(A\times[0,1]) \arrow[d, hook,"i"'] \arrow[r,"f"] & E \arrow[d,"p"] \\
     X\times[0,1] \ar[ur,dashed,"\til H"'] \arrow[r,"H"'] & B
     \end{tikzcd}
 \end{center}

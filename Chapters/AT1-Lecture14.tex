@@ -21,14 +21,14 @@ By cellular approximation $X^{(n)}$ is $(n-1)$-connected. The Hurewicz theorem t
 
 For every index $i\in I$ we chose a map $\alpha_i:S^n\to X^{(n)}$ such that $h([\alpha_i])=d(i)\in\Z[J]$. We define
 \[X^{(n+1)}=X^{(n)}\cup_{I\times S^n}I\times D^{n+1}\]
-using the $\alpha_i$'s as attaching maps. Then $X^{(n+1)}$ is a CW-complex with one $0$-cell, an $n$-cell for every element of $J$ and an $(n+1)$-cell for every element of $I$. So the cellular chain complex of $X^{(n+1)}$ is concentrated in degrees $0$, $n$ and $n+1$ and in the relevant dimension it looks as follows:
+using the $\alpha_i$'s as attaching maps. Then $X^{(n+1)}$ is a CW-complex with one $0$-cell, an $n$-cell for every element of $J$ and an $(n+1)$-cell for every element of $I$. So the cellular chain complex of $X^{(n+1)}$ is concentrated in degrees $0$, $n$ and $n+1$ and in the relevant dimensions it looks as follows:
 {\small
 \[0\to C^\text{cell}_{n+1}(X^{(n+1)};\Z)=\underbrace{H_{n+1}(X^{(n+1)},X^{(n)};\Z)}_{\cong\Z[I]}\xto{\de}C^\text{cell}_n(X^{(n+1)};\Z)=\underbrace{H_n(X^{(n)},\cb{x};\Z)}_{\cong\Z[J]}\to0.\]}Hence we have $H_n^\text{cell}(X^{(n+1)};\Z)=\coker(\de)\cong\coker(d:\Z[I]\to\Z[J])\cong A$.
 
 $X^{(n+1)}$ is again $(n-1)$-connected, so the Hurewicz theorem provides an isomorphism
 \[\pi_n(X^{(n+1)},x)\xto{\cong}H_n(X^{(n+1)};\Z)\cong H^\text{cell}_n(X^{(n+1)};\Z)\cong A.\]
 
-Now we can use kill the homotopy groups as we have seen in Theorem \ref{theorem:killing-homotopy-groups}, obtaining a relative CW-complex $(X,X^{(n+1)})$ with relative cells in dimensions $n+2$ and higher and such that:
+Now we can use kill the homotopy groups as we have seen in theorem \ref{theorem:killing-homotopy-groups}, obtaining a relative CW-complex $(X,X^{(n+1)})$ with relative cells in dimensions $n+2$ and higher and such that:
 \[\pi_i(X,x)\cong\pi_i(X^{(n+1)},x)\cong\begin{cases}
 0 & \text{for } 1\le i < n\\
 A & \text{for } i = n
@@ -63,7 +63,7 @@ Every $(\ni)$-connected CW-complex $Y$ is homotopy equivalent to a CW-complex wh
 \begin{proof}
 Suppose that $n=1$. We can choose a maximal tree\rightnote{Strictly speaking, we would have to show that such a maximal tree exists, but heh.} in $Y$ (i.e. a 1-dimensional subcomplex containing all the $0$-cells) and collapse it to obtain the desired CW-complex with just one cell (the quotient map will be an homotopy equivalence).
 
-Now suppose that $n\ge2$. Because $Y$ is $(n-1)$-connected, its $n$-skeleton is still $(n-1)$-connected. Since the Hurewicz map is an isomorphism, considering
+Now suppose that $n\ge2$. If $Y$ is $(n-1)$-connected, its $n$-skeleton is still $(n-1)$-connected. Since the Hurewicz map is an isomorphism, considering
 \[\pi_n(Y^{(n)},y)\to H_n(Y^{(n)};\Z)\cong H^\text{cell}_n(Y^{(n)};\Z)=\ker(\underbrace{C^\text{cell}_n(Y^{(n)};\Z)}_{\text{free abelian}}\xto{d^\text{cell}}C^\text{cell}_\ni(Y^{(n)};\Z))\]
 we have that $H_n(Y^{(n)};\Z)$ and hence $\pi_n(Y^{(n)},y)$ are free abelian groups.
 

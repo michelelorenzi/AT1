@@ -25,7 +25,7 @@ Let $(Y,y_0)$ be a based space. The reduced suspension is the space:
 
 The quotient map $q:Y\times[0,1]\to\Sigma Y$ induces a continuous injection:
 \[q^*:(Z,z_0)^{(\Sigma Y,*)}\to Z^{Y\times[0,1]}\]
-whose image consists of all continuous maps $f:Y\times[0,1]\to Z$ that factor through the quotient map, i.e. such that $f(Y\times 0\cup\cb{y_0}\times[0,1]\cup Y\times 1)=\cb{z_0}$. If $Y$ is compact, then so are $Y\times[0,1]$ and $\Sigma Y$, and $q^*$ is even an homeomorphism onto its image, hence (using first lemma \ref{lemma:quotient-map-induces-homeomorphism-on-mapping-spaces} and then theorem \ref{theorem:exponential-law}):
+whose image consists of all continuous maps $f:Y\times[0,1]\to Z$ that factor through the quotient map, i.e. such that $f(Y\times 0\cup\cb{y_0}\times[0,1]\cup Y\times 1)=\cb{z_0}$. If $Y$ is compact, then so are $Y\times[0,1]$ and $\Sigma Y$, and $q^*$ is even an homeomorphism onto its image (by lemma \ref{lemma:quotient-map-induces-homeomorphism-on-mapping-spaces}), hence (using theorem \ref{theorem:exponential-law}):
 \[(Z,z_0)^{(\Sigma Y,y_0)}\cong(\Omega Z,\const_{z_0})^{(Y,y_0)}.\]
 
 In particular,
@@ -59,7 +59,7 @@ The condition $\incl^*\circ f=\Phi|_{Q\times0}$ becomes the relation that $\til 
 We consider the glued map
 \[\til f\cup\til\Phi:X\times Q\times 0\cup A\times Q\times[0,1]\to Z.\]
 
-Since $(X\times Q,A\times Q)$ is a relative CW-complex, it has the HEP, so there is a continuous extension $H:X\times Q\times[0,1]\to Z$ that extends $\til f$ and $\til\Phi$. The adjoint $H^\#:Q\times[0,1]\to Z^X$ of $H$ then solves the original lifting problem.
+Since $(X\times Q,A\times Q)$ is a CW-pair, it has the HEP, so there is a continuous extension $H:X\times Q\times[0,1]\to Z$ that extends $\til f$ and $\til\Phi$. The adjoint $H^\#:Q\times[0,1]\to Z^X$ of $H$ then solves the original lifting problem.
 \end{proof}
 
 Applied to the relative CW-complex $([0,1],\cb{0,1})$ the theorem says that the restriction map

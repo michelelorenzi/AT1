@@ -47,12 +47,13 @@ Choose another lifting in the following diagram:
     F_0\times[0,1]\times[0,1] \arrow[ur,dashed,swap,"\bar L"] \arrow[r,swap,"L\circ\pr_{2,3}"] & B
     \end{tikzcd}
 \end{center}
-where the upper arrow is\alvaropls\ $(\const_{\incl}\,\cup\, H*(K\circ(f\times\id))\,\cup\,\const_{g\circ f})$.\smallskip
+where the upper arrow is\alvaropls\ $(\const_{\incl}\,\cup\, H*(K\circ(f\times\id))\,\cup\,\const_{\incl\circ 
+g\circ f})$.\smallskip
 
 \input{Pictures/Lec9Pic1}
 
 \vspace{-0.1cm}
-Then we can set $G=\bar L(-,-,1):F_0\times[0,1]\to E$ to obtain a homotopy from $\incl:F_0\into E$ to $\incl\circ g\circ f:F_0\to E$.
+Then we can set $G=\bar L(-,-,1):F_0\times[0,1]\to E$ to obtain a homotopy from $\incl:F_0\into E$ to $\incl\circ\,g\circ f:F_0\to E$.
 
 Since $p\circ G=\const_{b_0}$, this homotopy $G$ takes place inside $F_0$. So $G$ can be seen as a homotopy from $\id_{F_0}$ to $g\circ f$. Reversing the roles of $b_0$ with $b_1$, $F_0$ with $F_1$ and $f$ with $g$ yields a homotopy from $\id_{F_1}$ to $f\circ g$.
 \end{proof}
@@ -137,7 +138,7 @@ If both squares are pullbacks, then the composite square is also a pullback. Sym
 \[B''\times_B E\cong B''\times_{B'}(B'\times_B E).\]
 
 Hence, considering the same situation as in the direct proof, we have:
-\[(p')^{-1}(V)=V\times_B E\cong V\times_{B'}(B'\times_B E)= V\times_U(U\times_B E)\cong V\times_U(U\times F)\cong V\times F.\]
+\[(p')^{-1}(V)\cong V\times_B E\cong V\times_{B'}(B'\times_B E)\cong V\times_U(U\times_B E)\cong V\times_U(U\times F)\cong V\times F.\]
 
 (ii)+(iii) We show: whenever $p:E\to B$ has the HPL for some space $X$, then $p':B'\times_B E\to B'$ also has the HLP for $X$.
 
@@ -146,17 +147,17 @@ Consider a lifting square on the left:
     \begin{tikzcd}[column sep=large,row sep=huge]
     X\times0 \arrow[d,hook] \arrow[r,"f"] & B'\times_B E \arrow[d,"p'" near end] \arrow[r,"\beta'"] & E \arrow[d,"p"] \\
     
-    X\times[0,1] \arrow[ur,dashed,bend left=20,blue,"\bar K"] \arrow[urr,dashed,crossing over,red, "K" near start] \arrow[r,"H"'] & B' \arrow[r,"\beta"'] & B
+    X\times[0,1] \arrow[ur,dashed,bend left=20,blue,"\til H"] \arrow[urr,dashed,crossing over,red, "K" near start] \arrow[r,"H"'] & B' \arrow[r,"\beta"'] & B
     \end{tikzcd}
 \end{center}
 
 There is a homotopy $K:X\times[0,1]\to E$ so that $p\circ K=\beta\circ H$ and $K(-,0)=\beta'\circ f$.
 
 The universal property of the pullback provides a unique continuous map
-\[\bar K:X\times[0,1]\to B'\times_B E\]
-such that $p'\circ \bar K=H$ and $\beta'\circ\bar K=K$.
+\[\til H:X\times[0,1]\to B'\times_B E\]
+such that $p'\circ \til H=H$ and $\beta'\circ\til H=K$.
 
-The two continuous maps $f,\,\bar K(-,0):X\times0\to B'\times_B E$ compose in the same way with $p'$ and with $\beta'$. The uniqueness part of the universal property then forces $f=\bar K(-,0)$.
+The two continuous maps $f,\,\til H(-,0):X\times0\to B'\times_B E$ compose in the same way with $p'$ and with $\beta'$. The uniqueness part of the universal property then forces $f=\til H(-,0)$.
 \end{proof}
 
 \chapter{Mapping Spaces}
@@ -210,7 +211,7 @@ called the supremum metric.
 \end{theorem}
 
 \begin{proof}
-(1) Omitted (see \cite[Proposition A.13]{hatcher}).
+(1) Omitted (see \cite[proposition A.13]{hatcher}).
 
 (2) \enquote{$\subset$}: compact-open is metrically open.
 

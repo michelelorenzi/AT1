@@ -8,7 +8,7 @@
 
 The long term goal for the rest of the semester is to show that in some sense (which we will specify), the \enquote{homotopy theories} of topological spaces and of simplicial sets are equivalent.
 
-It is possible to prove (but it is beyond the scope of this course) that in fact there is an underlying equivalence of model categories/infinity categories; we will only see a "shadow" of this result, i.e. that there is an equivalence between the homotopy category of CW-complexes and the localization of the category of simplicial sets at the class of weak equivalences.\todo{Maybe I should rewrite this introduction}
+It is possible to prove (but it is beyond the scope of this course) that in fact there is an underlying equivalence of model categories/infinity categories; we will only see a \enquote{shadow} of this result, i.e. that there is an equivalence between the homotopy category of CW-complexes and the localization of the category of simplicial sets at the class of weak equivalences.\todo{Maybe I should rewrite this introduction}
 
 The short term goal for this lecture and the next one is to show the existence of a preferred\rightnote{In this course, we do not like the word \enquote{canonical}.} CW-structure on $|X|$, the geometric realization of a simplicial set $X$.
 
@@ -51,7 +51,7 @@ such that $\delta^*(y)=\sigma^*(x)$, $s=\delta_*(u)$ and $t=\sigma_*(u)$.
 \end{numerate}
 \end{proposition}
 
-Summing up: the first part of the proposition gives existence of minimal representatives, the second part a characterization of them and the third says that any element in an equivalence class is related to the minimal representative of the class by a chain of just two "elementary equivalences" (the relations by which the equivalence relation $\sim$ is generated), i.e. $(y,s)=(y,\delta_*(u))\sim(\delta^*(y),u)=(\sigma^*(x),u)\sim(x,\sigma_*(u))=(x,t)$.
+Summing up: the first part of the proposition gives existence of minimal representatives, the second part a characterization of them and the third says that any element in an equivalence class is related to the minimal representative of the class by a chain of just two \enquote{elementary equivalences} (the relations by which the equivalence relation $\sim$ is generated), i.e. $(y,s)=(y,\delta_*(u))\sim(\delta^*(y),u)=(\sigma^*(x),u)\sim(x,\sigma_*(u))=(x,t)$.
 
 \begin{proof}
 We write $X_l^\text{nd}$ for the set of non-degenerate $l$-simplices. We first define a map
@@ -70,7 +70,7 @@ It suffices to show this when $(y,s)$ and $(\bar y,\bar s)$ are "elementary equi
 We let $(\delta,u,\sigma,x)$ be the data in the construction of $\rho(y,s)$ and we choose a factorization (which is necessarily unique) $\alpha\circ\delta=\bar\delta\circ\bar\sigma$ for a surjective morphism $\bar\sigma:[k]\to[\bar k]$ and an injective morphism $\bar\delta:[\bar k]\to[\bar n]$. Then
 \[\bar s=\alpha_*(s)=\alpha_*(\delta_*(u))=\bar\delta_*(\bar\sigma_*(u)).\]
 
-Since $u\in\ring\nabla^{k}$ and $\sigma$ is surjective, $\bar\sigma_*(u)\in\ring\nabla^{\bar k}$. Hence $\bar s=\bar\delta_*(\bar\sigma_*(u))$ must be the unique expression in the first step of the construction of $\rho(\bar y,\bar s)$, since $\bar\delta_*$ is injective and $\bar\sigma_*(u)$ is an interior point. We write $\bar\delta^*(\bar y)=\hat\sigma^*(\hat x)$ for a surjective morphism $\hat\sigma:[\bar k]\to[\hat l]$ and a non-degenerate element $\hat x\in X_{\hat l}^\text{nd}$. Then we have:
+Since $u\in\ring\nabla^{k}$ and $\bar \sigma$ is surjective, $\bar\sigma_*(u)\in\ring\nabla^{\bar k}$. Hence $\bar s=\bar\delta_*(\bar\sigma_*(u))$ must be the unique expression in the first step of the construction of $\rho(\bar y,\bar s)$, since $\bar\delta_*$ is injective and $\bar\sigma_*(u)$ is an interior point. We write $\bar\delta^*(\bar y)=\hat\sigma^*(\hat x)$ for a surjective morphism $\hat\sigma:[\bar k]\to[\hat l]$ and a non-degenerate element $\hat x\in X_{\hat l}^\text{nd}$. Then we have:
 \[\sigma^*(x)=\delta^*(y)=\delta^*(\alpha^*(\bar y))=\bar\sigma^*(\bar\delta^*(\bar y))=\bar\sigma^*(\hat\sigma^*(\hat x))=(\hat\sigma\circ\bar\sigma)^*(\hat x).\]
 By the uniqueness of pairs of degeneracies and non-degenerate simplices (of proposition \ref{proposition:non-degenerate-simplices}), we must have $l=\hat l$, $x=\hat x$, $\sigma=\hat\sigma\circ\bar\sigma$. So $\bar\delta^*(\bar y)=\hat\sigma^*(\hat x)=\hat\sigma^*(x)$ and $(\bar\delta,\bar\sigma_*(u),\hat\sigma,x)$ must be the data in the construction of $\rho(\bar y,\bar s)$. Hence:
 \[\rho(\bar y,\bar s)=(x,\hat\sigma_*(\bar\sigma_*(u)))=(x,\sigma_*(u))=\rho(y,s).\]
@@ -131,7 +131,7 @@ Suppose that the total number of non-degenerate simplices in all dimensions is f
 
 \subsection{The Skeleta filtration}
 
-The preferred CW-structure of $|X|$ arises from a "CW-like structure" that is intrinsic to the combinatorics of simplicial sets.
+The preferred CW-structure of $|X|$ arises from a \enquote{CW-like structure} that is intrinsic to the combinatorics of simplicial sets.
 
 The \tbf{$m$-skeleton} $\sk^m X$ of a simplicial set $X$, for $m\ge0$, is the simplicial set defined by:
 \[(\sk^m X)_n=\cb{x\in X_n\mid x=\alpha^*(y)\text{ for some }\alpha:[n]\to[m]\text{ and some }y\in X_m},\]

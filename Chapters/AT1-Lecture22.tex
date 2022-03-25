@@ -1,6 +1,6 @@
 % Lecture 22
 
-\lecture[]{2022-01-12}
+\lecture[We finish the infinite proof we started last time and obtain that the counit is a weak equivalence.]{2022-01-12}
 
 Claim 5. Given a pair $(K,L)$, the theorem holds for $(L\cup\sk^m K,L)$ for all $m\ge-1$.
 
@@ -90,8 +90,8 @@ where the first map is $(s,t)\mapsto(t,(1-t)(1-s),(1-t)s)$, is a homotopy, relat
 \begin{corollary}\label{corollary:simply-connected-realization-of-singular-complex}
 Let $Z$ be a simply connected space.
 \begin{numerate}
-\item The singular complex $\S(X)$ satisfies the hypotheses of theorem \ref{proposition:simply-connected-realization}.
-\item The space $|\S(X)|$ is simply connected.
+\item The singular complex $\S(Z)$ satisfies the hypotheses of theorem \ref{proposition:simply-connected-realization}.
+\item The space $|\S(Z)|$ is simply connected.
 \end{numerate}
 \end{corollary}
 
@@ -125,7 +125,7 @@ Case 1. $Z$ is simply-connected and admits a CW-structure. Then by corollary \re
 
 Case 2. $Z$ is path-connected and admits a CW-structure. CW-complexes admit universal covers (they are locally path-connected and semi-locally simply-connected); let $\til Z\xto{p}Z$ be a universal cover. Let $G$ be the group of deck transformations of $p$. For every singular simplex $f:\ns\to Z$, we know from covering space theory that the group $G$ acts freely and transitively on the set of continuous lifts $\til f:\ns\to \til Z$, since $\ns$ is simply-connected and locally path-connected. So the morphism $\S(p):\S(\til Z)\to\S(Z)$ factors through an isomorphism $\S(\til Z)/G\to\S(Z)$.
 
-Since $G$ acts freely on $\S(\til Z)$, the induced action on $|\S(\til Z)|$ is free and properly discontinuous, as shown in AT1Sheet11.3. Since $\til Z$ is simply-connected, so is $|\S(\til Z)|$ by corollary \ref{corollary:simply-connected-realization-of-singular-complex}, so the quotient map
+Since $G$ acts freely on $\S(\til Z)$, the induced action on $|\S(\til Z)|$ is free and properly discontinuous, as shown in \hyperref[exercise:AT1Sheet11.3]{AT1Sheet11.3}. Since $\til Z$ is simply-connected, so is $|\S(\til Z)|$ by corollary \ref{corollary:simply-connected-realization-of-singular-complex}, so the quotient map
 \[|\S(\til Z)|\to|\S(\til Z)|/G\]
 is a covering map with simply connected source, hence a universal cover of $|\S(\til Z)|/G$ with $G$ as the deck transformations group. Again\rightnote{If anyone is wondering: in $\Top$ a quotient map is the coequalizer of the diagram $R\rightrightarrows X$ where $R\subset X\times X$ is the equivalence relation inducing the quotient and the maps are the projections.}, geometric realization preserves colimits and taking orbits by a group action is a colimit, so we have isomorphisms
 

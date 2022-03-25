@@ -2,7 +2,7 @@
 
 \section{The Counit Weak Equivalence}
 
-\lecture[]{2022-01-10}
+\lecture[A bunch of technical results. First, the singular complex functor sends weak equivalences of spaces to homotopy equivalences of simplicial sets. Second, the adjunction unit induces isomorphisms on homology.]{2022-01-10}
 
 \subsection{The Singular Complex Functor is Homotopical}
 
@@ -51,7 +51,7 @@ Let $f:A\to B$ be a weak homotopy equivalence of spaces. Then $\S(f):\S(A)\to\S(
 \begin{proof}
 Since $f$ is a weak equivalence, for every CW-complex $K$ the induced map
 \[f_*:=[K,f]:[K,A]\to[K,B]\]
-is bijective, as shown in ATSheet10.2. For $K=|\S(B)|$, we get a bijection
+is bijective, as shown in \hyperref[exercise:AT1Sheet10.2]{AT18Sheet10.2}. For $K=|\S(B)|$, we get a bijection
 \[
 f_*:[|\S(B)|,A]\xto{\cong}[|\S(B)|,B],
 \]
@@ -60,7 +60,7 @@ So there is a continuous map $\lambda:|\S(B)|\to A$, unique up to homotopy, such
 The adjoint $\lambda^\#:\S(B)\to\S(A)$ is a morphism of simplicial sets and by proposition \ref{proposition:adjunction-preserves-homotopy} we have that $\S(f)\circ\lambda^\#$ is simplicially homotopic to $(\epsilon_B)^\#=\id_{\S(B)}$. To see that the other composite $\lambda^\#\circ\S(f):\S(A)\to\S(A)$ is simplicially homotopic to $\id_{\S(A)}$ we observe that
 \[f\circ\lambda\circ|\S(f)|\simeq\epsilon_B\circ|\S(f)|=f\circ\epsilon_A\]
 where the last equality is by naturality of $\epsilon$. Since there is a bijection
-\[f_*[|\S(A)|,A]\xto{\cong}[|\S(A)|,B]\]
+\[f_*:[|\S(A)|,A]\xto{\cong}[|\S(A)|,B]\]
 we can conclude that $\lambda\circ|\S(f)|$ is homotopic to $\epsilon_A$. Again, thanks to proposition \ref{proposition:adjunction-preserves-homotopy} passing to the adjoints lets us conclude.
 \end{proof}
 
@@ -179,7 +179,7 @@ The geometric realization and singular complex functors both preserve disjoint u
 C_*(\amalg\,K_i;A)/C_*(\amalg\, L_i;A) \ar[r,"\eta_{\amalg K_i,\amalg L_i}"] & C_*(\S|\amalg K_i|;A)/C_*(\S|\amalg L_i|;A)
 \end{tikzcd}
 \]
-the canonical vertical maps are isomorphisms. Any direct sum of quasi-isomorphism is a quasi-isomorphism, so the upper horizontal morphism is a quasi-isomorphism since all pairs $(K_i,L_i)$ satisfy the hypothesis of the theorem. Hence the lower horizontal maps is a quasi-isomorphism by Claim 1, as we wanted to show.
+the canonical vertical maps are isomorphisms. Any direct sum of quasi-isomorphism is a quasi-isomorphism, so the upper horizontal morphism is a quasi-isomorphism since all pairs $(K_i,L_i)$ satisfy the hypothesis of the theorem. Hence the lower horizontal maps is a quasi-isomorphism, as we wanted to show.
 \end{claimproof}
 
 \end{proof}

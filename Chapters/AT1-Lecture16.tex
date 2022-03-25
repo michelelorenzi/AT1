@@ -30,7 +30,7 @@ sending $[f:X\to\cp{\infty}]$ to pullback of the universal complex line bundle o
 
 \begin{propdef}[Fundamental cohomology class]\label{propdef:fundamental-cohomology-class}
 Let $(X,\phi)$ be an EM-space of type $(A,n)$, $n\ge1$, $A$ abelian. Then there is a unique class $\iota\in H^n(X;A)$ such that the composite:
-\[\pi_n(X,x)\xto{\cong}H_n(X;\Z)\xto{\Phi(\iota)}A\]
+\[\pi_n(X,x)\xto{h}H_n(X;\Z)\xto{\Phi(\iota)}A\]
 is the isomorphism $\phi:\pi_n(X,x)\to A$, where $\Phi:H^n(X;A)\to\Hom(H_n(X;\Z),A)$ is the homomorphism from the universal coefficient theorem.
 \end{propdef}
 
@@ -64,7 +64,7 @@ Then we want to show that in the special case of $[\mu]=[p_1]+[p_2]$ evaluation 
 \[\mu^*(\iota)=p_1^*(\iota)+p_2^*(\iota).\]
 We will use the following isomorphism:
 {\small
-\[ H^n(K(A,n)^2;A)\xto{\cong}\Hom(H_n(K(A,n)^2;\Z),A)\xto{\cong}\Hom(\pi_n(K(A,n)^2,*),A)\xto{\cong}\Hom(A\times A,A)\]}where the first isomorphism comes from the UCT and the second is precomposition with the Hurewicz isomorphism. Under this isomorphism $\mu^*(\iota)$ corresponds (as one can show by naturality of the first two maps) to the addition $A\times A\to A$ and the projections to the corresponding projections $A\times A\to A$. But in $\Hom(A\times A,A)$ clearly we do have that the sum of the projections is the addition, hence the same holds in $H^n(K(A,n)^2;A)$.
+\[ H^n(K(A,n)^2;A)\xto{\cong}\Hom(H_n(K(A,n)^2;\Z),A)\xto{\cong}\Hom(\pi_n(K(A,n)^2,*),A)\xto{\cong}\Hom(A\times A,A)\]}where the first isomorphism comes from the UCT (and K\"unneth theorem) and the second is precomposition with the Hurewicz isomorphism. Under this isomorphism $\mu^*(\iota)$ corresponds (as one can show by naturality of the first two maps) to the addition $A\times A\to A$ and the projections to the corresponding projections $A\times A\to A$. But in $\Hom(A\times A,A)$ clearly we do have that the sum of the projections is the addition, hence the same holds in $H^n(K(A,n)^2;A)$.
 
 Now for the general case, let $Y$ be an arbitrary space and $f,g:Y\to K(A,n)$ continuous maps. Then we have:
 \begin{align*}
@@ -81,7 +81,7 @@ is a bijection.
 \end{lemma}
 
 \begin{proof}
-We start by showing surjectivity. We will use that for $n\ge1$ any $K(A,n)$ is path-connected and that the inclusion of the basepoint $\cb{y}\into Y$ has the HEP\rightnote{Note (for those who studied the HEP long ago): clearly not every inclusion of a point has the HEP, this works (as always in this course) because $Y$ is a CW-complex.}. In particular, given any continuous map $f:Y\to K(A,n)$, we can choose a path $w:[0,1]\to K(A,n)$ from $f(y)$ to $x\in K(A,n)$. The HEP for $(\cb{y},Y)$ lets us choose a homotopy $H:Y\times[0,1]\to K(A,n)$ starting with $f$ and such that $H(y,-)=w$. Then $g=H(-,1)$ is freely homotopic to $f$ and based, hence the forgetful map sends $[g]$ to $[f]$.
+We start by showing surjectivity. We will use that for $n\ge1$ any $K(A,n)$ is path-connected and that the inclusion of the basepoint $\cb{y}\into Y$ has the HEP\rightnote{Note (for those who studied the HEP long ago): clearly not every inclusion of a point has the HEP, this works (as always in this course) because $Y$ is a CW-complex.}. In particular, given any continuous map $f:Y\to K(A,n)$, we can choose a path $w:[0,1]\to K(A,n)$ from $f(y)$ to $x\in K(A,n)$. The HEP for $(Y,\cb{y})$ lets us choose a homotopy $H:Y\times[0,1]\to K(A,n)$ starting with $f$ and such that $H(y,-)=w$. Then $g=H(-,1)$ is freely homotopic to $f$ and based, hence the forgetful map sends $[g]$ to $[f]$.
 
 To show injectivity, we first consider the case $n=1$. Let $f,g:Y\to K(A,1)$ be based maps that are freely homotopic. Then we have:
 \[f_*=g_*:H_1(Y;\Z)\to H_1(K(A,1);\Z).\]
