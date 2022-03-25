@@ -30,7 +30,7 @@ We define:
 \[f^{(n)}:Y^{(n)}\cong\frac{I\times D^n}{I\times\de D^n}\xto{\amalg\bar\omega_i}Z.\]
 Then the diagram $(*)$ commutes by construction because the class of the characteristic maps of the $n$-cells generate $\pi_n(Y^{(n)},y)$.
 
-Now we extend $f^{(n)}$ to the $(n+1)$-skeleton of $Y$. Let $\chi_j:D^{n+1}\to Y^{(n+1)}$, $j\in J$, be a characteristic map for the $j$-th $(n+1)$-cell. Then the attaching map is $\chi_j|_{S^n}:S^n\to Y^{(n)}$. Because $Y^{(n)}$ is path-connected, $\chi_j|_{S^n}$ is freely homotopic to a based map $\alpha_j:S^n\to Y^{(n)}$. Because $(D^{n+1},S^n)$ has the HEP and because $\chi_j|_{S^n}$ comes from a continuous map on $D^{n+1}$, also $\alpha_j$ admits a continuous extension to $D^{n+1}$. So the composite
+Now we extend $f^{(n)}$ to the $(n+1)$-skeleton of $Y$. Let $\chi_j:D^{n+1}\to Y^{(n+1)}$, $j\in J$, be a characteristic map for the $j$-th $(n+1)$-cell. Then the attaching map is $\chi_j|_{S^n}:S^n\to Y^{(n)}$. Because $Y^{(n)}$ is path-connected, $\chi_j|_{S^n}$ is freely homotopic to a based map $\alpha_j:S^n\to Y^{(n)}$. Because $(D^{n+1},S^n)$ has the HEP and because $\chi_j|_{S^n}$ comes from a continuous map on $D^{n+1}$, $\alpha_j$ also admits a continuous extension to $D^{n+1}$. So the composite
 \[g:S^n\xto{\alpha_j}Y^{(n)}\into Y\]
 represents the zero element in $\pi_n(Y,y)$. Since $(*)$ commutes we have $0=f^{(n)}_*([\alpha_j])=[f^{(n)}\circ\alpha_j]$, so $f^{(n)}\circ\alpha_j:S^n\to Z$ has a continuous extension to $D^{n+1}$. Hence by the HEP also $f^{(n)}\circ\chi_j|_{S^n}:S^n\to Z$ admits a continuous extension to $D^{n+1}$. Choose such an extension $g_j:D^{n+1}\to Z$ and define
 \[f^{(n+1)}=f^{(n)}\cup\bigcup_{j\in J}g_j:Y^{(n+1)}=Y^{(n)}\cup_{J\times S^n}J\times D^{n+1}\to Z.\]
@@ -51,7 +51,7 @@ because $f$ and $f'$ have the same effect on $\pi_n$, $f\circ\bar\chi_i$ is base
 \[H=\bigcup_{i\in I}H_i:Y^{(n)}\times[0,1]\to Z\]
 which shows that $f|_{Y^{(n)}}$ and $f'|_{Y^{(n)}}$ are based homotopic.
 
-Now we apply the "extension theorem" \ref{theorem:extension-theorem} from last lecture to the relative CW-complex $(Y\times[0,1],Y\times\cb{0}\cup Y^{(n)}\times[0,1]\cup Y\times\cb{1})$ whose relative cells all have dimension greater than $n+1$. By the theorem we get a continuous extension $\bar H:Y\times[0,1]\to Z$ of the map
+Now we apply the \enquote{extension theorem} \ref{theorem:extension-theorem} from last lecture to the relative CW-complex $(Y\times[0,1],Y\times\cb{0}\cup Y^{(n)}\times[0,1]\cup Y\times\cb{1})$ whose relative cells all have dimension greater than $n+1$. By the theorem we get a continuous extension $\bar H:Y\times[0,1]\to Z$ of the map
 \[f\cup H\cup f':Y\times0\cup Y^{(n)}\times[0,1]\cup Y\times1\to Z.\]
 Then $\bar H$ is the desired based homotopy from $f$ to $f'$.
 \end{proof}

@@ -1,6 +1,6 @@
 % Lecture 24
 
-\lecture[]{2022-01-19}
+\lecture[This lecture is very similar to the previous one, with simplicial sets in place of spaces.]{2022-01-19}
 
 We can now show that there is an equivalence $\Top[\weq^\inv]$ and $\Ho(\Top_\text{CW})$.
 
@@ -39,7 +39,7 @@ Let $f:\de\Delta^2\to\Delta^1/\de\Delta^1$
 be the morphism such that $d_0,d_1\in(\de\Delta^1)_1$ map to the degenerate $1$-simplex of $\Delta^1/\de\Delta^1$ and $d_2$ maps to the non-degenerate $1$-simplex of $\Delta^1/\de\Delta^1$.\alvaropls
 
 Then $f$ is a weak equivalence, because under the homeomorphisms
-\[|\de\Delta^2|\cong\de\sx{1}\ \text{ and }\ |\Delta^1/\de\Delta^1|\cong\sx{1/\de\sx{1}}\cong[0,1]/\cb{0,1}\]
+\[|\de\Delta^2|\cong\de\sx{1}\ \text{ and }\ |\Delta^1/\de\Delta^1|\cong\sx{1}/\de\sx{1}\cong[0,1]/\cb{0,1}\]
 the realization of $f$ is the continuous map $\de\sx{2}\to[0,1]/\cb{0,1}$ that identifies two of the three sides of $\de\sx{2}$ to a point and maps the third side linearly onto the target, which is a homotopy equivalence. But $f$ is not a simplicial homotopy equivalence. Indeed, suppose we have a morphism of simplicial sets $g:\Delta^1/\de\Delta^1\to\de\Delta^2$, then $g$ must send the non-degenerate $1$-simplex $\id_{[1]}\in\Delta^1/\de\Delta^1$ to a $1$-simplex of $\de\Delta^2$ whose two vertices are the same: only the degenerate simplices have this property. Then $g$ must be constant at one of the three vertices of $\de\Delta^2$ and so $|g|$ a constant map at one of the $3$ vertices of $\de\sx{2}$. In particular, $|g|$ is not a homotopy equivalence.
 
 More generally, examples of weak equivalences that are not homotopy equivalences are the maps
@@ -54,7 +54,7 @@ For every simplicial set $X$, the adjunction unit $\eta_X:X\to\S|X|$ is a weak e
 \begin{proof}
 One of the triangle identities of an adjunction show that the composite
 \[|X|\xto{|\eta_X|}|\S|X||\xto{\epsilon_{|X|}}|X|\]
-is the identity. Then $|\eta_X|$ is a homotopy equivalence, hence an homotopy equivalence.\rightnote{We are using that the counit is a weak equivalence and Whitehead.}
+is the identity. Then $|\eta_X|$ is a homotopy equivalence, hence a weak homotopy equivalence.\rightnote{We are using that the counit is a weak equivalence and Whitehead.}
 \end{proof}
 
 As we already did for $\Top$, we want to construct a localization of $\sSet$ at the class of weak equivalences.
@@ -182,7 +182,7 @@ given by $X\mapsto|X|$ on objects and $[\alpha:|X|\to|Y|]\mapsto[\alpha]$ on mor
 \begin{remark}
 There is another category that is equivalent to the previous ones:
 \[\Ho(\sSet_\text{Kan})\]
-the homotopy category of \tbf{Kan-complexes}. But this is another story...\todo[color=yellow]{It would be nice to add some stuff about this...}
+the homotopy category of \tbf{Kan-complexes}. But this is another story...\todo[color=yellow]{It would be nice to say something more about this}
 \end{remark}
 
 

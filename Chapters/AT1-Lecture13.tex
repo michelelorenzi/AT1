@@ -15,7 +15,7 @@ We want to show existence and uniqueness (up to homotopy) of EM-spaces. For the 
 
 A space of type $(G,1)$ is also denoted $BG$, and called the \tbf{classifying space} for $G$.
 
-We use a construction that is similar to the one we saw in AT1Sheet4-1.
+We use a construction that is similar to the one we saw in \hyperref[exercise:AT1Sheet4.1]{AT1Sheet4.1}.
 
 \begin{construction}[Bar construction]
 Let $X$ be a set. We define a simplicial set $EX$ by setting $(EX)_n=\Hom(\cb{0,1,\dots,n},X)(\cong X^{n+1}$ via $f\mapsto(f(0),f(1),\dots,f(n))$) where the simplicial structure map $\alpha^*:(EX)_n\to(EX)_m$ induced by $\alpha:[m]\to[n]$ is $\alpha^*(f)=f\circ\alpha$. Equivalently we have: $\alpha^*(x_0,\dots,x_n)=(x_{\alpha(0)},\dots,x_{\alpha(m)})$.
@@ -56,18 +56,18 @@ i.e. $(Y/G)_n=Y_n/G$, the set of $G$-orbits on $Y_n$.
 
 This comes with a morphism of simplicial sets $Y\to Y/G$ with $p_n:Y_n\to Y_n/G$, $y\mapsto yG$.
 
-\begin{theorem}
+\begin{theorem}\label{theorem:classifying space}
 Let $G$ be a group and $Y$ a free $G$-simplicial set, i.e. the $G$ action on $Y_n$ is free for all $n\geq0$. Then $G$ acts freely and properly discontinuously on $|Y|$ and the continuous map $|p|:|Y|\to|Y/G|$ is a covering space with deck transformation group $G$.
 \end{theorem}
 
-Note: this is essentially AT1Sheet11.3. A key part is that $|-|:\Set\to\Top$ is a left adjoint, so it preserves all colimits, hence $|Y|/G\cong|Y/G|$ because taking orbits by a group action (i.e. the quotient of the space by the group action) is a colimit. If $G$ happens to be finite, we only need the freeness of the action on $|Y|$ and the fact that $|Y|$ is Hausdorff.
+Note: this is essentially \hyperref[exercise:AT1Sheet11.3]{AT1Sheet11.3}. A key part is that $|-|:\Set\to\Top$ is a left adjoint, so it preserves all colimits, hence $|Y|/G\cong|Y/G|$ because taking orbits by a group action (i.e. the quotient of the space by the group action) is a colimit. If $G$ happens to be finite, we only need the freeness of the action on $|Y|$ and the fact that $|Y|$ is Hausdorff.
 
 We apply this theorem to $Y=EG$. The right translation action of $G$ on itself is free, so the map:
 \[|p|:|EG|\to|(EG)/G|\cong|EG|/G\]
 is a covering space with deck transformation group $G$. Since $|EG|$ is contractible, $|(EG)/G|$ is a $K(G,1)$.
 
 \begin{remark}
-The \textbf{bar-construction} $BG$ of a group $G$ (introduced in AT1Sheet4.1) is the simplicial set $(BG)_n=G^n$ with structure maps:
+The \textbf{bar-construction} $BG$ of a group $G$ (introduced in \hyperref[exercise:AT1Sheet4.1]{AT1Sheet4.1}) is the simplicial set $(BG)_n=G^n$ with structure maps:
 \[d^*_i(g_1,\dots,g_n)=\begin{cases}
 (g_2,\dots,g_n) & i=0\\
 (g_1,\dots,g_ig_{i+1},\dots,g_n) & 1\leq i\leq n-1\\
@@ -116,7 +116,7 @@ is a bijection.
 
 \section{Construction of EM-Spaces}
 
-The first step towards construction of EM-spaces is to have a way to "kill homotopy groups".
+The first step towards construction of EM-spaces is to have a way to \enquote{kill homotopy groups}.
 
 \begin{theorem}[Killing homotopy groups]\label{theorem:killing-homotopy-groups}
 Let $n\geq0$ and let $(Y,y)$ be a based space. Then there is a relative CW-complex $(X,Y)$ such that:
