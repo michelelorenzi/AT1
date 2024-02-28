@@ -8,13 +8,11 @@ As an example, last time we saw that the nerve of every (usual) category has uni
 
 Let $f,g:x\to Y$ be morphisms in a quasi-category. Then $f$ and $g$ are homotopic if the following four conditions hold:
 
-\[some\ diagram\]
+\[some\ diagram\ here\]
 
 Homotopy is an equivalence relation on the set of morphisms from $x$ to $y$.
 
-A composite of... [something here]
-
-Composition is well-defined on homotopy classes... [something here]
+Composition is well-defined on homotopy classes...
 
 \begin{thmdef}
 Let $\Cc$ be a quasi-category. The \tbf{homotopy category} $h\Cc$ has objects $\Cc_0$, morphisms the homotopy classes of $\Cc$-morphisms and composition as above.
@@ -26,14 +24,14 @@ The identity property is clear.
 We want to show that composition is associative: let
 \[x\xto{f}y\xto{g}z\xto{i}w\]
 be composable $\Cc$-morphisms. Let $\sigma,\tau\in\Cc_2$ be $2$-simplices with boundaries $\de\sigma=(g,h,f)$ (read \enquote{$h\simeq g\circ f$}) and $\de\tau(i,h,g)$. Then choose $\alpha\in\Cc_2$ with $\de\alpha=(i,j,h)$. This data provides a $\Lambda^3_2$ horn:
-\[diagram\]
+\[some\ diagram\ here\]
 We choose a filler $\mu\in\Cc_3$ of this horn and consider $d_2^*(\mu)\in\Cc_2$. Then
 \[[i]\circ([g]\circ[f])=[i]\circ[h]=[j]=[k]\circ[f]=([i]\circ[g])\circ[f]\]
 where the penultimate equality is given by $d_2^*(\mu)$.
 \end{proof}
 
 \begin{example}
-Let $\Cc=NC$ be the nerve of some category $C$. Then $f,g:x\to y$ are homotopic if and only if [something].
+Let $\Cc=NC$ be the nerve of some category $C$. Then $f,g:x\to y$ are homotopic if and only if...
 
 Hence in $NC$ \enquote{homotopy} specializes to \enquote{equality}. So $h(NC)=C$.
 \end{example}
@@ -44,17 +42,16 @@ A quasi-category $\Cc$ is a Kan-complex if and only if $h\Cc$ is a groupoid.
 
 \begin{example}
 There are essentially two ways of obtaining quasi-categories, from old ones (many constructions, like completion or cocompletition, slice categories et cetera, specialize to quasi-categories) or from modified nerve constructions. We focus now on the second way.
-\[*****\]
+
 Let $\Cc$ be a $2$-category. The \tbf{Duskin nerve} $NC$ is given by:
 \begin{itemize}
     \item $(NC)_0$ are the objects of $C$,
     \item $(NC)_1$ are the $1$-simplices of $C$,
     \item $(NC)_2$ are quadruples:
-    \[diagram\]
-    \item $(NC)_3$:
-    \[not\ precise\ complicated\ diagram\]
-    such that the following two $2$-cells are equal
-    \[stuff\]
+    \[some\ diagram\ here\]
+    \item $(NC)_3$ are more complicated:
+    \[some\ imprecise\ complicated\ diagram\]
+    such that the following two $2$-cells are equal...
 \end{itemize}
 \end{example}
 
@@ -94,8 +91,6 @@ The \tbf{coherent nerve} of a category $C$ enriched in Kan complexes is:
     \item $(NC)_1$ is the set of $1$-simplices in all mapping complexes,
     \[\Hom_{NC}(x,y)=\map_C(x,y)_1,\]
     \item $(NC)_2$ is the set of triples $(f,g,h,\tau)$...
-    \[something\]
-    [something more]
 \end{itemize}
 
 \begin{proposition}
@@ -115,7 +110,7 @@ The \tbf{core} of a quasi-category $\Cc$ is the simplicial subset of $\Cc$ with
 $\core\Cc$ is a quasi-category, and in fact a Kan complex.
 \end{theorem}
 
-The $\infty$-category of $\infty$-categories is the coherent nerve of the Kan enriched category with objects all quasi-categories and morphisms simplicial sets $\core\map(\Cc,\Dd)$. Then $\ob(\Cat_\infty)$ are all quasi-categories, $\map_{\Cat_\infty}(\Cc,\Dd)$ are functors $\Cc\to\Dd$... [something]
+The $\infty$-category of $\infty$-categories is the coherent nerve of the Kan enriched category with objects all quasi-categories and morphisms simplicial sets $\core\map(\Cc,\Dd)$. Then $\ob(\Cat_\infty)$ are all quasi-categories, $\map_{\Cat_\infty}(\Cc,\Dd)$ are functors $\Cc\to\Dd$...
 
 A functor $f:\Cc\to\Dd$ of quasi-categories is an equivalence if for every simplicial set $K$, the functor
 \[f_*:h\map(K,\Cc)\to h\map(K,\Dd)\]

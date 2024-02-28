@@ -4,13 +4,11 @@
 
 \lecture[Cool stuff.]{2022-01-24}
 
-\warning This is just a stub!\todo{Someday I might clean it up, but I doubt it...}
+Reference: \href{https://arxiv.org/abs/1007.2925}{A Short Course on $\infty$-Categories} by Moritz Groth.
 
-Reference: M. Groth - A short course on $\infty$-categories.
+\warning\ \textcolor{red}{This is just a stub! In particular, while the material on simplicial sets in these notes might be good for beginners, I strongly advise against reading this chapter: there are many details I never got around filling (and probably never will).}
 
 We will talk about quasi-categories, which are a model for \enquote{$\infty$-categories}/\enquote{$(\infty,1)$-categories}.
-
-The philosophy is...?
 
 This theory began with Boardman and Vogt in 1973, but then it remained dormant until Joyal picked it up (in 2002) and eventually Lurie (Higher Topos Theory in 2009).
 
@@ -20,7 +18,7 @@ A few more (non-precise) words about the philosophy of infinity categories.
     
     \item Composition is no longer strictly defined, only \enquote{up to contractible choice}.
     
-    \item \enquote{Equality} is meaningless, the role is taken up by \enquote{weak equivalences}
+    \item \enquote{Equality} is meaningless, the role is taken up by \enquote{weak equivalences}.
     
     \item Initial objects $I$ are now characterized by the property that for all objects $T$, $\map_\Cc(I,T)$ is weakly contractible.
 \end{itemize}
@@ -33,7 +31,7 @@ For $0<k<n$, $\Lambda^n_k$ is called an \tbf{inner horn}; $\Lambda^n_0$ and $\La
 
 A \tbf{horn} in a simplicial set $X$ is a morphism $\alpha:\Lambda^n_k\to X$; a horn has a \tbf{filler} if there is a morphism $\beta:\Delta^n\to X$ such that $\beta|_{\Lambda^n_k}=\alpha$.
 
-\[diagram\]
+\[some\ diagram\ here\]
 
 A simplicial set is a \tbf{Kan complex} if all its horns have fillers. A simplicial set is a \tbf{quasi-category} if all its inner horns have fillers.
 
@@ -108,8 +106,6 @@ Kan fibrations are the simplicial analogue of Serre fibrations, i.e. they have t
 \end{tikzcd}
 \]
 
-[Some remark here]
-
 \subsection{The Homotopy Category of a Quasi-Category}
 
 Let $\Cc$ be a quasi-category.
@@ -118,35 +114,35 @@ Let $f,g:x\to y$ be $\Cc$-morphisms. A homotopy from $f$ to $g$ is a $2$-simplex
 \[\de\sigma=(d_0^*(\sigma),d_1^*(\sigma),d_2^*(\sigma))=(g,f,\id_x=s_0^*(x)=s_0^*(d_1^*(f))=s_0^*(d_1^*(g)))\]\rightnote{We will see that no choice is involved in this definition...}
 
 \[
-some\ diagrams
+some\ diagrams\ here
 \]
 
 \begin{proposition}
 Being homotopic is an equivalence relation on the set of $\Cc$-morphisms from $x$ to $y$. Moreover, $f$ is homotopic to $g$ if and only if there is a $\tau\in\Cc_2$ such that $\de\tau=(\id_y,g,f)$.
 
 \[
-some\ diagrams
+some\ diagrams\ here
 \]
 
 \end{proposition}
 
 \begin{proof}
-Reflexivity. [to be added, easy]
+Reflexivity. This one is easy.
 
 Symmetry. Let $\sigma$ be a homotopy from $f$ to $g$, i.e. $\de\sigma=(g,f,\id_x)$. Then
 \[(\sigma,s_0^*(g),-,s_0^*(\id_x)):\Lambda^3_2\to\Cc\]
 is an inner horn.
-\[diagram\]
+\[some\ diagram\ here\]
 Let $\mu:\Delta^3\to\Cc$ be a filler. Then $d_2^*(\mu)$ is the desired homotopy:
 \[\de(d_2^*(\mu))=(f,g,\id_x).\]
 
 Transitivity. Let $\sigma$ be a homotopy from $f$ to $g$, $\tau$ a homotopy from $g$ to $h$. Then
 \[(\tau,\sigma,-,s_0^*(\id_x)):\Lambda^3_2\to\Cc\]
 is an inner horn.
-\[diagram\]
+\[some\ diagram\ here\]
 Let $\mu:Delta^3\to\Cc$ be any filler. Then $\de(d_2^*(\mu))=(h,f,\id_x)$, so $d_2^*(\mu)$ is a homotopy from $f$ to $h$.
 
-Equivalence of the two versions of homotopy. Let $\sigma$ be a homotopy from $f$ to $g$... [to be added]
+Equivalence of the two versions of homotopy. Let $\sigma$ be a homotopy from $f$ to $g$...
 \end{proof}
 
 \begin{proposition}
@@ -155,5 +151,5 @@ Let $f:x\to y$ and $g:y\to z$ be composable morphisms in $\Cc$. Choose $\sigma\i
 
 \begin{proof}[Partial]
 Let $\tau\in\Cc_2$ be another choice of $2$-simplex with $\de\tau=(g,k,f)$. We need to show that $h$ and $k$ are homotopic. Fill the following $\Lambda^3_2$-horn.
-\[diagram\]
+\[some\ diagram\ here\]
 \end{proof}

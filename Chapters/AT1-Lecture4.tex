@@ -1,7 +1,7 @@
 %%% Lecture 4
 
 \lecture[We finish the proof of the HAT. My first non-trivial homotopy groups.]{2021-10-25}
-$(k\geq2)$ Set $u_i=f_i(\text{center of } I^n)\in I^n$. Assume without loss of generality that the first coordinates of $\nn{u}{k}$ are not all equal (if some of them are, we can "wiggle" the $f_i$'s).
+$(k\geq2)$ Set $u_i=f_i(\text{center of } I^n)\in I^n$. Assume without loss of generality that the first coordinates of $\nn{u}{k}$ are not all equal (if some of them are, we can \enquote{wiggle} the $f_i$'s).
 
 \input{Pictures/Lec4Pic1}
 
@@ -12,7 +12,7 @@ Choose $t\in (0,1)$ such that
     \item for some $1\leq i\leq k$, the first coordinate of $u_i$ is larger than $t$.
 \end{itemize}
 
-Choose neighborhoods $\Uu_i$ of $u_i$ inside $f_i(\ring I^n)$ that do not intersect $\cb{t}\times I^\ni$, that is such that $\Uu_i$ lies "on the same side respect to $t$" as $u_i$.
+Choose neighborhoods $\Uu_i$ of $u_i$ inside $f_i(\ring I^n)$ that do not intersect $\cb{t}\times I^\ni$, that is such that $\Uu_i$ lies \enquote{on the same side respect to $t$} as $u_i$.
 
 Choose subcubes $Q_i$ inside $\ring I^n$ that contain the center and lie in in $f^{-1}(\Uu_i)$.
 
@@ -25,7 +25,7 @@ By replacing $g$ by $g'$ and $f_i$ by $f'_i$ we can therefore assume without los
 
 \input{Pictures/Lec4Pic2}\smallskip
 
-Write $g=g_1+_t g_2$ by "cutting along $\cb{x_1=t}$".
+Write $g=g_1+_t g_2$ by \enquote{cutting along $\cb{x_1=t}$}.
 
 Formally, $g_1(\xs)=g(t\xs)$ and $g_2=g((1-t)x_1+t,\dots,x_n)$.
 
@@ -58,14 +58,14 @@ Let $f:(I^n,\de I^n)\to(S^n,U)$ be any pair map. Set $V=S^n\sm\cb{z}$ so that $S
     \item $A_2=\cdots$
     \item $A_n=I^n$
 \end{itemize}
-We want to "improve" $f$ successively by pair homotopies to maps $f_{-1},f_0,f_1,\dots,f_{n-1}$ such that:
+We want to \enquote{improve} $f$ successively by pair homotopies to maps $f_{-1},f_0,f_1,\dots,f_{n-1}$ such that:
 \begin{itemize}
     \item each $f_j$ is homotopic to $f$ relative $\de I^n$,
     \item each $f_j$ is admissible, i.e. it sends every subcube of side length $1/m$ to $U$ or to $V$,
     \item $f_j(A_j)\subset U$ for $j=-1,0,1,\dots,n-1$.
 \end{itemize}
 
-We proceed by induction on $j$. For $j=-1$ we can just set $f{-1}=f$. Let now $j\geq 0$. We first modify $f_{j-1}$ and the faces of the $j$-cube. If such a face $Q$ is "good", i.e. sent by $f_{j-1}$ into $U$, we do not do anything to $Q$. Otherwise the $(j-1)$-subcube is mapped to $V$ and the restriction of $f_{j-1}$ to it is a pair map $(Q,\de Q)\to (V,V\cap U)$.
+We proceed by induction on $j$. For $j=-1$ we can just set $f{-1}=f$. Let now $j\geq 0$. We first modify $f_{j-1}$ and the faces of the $j$-cube. If such a face $Q$ is \enquote{good}, i.e. sent by $f_{j-1}$ into $U$, we do not do anything to $Q$. Otherwise the $(j-1)$-subcube is mapped to $V$ and the restriction of $f_{j-1}$ to it is a pair map $(Q,\de Q)\to (V,V\cap U)$.
 
 Claim. For $j<n$, any pair map $(I^j,\de I^j)\to (V,U\cap V)$ is homotopic relative $\de I^j$ to a map with image in $U\cap V$.
 
@@ -93,7 +93,7 @@ so $\pi_n(S^n,U)^\#\cong\pi_n(S^n,z)$ is infinite cyclic.
 
 \section{Reminder on Simplicial Sets}\label{section:reminder-on-sset}
 
-Our proof of Hurewicz theorem will make substantial use of the theory of simplicial sets, therefore we remind some notions before going on.\todo{Maybe I will add something more about the basics of simplicial sets in the appendix}
+Our proof of Hurewicz theorem will make substantial use of the theory of simplicial sets, therefore we remind some notions before going on.
 
 We denote by $\Delta$ the category with objects the sets $[n]=\cb{0,1,\dots,n}$ for $n\geq 0$ and morphisms the non-decreasing maps.
 
