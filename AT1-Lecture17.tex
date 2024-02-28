@@ -1,0 +1,166 @@
+% Lecture 17
+
+\lecture[We finish to prove representability of singular cohomology. We show existence and uniqueness up to homotopy of CW-approximations to a topological space $Z$.]{2021-12-14}
+
+\comment{
+Last time we introduced the fundamental class of an EM-space $\iota\in H^n(K(A,n);A)$, the unique class such that the composite:
+\[\pi_n(K(A,n),*)\xto{\cong} H_n(K(A,n);\Z)\xto{\Phi(\iota)}A\]
+where the last morphism comes from the UCT, is the identification $\phi:\pi_n(K(A,n),*)\xto{\cong} A$.
+
+For every CW-complex $X$, the map
+\[[X,K(A,n)]\to H^n(X;A)\]
+\[[f]\to f^*(\iota)\]
+is a group homomorphism and the forgetful map $[X,K(A,n)]_*\to[X,K(A,n)]$ is bijective.
+
+\begin{theorem}
+For all $n\ge0$, all abelian groups $A$ and all CW-complexes $Y$, the evaluation homomorphism $[Y,K(A,n)]\to H^n(Y;A)$ is an isomorphism.
+\end{theorem}
+}
+
+General case. We consider the cone of the $(\ni)$-skeleton, \[CY^{(\ni)}=(Y^{(\ni)}\times[0,1])/(Y^{(\ni)}\times\cb{1}),\]
+and we form the CW-complex
+\[Y\cup_{Y^{(\ni)}}CY^{(\ni)}.\]
+Note that we have continuous maps
+\[Y\xto{i} Y\cup_{Y^{(\ni)}}CY^{(\ni)}\xto{p}\Sigma Y^{(\ni)},\]
+where $i$ is the inclusion and $p$ collapses $Y$.\todo[color=red]{Here $\Sigma Y$ denotes the \tit{unreduced} suspension! (I think, I do not know why the Professor chose this notation)}
+
+We consider the commutative diagram of abelian groups:
+\[
+\begin{tikzcd}\label{diagram:representability-theorem}
+{[\Sigma Y^{(\ni)},K(A,n)]} \ar[d] \ar[r,"p^*"] & {[Y\cup_{Y^{(\ni)}}CY^{(\ni)},K(A,n)]} \ar[d] \ar[r, "i^*"] & {[Y,K(A,n)]} \ar[d,"?"] \ar[r] & 0\\
+H^n(\Sigma Y^{(\ni)};A) \ar[r,"p^*"] & H^n(Y\cup_{Y^{(\ni)}}CY^{(\ni)};A) \ar[r,"i^*"] & H^n(Y;A) \ar[r] & 0
+\end{tikzcd}\tag{$*$}
+\]
+We want to use the $5$-lemma to show that the map on the right is an isomorphism.
+
+Exactness of the upper row of (\ref{diagram:representability-theorem}). In the relative CW-complex $(Y\cup_{Y^{(\ni)}}CY^{(\ni)},Y)$ all relative cells have dimension less or equal to $n$. Since the homotopy groups of $K(A,n)$ vanish up to dimension $\ni$, every continuous map $Y\to K(A,n)$ admits a continuous extension to $Y\cup_{Y^{(\ni)}}CY^{(\ni)}$. So the upper map $i^*$ is surjective. Since $p\circ i$ is the constant map, we have that $i^*\circ p^*=(p\circ i)^*$ is the zero homomorphism. Let $f:Y\cup_{Y^{(\ni)}}CY^{(\ni)}\to K(A,n)$ represent an element in the kernel of $i^*$, i.e. $f|_Y$ is nullhomotopic. The HEP for the pair $(Y\cup_{Y^{(\ni)}}CY^{(\ni)},Y)$ let us replace $f$ by a homotopic map $g:Y\cup_{Y^{(\ni)}}CY^{(\ni)}\to K(A,n)$ such that $g|_Y$ is the constant map at the basepoint:
+\[
+\begin{tikzcd}
+Y \ar[dr,"\const_*"'] \ar[r,"i"] & Y\cup_{Y^{(\ni)}}CY^{(\ni)} \ar[d,"g"] \ar[r,"p"] & \Sigma Y^{(\ni)} \ar[dl,dashed,"h"]\\
+& K(A,n) &
+\end{tikzcd}
+\]
+So there is a unique continuous map $h:\Sigma Y^{(\ni)}\to K(A,n)$ with $h\circ p=g$. In particular, we have that $p^*[h]=[g]=[f]$, so that $\ker(i^*)=\im(p^*)$.
+
+Exactness of the lower row of (\ref{diagram:representability-theorem}). This comes from the cohomology long exact sequence of the relative CW-complex $(Y\cup_{Y^{(\ni)}}CY^{(\ni)},Y)$. In particular, observe that the sequence would continue with
+\[H^n(Y;A)\xto{\de} H^{n+1}(\Sigma Y^{(\ni)};A)\]
+and $H^{n+1}(\Sigma Y^{(\ni)};A)=0$, since $\Sigma Y^{(\ni)}$ is a CW-complex of dimension less or equal to $n$.
+
+The left vertical map in (\ref{diagram:representability-theorem}) is surjective. Since $\Sigma K(A,\ni)$ has trivial homotopy groups below the $n$-th and $K(A,n)$ above the $n$-th, using theorem \ref{theorem:correspondence-maps-and-group-morphisms} we can choose a continuous based map, unique up to homotopy, $\kappa_n:\Sigma K(A,\ni)\to K(A,n)$, that realizes the following homomorphism on homotopy groups:
+\[
+    \pi_n(\Sigma K(A,\ni),*)\underset{\text{Hurewicz}}{\xto{\cong}}H_n(\Sigma K(A,\ni);\Z)\underset{\text{Suspension}}{\xto{\cong}} H_\ni(K(A,\ni);\Z)
+\]
+\[
+    \underset{\text{Hurewicz}}{\xto{\cong}}\pi_\ni(K(A,\ni),*)\xto{\cong}A\xto{\cong}\pi_n(K(A,n),*).
+\]
+
+Then the following square commutes:
+\[
+\begin{tikzcd}[column sep=10em]
+{[Y^{(\ni)},K(A,\ni)]} \ar[d,"\cong","{[f]}\mapsto f^*(\iota_\ni)"'] \ar[r,"{[f]}\mapsto{[\kappa_n\circ\Sigma f]}"] & {[\Sigma Y^{(\ni)},K(A,n)]} \ar[d,"{[f]}\mapsto f^*(\iota_n)"]\\
+H^\ni(Y^{(\ni)};A) \ar[r,"\cong"] & H^n(\Sigma Y^{(\ni)};A)
+\end{tikzcd}
+\]
+which gives us surjectivity of the map ${[f]}\mapsto f^*(\iota_n)$ (i.e. the left vertical map in (\ref{diagram:representability-theorem})), since ${[f]}\mapsto f^*(\iota_\ni)$ is an isomorphism by induction.
+
+The middle vertical map in (\ref{diagram:representability-theorem}) is an isomorphism. This follows from the previous special case, since the space $Y\cup_{Y^{(\ni)}}CY^{(\ni)}$ is $(\ni)$-connected: indeed, by cellular approximation any continuous map $f:S^k\to Y\cup_{Y^{(\ni)}}CY^{(\ni)}$, with $k\le\ni$, is homotopic to a map with image the contractible space $CY^{(\ni)}$.
+
+The $5$-lemma then shows that the right vertical map in (\ref{diagram:representability-theorem}) is an isomorphism.\qed
+
+\begin{example}
+$\rp{\infty}$ is both an EM-space of type ($\Z/2,1$) and a classifying space for real line bundles. So for any CW-complex $X$ we get two natural bijections
+\[
+    \Pic_\R(X)\xleftarrow{\cong}[X,\rp{\infty}]\xto{\cong}H^1(X,\FF_2),
+\]
+given by:
+\[
+    f^*(j)\mapsfrom [f]\mapsto f^*(\iota)
+\]
+where $j$ is the universal/tautological line bundle on $\rp{\infty}$. We can combine the two bijections into a map $w_1:\Pic_\R(X)\to H^1(X;\FF_2)$ which is called the first \tbf{Stiefel-Whitney class}.
+
+One can show that a real line bundle is completely determined (up to isomorphism) by its first Stiefel-Whitney class (it is possible to see that vector bundles of higher rank are in general \tit{not} determined by their Stiefel-Whitney classes, though).
+
+The complex version of this story uses $\cp{\infty}$:
+\[
+    \Pic_\CC(X)\xleftarrow{\cong}[X,\cp{\infty}]\xto{\cong} H^2(X,\Z),
+\]
+this gives a map $\Pic_\CC(X)\to H^2(X;\Z)$ which is called the first \tbf{Chern class}. Again, one can show that a complex line bundle over a CW-complex is determined up to isomorphism by its first Chern class (and that the same is not true in general for vector bundles of higher rank and their Chern classes).
+\end{example}
+
+\section{CW Approximation}
+
+Our aim: we want to show that every space $Z$ admits a weak homotopy equivalence $X\to Z$ from a CW-complex $X$ that is unique up to homotopy.
+
+A continuous map $f:X\to Y$ is a \tbf{weak homotopy equivalence}\rightnote{Being \enquote{weakly homotopy equivalent} is the equivalence relation generated by the relation \enquote{there is a weak homotopy equivalence between $X$ and $Y$}, which can be proved transitive but is not symmetric!} if $\pi_0(f):\pi_0(X)\to\pi_0(Y)$ is bijective and for all $n\ge1$ and all $x\in X$, $\pi_n(f):\pi_n(X,x)\to\pi_n(Y,f(x))$ is an isomorphism.\todo{A bunch of interesting facts are in AT1Sheet10.2 and elsewhere...}
+
+Note that every homotopy equivalence is a weak homotopy equivalence (note: sometimes people (e.g. me) forget that this is not entirely trivial... see \cite[proposition 1.18]{hatcher} for a proof in the case of fundamental groups, which can be easily generalized to the higher homotopy groups).
+
+For an example of a weak homotopy equivalence which is not an homotopy equivalence one could take the inclusion of a point into the long line or the Warsaw circle, or a map from a countable discrete space $Y$ to $\cb{0}\cup\cb{1/n\mid n\ge1}\subset\R$ with the subspace topology.\todo[color=yellow]{These pathological counterexamples can be quite subtle (if maybe not very interesting?).}
+
+\begin{theorem}[Existence of CW-approximations]\label{theorem:cw-approximation}
+Let $Z$ be a path connected space, $X$ a CW-complex, $x_0\in X$ a $0$-cell, $f:(X,x_0)\to(Z,z_0)$ a continuous map. Then there is a CW-complex $Y$ that contains $X$ as a subcomplex and a continuous extension $g:Y\to Z$ that is a weak homotopy equivalence.
+
+As a special case, $X=\cb{x_0}$ gives the existence of CW-approximations.
+\end{theorem}
+
+\begin{proof}
+This is similar to the proof of \ref{theorem:killing-homotopy-groups}, the method for "killing homotopy groups". We construct inductively CW-complexes $X=Y^{(-1)}\subset Y^{(0)}\subset Y^{(1)}\subset\cdots$ such that $Y^{(n)}$ contains $Y^{(\ni)}$ as a subcomplex and a continuous map $g^{(n)}:Y^{(n)}\to Z$ such that $g^{(n)}|_{Y^{(\ni)}}=g^{(\ni)}$ and $\pi_k(g^{(n)})=0$ for all $1\le k\le n$. Then $Y=\cup_{n\ge0}Y^{(n)}$ with the weak topology is the desired CW-complex and $g=\cup_{n\ge0}\,g^{(n)}:Y\to Z$ is the desired map because $\pi_k(g)=0$\rightnote{We are appealing to the fact that a compact subspace of a CW complex is contained in a finite subcomplex. In case of doubt: \cite[Prop. A.1]{hatcher}.} for all $k\ge1$ by compactness, hence $g$ is a weak homotopy equivalence by its associated long exact homotopy sequence.
+
+Now, we proceed with the construction. Let $Y^{(-1)}=X$ and $g^{(-1)}=f:X\to Z$. Suppose that $Y^{(\ni)}$ and $g^{(\ni)}:Y^{(\ni)}\to Z$ with the desired properties have already been constructed. For each class $i\in\pi_n(g^{(\ni)})$ choose representing maps $\alpha_i:S^\ni\to Y^{(\ni)}$ and $\beta_i:D^n\to Z$ such that the diagram
+\[
+\begin{tikzcd}
+S^\ni \ar[d,hook] \ar[r,"\alpha_i"] & Y^{(\ni)} \ar[d,"g^{(\ni)}"]\\
+D^n \ar[r,"\beta_i"] & Z
+\end{tikzcd}
+\]
+commutes. By cellular approximation we can assume that the $\alpha_i$ are cellular maps.
+
+We construct $Y^{(n)}$ by attaching $n$-cells to $Y^{(\ni)}$
+using the $\alpha_i$'s as attaching maps. Similarly, we define $g^{(n)}$ taking the union of $g^{(\ni)}$ with the $\beta_i$'s. Then $Y^{(n)}$ contains $Y^{(\ni)}$ as a subcomplex and $g^{(n)}$ extends $g^{(\ni)}$.
+
+It remains to show that $\pi_k(g^{(n)})=0$ for $1\le k\le n$. To this end we compare the long exact homotopy sequences of $g^{(\ni)}$ and $g^{(n)}$:
+{\small
+\[
+\begin{tikzcd}[scale=0.5]
+\pi_k(Y^{(\ni)},x_0) \ar[d,"\incl_*"] \ar[r,"g^{(\ni)}_*"] & \pi_k(Z,z_0) \ar[d,eq] \ar[r] & \pi_k(g^{(\ni)}) \ar[d,"\incl_*"] \ar[r,"\de"] & \pi_{k-1}(Y^{(\ni)},x_0) \ar[d,"\incl_*"] \ar[r,"g^{(\ni)}_*"] & \pi_{k-1}(Z,z_0) \ar[d,eq]\\
+\pi_k(Y^{(n)},x_0) \ar[r,"g^{(n)}_*"] & \pi_k(Z,z_0) \ar[r] & \pi_k(g^{(n)}) \ar[r,"\de"] & \pi_{k-1}(Y^{(n)},x_0) \ar[r,"g^{(n)}_*"] & \pi_{k-1}(Z,z_0)
+\end{tikzcd}
+\]}
+The fourth map is surjective for $k\le n$ by cellular approximation, hence the middle map is surjective by the $5$-lemma. Since $\pi_k(g^{(\ni)})=0$ for $1\le k<n$, we have that also $\pi_k(g^{(n)})=0$ for $1\le k<n$.
+
+For $k=n$ the map $\incl_*:\pi_n(g^{(\ni)})\to\pi_n(g^{(n)})$ sends all elements to zero by design: given an $i\in\pi_n(g^{(\ni)})$ represented by $(\beta_i,\alpha_i)$, we have the diagram
+\[
+\begin{tikzcd}[row sep=large]
+S^\ni \ar[d,hook] \ar[r,"\alpha_i"] & Y^{(\ni)} \ar[d,"g^{(\ni)}"' near start] \ar[r,hook] & Y^{(n)} \ar[d,"g^{(n)}"]\\
+D^n \ar[r,"\beta_i"'] \ar[urr,dashed,crossing over] & Z \ar[r,eq] & Z
+\end{tikzcd}
+\]
+where the dashed arrow is a characteristic map for the $i$-th cell. The existence of the diagonal filler means that the outer square represents the $0$ element in $\pi_n(g^{(n)})$\leftnote{Because then you can contract $D^n$.}, hence $\incl_*$ is surjective and the zero homomorphism, so $\pi_n(g^{(n)})=0$.
+\end{proof}
+
+\begin{theorem}[Uniqueness of CW-approximations]\label{theorem:uniqueness-cw-approximations}
+Let $f:X\to Z$ and $g:Y\to Z$ be two CW-approximations, i.e. weak homotopy equivalences to a path-connected space $Z$ such that $X$ and $Y$ are CW-complexes. Then there is a homotopy equivalence $\psi:X\to Y$ such that the diagram:
+\[
+\begin{tikzcd}
+X \ar[rd,"f"'] \ar[rr,"\psi"] & & Y \ar[dl,"g"]\\
+& Z &
+\end{tikzcd}
+\]
+commutes up to homotopy.
+\end{theorem}
+
+\begin{proof}
+We consider the map $f\amalg g:X\amalg Y\to Z$. Then by the previous theorem (\ref{theorem:cw-approximation}) there is a CW-complex $W$ that contains $X\amalg Y$ as a subcomplex and a weak homotopy equivalence $\Phi:W\to Z$ with $\Phi|_X=f$ and $\Phi|_Y=g$.
+
+Because $g$ and $\Phi$ are weak homotopy equivalences, so is the inclusion $i_Y:Y\into W$
+\[
+\begin{tikzcd}
+Y \ar[rd,"g"'] \ar[rr,"i_Y"] & & W \ar[dl,"\Phi"]\\
+& Z &
+\end{tikzcd}
+\]
+Since $Y$ and $W$ are path-connected, $i_Y$ is a homotopy equivalence by Whitehead's theorem. Let $j:W\to Y$ be a homotopy inverse.
+
+Interchanging the roles of $X$ and $Y$ shows that also $i_X:X\to W$ is a homotopy equivalence.
+So $\psi:j\circ i_X:X\to Y$ is a homotopy equivalence. Moreover: \[g\circ\psi=g\circ j\circ i_X=\Phi\circ i_Y\circ j\circ i_X\simeq\Phi\circ i_X=f.\]
+\end{proof}
