@@ -119,13 +119,13 @@ We construct $Y^{(n)}$ by attaching $n$-cells to $Y^{(\ni)}$
 using the $\alpha_i$'s as attaching maps. Similarly, we define $g^{(n)}$ taking the union of $g^{(\ni)}$ with the $\beta_i$'s. Then $Y^{(n)}$ contains $Y^{(\ni)}$ as a subcomplex and $g^{(n)}$ extends $g^{(\ni)}$.
 
 It remains to show that $\pi_k(g^{(n)})=0$ for $1\le k\le n$. To this end we compare the long exact homotopy sequences of $g^{(\ni)}$ and $g^{(n)}$:
+{\small
 \[
-\small
-\begin{tikzcd}
+\begin{tikzcd}[scale=0.5]
 \pi_k(Y^{(\ni)},x_0) \ar[d,"\incl_*"] \ar[r,"g^{(\ni)}_*"] & \pi_k(Z,z_0) \ar[d,eq] \ar[r] & \pi_k(g^{(\ni)}) \ar[d,"\incl_*"] \ar[r,"\de"] & \pi_{k-1}(Y^{(\ni)},x_0) \ar[d,"\incl_*"] \ar[r,"g^{(\ni)}_*"] & \pi_{k-1}(Z,z_0) \ar[d,eq]\\
 \pi_k(Y^{(n)},x_0) \ar[r,"g^{(n)}_*"] & \pi_k(Z,z_0) \ar[r] & \pi_k(g^{(n)}) \ar[r,"\de"] & \pi_{k-1}(Y^{(n)},x_0) \ar[r,"g^{(n)}_*"] & \pi_{k-1}(Z,z_0)
 \end{tikzcd}
-\]
+\]}
 The fourth map is surjective for $k\le n$ by cellular approximation, hence the middle map is surjective by the $5$-lemma. Since $\pi_k(g^{(\ni)})=0$ for $1\le k<n$, we have that also $\pi_k(g^{(n)})=0$ for $1\le k<n$.
 
 For $k=n$ the map $\incl_*:\pi_n(g^{(\ni)})\to\pi_n(g^{(n)})$ sends all elements to zero by design: given an $i\in\pi_n(g^{(\ni)})$ represented by $(\beta_i,\alpha_i)$, we have the diagram
